@@ -5,12 +5,15 @@
 
 [node name="MainScene" type="Node3D"]
 script = ExtResource("1_tr2i4")
-FloorContainerPath = NodePath(".")
+FloorContainerPath = NodePath("ElevatorContainer")
 
 [node name="Elevator" parent="." instance=ExtResource("1_hpc76")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.20052)
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0.608623, -0.308078, 0.731209, 1.52028e-08, 0.921545, 0.388272, -0.79346, -0.236311, 0.560873, 5.20378, 2, 5.84528)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.0127231, 0.999919, 0, -0.999919, 0.0127231, -0.708617, 4.753, -0.154598)
+
+[node name="ElevatorContainer" type="Node3D" parent="."]

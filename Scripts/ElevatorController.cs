@@ -1,41 +1,119 @@
+using System.Collections.Generic;
 using Godot;
 using System.Threading.Tasks;
 
 public partial class ElevatorController : Node
 {
-	// Path ของ Scene ชั้น (ปรับตามที่ต้องการ)
-	private const string FloorScenePath = "res://Scenes/Floors/Floor1.tscn";
-	
-	// Node ที่จะเก็บ Scene ชั้น (กำหนดผ่าน Inspector)
+	private const string FLOOR_SCENE_PATH = "res://Scenes/Floors/";
+
 	[Export]
 	public NodePath FloorContainerPath;
+	public List<PackedScene> SceneList = new List<PackedScene>();
 	
-	private Node FloorContainer;
+	private Node _floorContainer;
+	private Node _currentFloor = null;
+
 
 	public override void _Ready()
 	{
-		FloorContainer = GetNode(FloorContainerPath);
-		// เริ่มโหลดชั้นแรกแบบ asynchronous (จำลองด้วย Task.Run)
-		_ = LoadFloorAsync(FloorScenePath);
+		LoadScenesFromFloder(FLOOR_SCENE_PATH);
+		_floorContainer = GetNode(FloorContainerPath);
+		
+		// if (SceneList.Count > 0)
+		// {
+		// 	_ = LoadFloorAsync(SceneList[2]);
+		// }
+		// else
+		// {
+		// 	GD.PrintErr("SceneList is empty!");
+		// }
 	}
 
-	public async Task LoadFloorAsync(string scenePath)
+	private void LoadScenesFromFloder(string folderPath)
 	{
-		// ใช้ Task.Run เพื่อทำการโหลดแบบ synchronous ใน background thread
-		PackedScene floorScene = await Task.Run(() =>
+		GD.Print(folderPath);
+		DirAccess dir = DirAccess.Open(folderPath);
+		
+		if (dir == null)
 		{
-			return (PackedScene)ResourceLoader.Load(scenePath);
-		});
-
-		if (floorScene != null)
-		{
-			// สร้าง Instance ของ Scene และเพิ่มเข้าไปใน FloorContainer (บน Main Thread)
-			Node floorInstance = floorScene.Instantiate();
-			FloorContainer.AddChild(floorInstance);
+			GD.PrintErr("Cannot open folder: " + folderPath);
+			return;
 		}
-		else
+		List<string> fileNames = new List<string>();
+
+		dir.ListDirBegin();
+		string fileName = dir.GetNext();
+		while (!string.IsNullOrEmpty(fileName))
 		{
-			GD.PrintErr("ไม่สามารถโหลด Scene ได้: " + scenePath);
+			if (!dir.CurrentIsDir() && fileName.EndsWith(".tscn"))
+			{
+				fileNames.Add(fileName);
+			}
+			fileName = dir.GetNext();
+		}
+		dir.ListDirEnd();
+		
+		fileNames.Sort();
+
+		foreach (string file in fileNames)
+		{
+			string fullPath = folderPath + file;
+			PackedScene scene = ResourceLoader.Load<PackedScene>(fullPath);
+			if (scene != null)
+			{
+				SceneList.Add(scene);
+				GD.Print("Load scene: " + fullPath);
+			}
+			else
+			{
+				GD.PrintErr("Cannot load scene: " + fullPath);
+			}
+		}
+	}
+
+	public async Task LoadFloorAsync(PackedScene scene)
+	{
+		UnloadCurrentFloor();
+		
+		_currentFloor = scene.Instantiate();
+		_floorContainer.AddChild(_currentFloor);
+		
+		await Task.CompletedTask;
+	}
+	
+	private void UnloadCurrentFloor()
+	{
+		if (_currentFloor != null)
+		{
+			_currentFloor.GetParent()?.RemoveChild(_currentFloor);
+			_currentFloor.QueueFree();
+			_currentFloor = null;
+		}
+	}
+	
+	public override void _Input(InputEvent @event)
+	{
+		if (SceneList.Count > 1)
+		{
+			if (@event is InputEventKey keyEvent && keyEvent.Pressed && !keyEvent.Echo)
+			{
+				if (keyEvent.Keycode == Key.Key1)
+				{
+					GD.Print("Load Floor1");
+					_ = LoadFloorAsync(SceneList[0]);
+					
+				}
+				else if (keyEvent.Keycode == Key.Key2)
+				{
+					GD.Print("Load Floor2");
+					_ = LoadFloorAsync(SceneList[1]);
+				}
+				else if (keyEvent.Keycode == Key.Key3)
+				{
+					GD.Print("Load Floor3");
+					_ = LoadFloorAsync(SceneList[2]);
+				}
+			}
 		}
 	}
 }
