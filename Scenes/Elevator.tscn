@@ -1,68 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dinmhn3cmls06"]
-
-[sub_resource type="Animation" id="Animation_0felt"]
-resource_name = "Idle"
-
-[sub_resource type="Animation" id="Animation_410ca"]
-resource_name = "Open"
-length = 2.0
-tracks/0/type = "position_3d"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("DoorLeft")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 0.946, 1.546, -0.5, 2, 1, 0.946, 1.546, -1.5)
-tracks/1/type = "position_3d"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("DoorRight")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = PackedFloat32Array(0, 1, 0.946, 1.546, 0.5, 2, 1, 0.946, 1.546, 1.5)
-
-[sub_resource type="Animation" id="Animation_n3ex4"]
-resource_name = "Close"
-length = 2.0
-tracks/0/type = "position_3d"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("DoorLeft")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 0.946, 1.546, -1.5, 2, 1, 0.946, 1.546, -0.5)
-tracks/1/type = "position_3d"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("DoorRight")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = PackedFloat32Array(0, 1, 0.946, 1.546, 1.5, 2, 1, 0.946, 1.546, 0.5)
-
-[sub_resource type="Animation" id="Animation_dmimb"]
-length = 0.001
-tracks/0/type = "position_3d"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("DoorLeft")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 0.945727, 1.54634, 0)
-tracks/1/type = "position_3d"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("DoorRight")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0)
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_dmimb"]
-_data = {
-&"Close": SubResource("Animation_n3ex4"),
-&"Idle": SubResource("Animation_0felt"),
-&"Open": SubResource("Animation_410ca"),
-&"RESET": SubResource("Animation_dmimb")
-}
+[gd_scene load_steps=11 format=3 uid="uid://dinmhn3cmls06"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_gn14u"]
 size = Vector3(2, 0.1, 2)
@@ -82,12 +18,67 @@ size = Vector3(2, 3, 0.1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_n3ex4"]
 size = Vector3(2, 3, 0.1)
 
-[node name="Elevator" type="Node"]
+[sub_resource type="Animation" id="Animation_n3ex4"]
+resource_name = "Close"
+length = 2.0
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DoorLeft")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 1, 1.546, -1.5, 2, 1, 1, 1.546, -0.5)
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DoorRight")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 1, 1.546, 1.5, 2, 1, 1, 1.546, 0.5)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_dmimb")
+[sub_resource type="Animation" id="Animation_410ca"]
+resource_name = "Open"
+length = 2.0
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DoorLeft")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 1, 1.546, -0.5, 2, 1, 1, 1.546, -1.5)
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DoorRight")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 1, 1.546, 0.5, 2, 1, 1, 1.546, 1.5)
+
+[sub_resource type="Animation" id="Animation_dmimb"]
+length = 0.001
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DoorLeft")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 1, 1.546, 0.5)
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DoorRight")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 1, 1.546, -0.5)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dmimb"]
+_data = {
+&"Close": SubResource("Animation_n3ex4"),
+&"Open": SubResource("Animation_410ca"),
+&"RESET": SubResource("Animation_dmimb")
 }
+
+[node name="Elevator" type="Node3D"]
 
 [node name="Floor" type="StaticBody3D" parent="."]
 
@@ -109,7 +100,7 @@ skeleton = NodePath("../..")
 shape = SubResource("BoxShape3D_y1v7r")
 
 [node name="DoorLeft" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.945727, 1.54634, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1.546, 0.5)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="DoorLeft"]
 mesh = SubResource("BoxMesh_0felt")
@@ -118,6 +109,7 @@ mesh = SubResource("BoxMesh_0felt")
 shape = SubResource("BoxShape3D_0felt")
 
 [node name="DoorRight" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1.546, -0.5)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="DoorRight"]
 mesh = SubResource("BoxMesh_0felt")
@@ -151,3 +143,9 @@ mesh = SubResource("BoxMesh_410ca")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall3"]
 shape = SubResource("BoxShape3D_n3ex4")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_dmimb")
+}
+next/Close = &"RESET"

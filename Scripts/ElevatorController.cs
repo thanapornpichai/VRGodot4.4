@@ -2,16 +2,27 @@ using System.Collections.Generic;
 using Godot;
 using System.Threading.Tasks;
 
+public enum ElevatorState
+{
+	Idle,
+	Open,
+	Close
+}
+
 public partial class ElevatorController : Node
 {
 	private const string FLOOR_SCENE_PATH = "res://Scenes/Floors/";
+	private AnimationPlayer _animationPlayer;
+	private Node _floorContainer;
+	private Node _currentFloor = null;
+	private bool _isOpen = false;
 
 	[Export]
 	public NodePath FloorContainerPath;
 	public List<PackedScene> SceneList = new List<PackedScene>();
+	[Export]
+	public Node Elevator;
 	
-	private Node _floorContainer;
-	private Node _currentFloor = null;
 
 
 	public override void _Ready()
@@ -19,16 +30,11 @@ public partial class ElevatorController : Node
 		LoadScenesFromFloder(FLOOR_SCENE_PATH);
 		_floorContainer = GetNode(FloorContainerPath);
 		
-		// if (SceneList.Count > 0)
-		// {
-		// 	_ = LoadFloorAsync(SceneList[2]);
-		// }
-		// else
-		// {
-		// 	GD.PrintErr("SceneList is empty!");
-		// }
+		_animationPlayer = Elevator.GetNode<AnimationPlayer>("AnimationPlayer");
+		SetElevatorState(ElevatorState.Open);
+		_isOpen = true;
 	}
-
+	
 	private void LoadScenesFromFloder(string folderPath)
 	{
 		GD.Print(folderPath);
@@ -71,13 +77,52 @@ public partial class ElevatorController : Node
 		}
 	}
 
+	public async Task LoadScene(PackedScene scene)
+	{
+		if (_isOpen)
+		{
+			await DelayLoadScene();
+		}
+
+		if (!_isOpen)
+		{
+			await LoadFloorAsync(scene);
+		}
+	}
+	
+	private async Task DelayLoadScene()
+	{
+		SetElevatorState(ElevatorState.Close);
+		var animationLength = _animationPlayer.GetAnimation("Close");
+		await Task.Delay((int)(animationLength.Length * 1000));
+		_isOpen = false;
+	}
+
+	private void SetElevatorState(ElevatorState state)
+	{
+		if (state == ElevatorState.Idle)
+		{
+			_animationPlayer.Play("Idle");
+		}
+		if (state == ElevatorState.Open)
+		{
+			_animationPlayer.Play("Open");
+			_isOpen = true;
+		}
+		if (state == ElevatorState.Close)
+		{
+			_animationPlayer.Play("Close");
+		}
+	}
+
 	public async Task LoadFloorAsync(PackedScene scene)
 	{
 		UnloadCurrentFloor();
 		
 		_currentFloor = scene.Instantiate();
 		_floorContainer.AddChild(_currentFloor);
-		
+		await Task.Delay(3000);
+		SetElevatorState(ElevatorState.Open);
 		await Task.CompletedTask;
 	}
 	
@@ -100,18 +145,27 @@ public partial class ElevatorController : Node
 				if (keyEvent.Keycode == Key.Key1)
 				{
 					GD.Print("Load Floor1");
-					_ = LoadFloorAsync(SceneList[0]);
-					
+					_ = LoadScene(SceneList[0]);
 				}
 				else if (keyEvent.Keycode == Key.Key2)
 				{
 					GD.Print("Load Floor2");
-					_ = LoadFloorAsync(SceneList[1]);
+					_ = LoadScene(SceneList[1]);
 				}
 				else if (keyEvent.Keycode == Key.Key3)
 				{
 					GD.Print("Load Floor3");
-					_ = LoadFloorAsync(SceneList[2]);
+					_ = LoadScene(SceneList[2]);
+				}
+				else if (keyEvent.Keycode == Key.Key4)
+				{
+					GD.Print("Open Elevator");
+					SetElevatorState(ElevatorState.Open);
+				}
+				else if (keyEvent.Keycode == Key.Key5)
+				{
+					GD.Print("Close Elevator");
+					SetElevatorState(ElevatorState.Close);
 				}
 			}
 		}
