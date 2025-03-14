@@ -1,8 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://bdxt84n3f5hyl"]
+[gd_scene load_steps=6 format=3 uid="uid://bdxt84n3f5hyl"]
 
 [ext_resource type="PackedScene" uid="uid://dinmhn3cmls06" path="res://Scenes/Elevator.tscn" id="1_hpc76"]
 [ext_resource type="Script" uid="uid://cncdpvdpowvdf" path="res://Scripts/ElevatorController.cs" id="1_tr2i4"]
-[ext_resource type="ArrayMesh" uid="uid://ci808jc51jrq0" path="res://Models/Elevator.vox" id="3_nhkr4"]
+
+[sub_resource type="Environment" id="Environment_tr2i4"]
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_tr2i4"]
+
+[sub_resource type="Compositor" id="Compositor_nhkr4"]
 
 [node name="MainScene" type="Node3D" node_paths=PackedStringArray("Elevator")]
 script = ExtResource("1_tr2i4")
@@ -10,16 +15,14 @@ FloorContainerPath = NodePath("ElevatorContainer")
 Elevator = NodePath("Elevator")
 
 [node name="Elevator" parent="." instance=ExtResource("1_hpc76")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.52276, 2.38419e-07, 0)
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4.5491, 1.43271, -0.0452225)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.0166931, 0.922918, -0.0563335)
+environment = SubResource("Environment_tr2i4")
+attributes = SubResource("CameraAttributesPractical_tr2i4")
+compositor = SubResource("Compositor_nhkr4")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.0127231, 0.999919, 0, -0.999919, 0.0127231, -0.708617, 4.753, -0.154598)
 
 [node name="ElevatorContainer" type="Node3D" parent="."]
-
-[node name="Elevator2" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.374469, 0, 0.843773)
-mesh = ExtResource("3_nhkr4")

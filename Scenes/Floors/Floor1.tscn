@@ -1,15 +1,13 @@
 [gd_scene load_steps=3 format=3 uid="uid://m4q2uq45wscl"]
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_y8xt8"]
-
-[sub_resource type="SphereMesh" id="SphereMesh_2wp4g"]
+[ext_resource type="ArrayMesh" uid="uid://dx5e12fyuy5fi" path="res://Models/ClassRoom.vox" id="1_x5ba2"]
+[ext_resource type="PackedScene" uid="uid://c6afsp1shlypy" path="res://Scenes/Lights/Light01.tscn" id="2_x5ba2"]
 
 [node name="Floor1" type="Node3D"]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
+[node name="ClassRoom" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -7.1, 0, 31.4)
+mesh = ExtResource("1_x5ba2")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-shape = SubResource("SphereShape3D_y8xt8")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
-mesh = SubResource("SphereMesh_2wp4g")
+[node name="Light01" parent="." instance=ExtResource("2_x5ba2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0908523, 3.70517, 12.5611)

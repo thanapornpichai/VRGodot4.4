@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c6afsp1shlypy"]
+
+[ext_resource type="ArrayMesh" uid="uid://bgne7aoj26tun" path="res://Models/Light01.vox" id="1_v1wao"]
+
+[node name="Light01" type="Node3D"]
+
+[node name="Light01" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_v1wao")
