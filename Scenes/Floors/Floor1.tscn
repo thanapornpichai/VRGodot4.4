@@ -10,4 +10,16 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -7.1, 
 mesh = ExtResource("1_x5ba2")
 
 [node name="Light01" parent="." instance=ExtResource("2_x5ba2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0908523, 3.70517, 12.5611)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0908523, 3.70517, 16.3395)
+
+[node name="Light05" parent="." instance=ExtResource("2_x5ba2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0908523, 3.70517, 5.73853)
+
+[node name="Light02" parent="." instance=ExtResource("2_x5ba2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0908523, 3.70517, 31.3953)
+
+[node name="Light03" parent="." instance=ExtResource("2_x5ba2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0908523, 3.70517, 46.3001)
+
+[node name="Light04" parent="." instance=ExtResource("2_x5ba2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0908523, 3.70517, 56.9015)

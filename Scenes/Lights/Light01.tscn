@@ -6,3 +6,7 @@
 
 [node name="Light01" type="MeshInstance3D" parent="."]
 mesh = ExtResource("1_v1wao")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Light01"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.07604, 0)
+omni_range = 8.1556

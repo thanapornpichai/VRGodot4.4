@@ -1,13 +1,26 @@
-[gd_scene load_steps=6 format=3 uid="uid://bdxt84n3f5hyl"]
+[gd_scene load_steps=9 format=3 uid="uid://bdxt84n3f5hyl"]
 
 [ext_resource type="PackedScene" uid="uid://dinmhn3cmls06" path="res://Scenes/Elevator.tscn" id="1_hpc76"]
 [ext_resource type="Script" uid="uid://cncdpvdpowvdf" path="res://Scripts/ElevatorController.cs" id="1_tr2i4"]
+[ext_resource type="PackedScene" uid="uid://bpfinjadhqgd1" path="res://Scenes/XR_Player.tscn" id="3_nhkr4"]
 
-[sub_resource type="Environment" id="Environment_tr2i4"]
+[sub_resource type="BoxMesh" id="BoxMesh_tr2i4"]
+size = Vector3(20, 0.1, 20)
 
-[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_tr2i4"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_nhkr4"]
+size = Vector3(20, 0.1, 20)
 
-[sub_resource type="Compositor" id="Compositor_nhkr4"]
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tr2i4"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_nhkr4"]
+sky_material = SubResource("ProceduralSkyMaterial_tr2i4")
+
+[sub_resource type="Environment" id="Environment_7rqgy"]
+background_mode = 2
+sky = SubResource("Sky_nhkr4")
+tonemap_mode = 2
 
 [node name="MainScene" type="Node3D" node_paths=PackedStringArray("Elevator")]
 script = ExtResource("1_tr2i4")
@@ -16,13 +29,19 @@ Elevator = NodePath("Elevator")
 
 [node name="Elevator" parent="." instance=ExtResource("1_hpc76")]
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.0166931, 0.922918, -0.0563335)
-environment = SubResource("Environment_tr2i4")
-attributes = SubResource("CameraAttributesPractical_tr2i4")
-compositor = SubResource("Compositor_nhkr4")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.0127231, 0.999919, 0, -0.999919, 0.0127231, -0.708617, 4.753, -0.154598)
-
 [node name="ElevatorContainer" type="Node3D" parent="."]
+
+[node name="Floor" type="StaticBody3D" parent="."]
+visible = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
+mesh = SubResource("BoxMesh_tr2i4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+shape = SubResource("BoxShape3D_nhkr4")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_7rqgy")
+
+[node name="XrPlayer" parent="." instance=ExtResource("3_nhkr4")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.0230564, 1.07613, -0.279779)
