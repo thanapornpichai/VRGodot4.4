@@ -122,7 +122,7 @@ public partial class ElevatorController : Node
 		_currentFloor = scene.Instantiate();
 		_floorContainer.AddChild(_currentFloor);
 		await Task.Delay(3000);
-		awSetElevatorState(ElevatorState.Open);
+		SetElevatorState(ElevatorState.Open);
 		await Task.CompletedTask;
 	}
 	

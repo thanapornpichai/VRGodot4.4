@@ -1,13 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://nl8dfyxr33el"]
+[gd_scene load_steps=2 format=3 uid="uid://nl8dfyxr33el"]
 
-[ext_resource type="ArrayMesh" uid="uid://dx5e12fyuy5fi" path="res://Models/ClassRoom.vox" id="1_kdq16"]
 [ext_resource type="PackedScene" uid="uid://c6afsp1shlypy" path="res://Scenes/Lights/Light01.tscn" id="2_qu5op"]
 
-[node name="Floor1" type="Node3D"]
-
-[node name="ClassRoom" type="MeshInstance3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -7.1, 0, 31.4)
-mesh = ExtResource("1_kdq16")
+[node name="Floor4" type="Node3D"]
 
 [node name="Light01" parent="." instance=ExtResource("2_qu5op")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0908523, 3.70517, 12.5611)
