@@ -9,17 +9,17 @@ size = Vector3(0.1, 0.1, 0.1)
 [node name="Number1" type="Node3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0987509, -0.0792688, -0.373057)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0987509, -0.0960171, 0)
 mesh = SubResource("BoxMesh_2su68")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.101347, -0.0811339, -0.37319)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.101347, -0.0978822, 0)
 mesh = SubResource("BoxMesh_2su68")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0987509, 0.115199, -0.373057)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0987509, 0.0984507, 0)
 mesh = SubResource("BoxMesh_2su68")
 
 [node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.101347, 0.113334, -0.37319)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.101347, 0.0965857, 0)
 mesh = SubResource("BoxMesh_2su68")

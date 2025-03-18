@@ -1,7 +1,8 @@
-[gd_scene load_steps=15 format=3 uid="uid://bv0wy64hudybk"]
+[gd_scene load_steps=16 format=3 uid="uid://bv0wy64hudybk"]
 
 [ext_resource type="Script" uid="uid://0xvymqopke0y" path="res://Scripts/CryptexController.cs" id="1_no3ku"]
 [ext_resource type="PackedScene" uid="uid://db0f3bjv02kd5" path="res://Scenes/Puzzles/Cryptex/Number/Number1.tscn" id="2_e0gyp"]
+[ext_resource type="PackedScene" uid="uid://csrf68amhg7c0" path="res://Scenes/Puzzles/Cryptex/Number/Number0.tscn" id="2_tpgif"]
 [ext_resource type="PackedScene" uid="uid://cix3delwpuphw" path="res://Scenes/Puzzles/Cryptex/Number/Number2.tscn" id="3_tpgif"]
 [ext_resource type="PackedScene" uid="uid://01nx302srtj5" path="res://Scenes/Puzzles/Cryptex/Number/Number3.tscn" id="4_kxv4j"]
 [ext_resource type="PackedScene" uid="uid://dfl2thydbf3fp" path="res://Scenes/Puzzles/Cryptex/Number/Number4.tscn" id="5_hq3bk"]
@@ -26,9 +27,12 @@ tonemap_mode = 2
 [sub_resource type="BoxMesh" id="BoxMesh_q0vmq"]
 size = Vector3(0.5, 1, 1)
 
-[node name="CryptexController" type="Node3D"]
+[node name="CryptexController" type="Node3D" node_paths=PackedStringArray("firstNumberPosition", "secondNumberPosition", "thirdNumberPosition")]
 script = ExtResource("1_no3ku")
-NumberList = Array[PackedScene]([ExtResource("2_e0gyp"), ExtResource("3_tpgif"), ExtResource("4_kxv4j"), ExtResource("5_hq3bk"), ExtResource("6_b5pe0"), ExtResource("7_pkknd"), ExtResource("8_1y74x"), ExtResource("9_o1g02"), ExtResource("10_ebgv8")])
+NumberList = Array[PackedScene]([ExtResource("2_tpgif"), ExtResource("2_e0gyp"), ExtResource("3_tpgif"), ExtResource("4_kxv4j"), ExtResource("5_hq3bk"), ExtResource("6_b5pe0"), ExtResource("7_pkknd"), ExtResource("8_1y74x"), ExtResource("9_o1g02"), ExtResource("10_ebgv8")])
+firstNumberPosition = NodePath("FirstNumber")
+secondNumberPosition = NodePath("SecoundNumber")
+thirdNumberPosition = NodePath("ThirdNumber")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_kxv4j")
@@ -82,6 +86,15 @@ current = true
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00366962, -0.0240532, -0.900938)
 mesh = SubResource("BoxMesh_q0vmq")
+
+[node name="FirstNumber" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.619223, 0.0113562, 0)
+
+[node name="SecoundNumber" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00501698, 0.0113562, 0)
+
+[node name="ThirdNumber" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.57804, 0.0113562, 0)
 
 [connection signal="pressed" from="Button1" to="." method="OnDecreaseButton1Pressed"]
 [connection signal="pressed" from="Button2" to="." method="OnIncreaseButton1Pressed"]
