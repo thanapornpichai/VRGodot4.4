@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dc6g5u1tjeef7"]
+
+[ext_resource type="PackedScene" uid="uid://b3sgkmjanfs3u" path="res://Models/Classroom/class_room.tscn" id="1_vt062"]
+
+[node name="SimpleFloor" type="Node3D"]
+
+[node name="ClassRoom" parent="." instance=ExtResource("1_vt062")]

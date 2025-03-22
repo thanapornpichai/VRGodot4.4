@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dyesamjvdid0g"]
+
+[ext_resource type="PackedScene" uid="uid://dbbpjq4iu5t04" path="res://Models/Classroom/Stair/Stair.fbx" id="1_bhkdg"]
+[ext_resource type="Material" uid="uid://uujr2xiviphf" path="res://Models/Classroom/Stair/Stair.tres" id="2_s5thw"]
+
+[node name="Stair" instance=ExtResource("1_bhkdg")]
+
+[node name="Stair_001" parent="." index="0"]
+transform = Transform3D(-1, 1.50996e-07, -2.05921e-14, 0, 5.96046e-08, 1.44904, 1.50996e-07, 1, -1.72739e-07, 0, 0, 0)
+material_override = ExtResource("2_s5thw")

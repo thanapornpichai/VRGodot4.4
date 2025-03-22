@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cqc8mss40x4xe"]
+
+[ext_resource type="PackedScene" uid="uid://c7tmiwb3rdsbd" path="res://Models/Classroom/Pillar/Pillar.fbx" id="1_nm2vt"]
+[ext_resource type="Material" uid="uid://bfl1cxpd5aoqg" path="res://Models/Classroom/Pillar/Pillar.tres" id="2_eodhn"]
+
+[node name="Pillar" instance=ExtResource("1_nm2vt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00194228, 0.00741577, -0.00355577)
+
+[node name="Pillar_001" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+material_override = ExtResource("2_eodhn")

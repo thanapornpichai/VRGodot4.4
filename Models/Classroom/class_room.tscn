@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3sgkmjanfs3u"]
+
+[ext_resource type="PackedScene" uid="uid://c6yuu88sy01w6" path="res://Models/Classroom/ClassRoom2_461.fbx" id="1_xnwnx"]
+[ext_resource type="Material" uid="uid://bra55taik0qvn" path="res://Models/Classroom/Classroom.tres" id="2_giqsi"]
+
+[node name="ClassRoom" instance=ExtResource("1_xnwnx")]
+
+[node name="ClassRoom2_461_001" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, -1.19209e-07, -1, 0, 1, -1.19209e-07, 0, 0, 0)
+material_override = ExtResource("2_giqsi")
