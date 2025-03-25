@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bj73xl1ggsq10"]
+
+[ext_resource type="PackedScene" uid="uid://daiw7np6wm2r5" path="res://Models/BlackBoard/Blackboard_5.fbx" id="1_pstfb"]
+[ext_resource type="Material" uid="uid://dfx1obdvf1m7p" path="res://Models/BlackBoard/BlackBoard.tres" id="2_nfd7x"]
+
+[node name="Blackboard_5" instance=ExtResource("1_pstfb")]
+
+[node name="Blackboard_5_001" parent="." index="0"]
+material_override = ExtResource("2_nfd7x")

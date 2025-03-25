@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://dkb1oeb0htpsl"]
+
+[ext_resource type="PackedScene" uid="uid://bwtpfxjpg2w2p" path="res://Models/Chair/Chair_12.fbx" id="1_6q17q"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6q17q"]
+size = Vector3(0.792725, 0.791992, 0.203369)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_16vdm"]
+size = Vector3(0.800781, 0.198792, 0.893585)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_t8xan"]
+size = Vector3(0.102722, 0.0996094, 0.700073)
+
+[node name="Chair" instance=ExtResource("1_6q17q")]
+
+[node name="Chair_12_001" parent="." index="0"]
+transform = Transform3D(0.8, 0, 0, 0, -3.49691e-08, 0.8, 0, -0.8, -3.49691e-08, 0, -1.78814e-07, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Chair_12_001" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Chair_12_001/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.4406e-15, 0.600952)
+shape = SubResource("BoxShape3D_6q17q")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Chair_12_001/StaticBody3D" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00113299, 0.299602, 0.95192)
+shape = SubResource("BoxShape3D_16vdm")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Chair_12_001/StaticBody3D" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.350643, -0.35033, 0.351624)
+shape = SubResource("BoxShape3D_t8xan")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Chair_12_001/StaticBody3D" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35162, -0.35033, 0.351624)
+shape = SubResource("BoxShape3D_t8xan")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="Chair_12_001/StaticBody3D" index="4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35162, 0.346734, 0.351624)
+shape = SubResource("BoxShape3D_t8xan")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="Chair_12_001/StaticBody3D" index="5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.351562, 0.346734, 0.351624)
+shape = SubResource("BoxShape3D_t8xan")

@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://dfx1obdvf1m7p"]
+
+[ext_resource type="Texture2D" uid="uid://dtx6p4o11y38p" path="res://Models/BlackBoard/Blackboard_5_Color.png" id="1_6w7v4"]
+[ext_resource type="Texture2D" uid="uid://7e3bsorr51us" path="res://Models/BlackBoard/Blackboard_5_Roughness.png" id="2_yuyg8"]
+
+[resource]
+albedo_texture = ExtResource("1_6w7v4")
+roughness_texture = ExtResource("2_yuyg8")
+uv1_scale = Vector3(1.045, 1.045, 1.045)
+texture_filter = 0

@@ -9,4 +9,5 @@ mesh = ExtResource("1_v1wao")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Light01"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.07604, 0)
-light_energy = 0.5
+light_energy = 0.1
+omni_attenuation = 0.5

@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://dqlc35humd6t6"]
+
+[ext_resource type="Texture2D" uid="uid://1jpuh08hxuao" path="res://Models/Desk/Desk_14_Color.png" id="1_lgj66"]
+[ext_resource type="Texture2D" uid="uid://4wk0gb7k5g2s" path="res://Models/Desk/Desk_14_Roughness.png" id="2_toyl4"]
+
+[resource]
+albedo_texture = ExtResource("1_lgj66")
+roughness_texture = ExtResource("2_toyl4")
+texture_filter = 0

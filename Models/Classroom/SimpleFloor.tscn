@@ -56,7 +56,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.8855, 1.17315, -2.48907)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.457405, 1.17315, -2.48907)
 
 [node name="Board6" parent="." instance=ExtResource("6_iowd6")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -12.4276, 1.17315, -6.91406)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -12.7562, 1.17315, -6.91406)
 
 [node name="Board7" parent="." instance=ExtResource("6_iowd6")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -9.42757, 1.17315, -6.91406)
@@ -113,10 +113,16 @@ transform = Transform3D(-4.37305e-08, 0, -1.00044, 0, 1.00044, 0, 1.00044, 0, -4
 transform = Transform3D(-4.37305e-08, 0, -1.00044, 0, 1.00044, 0, 1.00044, 0, -4.37305e-08, 0.550908, 3.72644, -4.80001)
 
 [node name="Light05" parent="." instance=ExtResource("11_kv0hi")]
-transform = Transform3D(-4.37305e-08, 0, -1.00044, 0, 1.00044, 0, 1.00044, 0, -4.37305e-08, -12.5225, 3.72644, -4.80001)
+transform = Transform3D(-4.37305e-08, 0, -1.00044, 0, 1.00044, 0, 1.00044, 0, -4.37305e-08, -10.3655, 3.72644, -4.80001)
 
 [node name="Light02" parent="." instance=ExtResource("11_kv0hi")]
 transform = Transform3D(-4.37305e-08, 0, -1.00044, 0, 1.00044, 0, 1.00044, 0, -4.37305e-08, 30.4855, 3.72644, -4.80001)
 
 [node name="Light03" parent="." instance=ExtResource("11_kv0hi")]
-transform = Transform3D(-4.37305e-08, 0, -1.00044, 0, 1.00044, 0, 1.00044, 0, -4.37305e-08, 43.3949, 3.72644, -4.80001)
+transform = Transform3D(-4.37305e-08, 0, -1.00044, 0, 1.00044, 0, 1.00044, 0, -4.37305e-08, 42.2345, 3.72644, -4.80001)
+
+[editable path="Light01"]
+[editable path="Light04"]
+[editable path="Light05"]
+[editable path="Light02"]
+[editable path="Light03"]

@@ -9,7 +9,7 @@ public enum ElevatorState
 	Close
 }
 
-public partial class ElevatorController : Node
+public partial class GameManager : Node
 {
 	private const string FLOOR_SCENE_PATH = "res://Scenes/Floors/";
 	private AnimationPlayer _animationPlayer;
@@ -22,8 +22,6 @@ public partial class ElevatorController : Node
 	public List<PackedScene> SceneList = new List<PackedScene>();
 	[Export]
 	public Node Elevator;
-	
-
 
 	public override void _Ready()
 	{

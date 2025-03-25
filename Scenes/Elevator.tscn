@@ -70,7 +70,8 @@ _data = {
 mesh = ExtResource("1_dmimb")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Elevator"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.91966, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.84333, 0)
+light_energy = 0.5
 
 [node name="ElevatorDoorLeft" type="MeshInstance3D" parent="."]
 mesh = ExtResource("2_xv5vg")
