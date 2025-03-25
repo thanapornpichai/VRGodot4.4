@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dk1l0oeigmafd"]
+
+[ext_resource type="PackedScene" uid="uid://cyv5wydqxngx8" path="res://Models/RoomNameBoard/RoomNameBoard.fbx" id="1_i1wm6"]
+[ext_resource type="Material" uid="uid://cunp042l8dmhe" path="res://Models/RoomNameBoard/RoomNameBoard.tres" id="2_i5tet"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_i5tet"]
+size = Vector3(2.60059, 0.106812, 0.701294)
+
+[node name="RoomNameBoard" instance=ExtResource("1_i1wm6")]
+
+[node name="RoomNameBoard_001" parent="." index="0"]
+transform = Transform3D(1.19209e-07, 1, -1.49012e-07, 2.98023e-08, -1.19209e-07, -1, -1, 5.96046e-08, 0, 0, 0, 0)
+material_override = ExtResource("2_i5tet")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="RoomNameBoard_001" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RoomNameBoard_001/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, -1.77635e-15, 1, -1.11022e-15, -0.0510864, -0.349548)
+shape = SubResource("BoxShape3D_i5tet")

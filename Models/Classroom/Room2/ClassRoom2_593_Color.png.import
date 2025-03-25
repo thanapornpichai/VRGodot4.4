@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cmerpdog5y1ha"
-path.bptc="res://.godot/imported/ClassRoom2_332_Metallic.png-20cdc2e0da651ed481e838daf6c66927.bptc.ctex"
-path.astc="res://.godot/imported/ClassRoom2_332_Metallic.png-20cdc2e0da651ed481e838daf6c66927.astc.ctex"
+uid="uid://cnog7slyqdx84"
+path.bptc="res://.godot/imported/ClassRoom2_593_Color.png-c7c85e5ab189fc29e115148aa43db5c2.bptc.ctex"
+path.astc="res://.godot/imported/ClassRoom2_593_Color.png-c7c85e5ab189fc29e115148aa43db5c2.astc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://Models/Classroom/Windows/ClassRoom2_332_Metallic.png"
-dest_files=["res://.godot/imported/ClassRoom2_332_Metallic.png-20cdc2e0da651ed481e838daf6c66927.bptc.ctex", "res://.godot/imported/ClassRoom2_332_Metallic.png-20cdc2e0da651ed481e838daf6c66927.astc.ctex"]
+source_file="res://Models/Classroom/Room2/ClassRoom2_593_Color.png"
+dest_files=["res://.godot/imported/ClassRoom2_593_Color.png-c7c85e5ab189fc29e115148aa43db5c2.bptc.ctex", "res://.godot/imported/ClassRoom2_593_Color.png-c7c85e5ab189fc29e115148aa43db5c2.astc.ctex"]
 
 [params]
 

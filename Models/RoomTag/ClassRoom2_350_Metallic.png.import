@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cmerpdog5y1ha"
-path.bptc="res://.godot/imported/ClassRoom2_332_Metallic.png-20cdc2e0da651ed481e838daf6c66927.bptc.ctex"
-path.astc="res://.godot/imported/ClassRoom2_332_Metallic.png-20cdc2e0da651ed481e838daf6c66927.astc.ctex"
+uid="uid://bl2varjotfxoj"
+path.bptc="res://.godot/imported/ClassRoom2_350_Metallic.png-9626aa557823a1568aaedfdee79fc0f1.bptc.ctex"
+path.astc="res://.godot/imported/ClassRoom2_350_Metallic.png-9626aa557823a1568aaedfdee79fc0f1.astc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://Models/Classroom/Windows/ClassRoom2_332_Metallic.png"
-dest_files=["res://.godot/imported/ClassRoom2_332_Metallic.png-20cdc2e0da651ed481e838daf6c66927.bptc.ctex", "res://.godot/imported/ClassRoom2_332_Metallic.png-20cdc2e0da651ed481e838daf6c66927.astc.ctex"]
+source_file="res://Models/RoomTag/ClassRoom2_350_Metallic.png"
+dest_files=["res://.godot/imported/ClassRoom2_350_Metallic.png-9626aa557823a1568aaedfdee79fc0f1.bptc.ctex", "res://.godot/imported/ClassRoom2_350_Metallic.png-9626aa557823a1568aaedfdee79fc0f1.astc.ctex"]
 
 [params]
 

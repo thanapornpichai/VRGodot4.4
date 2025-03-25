@@ -1,23 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://m4q2uq45wscl"]
+[gd_scene load_steps=2 format=3 uid="uid://m4q2uq45wscl"]
 
-[ext_resource type="PackedScene" uid="uid://c6yuu88sy01w6" path="res://Models/Classroom/ClassRoom2_461.fbx" id="2_2bf51"]
-[ext_resource type="PackedScene" uid="uid://c6afsp1shlypy" path="res://Scenes/Lights/Light01.tscn" id="2_x5ba2"]
+[ext_resource type="PackedScene" uid="uid://ddneys6hhnini" path="res://Models/Classroom/SimpleFloor.tscn" id="1_2wp4g"]
 
 [node name="Floor1" type="Node3D"]
 
-[node name="Light01" parent="." instance=ExtResource("2_x5ba2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0908523, 3.70517, 16.3395)
-
-[node name="Light05" parent="." instance=ExtResource("2_x5ba2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0908523, 3.70517, 5.73853)
-
-[node name="Light02" parent="." instance=ExtResource("2_x5ba2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0908523, 3.70517, 31.3953)
-
-[node name="Light03" parent="." instance=ExtResource("2_x5ba2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0908523, 3.70517, 46.3001)
-
-[node name="Light04" parent="." instance=ExtResource("2_x5ba2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0908523, 3.70517, 56.9015)
-
-[node name="ClassRoom2_461" parent="." instance=ExtResource("2_2bf51")]
+[node name="SimpleFloor" parent="." instance=ExtResource("1_2wp4g")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4.80001, -0.0999999, 16.1663)

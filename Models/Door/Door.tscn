@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://4bh5bvr6jtpr"]
+
+[ext_resource type="PackedScene" uid="uid://dctg30c4awlad" path="res://Models/Door/Door.fbx" id="1_bfksg"]
+[ext_resource type="Material" uid="uid://cas656vn073e2" path="res://Models/Door/Door.tres" id="2_gmaqu"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gmaqu"]
+size = Vector3(1.50208, 2.50208, 0.102173)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_niy75"]
+size = Vector3(0.108429, 0.102081, 0.297852)
+
+[node name="Door" instance=ExtResource("1_bfksg")]
+
+[node name="Door_001" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, -1.19209e-07, -1, 0, 1, -1.19209e-07, 0, 0, 0)
+material_override = ExtResource("2_gmaqu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0477905, 1.24982, -0.0513306)
+shape = SubResource("BoxShape3D_gmaqu")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.550217, 1.0504, -0.0513306)
+shape = SubResource("BoxShape3D_niy75")

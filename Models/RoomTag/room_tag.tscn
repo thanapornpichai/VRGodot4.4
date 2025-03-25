@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://c3utpnc3y8hsa"]
+
+[ext_resource type="PackedScene" uid="uid://cw8gm0duoqb0f" path="res://Models/RoomTag/RoomTag.fbx" id="1_5xmjs"]
+[ext_resource type="Material" uid="uid://d1tqq6w1ymmv5" path="res://Models/RoomTag/Roomtag.tres" id="2_yu02f"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yu02f"]
+size = Vector3(0.109131, 0.50708, 0.804749)
+
+[node name="RoomTag" instance=ExtResource("1_5xmjs")]
+
+[node name="RoomTag_001" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, -1.19209e-07, -1, 0, 1, -1.19209e-07, 0, 0, 0)
+material_override = ExtResource("2_yu02f")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0474854, 0.24646, -0.00088501)
+shape = SubResource("BoxShape3D_yu02f")

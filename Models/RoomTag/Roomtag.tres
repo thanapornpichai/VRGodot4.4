@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" load_steps=4 format=3 uid="uid://d1tqq6w1ymmv5"]
+
+[ext_resource type="Texture2D" uid="uid://bdld516hl4tqv" path="res://Models/RoomTag/ClassRoom2_350_Color.png" id="1_xpeoe"]
+[ext_resource type="Texture2D" uid="uid://bl2varjotfxoj" path="res://Models/RoomTag/ClassRoom2_350_Metallic.png" id="2_i21hn"]
+[ext_resource type="Texture2D" uid="uid://dgca360gy43n4" path="res://Models/RoomTag/ClassRoom2_350_Roughness.png" id="3_jpfmr"]
+
+[resource]
+albedo_texture = ExtResource("1_xpeoe")
+metallic = 0.6
+metallic_specular = 0.15
+metallic_texture = ExtResource("2_i21hn")
+roughness_texture = ExtResource("3_jpfmr")
+texture_filter = 0

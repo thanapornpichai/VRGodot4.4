@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://ccm70bu4r0y1s"]
+
+[ext_resource type="PackedScene" uid="uid://oe5oc8rfnrd2" path="res://Models/Board/Board.fbx" id="1_lk2qf"]
+[ext_resource type="Material" uid="uid://dnt8akbyoosdi" path="res://Models/Board/Board.tres" id="2_1epo5"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0k73p"]
+size = Vector3(3.00781, 1.50238, 0.108093)
+
+[node name="Board" instance=ExtResource("1_lk2qf")]
+
+[node name="Board_001" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, -1.19209e-07, -1, 0, 1, -1.19209e-07, 0, 0, 0)
+material_override = ExtResource("2_1epo5")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.752289, -0.0470886)
+shape = SubResource("BoxShape3D_0k73p")
