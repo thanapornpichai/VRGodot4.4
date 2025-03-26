@@ -3,8 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dhcdi0tr8bupq"
-path.bptc="res://.godot/imported/ClassRoom2_332_Roughness.png-acdc7099a1ffd15fc4a800fcf7976075.bptc.ctex"
-path.astc="res://.godot/imported/ClassRoom2_332_Roughness.png-acdc7099a1ffd15fc4a800fcf7976075.astc.ctex"
+path.s3tc="res://.godot/imported/ClassRoom2_332_Roughness.png-acdc7099a1ffd15fc4a800fcf7976075.s3tc.ctex"
+path.etc2="res://.godot/imported/ClassRoom2_332_Roughness.png-acdc7099a1ffd15fc4a800fcf7976075.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -13,12 +13,12 @@ metadata={
 [deps]
 
 source_file="res://Models/Classroom/Windows/ClassRoom2_332_Roughness.png"
-dest_files=["res://.godot/imported/ClassRoom2_332_Roughness.png-acdc7099a1ffd15fc4a800fcf7976075.bptc.ctex", "res://.godot/imported/ClassRoom2_332_Roughness.png-acdc7099a1ffd15fc4a800fcf7976075.astc.ctex"]
+dest_files=["res://.godot/imported/ClassRoom2_332_Roughness.png-acdc7099a1ffd15fc4a800fcf7976075.s3tc.ctex", "res://.godot/imported/ClassRoom2_332_Roughness.png-acdc7099a1ffd15fc4a800fcf7976075.etc2.ctex"]
 
 [params]
 
 compress/mode=2
-compress/high_quality=true
+compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0

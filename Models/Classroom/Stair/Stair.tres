@@ -2,11 +2,11 @@
 
 [ext_resource type="Texture2D" uid="uid://ch2jmu3i07gfw" path="res://Models/Classroom/Stair/ClassRoom2_544_Color.png" id="1_oibyb"]
 [ext_resource type="Texture2D" uid="uid://et78lwckaqh2" path="res://Models/Classroom/Stair/ClassRoom2_544_Metallic.png" id="2_8kqlh"]
-[ext_resource type="Texture2D" uid="uid://b6n7slpyj6nbs" path="res://Models/Classroom/Stair/ClassRoom2_544_Roughness.png" id="3_oqg7c"]
+[ext_resource type="Texture2D" uid="uid://b6n7slpyj6nbs" path="res://Models/Classroom/Stair/ClassRoom2_544_Roughness.png" id="3_8kqlh"]
 
 [resource]
 albedo_texture = ExtResource("1_oibyb")
 metallic_specular = 0.0
 metallic_texture = ExtResource("2_8kqlh")
-roughness_texture = ExtResource("3_oqg7c")
+roughness_texture = ExtResource("3_8kqlh")
 texture_filter = 0

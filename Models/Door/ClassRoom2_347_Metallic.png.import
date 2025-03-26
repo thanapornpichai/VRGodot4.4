@@ -3,21 +3,19 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://oqi5ui6pta0x"
-path.bptc="res://.godot/imported/ClassRoom2_347_Metallic.png-928ca7a8240e8d1e1a3c25720dd44c32.bptc.ctex"
-path.astc="res://.godot/imported/ClassRoom2_347_Metallic.png-928ca7a8240e8d1e1a3c25720dd44c32.astc.ctex"
+path="res://.godot/imported/ClassRoom2_347_Metallic.png-928ca7a8240e8d1e1a3c25720dd44c32.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://Models/Door/ClassRoom2_347_Metallic.png"
-dest_files=["res://.godot/imported/ClassRoom2_347_Metallic.png-928ca7a8240e8d1e1a3c25720dd44c32.bptc.ctex", "res://.godot/imported/ClassRoom2_347_Metallic.png-928ca7a8240e8d1e1a3c25720dd44c32.astc.ctex"]
+dest_files=["res://.godot/imported/ClassRoom2_347_Metallic.png-928ca7a8240e8d1e1a3c25720dd44c32.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=3
 compress/high_quality=true
 compress/lossy_quality=0.7
 compress/hdr_compression=1

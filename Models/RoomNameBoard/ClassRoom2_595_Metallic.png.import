@@ -3,21 +3,19 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bsc8gkrtudvhh"
-path.bptc="res://.godot/imported/ClassRoom2_595_Metallic.png-c0590d03dd70e0f0353a296ca651001b.bptc.ctex"
-path.astc="res://.godot/imported/ClassRoom2_595_Metallic.png-c0590d03dd70e0f0353a296ca651001b.astc.ctex"
+path="res://.godot/imported/ClassRoom2_595_Metallic.png-c0590d03dd70e0f0353a296ca651001b.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://Models/RoomNameBoard/ClassRoom2_595_Metallic.png"
-dest_files=["res://.godot/imported/ClassRoom2_595_Metallic.png-c0590d03dd70e0f0353a296ca651001b.bptc.ctex", "res://.godot/imported/ClassRoom2_595_Metallic.png-c0590d03dd70e0f0353a296ca651001b.astc.ctex"]
+dest_files=["res://.godot/imported/ClassRoom2_595_Metallic.png-c0590d03dd70e0f0353a296ca651001b.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=3
 compress/high_quality=true
 compress/lossy_quality=0.7
 compress/hdr_compression=1

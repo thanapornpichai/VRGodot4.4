@@ -2,18 +2,21 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bai0mirqxvfn7"
-path.s3tc="res://.godot/imported/ClassRoom2_519_Metallic.png-274b462eccc31eec790e69feb4e6d48f.s3tc.ctex"
-path.etc2="res://.godot/imported/ClassRoom2_519_Metallic.png-274b462eccc31eec790e69feb4e6d48f.etc2.ctex"
+uid="uid://cgw1sdaebnvx8"
+path.s3tc="res://.godot/imported/StairConnector_0.png-e908787872bbee143eb0cb5d1a4ef0f3.s3tc.ctex"
+path.etc2="res://.godot/imported/StairConnector_0.png-e908787872bbee143eb0cb5d1a4ef0f3.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "e5b08c97c011070c3e1038486a2a47f1"
+}
 
 [deps]
 
-source_file="res://Models/Classroom/StairConnector/ClassRoom2_519_Metallic.png"
-dest_files=["res://.godot/imported/ClassRoom2_519_Metallic.png-274b462eccc31eec790e69feb4e6d48f.s3tc.ctex", "res://.godot/imported/ClassRoom2_519_Metallic.png-274b462eccc31eec790e69feb4e6d48f.etc2.ctex"]
+source_file="res://Models/Classroom/StairConnector/StairConnector_0.png"
+dest_files=["res://.godot/imported/StairConnector_0.png-e908787872bbee143eb0cb5d1a4ef0f3.s3tc.ctex", "res://.godot/imported/StairConnector_0.png-e908787872bbee143eb0cb5d1a4ef0f3.etc2.ctex"]
 
 [params]
 

@@ -3,8 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cgd0gtw6gpb6s"
-path.bptc="res://.godot/imported/ClassRoom2_519_Roughness.png-fcfbcafc8d8d59ab03d704ec08c75d4b.bptc.ctex"
-path.astc="res://.godot/imported/ClassRoom2_519_Roughness.png-fcfbcafc8d8d59ab03d704ec08c75d4b.astc.ctex"
+path.s3tc="res://.godot/imported/ClassRoom2_519_Roughness.png-fcfbcafc8d8d59ab03d704ec08c75d4b.s3tc.ctex"
+path.etc2="res://.godot/imported/ClassRoom2_519_Roughness.png-fcfbcafc8d8d59ab03d704ec08c75d4b.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -13,12 +13,12 @@ metadata={
 [deps]
 
 source_file="res://Models/Classroom/StairConnector/ClassRoom2_519_Roughness.png"
-dest_files=["res://.godot/imported/ClassRoom2_519_Roughness.png-fcfbcafc8d8d59ab03d704ec08c75d4b.bptc.ctex", "res://.godot/imported/ClassRoom2_519_Roughness.png-fcfbcafc8d8d59ab03d704ec08c75d4b.astc.ctex"]
+dest_files=["res://.godot/imported/ClassRoom2_519_Roughness.png-fcfbcafc8d8d59ab03d704ec08c75d4b.s3tc.ctex", "res://.godot/imported/ClassRoom2_519_Roughness.png-fcfbcafc8d8d59ab03d704ec08c75d4b.etc2.ctex"]
 
 [params]
 
 compress/mode=2
-compress/high_quality=true
+compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0

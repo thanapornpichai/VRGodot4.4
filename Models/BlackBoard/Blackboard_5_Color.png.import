@@ -3,21 +3,19 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dtx6p4o11y38p"
-path.bptc="res://.godot/imported/Blackboard_5_Color.png-d1f9b97d3933bf1870740ae10db1899e.bptc.ctex"
-path.astc="res://.godot/imported/Blackboard_5_Color.png-d1f9b97d3933bf1870740ae10db1899e.astc.ctex"
+path="res://.godot/imported/Blackboard_5_Color.png-d1f9b97d3933bf1870740ae10db1899e.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://Models/BlackBoard/Blackboard_5_Color.png"
-dest_files=["res://.godot/imported/Blackboard_5_Color.png-d1f9b97d3933bf1870740ae10db1899e.bptc.ctex", "res://.godot/imported/Blackboard_5_Color.png-d1f9b97d3933bf1870740ae10db1899e.astc.ctex"]
+dest_files=["res://.godot/imported/Blackboard_5_Color.png-d1f9b97d3933bf1870740ae10db1899e.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=3
 compress/high_quality=true
 compress/lossy_quality=0.7
 compress/hdr_compression=1

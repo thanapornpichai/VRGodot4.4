@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://bdxt84n3f5hyl"]
+[gd_scene load_steps=14 format=3 uid="uid://bdxt84n3f5hyl"]
 
 [ext_resource type="Script" uid="uid://tbh5wu80s6x6" path="res://Scripts/GameManager.cs" id="1_7rqgy"]
 [ext_resource type="PackedScene" uid="uid://dinmhn3cmls06" path="res://Scenes/Elevator.tscn" id="1_hpc76"]
 [ext_resource type="PackedScene" uid="uid://bpfinjadhqgd1" path="res://Scenes/XR_Player.tscn" id="3_nhkr4"]
 [ext_resource type="PackedScene" uid="uid://bk10ug2j36i8r" path="res://Scenes/Floors/Scene1_Floor2.tscn" id="4_7rqgy"]
+[ext_resource type="Script" uid="uid://b2w84olsto7kp" path="res://Scripts/FloorController1.cs" id="5_qxria"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_tr2i4"]
 size = Vector3(20, 0.1, 20)
@@ -23,6 +24,12 @@ background_energy_multiplier = 0.0
 sky = SubResource("Sky_nhkr4")
 ambient_light_energy = 0.0
 tonemap_mode = 2
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_qxria"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_qxria"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_y4jh7"]
 
 [node name="MainScene" type="Node3D" node_paths=PackedStringArray("Elevator")]
 script = ExtResource("1_7rqgy")
@@ -45,7 +52,23 @@ shape = SubResource("BoxShape3D_nhkr4")
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_7rqgy")
 
-[node name="XrPlayer" parent="." instance=ExtResource("3_nhkr4")]
+[node name="XrPlayer" parent="." groups=["Player"] instance=ExtResource("3_nhkr4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.04039, 1.07613, 13.1691)
 
 [node name="Scene1_Floor2" parent="." instance=ExtResource("4_7rqgy")]
+script = ExtResource("5_qxria")
+
+[node name="Area3D" type="Area3D" parent="Scene1_Floor2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.859781, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scene1_Floor2/Area3D"]
+shape = SubResource("SphereShape3D_qxria")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Scene1_Floor2" groups=["Player"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.014282, 0.749357, -0.368369)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Scene1_Floor2/StaticBody3D"]
+mesh = SubResource("SphereMesh_qxria")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scene1_Floor2/StaticBody3D"]
+shape = SubResource("SphereShape3D_y4jh7")

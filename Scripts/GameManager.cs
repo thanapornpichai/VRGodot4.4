@@ -22,9 +22,20 @@ public partial class GameManager : Node
 	public List<PackedScene> SceneList = new List<PackedScene>();
 	[Export]
 	public Node Elevator;
+	public static GameManager Instance { get; private set; }
 
 	public override void _Ready()
 	{
+		if (Instance == null)
+		{
+			Instance = this;
+			GD.Print("GameManager Loaded");
+		}
+		else
+		{
+			QueueFree();
+		}
+		
 		LoadScenesFromFloder(FLOOR_SCENE_PATH);
 		_floorContainer = GetNode(FloorContainerPath);
 		

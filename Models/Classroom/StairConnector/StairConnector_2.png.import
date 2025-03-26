@@ -2,21 +2,24 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cmogatm2whl4h"
-path="res://.godot/imported/ClassRoom2_347_Color.png-f1292cd00e0a1e6cf491582b1d9f1edb.ctex"
+uid="uid://6hw01jlg27a7"
+path="res://.godot/imported/StairConnector_2.png-c44e863667407d1e419859f53b8f33ff.ctex"
 metadata={
 "vram_texture": false
+}
+generator_parameters={
+"md5": "3beffb056dda5a3272158a9e21417e18"
 }
 
 [deps]
 
-source_file="res://Models/Door/ClassRoom2_347_Color.png"
-dest_files=["res://.godot/imported/ClassRoom2_347_Color.png-f1292cd00e0a1e6cf491582b1d9f1edb.ctex"]
+source_file="res://Models/Classroom/StairConnector/StairConnector_2.png"
+dest_files=["res://.godot/imported/StairConnector_2.png-c44e863667407d1e419859f53b8f33ff.ctex"]
 
 [params]
 
-compress/mode=3
-compress/high_quality=true
+compress/mode=0
+compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
@@ -31,4 +34,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1
