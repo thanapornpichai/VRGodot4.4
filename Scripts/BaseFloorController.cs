@@ -7,4 +7,9 @@ public partial class BaseFloorController : Node
     {
         GameManager.Instance.LoadScene(GameManager.Instance.SceneList[floorNumber-1]);
     }
+
+    public virtual void _Process(float delta)
+    {
+        
+    }
 }
