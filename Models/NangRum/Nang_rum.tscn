@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://b52o3vypq51bv"]
+
+[ext_resource type="PackedScene" uid="uid://2v2hglatu86o" path="res://Models/NangRum/Nang_Rum_1.fbx" id="1_a85s4"]
+[ext_resource type="Material" uid="uid://brivgmhax0mk6" path="res://Models/NangRum/NangRum.tres" id="2_00pcf"]
+
+[node name="Nang_Rum_1" instance=ExtResource("1_a85s4")]
+
+[node name="Nung Rum_1_001" parent="." index="0"]
+transform = Transform3D(0.5, 0, 0, 0, -2.18557e-08, 0.5, 0, -0.5, -2.18557e-08, 0, -4.76837e-07, 0)
+material_override = ExtResource("2_00pcf")

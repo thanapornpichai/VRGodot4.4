@@ -1,0 +1,108 @@
+[gd_scene load_steps=7 format=3 uid="uid://bg5dhuw1jx001"]
+
+[ext_resource type="Script" uid="uid://37xaisjvtc8k" path="res://Scripts/Scene1FloorController.cs" id="1_l74kq"]
+[ext_resource type="PackedScene" uid="uid://ddneys6hhnini" path="res://Models/Classroom/SimpleFloor.tscn" id="2_eiqug"]
+[ext_resource type="ArrayMesh" uid="uid://bgne7aoj26tun" path="res://Models/Light01.vox" id="3_l4gbl"]
+[ext_resource type="PackedScene" uid="uid://ccm70bu4r0y1s" path="res://Models/Board/board.tscn" id="4_824ef"]
+[ext_resource type="Script" uid="uid://bdhrn8etx58n2" path="res://Scripts/BlinkingLight.cs" id="4_v6hoi"]
+[ext_resource type="Material" uid="uid://k4y1b15kqekx" path="res://Models/Board/BoardBlack.tres" id="5_f5cao"]
+
+[node name="Scene1_Floor2" type="Node3D"]
+script = ExtResource("1_l74kq")
+
+[node name="SimpleFloor" parent="." instance=ExtResource("2_eiqug")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4.80001, -0.0999999, 16.1663)
+
+[node name="RoomNameBoard" parent="SimpleFloor" index="8"]
+transform = Transform3D(1, 7.42355e-09, -6.34991e-10, -7.42355e-09, 0.985473, -0.169831, -6.34987e-10, 0.169831, 0.985473, 45.7933, 2.74884, -4.76648)
+
+[node name="Door7" parent="SimpleFloor" index="26"]
+transform = Transform3D(0.714131, 0, 0.700013, 0, 1, 0, -0.700013, 0, 0.714131, 46.5183, 0.0899995, -4.60361)
+
+[node name="OmniLight3D" parent="SimpleFloor/Light01/Light01" index="0"]
+light_energy = 1.0
+shadow_enabled = true
+shadow_bias = 1.0
+shadow_opacity = 0.2
+omni_range = 10.0
+omni_attenuation = 0.8
+
+[node name="OmniLight3D" parent="SimpleFloor/Light04/Light01" index="0"]
+light_energy = 1.0
+shadow_enabled = true
+shadow_bias = 1.0
+shadow_opacity = 0.2
+omni_range = 10.0
+omni_attenuation = 0.8
+
+[node name="Light01" parent="SimpleFloor/Light05" index="0"]
+transform = Transform3D(1, 0, -1.42109e-14, 0, 1, 0, 1.42109e-14, 0, 1, 1.00068e-07, 0, 1.14464)
+
+[node name="OmniLight3D" parent="SimpleFloor/Light05/Light01" index="0"]
+light_energy = 1.0
+shadow_enabled = true
+shadow_bias = 1.0
+shadow_opacity = 0.2
+omni_range = 10.0
+omni_attenuation = 0.8
+
+[node name="OmniLight3D" parent="SimpleFloor/Light02/Light01" index="0"]
+light_energy = 1.0
+shadow_enabled = true
+shadow_bias = 1.0
+shadow_opacity = 0.2
+omni_range = 10.0
+omni_attenuation = 0.8
+
+[node name="OmniLight3D" parent="SimpleFloor/Light03/Light01" index="0"]
+light_energy = 1.0
+shadow_enabled = true
+shadow_bias = 1.0
+shadow_opacity = 0.2
+omni_range = 10.0
+omni_attenuation = 0.8
+
+[node name="Light02" type="MeshInstance3D" parent="SimpleFloor/Light03" index="1" node_paths=PackedStringArray("_light")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -7.44107e-07, 0, -8.51162)
+mesh = ExtResource("3_l4gbl")
+script = ExtResource("4_v6hoi")
+_light = NodePath("OmniLight3D")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="SimpleFloor/Light03/Light02"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.07604, 0)
+light_energy = 0.1
+shadow_enabled = true
+shadow_bias = 1.0
+shadow_opacity = 0.2
+omni_range = 10.0
+omni_attenuation = 0.8
+
+[node name="Light03" type="MeshInstance3D" parent="SimpleFloor/Light03" index="2" node_paths=PackedStringArray("_light")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6.57472, 0, -8.51162)
+mesh = ExtResource("3_l4gbl")
+script = ExtResource("4_v6hoi")
+_light = NodePath("OmniLight3D")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="SimpleFloor/Light03/Light03"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.07604, 0)
+light_energy = 0.2
+shadow_enabled = true
+shadow_bias = 1.0
+shadow_opacity = 0.2
+omni_range = 10.0
+omni_attenuation = 0.8
+
+[node name="Board" parent="." instance=ExtResource("4_824ef")]
+transform = Transform3D(1.62952, 0, 0, 0, 1.37517, 0, 0, 0, 1, -7.46171, 1.15829, 9.36686)
+
+[node name="Board_001" parent="Board" index="0"]
+transform = Transform3D(1, 0, 0, 0, -1.19209e-07, -1, 0, 1, -1.19209e-07, 0.122889, 0, 0)
+material_override = ExtResource("5_f5cao")
+
+[editable path="SimpleFloor"]
+[editable path="SimpleFloor/Light01"]
+[editable path="SimpleFloor/Light04"]
+[editable path="SimpleFloor/Light05"]
+[editable path="SimpleFloor/Light02"]
+[editable path="SimpleFloor/Light03"]
+[editable path="Board"]

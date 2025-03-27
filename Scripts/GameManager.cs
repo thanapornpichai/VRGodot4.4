@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Godot;
 using System.Threading.Tasks;
+using Godot.Collections;
 
 public enum ElevatorState
 {
@@ -14,12 +15,14 @@ public partial class GameManager : Node
 	private const string FLOOR_SCENE_PATH = "res://Scenes/Floors/";
 	private AnimationPlayer _animationPlayer;
 	private Node _floorContainer;
-	private Node _currentFloor = null;
 	private bool _isOpen = false;
 
 	[Export]
+	public Node _currentFloor = null;
+	[Export]
 	public NodePath FloorContainerPath;
-	public List<PackedScene> SceneList = new List<PackedScene>();
+	[Export]
+	public Array<PackedScene> SceneList = new Array<PackedScene>();
 	[Export]
 	public Node Elevator;
 	public static GameManager Instance { get; private set; }
@@ -127,7 +130,8 @@ public partial class GameManager : Node
 	public async Task LoadFloorAsync(PackedScene scene)
 	{
 		UnloadCurrentFloor();
-		
+		GD.Print("LoadFloorAsync");
+
 		_currentFloor = scene.Instantiate();
 		_floorContainer.AddChild(_currentFloor);
 		await Task.Delay(3000);
@@ -137,6 +141,7 @@ public partial class GameManager : Node
 	
 	private void UnloadCurrentFloor()
 	{
+		GD.Print($"{_currentFloor} : Unload");
 		if (_currentFloor != null)
 		{
 			_currentFloor.GetParent()?.RemoveChild(_currentFloor);

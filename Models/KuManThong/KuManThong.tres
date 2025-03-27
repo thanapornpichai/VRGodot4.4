@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://e781x18efxo7"]
+
+[ext_resource type="Texture2D" uid="uid://lfh6l3vmyvo7" path="res://Models/KuManThong/Guman Tong_3_Color.png" id="1_jssiw"]
+[ext_resource type="Texture2D" uid="uid://bg0upmmnphsj8" path="res://Models/KuManThong/Guman Tong_3_Roughness.png" id="2_6dlm0"]
+
+[resource]
+albedo_texture = ExtResource("1_jssiw")
+roughness = 0.0
+roughness_texture = ExtResource("2_6dlm0")
+texture_filter = 0

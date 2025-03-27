@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bs71cxdouhb0u"]
+
+[ext_resource type="PackedScene" uid="uid://bpnu7t2mohawg" path="res://Models/KuManThong/Kuman Tong_3.fbx" id="1_i8por"]
+[ext_resource type="Material" uid="uid://e781x18efxo7" path="res://Models/KuManThong/KuManThong.tres" id="2_ubk07"]
+
+[node name="Kuman Tong_3" instance=ExtResource("1_i8por")]
+
+[node name="Guman Tong_3_001" parent="." index="0"]
+transform = Transform3D(0.2, 0, 0, 0, -1.09278e-08, 0.25, 0, -0.25, -1.09278e-08, 0, -4.76837e-07, 0)
+material_override = ExtResource("2_ubk07")

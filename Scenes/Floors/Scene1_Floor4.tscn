@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://bk10ug2j36i8r"]
+[gd_scene load_steps=8 format=3 uid="uid://bk10ug2j36i8r"]
 
 [ext_resource type="PackedScene" uid="uid://ddneys6hhnini" path="res://Models/Classroom/SimpleFloor.tscn" id="1_cw5vt"]
+[ext_resource type="Script" uid="uid://37xaisjvtc8k" path="res://Scripts/Scene1FloorController.cs" id="1_embbr"]
 [ext_resource type="ArrayMesh" uid="uid://bgne7aoj26tun" path="res://Models/Light01.vox" id="2_oeq2w"]
 [ext_resource type="PackedScene" uid="uid://ccm70bu4r0y1s" path="res://Models/Board/board.tscn" id="3_kl607"]
 [ext_resource type="Material" uid="uid://k4y1b15kqekx" path="res://Models/Board/BoardBlack.tres" id="4_gqjfe"]
@@ -8,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bosp3baam0wet" path="res://Models/Desk/desk.tscn" id="5_xs76b"]
 
 [node name="Scene1_Floor2" type="Node3D"]
+script = ExtResource("1_embbr")
 
 [node name="SimpleFloor" parent="." instance=ExtResource("1_cw5vt")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4.80001, -0.0999999, 16.1663)

@@ -1,11 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://bq86r4yll8po"]
+[gd_scene load_steps=14 format=3 uid="uid://bq86r4yll8po"]
 
 [ext_resource type="PackedScene" uid="uid://the6y7swe6j0" path="res://addons/godot-xr-tools/hands/animations/left/AnimationPlayer.tscn" id="1"]
 [ext_resource type="PackedScene" uid="uid://16colgxrw27d" path="res://addons/godot-xr-tools/hands/model/Hand_low_L.gltf" id="2"]
 [ext_resource type="Script" uid="uid://be6nl82n3nylo" path="res://addons/godot-xr-tools/hands/hand.gd" id="3"]
 [ext_resource type="Resource" uid="uid://dertgu7k8alls" path="res://addons/godot-xr-tools/hands/poses/pose_default_left.tres" id="3_wyae6"]
 [ext_resource type="AnimationNodeBlendTree" uid="uid://dl8yf7ipqotd1" path="res://addons/godot-xr-tools/hands/animations/left/hand_blend_tree.tres" id="5"]
-[ext_resource type="Material" uid="uid://dtjv8ydq0it37" path="res://Materials/Hand.tres" id="6_4obwe"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_4obwe"]
 radius = 0.01
@@ -32,6 +31,7 @@ filter_enabled = true
 filters = ["Armature/Skeleton3D:Index_Distal_L", "Armature/Skeleton3D:Index_Intermediate_L", "Armature/Skeleton3D:Index_Metacarpal_L", "Armature/Skeleton3D:Index_Proximal_L", "Armature/Skeleton:Index_Distal_L", "Armature/Skeleton:Index_Intermediate_L", "Armature/Skeleton:Index_Proximal_L"]
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_hwtfy"]
+graph_offset = Vector2(-536, 11)
 nodes/ClosedHand1/node = SubResource("AnimationNodeAnimation_vj4qq")
 nodes/ClosedHand1/position = Vector2(-600, 300)
 nodes/ClosedHand2/node = SubResource("AnimationNodeAnimation_cbo75")
@@ -72,9 +72,6 @@ bones/20/rotation = Quaternion(-0.0917369, 0.0203027, -0.010183, 0.995524)
 bones/21/rotation = Quaternion(-0.0625182, -0.00022572, -0.115393, 0.991351)
 bones/22/rotation = Quaternion(0.0585786, 0.0216483, -0.269905, 0.96086)
 bones/23/rotation = Quaternion(0.00687177, -0.00357275, -0.211953, 0.977249)
-
-[node name="mesh_Hand_low_L" parent="Hand_low_L/Armature/Skeleton3D" index="0"]
-material_override = ExtResource("6_4obwe")
 
 [node name="BoneAttachment3D" type="BoneAttachment3D" parent="Hand_low_L/Armature/Skeleton3D" index="1"]
 transform = Transform3D(0.54083, 0.840813, -0.0231736, -0.0826267, 0.0805243, 0.993322, 0.837064, -0.535303, 0.113023, 0.039902, 0.0402828, -0.150096)

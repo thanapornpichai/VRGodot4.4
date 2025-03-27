@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://brivgmhax0mk6"]
+
+[ext_resource type="Texture2D" uid="uid://bvgf1718kn7dq" path="res://Models/NangRum/Nang Rum_1_Color.png" id="1_h01rx"]
+[ext_resource type="Texture2D" uid="uid://d2lh1fe462wn1" path="res://Models/NangRum/Nang Rum_1_Roughness.png" id="2_ckp3d"]
+
+[resource]
+albedo_texture = ExtResource("1_h01rx")
+roughness = 0.0
+roughness_texture = ExtResource("2_ckp3d")
+texture_filter = 0
