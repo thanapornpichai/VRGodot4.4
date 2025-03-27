@@ -1,20 +1,38 @@
 using Godot;
 using System;
 
-public partial class FloorController1 : BaseFloorController
+public partial class Scene3FloorController : BaseFloorController
 {
 	private Area3D _area;
 	private double _timer = 0f;
 	private bool _playerInside = false;
+	private bool _isTrigger = false;
+	private bool _finishedFloor = false;
+	public static Scene3FloorController Instance { get; private set; }
 	
 	public override void _Ready()
+	{
+		_area = null;
+		if (Instance == null)
+		{
+			Instance = this;
+			GD.Print("FloorController3 Loaded");
+		}
+		else
+		{
+			QueueFree();
+		}
+		SetProcess(true);
+	}
+
+	public void OnFinishFloor()
 	{
 		_area = GetNode<Area3D>("Area3D");
 
 		_area.Connect("body_entered", new Callable(this, nameof(OnBodyEntered)));
 		_area.Connect("body_exited", new Callable(this, nameof(OnBodyExited)));
-		SetProcess(true);
 	}
+	
 	public override void LoadFloor(int floorNumber)
 	{
 		base.LoadFloor(floorNumber);
@@ -22,17 +40,21 @@ public partial class FloorController1 : BaseFloorController
 	
 	public override void _Process(double delta)
 	{
-		GD.Print(_timer);
-		GD.Print(_playerInside);
-
-		if (_playerInside)
+		if (_finishedFloor)
 		{
-			_timer += delta;
-
-			if (_timer >= 2.0f)
+			if (_playerInside)
 			{
-				this.LoadFloor(2);
-				_timer = 0;
+				_timer += delta;
+
+				if (_timer >= 2.0f)
+				{
+					if (!_isTrigger)
+					{
+						this.LoadFloor(3);
+						_isTrigger = true;
+					}
+					_timer = 2;
+				}
 			}
 		}
 	}
