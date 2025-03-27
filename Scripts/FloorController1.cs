@@ -4,7 +4,7 @@ using System;
 public partial class FloorController1 : BaseFloorController
 {
 	private Area3D _area;
-	private float _timer = 0f;
+	private double _timer = 0f;
 	private bool _playerInside = false;
 	
 	public override void _Ready()
@@ -13,13 +13,14 @@ public partial class FloorController1 : BaseFloorController
 
 		_area.Connect("body_entered", new Callable(this, nameof(OnBodyEntered)));
 		_area.Connect("body_exited", new Callable(this, nameof(OnBodyExited)));
+		SetProcess(true);
 	}
 	public override void LoadFloor(int floorNumber)
 	{
 		base.LoadFloor(floorNumber);
 	}
 	
-	public override void _Process(float delta)
+	public override void _Process(double delta)
 	{
 		GD.Print(_timer);
 		GD.Print(_playerInside);
@@ -34,8 +35,6 @@ public partial class FloorController1 : BaseFloorController
 				_timer = 0;
 			}
 		}
-
-	   
 	}
 	
 	private void OnBodyEntered(Node3D body)
