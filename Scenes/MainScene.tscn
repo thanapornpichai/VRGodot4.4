@@ -1,12 +1,14 @@
-[gd_scene load_steps=27 format=3 uid="uid://bdxt84n3f5hyl"]
+[gd_scene load_steps=29 format=3 uid="uid://bdxt84n3f5hyl"]
 
 [ext_resource type="Script" uid="uid://tbh5wu80s6x6" path="res://Scripts/GameManager.cs" id="1_7rqgy"]
 [ext_resource type="PackedScene" uid="uid://dinmhn3cmls06" path="res://Scenes/Elevator.tscn" id="1_hpc76"]
 [ext_resource type="PackedScene" uid="uid://bpfinjadhqgd1" path="res://Scenes/XR_Player.tscn" id="3_nhkr4"]
 [ext_resource type="PackedScene" uid="uid://bg5dhuw1jx001" path="res://Scenes/Floors/Scene2_Floor2.tscn" id="3_y4jh7"]
 [ext_resource type="PackedScene" uid="uid://bk10ug2j36i8r" path="res://Scenes/Floors/Scene1_Floor4.tscn" id="4_7rqgy"]
+[ext_resource type="Script" uid="uid://ch47acqybk1sk" path="res://Scripts/XRViewport.cs" id="4_q68mp"]
 [ext_resource type="Material" uid="uid://dtjv8ydq0it37" path="res://Materials/Hand.tres" id="4_qxria"]
 [ext_resource type="PackedScene" uid="uid://b52o3vypq51bv" path="res://Models/NangRum/Nang_rum.tscn" id="7_q68mp"]
+[ext_resource type="PackedScene" uid="uid://bs71cxdouhb0u" path="res://Models/KuManThong/kuman_tong.tscn" id="9_0iob3"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_tr2i4"]
 size = Vector3(20, 0.1, 20)
@@ -102,6 +104,9 @@ FloorContainerPath = NodePath("ElevatorContainer")
 SceneList = Array[PackedScene]([ExtResource("4_7rqgy"), ExtResource("3_y4jh7")])
 Elevator = NodePath("Elevator")
 
+[node name="XRController" type="Node3D" parent="."]
+script = ExtResource("4_q68mp")
+
 [node name="Elevator" parent="." instance=ExtResource("1_hpc76")]
 
 [node name="ElevatorContainer" type="Node3D" parent="."]
@@ -119,7 +124,7 @@ shape = SubResource("BoxShape3D_nhkr4")
 environment = SubResource("Environment_7rqgy")
 
 [node name="XrPlayer" parent="." groups=["Player"] instance=ExtResource("3_nhkr4")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.151681, 1.07613, 60.9337)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.183009, 0, 62.08)
 
 [node name="Skeleton3D" parent="XrPlayer/XROrigin3D/LeftHand/LeftHand/Hand_low_L/Armature" index="0"]
 bones/1/rotation = Quaternion(0.323537, -2.56581e-05, -0.0272204, 0.945824)
@@ -157,8 +162,32 @@ transform = Transform3D(0.54083, 0.840813, -0.0231736, -0.0826267, 0.0805243, 0.
 [node name="AnimationTree" parent="XrPlayer/XROrigin3D/LeftHand/LeftHand" index="1"]
 tree_root = SubResource("AnimationNodeBlendTree_xb4mg")
 
+[node name="Skeleton3D" parent="XrPlayer/XROrigin3D/RightHand/RightHand/Hand_low_R/Armature" index="0"]
+bones/1/rotation = Quaternion(0.323537, 2.56581e-05, 0.0272204, 0.945824)
+bones/2/rotation = Quaternion(-0.0904441, 0.0415175, 0.166293, 0.981042)
+bones/3/rotation = Quaternion(-0.0466199, -0.020971, -0.0103276, 0.998639)
+bones/5/rotation = Quaternion(-0.00128455, 0.0116081, 0.0168259, 0.99979)
+bones/6/rotation = Quaternion(0.102925, 0.00993208, 0.00794419, 0.994608)
+bones/7/rotation = Quaternion(-0.012859, 0.0236108, 0.323258, 0.945929)
+bones/8/rotation = Quaternion(0.0120575, 0.00929193, 0.247472, 0.968775)
+bones/10/rotation = Quaternion(-0.0357539, 0.000400032, -0.00636763, 0.99934)
+bones/11/rotation = Quaternion(-0.00264964, 0.00114471, 0.125992, 0.992027)
+bones/12/rotation = Quaternion(0.0394225, -0.00193393, 0.228074, 0.972843)
+bones/13/rotation = Quaternion(-0.0123395, 0.00881294, 0.280669, 0.959685)
+bones/15/rotation = Quaternion(-0.0702656, -0.0101908, 0.0243307, 0.99718)
+bones/16/rotation = Quaternion(-0.0320634, 0.00223624, 0.0686366, 0.997124)
+bones/17/rotation = Quaternion(0.0253452, -0.00812462, 0.249005, 0.968136)
+bones/18/rotation = Quaternion(0.00252233, -0.00788073, 0.243204, 0.96994)
+bones/20/rotation = Quaternion(-0.0917369, -0.0203027, 0.010183, 0.995524)
+bones/21/rotation = Quaternion(-0.0625182, 0.000225721, 0.115393, 0.991351)
+bones/22/rotation = Quaternion(0.0585786, -0.0216483, 0.269905, 0.96086)
+bones/23/rotation = Quaternion(0.00687177, 0.00357275, 0.211953, 0.977249)
+
 [node name="mesh_Hand_low_R" parent="XrPlayer/XROrigin3D/RightHand/RightHand/Hand_low_R/Armature/Skeleton3D" index="0"]
 material_override = ExtResource("4_qxria")
+
+[node name="BoneAttachment3D" parent="XrPlayer/XROrigin3D/RightHand/RightHand/Hand_low_R/Armature/Skeleton3D" index="1"]
+transform = Transform3D(0.540829, -0.840813, 0.0231736, 0.0826268, 0.0805242, 0.993322, -0.837064, -0.535303, 0.113024, -0.039902, 0.0402828, -0.150096)
 
 [node name="RigidBody3D" parent="XrPlayer/XROrigin3D/RightHand/RightHand/Hand_low_R/Armature/Skeleton3D/BoneAttachment3D" index="0" groups=["Player"]]
 
@@ -186,7 +215,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.44345, 1.75046, 1.70716)
 shape = SubResource("BoxShape3D_qxria")
 
 [node name="Nang_Rum_1" parent="." instance=ExtResource("7_q68mp")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.461094, 0, 15.638)
+transform = Transform3D(0.477675, 0, 0.802172, 0, 1, 0, -0.641737, 0, 0.597093, 2.44107, 2.38419e-07, 63.783)
+
+[node name="Kuman Tong_3" parent="." instance=ExtResource("9_0iob3")]
+transform = Transform3D(-0.756322, 0, -0.6542, 0, 1, 0, 0.6542, 0, -0.756322, 1.68846, 0, 64.0397)
 
 [editable path="XrPlayer"]
 [editable path="XrPlayer/XROrigin3D/LeftHand/LeftHand"]
