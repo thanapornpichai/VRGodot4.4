@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bk10ug2j36i8r"]
+[gd_scene load_steps=9 format=3 uid="uid://bk10ug2j36i8r"]
 
 [ext_resource type="PackedScene" uid="uid://ddneys6hhnini" path="res://Models/Classroom/SimpleFloor.tscn" id="1_cw5vt"]
 [ext_resource type="Script" uid="uid://37xaisjvtc8k" path="res://Scripts/Scene1FloorController.cs" id="1_embbr"]
@@ -7,6 +7,9 @@
 [ext_resource type="Material" uid="uid://k4y1b15kqekx" path="res://Models/Board/BoardBlack.tres" id="4_gqjfe"]
 [ext_resource type="PackedScene" uid="uid://dkb1oeb0htpsl" path="res://Models/Chair/chair.tscn" id="5_gqjfe"]
 [ext_resource type="PackedScene" uid="uid://bosp3baam0wet" path="res://Models/Desk/desk.tscn" id="5_xs76b"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uk6cp"]
+size = Vector3(15.6099, 5.39844, 4.25537)
 
 [node name="Scene1_Floor2" type="Node3D"]
 script = ExtResource("1_embbr")
@@ -311,6 +314,13 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5.053
 
 [node name="Desk_54" parent="." instance=ExtResource("5_xs76b")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5.06869, 0.0148347, 21.02)
+
+[node name="Static" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.29444, 24.5266)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Static"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.54858, 0, 1.41119)
+shape = SubResource("BoxShape3D_uk6cp")
 
 [editable path="SimpleFloor"]
 [editable path="SimpleFloor/Light01"]

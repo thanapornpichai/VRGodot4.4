@@ -3,16 +3,20 @@ using System;
 
 public partial class Scene2GhostEventTrigger : BaseFloorController
 {
-	private Area3D _area;
-	private Node3D _ghostNode3D;
+	[Export]
+	public Area3D _area;
+
 	private bool _triggered = false;
 	private double _timer = 0;
 
 	[Export] public double MaxTimer = 0;
+	[Export] public Node3D ghostNode3D;
+	[Export] public Node3D floorCheck;
 	
 	public override void _Ready()
 	{
-		_ghostNode3D.Visible = false;
+		ghostNode3D.Visible = false;
+		_area.Connect("body_entered", new Callable(this, nameof(OnBodyEntered)));
 		SetProcess(true);
 	}
 
@@ -21,9 +25,11 @@ public partial class Scene2GhostEventTrigger : BaseFloorController
 		if (_triggered)
 		{
 			_timer += delta;
+			GD.Print(_timer);
 			if (_timer >= MaxTimer)
 			{
-				_ghostNode3D.Visible = false;
+				ghostNode3D.Visible = false;
+				_triggered = false;
 				SetProcess(false);
 			}
 		}
@@ -35,9 +41,18 @@ public partial class Scene2GhostEventTrigger : BaseFloorController
 		{
 			if (!_triggered)
 			{
-				_ghostNode3D.Visible = true;
+				ghostNode3D.Visible = true;
+				
+				var ghostArea3D = this.GetNode<Area3D>("Area3D");
+				ghostArea3D.Visible = false;
+				ghostArea3D.Monitoring = false;
+				
+				floorCheck.Visible = true;
+				floorCheck.GetNode<Area3D>("Area3D").Monitoring = true;
+				
+				_triggered = true;
 			}
-			GD.Print("Player entered the Storage room!");
+			GD.Print("Player entered event area!");
 		}
 	}
 }
