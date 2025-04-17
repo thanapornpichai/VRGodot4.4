@@ -3,11 +3,11 @@ using System.Threading.Tasks;
 
 public partial class Scene3KumanThong : BaseFloorController
 {
-	private Area3D _area;
+	[Export]
+	public Area3D area;
 	private Node3D _offerNode3D;
 	private Node3D _hintNode3D;
 	private bool _triggered = false;
-	private double _timer = 0;
 
 	[Export] public double MaxTimer = 0;
 	
@@ -16,9 +16,7 @@ public partial class Scene3KumanThong : BaseFloorController
 		_offerNode3D.Visible = false;
 		SetProcess(true);
 		
-		_area = GetNode<Area3D>("Area3D");
-
-		_area.Connect("body_entered", new Callable(this, nameof(OnBodyEntered)));
+		area.Connect("body_entered", new Callable(this, nameof(OnBodyEntered)));
 	}
 
 	private void OnBodyEntered(Node3D body)

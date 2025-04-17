@@ -1,66 +1,82 @@
-[gd_scene load_steps=21 format=3 uid="uid://bg5dhuw1jx001"]
+[gd_scene load_steps=18 format=3 uid="uid://cghew80d8e872"]
 
-[ext_resource type="Script" uid="uid://bpnulmqen7lg" path="res://Scripts/Scene2FloorController.cs" id="1_l4gbl"]
-[ext_resource type="PackedScene" uid="uid://ddneys6hhnini" path="res://Models/Classroom/SimpleFloor.tscn" id="2_eiqug"]
-[ext_resource type="ArrayMesh" uid="uid://bgne7aoj26tun" path="res://Models/Light01.vox" id="3_l4gbl"]
-[ext_resource type="PackedScene" uid="uid://ccm70bu4r0y1s" path="res://Models/Board/board.tscn" id="4_824ef"]
-[ext_resource type="Script" uid="uid://bdhrn8etx58n2" path="res://Scripts/BlinkingLight.cs" id="4_v6hoi"]
-[ext_resource type="Material" uid="uid://k4y1b15kqekx" path="res://Models/Board/BoardBlack.tres" id="5_f5cao"]
-[ext_resource type="Script" uid="uid://cea45f6fgd8lm" path="res://Scripts/Scene2GhostEventTrigger.cs" id="7_eiqug"]
-[ext_resource type="PackedScene" uid="uid://b52o3vypq51bv" path="res://Models/NangRum/Nang_rum.tscn" id="7_l74kq"]
-[ext_resource type="Script" uid="uid://brwvamfdf8dr7" path="res://Scripts/Scene2StorageRoom.cs" id="8_824ef"]
-[ext_resource type="Script" uid="uid://bwrv6e2r1ogsb" path="res://Scripts/Scene2FloorCheck.cs" id="9_824ef"]
-[ext_resource type="PackedScene" uid="uid://bpfinjadhqgd1" path="res://Scenes/XR_Player.tscn" id="11_f5cao"]
-[ext_resource type="Material" uid="uid://dtjv8ydq0it37" path="res://Materials/Hand.tres" id="12_7r4ik"]
+[ext_resource type="Script" uid="uid://c4g00y14fo4ng" path="res://Scripts/Scene3FloorController.cs" id="1_31cuc"]
+[ext_resource type="PackedScene" uid="uid://ddneys6hhnini" path="res://Models/Classroom/SimpleFloor.tscn" id="2_75sb2"]
+[ext_resource type="ArrayMesh" uid="uid://bgne7aoj26tun" path="res://Models/Light01.vox" id="3_f5k57"]
+[ext_resource type="Script" uid="uid://bdhrn8etx58n2" path="res://Scripts/BlinkingLight.cs" id="4_3fasx"]
+[ext_resource type="PackedScene" uid="uid://bs71cxdouhb0u" path="res://Models/KuManThong/kuman_tong.tscn" id="4_lnes4"]
+[ext_resource type="Script" uid="uid://f3wjrcxt2cm3" path="res://Scripts/Scene3KumanThong.cs" id="5_31cuc"]
+[ext_resource type="PackedScene" uid="uid://bpfinjadhqgd1" path="res://Scenes/XR_Player.tscn" id="11_jpk4g"]
+[ext_resource type="Material" uid="uid://dtjv8ydq0it37" path="res://Materials/Hand.tres" id="12_yej3f"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_eiqug"]
-size = Vector3(9.10352, 4.5722, 3.46509)
+[sub_resource type="BoxShape3D" id="BoxShape3D_u6agb"]
+size = Vector3(1, 1.62518, 1)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_f5cao"]
-size = Vector3(1.83105, 3.10541, 1.49561)
+[sub_resource type="BoxShape3D" id="BoxShape3D_31cuc"]
+size = Vector3(14.8738, 4.06842, 1)
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7r4ik"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_cuojo"]
+size = Vector3(2.01172, 3.11804, 1.18628)
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_oo86m"]
 animation = &"Grip"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8j2s4"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_75sb2"]
 animation = &"Grip"
 
-[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_pv4ah"]
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_f5k57"]
 filter_enabled = true
 filters = ["Armature/Skeleton3D:Little_Distal_L", "Armature/Skeleton3D:Little_Intermediate_L", "Armature/Skeleton3D:Little_Metacarpal_L", "Armature/Skeleton3D:Little_Proximal_L", "Armature/Skeleton3D:Middle_Distal_L", "Armature/Skeleton3D:Middle_Intermediate_L", "Armature/Skeleton3D:Middle_Metacarpal_L", "Armature/Skeleton3D:Middle_Proximal_L", "Armature/Skeleton3D:Ring_Distal_L", "Armature/Skeleton3D:Ring_Intermediate_L", "Armature/Skeleton3D:Ring_Metacarpal_L", "Armature/Skeleton3D:Ring_Proximal_L", "Armature/Skeleton3D:Thumb_Distal_L", "Armature/Skeleton3D:Thumb_Metacarpal_L", "Armature/Skeleton3D:Thumb_Proximal_L", "Armature/Skeleton:Little_Distal_L", "Armature/Skeleton:Little_Intermediate_L", "Armature/Skeleton:Little_Proximal_L", "Armature/Skeleton:Middle_Distal_L", "Armature/Skeleton:Middle_Intermediate_L", "Armature/Skeleton:Middle_Proximal_L", "Armature/Skeleton:Ring_Distal_L", "Armature/Skeleton:Ring_Intermediate_L", "Armature/Skeleton:Ring_Proximal_L", "Armature/Skeleton:Thumb_Distal_L", "Armature/Skeleton:Thumb_Proximal_L"]
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_dhimy"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_3fasx"]
 animation = &"Grip 5"
 
-[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_di1lr"]
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_0m4j3"]
 filter_enabled = true
 filters = ["Armature/Skeleton3D:Index_Distal_L", "Armature/Skeleton3D:Index_Intermediate_L", "Armature/Skeleton3D:Index_Metacarpal_L", "Armature/Skeleton3D:Index_Proximal_L", "Armature/Skeleton:Index_Distal_L", "Armature/Skeleton:Index_Intermediate_L", "Armature/Skeleton:Index_Proximal_L"]
 
-[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_kcl1u"]
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_v57wi"]
 graph_offset = Vector2(-536, 11)
-nodes/ClosedHand1/node = SubResource("AnimationNodeAnimation_7r4ik")
+nodes/ClosedHand1/node = SubResource("AnimationNodeAnimation_oo86m")
 nodes/ClosedHand1/position = Vector2(-600, 300)
-nodes/ClosedHand2/node = SubResource("AnimationNodeAnimation_8j2s4")
+nodes/ClosedHand2/node = SubResource("AnimationNodeAnimation_75sb2")
 nodes/ClosedHand2/position = Vector2(-360, 300)
-nodes/Grip/node = SubResource("AnimationNodeBlend2_pv4ah")
+nodes/Grip/node = SubResource("AnimationNodeBlend2_f5k57")
 nodes/Grip/position = Vector2(0, 20)
-nodes/OpenHand/node = SubResource("AnimationNodeAnimation_dhimy")
+nodes/OpenHand/node = SubResource("AnimationNodeAnimation_3fasx")
 nodes/OpenHand/position = Vector2(-600, 100)
-nodes/Trigger/node = SubResource("AnimationNodeBlend2_di1lr")
+nodes/Trigger/node = SubResource("AnimationNodeBlend2_0m4j3")
 nodes/Trigger/position = Vector2(-360, 20)
 node_connections = [&"Grip", 0, &"Trigger", &"Grip", 1, &"ClosedHand2", &"Trigger", 0, &"OpenHand", &"Trigger", 1, &"ClosedHand1", &"output", 0, &"Grip"]
 
-[node name="Scene2_Floor2" type="Node3D"]
-script = ExtResource("1_l4gbl")
+[node name="Scene3_Floor5" type="Node3D" node_paths=PackedStringArray("_area")]
+script = ExtResource("1_31cuc")
+_area = NodePath("Area3D")
 
-[node name="SimpleFloor" parent="." instance=ExtResource("2_eiqug")]
+[node name="SimpleFloor" parent="." instance=ExtResource("2_75sb2")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4.80001, -0.0999999, 16.1663)
 
 [node name="RoomNameBoard" parent="SimpleFloor" index="8"]
-transform = Transform3D(1, 7.42355e-09, -6.34991e-10, -7.42355e-09, 0.985473, -0.169831, -6.34987e-10, 0.169831, 0.985473, 45.7933, 2.74884, -4.76648)
+transform = Transform3D(1, 4.37114e-08, -4.37053e-08, -4.37114e-08, 0.000139713, -1, -4.37053e-08, 1, 0.000139713, 45.7933, 1.97877, -5.86651)
+
+[node name="Board5" parent="SimpleFloor" index="13"]
+transform = Transform3D(0.951315, -0.30822, 2.12809e-09, 0.30822, 0.951315, -1.34727e-08, 2.12809e-09, 1.34727e-08, 1, 0.457405, 0.60448, -2.48907)
+
+[node name="Board6" parent="SimpleFloor" index="14"]
+transform = Transform3D(-0.981591, -0.190976, 0.00283003, -4.37066e-08, 0.0148173, 0.99989, -0.190997, 0.981483, -0.0145445, -12.1658, 0.211084, -6.50084)
+
+[node name="Board7" parent="SimpleFloor" index="15"]
+transform = Transform3D(-0.881913, 0.471412, -8.22611e-08, 0.471412, 0.881913, 2.06061e-08, 8.22611e-08, -2.06061e-08, -1, -9.65829, 0.798962, -6.91406)
+
+[node name="Door6" parent="SimpleFloor" index="25"]
+visible = false
 
 [node name="Door7" parent="SimpleFloor" index="26"]
 transform = Transform3D(0.714131, 0, 0.700013, 0, 1, 0, -0.700013, 0, 0.714131, 46.5183, 0.0899995, -4.60361)
+
+[node name="Light01" parent="SimpleFloor/Light01" index="0" node_paths=PackedStringArray("_light")]
+script = ExtResource("4_3fasx")
+_light = NodePath("OmniLight3D")
 
 [node name="OmniLight3D" parent="SimpleFloor/Light01/Light01" index="0"]
 light_energy = 1.0
@@ -68,9 +84,13 @@ shadow_enabled = true
 shadow_bias = 1.0
 shadow_opacity = 0.2
 omni_range = 10.0
-omni_attenuation = 0.8
+omni_attenuation = 3.848
+
+[node name="Light01" parent="SimpleFloor/Light04" index="0"]
+transform = Transform3D(0.0764394, -0.996462, 8.00754e-08, 0.906309, 0.084043, -8.71134e-08, 7.28307e-08, 8.71134e-08, 1, 1.08874, -1.16559, -0.00115585)
 
 [node name="OmniLight3D" parent="SimpleFloor/Light04/Light01" index="0"]
+transform = Transform3D(1, 3.10315e-22, 7.10855e-15, -3.10315e-22, 1, -4.75544e-16, -7.10855e-15, 4.75544e-16, 1, -0.0634611, -0.323609, 0)
 light_energy = 1.0
 shadow_enabled = true
 shadow_bias = 1.0
@@ -90,12 +110,17 @@ omni_range = 10.0
 omni_attenuation = 0.8
 
 [node name="OmniLight3D" parent="SimpleFloor/Light02/Light01" index="0"]
+visible = false
 light_energy = 1.0
 shadow_enabled = true
 shadow_bias = 1.0
 shadow_opacity = 0.2
 omni_range = 10.0
 omni_attenuation = 0.8
+
+[node name="Light03" parent="SimpleFloor" index="35" node_paths=PackedStringArray("_light")]
+script = ExtResource("4_3fasx")
+_light = NodePath("Light01/OmniLight3D")
 
 [node name="OmniLight3D" parent="SimpleFloor/Light03/Light01" index="0"]
 light_energy = 1.0
@@ -103,91 +128,59 @@ shadow_enabled = true
 shadow_bias = 1.0
 shadow_opacity = 0.2
 omni_range = 10.0
-omni_attenuation = 0.8
+omni_attenuation = 2.324
 
-[node name="Light02" type="MeshInstance3D" parent="SimpleFloor/Light03" index="1" node_paths=PackedStringArray("_light")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -7.44107e-07, 0, -8.51162)
-mesh = ExtResource("3_l4gbl")
-script = ExtResource("4_v6hoi")
-_light = NodePath("OmniLight3D")
+[node name="Kuman Tong_3" parent="SimpleFloor" node_paths=PackedStringArray("area") instance=ExtResource("4_lnes4")]
+transform = Transform3D(0.998326, 0, -0.0578427, 0, 1, 0, 0.0578427, 0, 0.998326, -8.26926, 0.105958, -6.31888)
+script = ExtResource("5_31cuc")
+area = NodePath("Area3D")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="SimpleFloor/Light03/Light02"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.07604, 0)
-light_energy = 0.1
+[node name="Area3D" type="Area3D" parent="SimpleFloor/Kuman Tong_3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SimpleFloor/Kuman Tong_3/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.312592, 0)
+shape = SubResource("BoxShape3D_u6agb")
+
+[node name="Light06" type="MeshInstance3D" parent="SimpleFloor"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3.32436, 3.71921, 2.56586)
+mesh = ExtResource("3_f5k57")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="SimpleFloor/Light06"]
+transform = Transform3D(1, 3.10315e-22, 7.10855e-15, -3.10315e-22, 1, -4.75544e-16, -7.10855e-15, 4.75544e-16, 1, -0.0634611, -0.572698, -1.18453e-16)
 shadow_enabled = true
 shadow_bias = 1.0
 shadow_opacity = 0.2
 omni_range = 10.0
-omni_attenuation = 0.8
+omni_attenuation = 1.372
 
-[node name="Light03" type="MeshInstance3D" parent="SimpleFloor/Light03" index="2" node_paths=PackedStringArray("_light")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6.57472, 0, -8.51162)
-mesh = ExtResource("3_l4gbl")
-script = ExtResource("4_v6hoi")
+[node name="Light07" type="MeshInstance3D" parent="SimpleFloor" node_paths=PackedStringArray("_light")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.58556, 3.71921, 2.56586)
+mesh = ExtResource("3_f5k57")
+script = ExtResource("4_3fasx")
 _light = NodePath("OmniLight3D")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="SimpleFloor/Light03/Light03"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.07604, 0)
-light_energy = 0.2
+[node name="OmniLight3D" type="OmniLight3D" parent="SimpleFloor/Light07"]
+transform = Transform3D(1, 3.10315e-22, 7.10855e-15, -3.10315e-22, 1, -4.75544e-16, -7.10855e-15, 4.75544e-16, 1, -0.0634611, -0.572698, -1.18453e-16)
 shadow_enabled = true
 shadow_bias = 1.0
 shadow_opacity = 0.2
-omni_range = 10.0
-omni_attenuation = 0.8
+omni_range = 6.73
+omni_attenuation = 2.324
 
-[node name="Board" parent="." instance=ExtResource("4_824ef")]
-transform = Transform3D(1.62952, 0, 0, 0, 1.37517, 0, 0, 0, 1, -7.46171, 1.15829, 9.36686)
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.373257, 22.64)
 
-[node name="Board_001" parent="Board" index="0"]
-transform = Transform3D(1, 0, 0, 0, -1.19209e-07, -1, 0, 1, -1.19209e-07, 0.122889, 0, 0)
-material_override = ExtResource("5_f5cao")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.99979, 1.53421, 1.71478)
+shape = SubResource("BoxShape3D_31cuc")
 
-[node name="EventAreaStorageRoom" type="Node3D" parent="." node_paths=PackedStringArray("_area", "ghostEvent")]
-script = ExtResource("8_824ef")
-_area = NodePath("Area3D")
-ghostEvent = NodePath("../EventAreaGhost")
+[node name="Area3D" type="Area3D" parent="."]
 
-[node name="Area3D" type="Area3D" parent="EventAreaStorageRoom"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 31.3784)
+[node name="CollisionFloorCheck" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.05902, -0.258423)
+shape = SubResource("BoxShape3D_cuojo")
 
-[node name="EventArea" type="CollisionShape3D" parent="EventAreaStorageRoom/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7861, 32.4016)
-shape = SubResource("BoxShape3D_eiqug")
-
-[node name="EventAreaGhost" type="Node3D" parent="." node_paths=PackedStringArray("_area", "ghostNode3D", "floorCheck")]
-visible = false
-script = ExtResource("7_eiqug")
-_area = NodePath("Area3D")
-MaxTimer = 3.0
-ghostNode3D = NodePath("../Nang_Rum_1")
-floorCheck = NodePath("../EventAreaFloorCheck")
-
-[node name="Area3D" type="Area3D" parent="EventAreaGhost"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 31.3784)
-monitoring = false
-
-[node name="EventArea" type="CollisionShape3D" parent="EventAreaGhost/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7861, -0.231201)
-shape = SubResource("BoxShape3D_eiqug")
-
-[node name="EventAreaFloorCheck" type="Node3D" parent="." node_paths=PackedStringArray("_area")]
-visible = false
-script = ExtResource("9_824ef")
-_area = NodePath("Area3D")
-
-[node name="Area3D" type="Area3D" parent="EventAreaFloorCheck"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 31.3784)
-monitoring = false
-
-[node name="EventArea" type="CollisionShape3D" parent="EventAreaFloorCheck/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0527, -31.673)
-shape = SubResource("BoxShape3D_f5cao")
-
-[node name="Nang_Rum_1" parent="." instance=ExtResource("7_l74kq")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 24.7805)
-visible = false
-
-[node name="XrPlayer" parent="." instance=ExtResource("11_f5cao")]
+[node name="XrPlayer" parent="." instance=ExtResource("11_jpk4g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.187784, 1.40138, 37.0368)
 
 [node name="Skeleton3D" parent="XrPlayer/XROrigin3D/LeftHand/LeftHand/Hand_low_L/Armature" index="0"]
@@ -212,7 +205,7 @@ bones/22/rotation = Quaternion(0.0585786, 0.0216483, -0.269905, 0.96086)
 bones/23/rotation = Quaternion(0.00687177, -0.00357275, -0.211953, 0.977249)
 
 [node name="mesh_Hand_low_L" parent="XrPlayer/XROrigin3D/LeftHand/LeftHand/Hand_low_L/Armature/Skeleton3D" index="0"]
-material_override = ExtResource("12_7r4ik")
+material_override = ExtResource("12_yej3f")
 
 [node name="BoneAttachment3D" parent="XrPlayer/XROrigin3D/LeftHand/LeftHand/Hand_low_L/Armature/Skeleton3D" index="1"]
 transform = Transform3D(0.54083, 0.840813, -0.0231736, -0.0826267, 0.0805243, 0.993322, 0.837064, -0.535303, 0.113023, 0.039902, 0.0402828, -0.150096)
@@ -224,7 +217,7 @@ transform = Transform3D(0.54083, 0.840813, -0.0231736, -0.0826267, 0.0805243, 0.
 [node name="MeshInstance3D" parent="XrPlayer/XROrigin3D/LeftHand/LeftHand/Hand_low_L/Armature/Skeleton3D/BoneAttachment3D/RigidBody3D" index="1" groups=["Player"]]
 
 [node name="AnimationTree" parent="XrPlayer/XROrigin3D/LeftHand/LeftHand" index="1"]
-tree_root = SubResource("AnimationNodeBlendTree_kcl1u")
+tree_root = SubResource("AnimationNodeBlendTree_v57wi")
 
 [editable path="SimpleFloor"]
 [editable path="SimpleFloor/Light01"]
@@ -232,7 +225,6 @@ tree_root = SubResource("AnimationNodeBlendTree_kcl1u")
 [editable path="SimpleFloor/Light05"]
 [editable path="SimpleFloor/Light02"]
 [editable path="SimpleFloor/Light03"]
-[editable path="Board"]
 [editable path="XrPlayer"]
 [editable path="XrPlayer/XROrigin3D/LeftHand/LeftHand"]
 [editable path="XrPlayer/XROrigin3D/LeftHand/LeftHand/Hand_low_L"]
