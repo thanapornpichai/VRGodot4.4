@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://c30pdv1wwu405"]
+
+[ext_resource type="PackedScene" uid="uid://cxqdu6atifje6" path="res://Nai/Scenes/box.tscn" id="1_hj615"]
+[ext_resource type="PackedScene" uid="uid://dt111ydjcyy1b" path="res://Nai/Scenes/laser.tscn" id="2_nilsb"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_dxil7"]
+size = Vector2(5, 5)
+
+[node name="Main" type="Node3D"]
+
+[node name="Floor" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0)
+mesh = SubResource("PlaneMesh_dxil7")
+
+[node name="Box" parent="." instance=ExtResource("1_hj615")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9, 0, 0)
+
+[node name="Box2" parent="." instance=ExtResource("1_hj615")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9, 0, 0)
+
+[node name="Laser" parent="." instance=ExtResource("2_nilsb")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.9, 0, 0)
+target_position = Vector3(0, -10, 0)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.678147, 0.734926, 0, -0.734926, 0.678147, 0, 1.29952, 1.49795)
