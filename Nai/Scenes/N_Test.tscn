@@ -31,10 +31,10 @@ shadow_enabled = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00958526, -0.25, 0)
 mesh = SubResource("PlaneMesh_dxil7")
 
-[node name="Box" parent="." instance=ExtResource("1_hj615")]
+[node name="Box_01" parent="." instance=ExtResource("1_hj615")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
 
-[node name="Box2" parent="." instance=ExtResource("1_hj615")]
+[node name="Box_02" parent="." instance=ExtResource("1_hj615")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
 
 [node name="Laser" parent="." instance=ExtResource("2_nilsb")]
@@ -42,4 +42,5 @@ transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 1, 0, 
 target_position = Vector3(0, -50, 0)
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.678147, 0.734926, 0, -0.734926, 0.678147, 0, 1.29952, 1.49795)
+transform = Transform3D(1, 0, 0, 0, 0.991204, 0.132343, 0, -0.132343, 0.991204, -0.0377808, 0.157308, 1.63735)
+fov = 63.1613
