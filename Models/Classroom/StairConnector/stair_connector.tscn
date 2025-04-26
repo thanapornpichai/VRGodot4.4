@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://dojmkq5eymgqk"]
+[gd_scene load_steps=9 format=3 uid="uid://dojmkq5eymgqk"]
 
 [ext_resource type="PackedScene" uid="uid://wavqnvtpwa2v" path="res://Models/Classroom/StairConnector/StairConnector.fbx" id="1_ftyb1"]
 [ext_resource type="Material" uid="uid://bwuq1s5ynqh1f" path="res://Models/Classroom/StairConnector/Stairconnector.tres" id="2_prb0b"]
+[ext_resource type="PackedScene" uid="uid://dy2uii265y4ng" path="res://Models/Classroom/StairConnector/StairConnector2.fbx" id="2_rhen3"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ftyb1"]
-size = Vector3(7.99884, 4.68365, 0.605957)
+size = Vector3(7.99884, 4.68365, 0.599854)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_prb0b"]
 size = Vector3(8.05469, 0.509888, 4.1261)
@@ -20,14 +21,16 @@ size = Vector3(0.106445, 2.04285, 1.0509)
 
 [node name="StairConnector" instance=ExtResource("1_ftyb1")]
 
-[node name="StairConnector_001" parent="." index="0"]
+[node name="StairConnector2" parent="." index="0" instance=ExtResource("2_rhen3")]
+
+[node name="StairConnector_001" parent="." index="1"]
 transform = Transform3D(1, 0, 0, 0, -1.19209e-07, -1, 0, 1, -1.19209e-07, 0, 0, 0)
 material_override = ExtResource("2_prb0b")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="StairConnector_001" index="0"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StairConnector_001/StaticBody3D" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000152588, -0.045929, 0.197021)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000152588, -0.045929, 0.200073)
 shape = SubResource("BoxShape3D_ftyb1")
 
 [node name="CollisionShape3D4" type="CollisionShape3D" parent="StairConnector_001/StaticBody3D" index="1"]

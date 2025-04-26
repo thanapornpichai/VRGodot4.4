@@ -20,8 +20,24 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4.800
 [node name="Door5" parent="SimpleFloor" index="24"]
 visible = false
 
+[node name="CollisionShape3D" parent="SimpleFloor/Door5/StaticBody3D" index="0"]
+visible = false
+disabled = true
+
+[node name="CollisionShape3D2" parent="SimpleFloor/Door5/StaticBody3D" index="1"]
+visible = false
+disabled = true
+
 [node name="Door6" parent="SimpleFloor" index="25"]
 visible = false
+
+[node name="CollisionShape3D" parent="SimpleFloor/Door6/StaticBody3D" index="0"]
+visible = false
+disabled = true
+
+[node name="CollisionShape3D2" parent="SimpleFloor/Door6/StaticBody3D" index="1"]
+visible = false
+disabled = true
 
 [node name="OmniLight3D" parent="SimpleFloor/Light01/Light01" index="0"]
 light_energy = 1.0
@@ -323,6 +339,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.54858, 0, 1.41119)
 shape = SubResource("BoxShape3D_uk6cp")
 
 [editable path="SimpleFloor"]
+[editable path="SimpleFloor/Door5"]
+[editable path="SimpleFloor/Door6"]
 [editable path="SimpleFloor/Light01"]
 [editable path="SimpleFloor/Light04"]
 [editable path="SimpleFloor/Light05"]

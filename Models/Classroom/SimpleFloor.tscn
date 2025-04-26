@@ -29,7 +29,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.2, -1.93715e-07, -5)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.2, -7.19997, 5.6)
 
 [node name="StairConnector2" parent="." instance=ExtResource("2_oigck")]
-transform = Transform3D(-1, 0, 0, 0, 1, -8.74228e-08, 0, 8.74228e-08, 1, 41.8, -3.57628e-07, -5)
+transform = Transform3D(-1, 0, 0, 0, 1, -1.50996e-07, 0, 1.50996e-07, 1, 41.8, -3.57628e-07, -5)
 
 [node name="Stair2" parent="." instance=ExtResource("3_o3a1g")]
 transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, 1, 40.8, -7.19997, 5.6)

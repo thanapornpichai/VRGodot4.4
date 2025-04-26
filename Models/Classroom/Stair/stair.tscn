@@ -7,7 +7,7 @@
 size = Vector3(6.70508, 7.3175, 11.1802)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_s5thw"]
-size = Vector3(5.9873, 5.65015, 0.307617)
+size = Vector3(5.9873, 5.65015, 0.374023)
 
 [node name="Stair" instance=ExtResource("1_bhkdg")]
 
@@ -18,11 +18,11 @@ material_override = ExtResource("2_s5thw")
 [node name="StaticBody3D" type="StaticBody3D" parent="Stair_001" index="0"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Stair_001/StaticBody3D" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 1.83806e-19, 0, 1, -2.27374e-13, -3.15875, 5.09009)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 2.21499e-19, 0, 1, -2.27374e-13, -3.15875, 5.09009)
 shape = SubResource("BoxShape3D_bhkdg")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Stair_001/StaticBody3D" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 3.15096e-19, 0, 1, -5.68434e-13, -5.48383, 4.8175)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 3.41354e-19, 0, 1, -7.95808e-13, -5.48383, 4.8507)
 shape = SubResource("BoxShape3D_s5thw")
 
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="Stair_001/StaticBody3D" index="2"]

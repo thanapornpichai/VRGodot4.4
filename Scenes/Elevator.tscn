@@ -1,8 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://dinmhn3cmls06"]
+[gd_scene load_steps=12 format=3 uid="uid://dinmhn3cmls06"]
 
 [ext_resource type="ArrayMesh" uid="uid://bwlc31vxoag6t" path="res://Models/Elevator.vox" id="1_dmimb"]
 [ext_resource type="ArrayMesh" uid="uid://dyc2lmthfk7yo" path="res://Models/ElevatorDoorLeft.vox" id="2_xv5vg"]
 [ext_resource type="ArrayMesh" uid="uid://cwnn05n46gxon" path="res://Models/ElevatorDoorRight.vox" id="3_3geoe"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dmimb"]
+size = Vector3(0.999359, 2.60034, 0.103577)
 
 [sub_resource type="Animation" id="Animation_n3ex4"]
 resource_name = "Close"
@@ -64,6 +67,15 @@ _data = {
 &"RESET": SubResource("Animation_dmimb")
 }
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_xv5vg"]
+size = Vector3(1.65625, 0.700684, 1.80078)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3geoe"]
+size = Vector3(0.085968, 2.38025, 2.25684)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_57077"]
+size = Vector3(1.66406, 2.4335, 0.282471)
+
 [node name="Elevator" type="Node3D"]
 
 [node name="Elevator" type="MeshInstance3D" parent="."]
@@ -76,11 +88,41 @@ light_energy = 0.5
 [node name="ElevatorDoorLeft" type="MeshInstance3D" parent="."]
 mesh = ExtResource("2_xv5vg")
 
+[node name="StaticBody3D" type="StaticBody3D" parent="ElevatorDoorLeft"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ElevatorDoorLeft/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.500778, 1.30383, 1.0499)
+shape = SubResource("BoxShape3D_dmimb")
+
 [node name="ElevatorDoorRight" type="MeshInstance3D" parent="."]
 mesh = ExtResource("3_3geoe")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="ElevatorDoorRight"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ElevatorDoorRight/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.495542, 1.30383, 1.0499)
+shape = SubResource("BoxShape3D_dmimb")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_dmimb")
 }
 next/Close = &"RESET"
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="FloorCollision" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.149658, 0)
+shape = SubResource("BoxShape3D_xv5vg")
+
+[node name="WallCollision" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.84288, 1.34479, -0.0263672)
+shape = SubResource("BoxShape3D_3geoe")
+
+[node name="WallCollision2" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.838235, 1.34479, -0.0263672)
+shape = SubResource("BoxShape3D_3geoe")
+
+[node name="WallCollision3" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.35548, -1.23621)
+shape = SubResource("BoxShape3D_57077")

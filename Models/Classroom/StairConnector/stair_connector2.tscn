@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://n2iyevvpgouh"]
+
+[ext_resource type="PackedScene" uid="uid://dy2uii265y4ng" path="res://Models/Classroom/StairConnector/StairConnector2.fbx" id="1_kr6o0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kr6o0"]
+size = Vector3(0.0804138, 0.0470581, 0.00159863)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pbycs"]
+size = Vector3(0.0722656, 0.00756836, 0.0424805)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4tnwn"]
+size = Vector3(0.11731, 4.02054, 1.46155)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fufc0"]
+size = Vector3(0.112061, 1.89783, 1.48633)
+
+[node name="StairConnector2" instance=ExtResource("1_kr6o0")]
+
+[node name="StairConnector_001" parent="." index="0"]
+transform = Transform3D(-100, 0, 0, 0, -3.57628e-05, -100, 0, 100, -3.57628e-05, 0, 3.94881e-07, 9.53674e-07)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="StairConnector_001" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StairConnector_001/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 8.52651e-14, 0, -8.52651e-14, 1, -7.58023e-05, -0.000687698, -0.000296791)
+shape = SubResource("BoxShape3D_kr6o0")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StairConnector_001/StaticBody3D" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 8.52651e-14, 0, -8.52651e-14, 1, -7.58023e-05, -0.000687712, -0.0396909)
+shape = SubResource("BoxShape3D_kr6o0")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StairConnector_001/StaticBody3D" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 8.52651e-14, 0, -8.52651e-14, 1, 0.00247275, -0.0247086, -0.0201009)
+shape = SubResource("BoxShape3D_pbycs")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="StairConnector_001/StaticBody3D" index="3"]
+transform = Transform3D(-0.01, 0, 0, 0, -3.57628e-09, 0.01, 0, -0.01, -3.57628e-09, -0.0404767, -0.0153376, -0.0208461)
+shape = SubResource("BoxShape3D_4tnwn")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="StairConnector_001/StaticBody3D" index="4"]
+transform = Transform3D(-0.01, 0, 0, 0, -3.57628e-09, 0.01, 0, -0.01, -3.57628e-09, -0.0404767, 0.0193963, -0.0208461)
+shape = SubResource("BoxShape3D_4tnwn")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="StairConnector_001/StaticBody3D" index="5"]
+transform = Transform3D(0.01, 0, 0, 0, 0.01, -6.66134e-16, 0, 6.66134e-16, 0.01, -0.040478, 0.00158142, -0.0334522)
+shape = SubResource("BoxShape3D_fufc0")
