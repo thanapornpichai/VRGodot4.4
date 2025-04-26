@@ -142,10 +142,8 @@ transform = Transform3D(1.62952, 0, 0, 0, 1.37517, 0, 0, 0, 1, -7.46171, 1.15829
 transform = Transform3D(1, 0, 0, 0, -1.19209e-07, -1, 0, 1, -1.19209e-07, 0.122889, 0, 0)
 material_override = ExtResource("5_f5cao")
 
-[node name="EventAreaStorageRoom" type="Node3D" parent="." node_paths=PackedStringArray("_area", "ghostEvent")]
+[node name="EventAreaStorageRoom" type="Node3D" parent="."]
 script = ExtResource("8_824ef")
-_area = NodePath("Area3D")
-ghostEvent = NodePath("../EventAreaGhost")
 
 [node name="Area3D" type="Area3D" parent="EventAreaStorageRoom"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 31.3784)
@@ -154,13 +152,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 31.3784)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7861, 32.4016)
 shape = SubResource("BoxShape3D_eiqug")
 
-[node name="EventAreaGhost" type="Node3D" parent="." node_paths=PackedStringArray("_area", "ghostNode3D", "floorCheck")]
+[node name="EventAreaGhost" type="Node3D" parent="."]
 visible = false
 script = ExtResource("7_eiqug")
-_area = NodePath("Area3D")
 MaxTimer = 3.0
-ghostNode3D = NodePath("../Nang_Rum_1")
-floorCheck = NodePath("../EventAreaFloorCheck")
 
 [node name="Area3D" type="Area3D" parent="EventAreaGhost"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 31.3784)
