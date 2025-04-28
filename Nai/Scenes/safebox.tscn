@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dq85p7v4jggu0"]
+
+[ext_resource type="ArrayMesh" uid="uid://dg64cdmsv35x8" path="res://Nai/Asssets/safe.vox" id="1_rmfpn"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_a1oe4"]
+size = Vector3(4.08942, 10.0429, 2.09354)
+
+[node name="Safebox" type="MeshInstance3D"]
+mesh = ExtResource("1_rmfpn")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1.00273, 0, 0, 0, 1.00273, 0, 0, 0, 1.00273, 0.00421202, 5.06389, -0.00549397)
+shape = SubResource("BoxShape3D_a1oe4")

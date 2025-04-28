@@ -13,7 +13,7 @@ particles_anim_v_frames = 1
 particles_anim_loop = false
 
 [sub_resource type="Curve" id="Curve_sup7e"]
-_data = [Vector2(0, 0.505618), 0.0, 1.67362, 0, 0, Vector2(0.5, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+_data = [Vector2(0, 0.505618), 0.0, 1.67362, 0, 0, Vector2(0.514706, 0.932584), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 3
 
 [sub_resource type="CurveTexture" id="CurveTexture_2bkb1"]
@@ -24,6 +24,8 @@ spread = 80.0
 initial_velocity_min = 1.0
 initial_velocity_max = 1.0
 gravity = Vector3(0, 0, 0)
+scale_min = 2.0
+scale_max = 2.0
 scale_curve = SubResource("CurveTexture_2bkb1")
 
 [sub_resource type="QuadMesh" id="QuadMesh_xjwij"]

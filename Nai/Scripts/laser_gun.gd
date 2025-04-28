@@ -11,7 +11,6 @@ func _ready() -> void:
 func  _process(delta: float) -> void:
 	var cast_point
 	force_raycast_update()
-	
 	if Input.is_action_pressed("Naitest1"):
 		deactivate()
 	elif Input.is_action_pressed("Naitest2"):
@@ -23,11 +22,11 @@ func  _process(delta: float) -> void:
 func laseractivate(cast_point, time=1):
 	beam_mesh.mesh.height = cast_point.y
 	beam_mesh.position.y = cast_point.y / 2
-	end_particles.position.y = cast_point.y
+	#end_particles.position.y = cast_point.y
 
 	tween = get_tree().create_tween()
 	visible = true
-	end_particles.emitting = true
+	#end_particles.emitting = true
 	tween.set_parallel(true)
 
 	tween.tween_property(beam_mesh.mesh, "top_radius", 0.1, time)
