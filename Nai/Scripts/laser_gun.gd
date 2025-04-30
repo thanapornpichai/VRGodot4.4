@@ -16,12 +16,12 @@ func  _process(delta: float) -> void:
 	elif Input.is_action_pressed("Naitest2"):
 		if is_colliding():
 			cast_point = to_local(get_collision_point())
-			print(cast_point)
 			laseractivate(cast_point)
 		
 func laseractivate(cast_point, time=1):
 	beam_mesh.mesh.height = cast_point.y
-	beam_mesh.position.y = cast_point.y / 2
+	beam_mesh.position.y = cast_point.y
+	print(cast_point.y / 2)
 	#end_particles.position.y = cast_point.y
 
 	tween = get_tree().create_tween()

@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cb1uvx0p14neg" path="res://Nai/Scenes/mirror.tscn" id="3_wwyjm"]
 [ext_resource type="PackedScene" uid="uid://dq85p7v4jggu0" path="res://Nai/Scenes/safebox.tscn" id="4_qu6du"]
 [ext_resource type="Script" uid="uid://u4rismvh82xa" path="res://Nai/Scripts/laser.gd" id="4_wwyjm"]
+[ext_resource type="PackedScene" uid="uid://c68p8gcw0xqx3" path="res://Models/Classroom/Room2/class_room_2.tscn" id="6_hiwvh"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_awtg0"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -18,40 +19,55 @@ background_mode = 2
 sky = SubResource("Sky_qu6du")
 tonemap_mode = 2
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_hiwvh"]
-size = Vector2(75, 75)
-
 [node name="Main" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_wwyjm")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866026, -0.500003, 0.749999, -0.43301, 18.9836, 14.3006, 0)
 shadow_enabled = true
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.817939, 0.575305, 0, -0.575305, 0.817939, 0, 24.0544, 26.298)
+transform = Transform3D(1, 0, 0, 0, 0.817939, 0.575305, 0, -0.575305, 0.817939, -0.309378, 3.80521, 3.25478)
 keep_aspect = 0
-
-[node name="Floor" type="MeshInstance3D" parent="."]
-mesh = SubResource("PlaneMesh_hiwvh")
+fov = 100.4
 
 [node name="LaserGun" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0, -10)
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -2, 0.022, -5)
 mesh = ExtResource("1_awtg0")
 
 [node name="Laser1" parent="LaserGun" instance=ExtResource("2_qu6du")]
-transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 10.0513, 8, 0)
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 10.051, 8, 0)
 target_position = Vector3(0, 500, 0)
 
 [node name="Mirror" parent="." instance=ExtResource("3_wwyjm")]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 25, 8.081, -10)
+transform = Transform3D(-8.74228e-09, -0.2, 0, 0.2, -8.74228e-09, 0, 0, 0, 0.2, 4.216, 1.59192, -5)
 
 [node name="Laser2" parent="Mirror" instance=ExtResource("2_qu6du")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.322259, 0, 0)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
 target_position = Vector3(0, 500, 0)
 script = ExtResource("4_wwyjm")
 
 [node name="Safebox" parent="." instance=ExtResource("4_qu6du")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.42206, 0, 11)
+
+[node name="ClassRoom2" parent="." instance=ExtResource("6_hiwvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.017, 0, 0)
+
+[node name="StaticBody3D" parent="ClassRoom2/ClassRoom2_593_001" index="0"]
+visible = false
+
+[node name="Windows" parent="ClassRoom2" index="1"]
+visible = false
+
+[node name="Windows2" parent="ClassRoom2" index="2"]
+visible = false
+
+[node name="Windows3" parent="ClassRoom2" index="3"]
+visible = false
+
+[node name="Windows4" parent="ClassRoom2" index="4"]
+visible = false
+
+[editable path="ClassRoom2"]

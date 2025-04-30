@@ -17,7 +17,6 @@ func  _process(delta: float) -> void:
 	elif Input.is_action_pressed("Naitest2"):
 		if is_colliding():
 			cast_point = to_local(get_collision_point())
-			print(cast_point)
 			laseractivate(cast_point)
 		
 func laseractivate(cast_point, time=1):
