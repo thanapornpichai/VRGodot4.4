@@ -1,29 +1,34 @@
-extends RayCast3D
+extends MeshInstance3D
 
-@onready var beam_mesh      : MeshInstance3D = $BeamMesh
-@onready var end_particles  : GPUParticles3D = $EndParticles
+@export var beam_mesh      : MeshInstance3D
+@export var end_particles  : GPUParticles3D
+@export var rayCast : RayCast3D
+@export var rayCastPiVot : Node3D
+@export var hit_vfx: Node3D
+
+@export var m_rot_degrees := 45
+var current_degrees := 0
+var last_hit_local  : Vector3
 
 var tween : Tween
 
-func _process(_delta: float) -> void:
-	# ให้ RayCast คำนวณใหม่ทุกเฟรม
-	force_raycast_update()
-	
-	if is_colliding():
-		var hit_local : Vector3 = to_local(get_collision_point())
+func _process(_delta):
+	rayCast.force_raycast_update()
+	if rayCast.is_colliding():
+		var hit_local : Vector3 = to_local(rayCast.get_collision_point())
 		laser_activate(hit_local)
 		
-		var incident : Vector3 = (get_collision_point() - global_transform.origin).normalized()
-		var normal   : Vector3 = get_collision_normal().normalized()
-		var reflect  : Vector3 = incident.reflect(normal)          # ← ทิศสะท้อน
+	if Input.is_action_pressed("Naitest3") and current_degrees <  m_rot_degrees:
+		current_degrees += 45
+		update_rotation()
 
-		var target = get_collider()
-		var root = target.get_parent()
-		if root and root.has_method("OnLaserHit"):
-			root.OnLaserHit(get_collision_point(),reflect)
+	if Input.is_action_pressed("Naitest4") and current_degrees > -m_rot_degrees:
+		current_degrees -= 45
+		update_rotation()
 
-
-# ----------------- เลเซอร์ -----------------
+func update_rotation():
+	rotation_degrees.y = current_degrees
+	
 func laser_activate(hit_local: Vector3, time := 0.15):
 	# hit_local.y คือตำแหน่งตามแกน Y ของ RayCast
 	beam_mesh.mesh.height   = hit_local.y           # ยืดความสูงทรงกระบอก
@@ -50,3 +55,12 @@ func deactivate(time := 0.15):
 	await tween.finished
 	visible = false
 	end_particles.emitting = false
+	
+func OnLaserHit(hit_position : Vector3, dir : Vector3):
+	var local_hit_position = to_local(hit_position)
+	rayCastPiVot.global_position = hit_position
+	rayCastPiVot.look_at(rayCastPiVot.global_position + dir, Vector3.UP)
+
+	hit_vfx.global_position = hit_position
+	hit_vfx.look_at(hit_vfx.global_position + dir, Vector3.UP)
+	print(hit_vfx.rotation)

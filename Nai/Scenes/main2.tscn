@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bv14xk3mk3v2h" path="res://Nai/Scenes/end_particles.tscn" id="3_gkrqf"]
 [ext_resource type="ArrayMesh" uid="uid://bnhqyeb6u4nxp" path="res://Nai/Asssets/Mirror.vox" id="4_jin7a"]
 [ext_resource type="PackedScene" uid="uid://dq85p7v4jggu0" path="res://Nai/Scenes/safebox.tscn" id="5_3bh7u"]
-[ext_resource type="Script" uid="uid://ch0cgdai317" path="res://Nai/Scenes/mirror.gd" id="5_8idn8"]
+[ext_resource type="Script" uid="uid://c6hri4lvgolq5" path="res://Nai/Scenes/mirror2.gd" id="5_jin7a"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_awtg0"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -34,11 +34,11 @@ emission_enabled = true
 emission = Color(1, 0, 0, 1)
 emission_energy_multiplier = 16.0
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_4k5p6"]
-radius = 0.1
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_wh8if"]
 size = Vector3(1.25, 0.1, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_4k5p6"]
+radius = 0.1
 
 [node name="Main2" type="Node3D"]
 
@@ -68,7 +68,7 @@ transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 10.051
 
 [node name="RayCast3D" type="RayCast3D" parent="LaserGun"]
 transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 10.5812, 8, 0)
-target_position = Vector3(0, 500, 0)
+target_position = Vector3(0, 100, 0)
 script = ExtResource("2_jin7a")
 
 [node name="BeamMesh" type="MeshInstance3D" parent="LaserGun/RayCast3D"]
@@ -79,17 +79,15 @@ surface_material_override/0 = SubResource("StandardMaterial3D_b7ay4")
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
 amount = 31
 
-[node name="Reflex" type="Node3D" parent="LaserGun/RayCast3D"]
-transform = Transform3D(10, 2.84217e-14, 0, -2.84217e-14, 10, 0, 0, 0, 10, 17.821, -14.8878, 0)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="LaserGun/RayCast3D/Reflex"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
-mesh = SubResource("CapsuleMesh_4k5p6")
-
-[node name="Mirror" type="MeshInstance3D" parent="."]
-transform = Transform3D(-3.92285e-08, -0.897443, 0.44113, 1, -4.37114e-08, -1.2968e-15, 1.92824e-08, 0.44113, 0.897443, 1.0813, 0.847192, -2.43381)
+[node name="Mirror" type="MeshInstance3D" parent="." node_paths=PackedStringArray("beam_mesh", "end_particles", "rayCast", "rayCastPiVot", "hit_vfx")]
+transform = Transform3D(-3.18637e-08, -0.728957, 0.68456, 1, -4.37114e-08, 8.06613e-16, 2.99231e-08, 0.68456, 0.728957, 0.189623, 0.801403, -2.68994)
 mesh = ExtResource("4_jin7a")
-script = ExtResource("5_8idn8")
+script = ExtResource("5_jin7a")
+beam_mesh = NodePath("Pivot/RayCast3D/BeamMesh")
+end_particles = NodePath("Pivot/RayCast3D/EndParticles")
+rayCast = NodePath("Pivot/RayCast3D")
+rayCastPiVot = NodePath("Pivot")
+hit_vfx = NodePath("Pivot/RayCast3D/Reflex2")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Mirror"]
 
@@ -97,5 +95,27 @@ script = ExtResource("5_8idn8")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00127566, 0.0473633, -0.0515991)
 shape = SubResource("BoxShape3D_wh8if")
 
+[node name="Pivot" type="Node3D" parent="Mirror"]
+transform = Transform3D(1, 0, 3.82137e-15, -3.82137e-15, 4.37114e-08, 1, 0, -1, 4.37114e-08, 0, 0, 0)
+
+[node name="RayCast3D" type="RayCast3D" parent="Mirror/Pivot"]
+transform = Transform3D(0.1, 0, 0, 0, -4.37114e-09, -0.1, 0, 0.1, -4.37114e-09, 0, 0, 0)
+target_position = Vector3(0, 100, 0)
+
+[node name="BeamMesh" type="MeshInstance3D" parent="Mirror/Pivot/RayCast3D"]
+mesh = SubResource("CylinderMesh_15umw")
+surface_material_override/0 = SubResource("StandardMaterial3D_b7ay4")
+
+[node name="EndParticles" parent="Mirror/Pivot/RayCast3D" instance=ExtResource("3_gkrqf")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+amount = 31
+
+[node name="Reflex2" type="Node3D" parent="Mirror/Pivot/RayCast3D"]
+transform = Transform3D(10, 2.84217e-14, -1.12104e-43, -2.84217e-14, 10, -3.00927e-36, 1.12104e-43, 3.00927e-36, 10, -1.17192, 1.03748, -1.48681)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Mirror/Pivot/RayCast3D/Reflex2"]
+transform = Transform3D(0.7, 0, 0, 0, -3.0598e-08, -0.7, 0, 0.7, -3.0598e-08, 0, 0, 0)
+mesh = SubResource("CapsuleMesh_4k5p6")
+
 [node name="Safebox" parent="." instance=ExtResource("5_3bh7u")]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -2.19611, 0.251008, -2.39361)
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.0407814, 0.251008, -0.544988)
