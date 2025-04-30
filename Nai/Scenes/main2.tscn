@@ -1,0 +1,130 @@
+[gd_scene load_steps=16 format=3 uid="uid://b3xqkiexl0vp"]
+
+[ext_resource type="ArrayMesh" uid="uid://dsribb0848n8s" path="res://Nai/Asssets/Laser_Machine.vox" id="1_4k5p6"]
+[ext_resource type="Script" uid="uid://b3u6or033rykx" path="res://Nai/Scripts/laser_gun3.gd" id="2_jin7a"]
+[ext_resource type="PackedScene" uid="uid://bv14xk3mk3v2h" path="res://Nai/Scenes/end_particles.tscn" id="3_gkrqf"]
+[ext_resource type="ArrayMesh" uid="uid://bnhqyeb6u4nxp" path="res://Nai/Asssets/Mirror.vox" id="4_jin7a"]
+[ext_resource type="PackedScene" uid="uid://dq85p7v4jggu0" path="res://Nai/Scenes/safebox.tscn" id="5_3bh7u"]
+[ext_resource type="Script" uid="uid://c6hri4lvgolq5" path="res://Nai/Scenes/mirror2.gd" id="5_jin7a"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_awtg0"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_qu6du"]
+sky_material = SubResource("ProceduralSkyMaterial_awtg0")
+
+[sub_resource type="Environment" id="Environment_wwyjm"]
+background_mode = 2
+sky = SubResource("Sky_qu6du")
+tonemap_mode = 2
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_hiwvh"]
+size = Vector2(75, 75)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_15umw"]
+top_radius = 0.1
+bottom_radius = 0.1
+height = 0.1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b7ay4"]
+transparency = 1
+albedo_color = Color(1, 0, 0, 1)
+emission_enabled = true
+emission = Color(1, 0, 0, 1)
+emission_energy_multiplier = 16.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wh8if"]
+size = Vector3(11.9084, 0.1, 11.0037)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_jin7a"]
+top_radius = 0.1
+bottom_radius = 0.1
+height = 0.1
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_4k5p6"]
+radius = 0.1
+
+[node name="Main2" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_wwyjm")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.817939, 0.575305, 0, -0.575305, 0.817939, -1.44417, 3.44126, 2.35809)
+keep_aspect = 0
+
+[node name="Floor" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_hiwvh")
+
+[node name="Node3D" type="Node3D" parent="."]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -3.1377, 0.8, -2.43381)
+
+[node name="LaserGun" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -4.28983, -0.0673804, -2.43381)
+mesh = ExtResource("1_4k5p6")
+
+[node name="LaserOrigin" type="Node3D" parent="LaserGun"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 10.0513, 8, 0)
+
+[node name="RayCast3D" type="RayCast3D" parent="LaserGun"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 10.5812, 8, 0)
+target_position = Vector3(0, 100, 0)
+script = ExtResource("2_jin7a")
+
+[node name="BeamMesh" type="MeshInstance3D" parent="LaserGun/RayCast3D"]
+mesh = SubResource("CylinderMesh_15umw")
+surface_material_override/0 = SubResource("StandardMaterial3D_b7ay4")
+
+[node name="EndParticles" parent="LaserGun/RayCast3D" instance=ExtResource("3_gkrqf")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+amount = 31
+
+[node name="Mirror" type="MeshInstance3D" parent="." node_paths=PackedStringArray("beam_mesh", "end_particles", "rayCast", "rayCastPiVot", "hit_vfx")]
+transform = Transform3D(-3.86192e-09, -0.0883504, 0.0468423, 0.1, -4.37114e-09, 1.07009e-15, 2.04754e-09, 0.0468423, 0.0883504, 1.26082, 0.736148, -2.43226)
+mesh = ExtResource("4_jin7a")
+script = ExtResource("5_jin7a")
+beam_mesh = NodePath("RayCast3D/BeamMesh")
+end_particles = NodePath("RayCast3D/EndParticles")
+rayCast = NodePath("RayCast3D")
+rayCastPiVot = NodePath("Pivot")
+hit_vfx = NodePath("RayCast3D/Reflex2")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Mirror"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Mirror/StaticBody3D"]
+transform = Transform3D(1, -1.42109e-14, 1.43885e-13, 3.73035e-14, 1, -3.57628e-07, 1.06581e-14, 3.57628e-07, 1, 0.00127554, 0.0473595, -0.0516071)
+shape = SubResource("BoxShape3D_wh8if")
+
+[node name="RayCast3D" type="RayCast3D" parent="Mirror"]
+transform = Transform3D(1, 9.31323e-09, -1.62981e-08, -9.31322e-09, 1, 2.23517e-07, 1.62981e-08, -2.23517e-07, 1, -0.000483751, 0.0908597, -0.0241207)
+target_position = Vector3(0, 100, 0)
+
+[node name="BeamMesh" type="MeshInstance3D" parent="Mirror/RayCast3D"]
+transform = Transform3D(1, -8.88178e-16, 0, 8.88178e-16, 1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("CylinderMesh_jin7a")
+surface_material_override/0 = SubResource("StandardMaterial3D_b7ay4")
+
+[node name="EndParticles" parent="Mirror/RayCast3D" instance=ExtResource("3_gkrqf")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+amount = 31
+
+[node name="Reflex2" type="Node3D" parent="Mirror/RayCast3D"]
+transform = Transform3D(10, 5.68434e-14, -7.10543e-14, -2.84217e-14, 10, -9.53674e-07, 2.84217e-14, 9.53674e-07, 10, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Mirror/RayCast3D/Reflex2"]
+transform = Transform3D(0.7, 0, 1.77636e-15, 8.88178e-16, -5.96046e-08, -0.7, 8.88178e-16, 0.7, -5.96046e-08, 0, 0, 0)
+visible = false
+mesh = SubResource("CapsuleMesh_4k5p6")
+
+[node name="Pivot" type="Node3D" parent="Mirror"]
+transform = Transform3D(1, -1.11759e-08, 3.72529e-09, 0, -2.98023e-08, 1, 7.45058e-09, -1, -8.9407e-08, -0.000483871, 0.0908597, -0.0241207)
+
+[node name="Safebox" parent="." instance=ExtResource("5_3bh7u")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.207911, 0.251008, -0.822364)
+
+[editable path="Safebox"]

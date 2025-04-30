@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://t2ihfucmnf7r"]
+
+[ext_resource type="PackedScene" uid="uid://bv14xk3mk3v2h" path="res://Nai/Scenes/end_particles.tscn" id="1_suu6c"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_kvf05"]
+top_radius = 0.05
+bottom_radius = 0.05
+height = 0.05
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_suu6c"]
+transparency = 1
+albedo_color = Color(1, 0, 0, 1)
+emission_enabled = true
+emission = Color(1, 0, 0, 1)
+emission_energy_multiplier = 16.0
+
+[node name="BeamMesh" type="MeshInstance3D"]
+mesh = SubResource("CylinderMesh_kvf05")
+surface_material_override/0 = SubResource("StandardMaterial3D_suu6c")
+
+[node name="EndParticles" parent="." instance=ExtResource("1_suu6c")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+amount = 31
