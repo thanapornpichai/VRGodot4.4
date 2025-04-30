@@ -3,27 +3,42 @@ extends RayCast3D
 @onready var beam_mesh      : MeshInstance3D = $BeamMesh
 @onready var end_particles  : GPUParticles3D = $EndParticles
 
+var start_locked := false
+var start_world  : Vector3
+
 var tween : Tween
 
-func _process(_delta: float) -> void:
-	# ให้ RayCast คำนวณใหม่ทุกเฟรม
+func _process(_delta):
 	force_raycast_update()
-	
+
 	if is_colliding():
-		var hit_local : Vector3 = to_local(get_collision_point())
-		laser_activate(hit_local)
-		
-		var incident : Vector3 = (get_collision_point() - global_transform.origin).normalized()
-		var normal   : Vector3 = get_collision_normal().normalized()
-		var reflect  : Vector3 = incident.reflect(normal)          # ← ทิศสะท้อน
+		var hit_world = get_collision_point()
 
-		var target = get_collider()
-		var root = target.get_parent()
+		if !start_locked:
+			start_locked = true
+			start_world = global_transform.origin
+
+		var end_local = to_local(hit_world)
+		laser_activate(end_local, 0.15)
+
+		var inc  = (hit_world - start_world).normalized()
+		var nrm  = get_collision_normal().normalized()
+		var refl = inc.reflect(nrm)
+
+		var root = get_collider().get_parent()
 		if root and root.has_method("OnLaserHit"):
-			root.OnLaserHit(get_collision_point(),reflect)
+			root.OnLaserHit(hit_world, refl)
 
+	else:
+		# ไม่ชนอะไรเลย → ยิงเต็มระยะไปตาม target_position
+		if !start_locked:
+			start_locked = true
+			start_world = global_transform.origin
 
-# ----------------- เลเซอร์ -----------------
+		var max_reach_world = global_transform.origin + global_transform.basis.y * 100.0
+		var end_local = to_local(max_reach_world)
+		laser_activate(end_local, 0.05)
+
 func laser_activate(hit_local: Vector3, time := 0.15):
 	# hit_local.y คือตำแหน่งตามแกน Y ของ RayCast
 	beam_mesh.mesh.height   = hit_local.y           # ยืดความสูงทรงกระบอก

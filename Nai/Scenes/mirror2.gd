@@ -5,6 +5,10 @@ extends MeshInstance3D
 @export var rayCast : RayCast3D
 @export var rayCastPiVot : Node3D
 @export var hit_vfx: Node3D
+var pivot_locked := false
+
+var start_locked := false
+var start_world  : Vector3
 
 @export var m_rot_degrees := 45
 var current_degrees := 0
@@ -14,9 +18,22 @@ var tween : Tween
 
 func _process(_delta):
 	rayCast.force_raycast_update()
+
 	if rayCast.is_colliding():
-		var hit_local : Vector3 = to_local(rayCast.get_collision_point())
-		laser_activate(hit_local)
+		var hit_world = rayCast.get_collision_point()
+		print(hit_world)
+		print(to_local(hit_world))
+
+		if !start_locked:
+			start_locked = true
+			start_world = global_transform.origin
+
+		var end_local = to_local(hit_world)
+		laser_activate(end_local, 0.15)
+	else:
+		var max_reach_world = global_transform.origin + global_transform.basis.y * 100.0
+		var end_local = to_local(max_reach_world)
+		laser_activate(end_local, 0.05)
 		
 	if Input.is_action_pressed("Naitest3") and current_degrees <  m_rot_degrees:
 		current_degrees += 45
@@ -25,6 +42,7 @@ func _process(_delta):
 	if Input.is_action_pressed("Naitest4") and current_degrees > -m_rot_degrees:
 		current_degrees -= 45
 		update_rotation()
+	
 
 func update_rotation():
 	rotation_degrees.y = current_degrees
@@ -56,11 +74,14 @@ func deactivate(time := 0.15):
 	visible = false
 	end_particles.emitting = false
 	
-func OnLaserHit(hit_position : Vector3, dir : Vector3):
-	var local_hit_position = to_local(hit_position)
-	rayCastPiVot.global_position = hit_position
-	rayCastPiVot.look_at(rayCastPiVot.global_position + dir, Vector3.UP)
+func OnLaserHit(hit_pos : Vector3, dir : Vector3):
+	# ล็อก pivot แค่ครั้งแรก
+	rayCast.global_position = hit_pos   # จุดกำเนิดใหม่
+	hit_vfx.global_position = hit_pos
+	pivot_locked = true
+	
+	# หมุนตามทิศสะท้อนทุกครั้ง
+	rayCast.look_at(hit_pos + dir, Vector3.UP)
+	rayCast.rotate_object_local(Vector3.RIGHT, deg_to_rad(90))
 
-	hit_vfx.global_position = hit_position
 	hit_vfx.look_at(hit_vfx.global_position + dir, Vector3.UP)
-	print(hit_vfx.rotation)
