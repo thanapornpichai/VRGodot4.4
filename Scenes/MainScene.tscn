@@ -1,10 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://bdxt84n3f5hyl"]
+[gd_scene load_steps=13 format=3 uid="uid://bdxt84n3f5hyl"]
 
 [ext_resource type="Script" uid="uid://tbh5wu80s6x6" path="res://Scripts/GameManager.cs" id="1_7rqgy"]
 [ext_resource type="PackedScene" uid="uid://dinmhn3cmls06" path="res://Scenes/Elevator.tscn" id="1_hpc76"]
 [ext_resource type="PackedScene" uid="uid://bg5dhuw1jx001" path="res://Scenes/Floors/Scene2_Floor2.tscn" id="3_y4jh7"]
 [ext_resource type="PackedScene" uid="uid://bk10ug2j36i8r" path="res://Scenes/Floors/Scene1_Floor4.tscn" id="4_7rqgy"]
+[ext_resource type="PackedScene" uid="uid://cghew80d8e872" path="res://Scenes/Floors/Scene3_Floor5.tscn" id="4_f140w"]
 [ext_resource type="Script" uid="uid://ch47acqybk1sk" path="res://Scripts/XRViewport.cs" id="4_q68mp"]
+[ext_resource type="PackedScene" uid="uid://box148mntjlle" path="res://Scenes/Floors/Scene4_Floor3.tscn" id="5_0iob3"]
 [ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://addons/fpc/character.tscn" id="6_f140w"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tr2i4"]
@@ -27,7 +29,7 @@ size = Vector3(1, 1.83649, 1.31494)
 script = ExtResource("1_7rqgy")
 _currentFloor = NodePath("Scene1_Floor4")
 FloorContainerPath = NodePath("ElevatorContainer")
-SceneList = Array[PackedScene]([ExtResource("4_7rqgy"), ExtResource("3_y4jh7")])
+SceneList = Array[PackedScene]([ExtResource("4_7rqgy"), ExtResource("3_y4jh7"), ExtResource("4_f140w"), ExtResource("5_0iob3")])
 Elevator = NodePath("Elevator")
 
 [node name="XRController" type="Node3D" parent="."]

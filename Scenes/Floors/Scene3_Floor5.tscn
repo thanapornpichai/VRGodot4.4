@@ -22,22 +22,28 @@ script = ExtResource("1_31cuc")
 [node name="SimpleFloor" parent="." instance=ExtResource("2_75sb2")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4.80001, -0.0999999, 16.1663)
 
-[node name="RoomNameBoard" parent="SimpleFloor" index="8"]
+[node name="RoomNameBoard" parent="SimpleFloor" index="9"]
 transform = Transform3D(1, 4.37114e-08, -4.37053e-08, -4.37114e-08, 0.000139713, -1, -4.37053e-08, 1, 0.000139713, 45.7933, 1.97877, -5.86651)
 
-[node name="Board5" parent="SimpleFloor" index="13"]
+[node name="Board5" parent="SimpleFloor" index="14"]
 transform = Transform3D(0.951315, -0.30822, 2.12809e-09, 0.30822, 0.951315, -1.34727e-08, 2.12809e-09, 1.34727e-08, 1, 0.457405, 0.60448, -2.48907)
 
-[node name="Board6" parent="SimpleFloor" index="14"]
+[node name="Board6" parent="SimpleFloor" index="15"]
 transform = Transform3D(-0.981591, -0.190976, 0.00283003, -4.37066e-08, 0.0148173, 0.99989, -0.190997, 0.981483, -0.0145445, -12.1658, 0.211084, -6.50084)
 
-[node name="Board7" parent="SimpleFloor" index="15"]
+[node name="Board7" parent="SimpleFloor" index="16"]
 transform = Transform3D(-0.881913, 0.471412, -8.22611e-08, 0.471412, 0.881913, 2.06061e-08, 8.22611e-08, -2.06061e-08, -1, -9.65829, 0.798962, -6.91406)
 
-[node name="Door6" parent="SimpleFloor" index="25"]
+[node name="Door6" parent="SimpleFloor" index="26"]
 visible = false
 
-[node name="Door7" parent="SimpleFloor" index="26"]
+[node name="CollisionShape3D" parent="SimpleFloor/Door6/StaticBody3D" index="0"]
+disabled = true
+
+[node name="CollisionShape3D2" parent="SimpleFloor/Door6/StaticBody3D" index="1"]
+disabled = true
+
+[node name="Door7" parent="SimpleFloor" index="27"]
 transform = Transform3D(0.714131, 0, 0.700013, 0, 1, 0, -0.700013, 0, 0.714131, 46.5183, 0.0899995, -4.60361)
 
 [node name="Light01" parent="SimpleFloor/Light01" index="0" node_paths=PackedStringArray("_light")]
@@ -84,7 +90,7 @@ shadow_opacity = 0.2
 omni_range = 10.0
 omni_attenuation = 0.8
 
-[node name="Light03" parent="SimpleFloor" index="35" node_paths=PackedStringArray("_light")]
+[node name="Light03" parent="SimpleFloor" index="36" node_paths=PackedStringArray("_light")]
 script = ExtResource("4_3fasx")
 _light = NodePath("Light01/OmniLight3D")
 
@@ -146,6 +152,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.05902, -0.258423)
 shape = SubResource("BoxShape3D_cuojo")
 
 [editable path="SimpleFloor"]
+[editable path="SimpleFloor/Door6"]
 [editable path="SimpleFloor/Light01"]
 [editable path="SimpleFloor/Light04"]
 [editable path="SimpleFloor/Light05"]
