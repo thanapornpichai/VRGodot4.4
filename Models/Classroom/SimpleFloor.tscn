@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://ddneys6hhnini"]
+[gd_scene load_steps=16 format=3 uid="uid://ddneys6hhnini"]
 
 [ext_resource type="PackedScene" uid="uid://c3ynhdje3m5r3" path="res://Models/Classroom/class_room.tscn" id="1_vt062"]
 [ext_resource type="PackedScene" uid="uid://dojmkq5eymgqk" path="res://Models/Classroom/StairConnector/stair_connector.tscn" id="2_oigck"]
@@ -12,12 +12,24 @@
 [ext_resource type="PackedScene" uid="uid://cqc8mss40x4xe" path="res://Models/Classroom/Pillar/Pillar.tscn" id="10_drj1l"]
 [ext_resource type="PackedScene" uid="uid://c6afsp1shlypy" path="res://Scenes/Lights/Light01.tscn" id="11_kv0hi"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_kv0hi"]
+size = Vector3(8.29346, 0.60144, 7.50891)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cwsir"]
+size = Vector3(8.80765, 0.719757, 8.24963)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wpl5c"]
+size = Vector3(7.76807, 4.91147, 1.24475)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pxith"]
+size = Vector3(2.04321, 4.61893, 1.93237)
+
 [node name="SimpleFloor" type="Node3D"]
 
 [node name="ClassRoom" parent="." instance=ExtResource("1_vt062")]
 
 [node name="ClassRoom2" parent="." instance=ExtResource("1_vt062")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.9865, -4.76837e-07, -0.000176907)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 1.7053e-13, -4.07454e-10)
 
 [node name="ClassRoom3" parent="." instance=ExtResource("1_vt062")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 0)
@@ -30,6 +42,45 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.2, -7.19997, 5.6)
 
 [node name="StairConnector2" parent="." instance=ExtResource("2_oigck")]
 transform = Transform3D(-1, 0, 0, 0, 1, -1.50996e-07, 0, 1.50996e-07, 1, 41.8, -3.57628e-07, -5)
+
+[node name="CollisionShape3D" parent="StairConnector2/StairConnector_001/StaticBody3D" index="0"]
+disabled = true
+
+[node name="CollisionShape3D4" parent="StairConnector2/StairConnector_001/StaticBody3D" index="1"]
+disabled = true
+
+[node name="CollisionShape3D2" parent="StairConnector2/StairConnector_001/StaticBody3D" index="2"]
+disabled = true
+
+[node name="CollisionShape3D3" parent="StairConnector2/StairConnector_001/StaticBody3D" index="3"]
+disabled = true
+
+[node name="CollisionShape3D5" parent="StairConnector2/StairConnector_001/StaticBody3D" index="4"]
+disabled = true
+
+[node name="CollisionShape3D6" parent="StairConnector2/StairConnector_001/StaticBody3D" index="5"]
+disabled = true
+
+[node name="CollisionShape3D7" parent="StairConnector2/StairConnector_001/StaticBody3D" index="6"]
+disabled = true
+
+[node name="StaticBody3D" type="StaticBody3D" parent="StairConnector2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StairConnector2/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0476074, -0.19928, 1.10211)
+shape = SubResource("BoxShape3D_kv0hi")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StairConnector2/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0701141, 4.22915, 1.10657)
+shape = SubResource("BoxShape3D_cwsir")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StairConnector2/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.148193, 1.95573, -2.51825)
+shape = SubResource("BoxShape3D_wpl5c")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="StairConnector2/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.01648, 1.80946, 2.76575)
+shape = SubResource("BoxShape3D_pxith")
 
 [node name="Stair2" parent="." instance=ExtResource("3_o3a1g")]
 transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, 1, 40.8, -7.19997, 5.6)
@@ -121,6 +172,7 @@ transform = Transform3D(-4.37305e-08, 0, -1.00044, 0, 1.00044, 0, 1.00044, 0, -4
 [node name="Light03" parent="." instance=ExtResource("11_kv0hi")]
 transform = Transform3D(-4.37305e-08, 0, -1.00044, 0, 1.00044, 0, 1.00044, 0, -4.37305e-08, 42.2345, 3.72644, -4.80001)
 
+[editable path="StairConnector2"]
 [editable path="Light01"]
 [editable path="Light04"]
 [editable path="Light05"]

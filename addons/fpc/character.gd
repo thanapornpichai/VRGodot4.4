@@ -11,7 +11,7 @@ extends CharacterBody3D
 ## The settings for the character's movement and feel.
 @export_category("Character")
 ## The speed that the character moves at without crouching or sprinting.
-@export var base_speed : float = 3.0
+@export var base_speed : float = 6.0
 ## The speed that the character moves at when sprinting.
 @export var sprint_speed : float = 6.0
 ## The speed that the character moves at when crouching.

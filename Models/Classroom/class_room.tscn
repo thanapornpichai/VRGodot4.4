@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cl0ltuo0te1i1" path="res://Models/Classroom/Windows/windows.tscn" id="3_giqsi"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_giqsi"]
-size = Vector3(15.0393, 14.7784, 0.0988615)
+size = Vector3(15.0393, 14.7784, 0.0953292)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fucn1"]
 size = Vector3(15.3189, 0.202576, 3.99585)
@@ -43,7 +43,7 @@ material_override = ExtResource("2_giqsi")
 [node name="StaticBody3D" type="StaticBody3D" parent="ClassRoom2_461_001" index="0"]
 
 [node name="CollisionFloor" type="CollisionShape3D" parent="ClassRoom2_461_001/StaticBody3D" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.294312, 7.16883, 1.44654)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.294, 7.169, 1.447)
 shape = SubResource("BoxShape3D_giqsi")
 
 [node name="CollisionCelling" type="CollisionShape3D" parent="ClassRoom2_461_001/StaticBody3D" index="1"]

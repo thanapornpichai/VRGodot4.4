@@ -23,6 +23,9 @@ script = ExtResource("1_l4gbl")
 [node name="SimpleFloor" parent="." instance=ExtResource("2_eiqug")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4.80001, -0.0999999, 16.1663)
 
+[node name="StaticBody3D" parent="SimpleFloor/StairConnector2/StairConnector_001" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, -5.16277e-22, 0, -5.16277e-22, 1, 0, -13.4712, 3.64333e-06)
+
 [node name="RoomNameBoard" parent="SimpleFloor" index="8"]
 transform = Transform3D(1, 7.42355e-09, -6.34991e-10, -7.42355e-09, 0.985473, -0.169831, -6.34987e-10, 0.169831, 0.985473, 45.7933, 2.74884, -4.76648)
 
@@ -150,6 +153,7 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 
 visible = false
 
 [editable path="SimpleFloor"]
+[editable path="SimpleFloor/StairConnector2"]
 [editable path="SimpleFloor/Light01"]
 [editable path="SimpleFloor/Light04"]
 [editable path="SimpleFloor/Light05"]
