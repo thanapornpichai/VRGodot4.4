@@ -32,6 +32,10 @@ enabled=PackedStringArray("res://addons/MagicaVoxel_Importer_with_Extensions/plu
 
 import/blender/enabled=false
 
+[global_group]
+
+Offer=""
+
 [input]
 
 LoadSceneTest={
