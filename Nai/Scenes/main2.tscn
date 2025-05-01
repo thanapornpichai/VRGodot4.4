@@ -84,14 +84,13 @@ surface_material_override/0 = SubResource("StandardMaterial3D_b7ay4")
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
 amount = 31
 
-[node name="Mirror" type="MeshInstance3D" parent="." node_paths=PackedStringArray("beam_mesh", "end_particles", "rayCast", "rayCastPiVot", "hit_vfx")]
+[node name="Mirror" type="MeshInstance3D" parent="." node_paths=PackedStringArray("beam_mesh", "end_particles", "rayCast", "hit_vfx")]
 transform = Transform3D(-3.86192e-09, -0.0883504, 0.0468423, 0.1, -4.37114e-09, 1.07009e-15, 2.04754e-09, 0.0468423, 0.0883504, 1.26082, 0.736148, -2.43226)
 mesh = ExtResource("4_jin7a")
 script = ExtResource("5_jin7a")
 beam_mesh = NodePath("RayCast3D/BeamMesh")
 end_particles = NodePath("RayCast3D/EndParticles")
 rayCast = NodePath("RayCast3D")
-rayCastPiVot = NodePath("Pivot")
 hit_vfx = NodePath("RayCast3D/Reflex2")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Mirror"]
