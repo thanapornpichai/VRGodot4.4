@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cb1uvx0p14neg"]
 
 [ext_resource type="ArrayMesh" uid="uid://bnhqyeb6u4nxp" path="res://Nai/Asssets/Mirror.vox" id="1_tarca"]
-[ext_resource type="Script" uid="uid://ch0cgdai317" path="res://Nai/Scenes/mirror.gd" id="2_wh8if"]
+[ext_resource type="Script" uid="uid://ch0cgdai317" path="res://Nai/Scripts/mirror.gd" id="2_wh8if"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wh8if"]
 size = Vector3(1.25, 0.1, 1)
