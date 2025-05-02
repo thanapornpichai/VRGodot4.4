@@ -52,10 +52,7 @@ transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866026, -
 shadow_enabled = true
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-0.0502667, -0.385428, 0.921368, 0.0909017, 0.916939, 0.388535, -0.99459, 0.103284, -0.0110554, 3.89386, 2.58077, 2.04055)
-keep_aspect = 0
-current = true
-fov = 117.4
+transform = Transform3D(0.793754, -0.302327, 0.527781, 0.0909018, 0.916939, 0.388535, -0.601408, -0.260425, 0.755306, 2.91434, 2.58077, 7.37973)
 
 [node name="Safebox" parent="." instance=ExtResource("4_qu6du")]
 transform = Transform3D(-0.187939, 0, -0.068404, 0, 0.2, 0, 0.068404, 0, -0.187939, 1.33056, 0.1, 6.243)
@@ -123,6 +120,7 @@ transform = Transform3D(1, -1.11759e-08, 3.72529e-09, 0, -2.98023e-08, 1, 7.4505
 
 [node name="ClassRoom2" parent="." instance=ExtResource("6_hiwvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.017, 0, 0)
+visible = false
 
 [node name="StaticBody3D" parent="ClassRoom2/ClassRoom2_593_001" index="0"]
 visible = false

@@ -8,35 +8,33 @@ extends MeshInstance3D
 var tween : Tween
 var safe_box_hit_time := 0.0
 var safe_box : Node = null
+var is_open = false
 
 func _process(delta):
 	rayCast.force_raycast_update()
-
 	if rayCast.is_colliding():
 		var collider = rayCast.get_collider()
 		var cap  = collider.get_parent()
 		var safebox = collider.get_parent().get_parent()
 		var hit_world = rayCast.get_collision_point()
 		var end_local = to_local(hit_world)
-
-		if safebox.is_in_group("safe_boxes"):
-			safe_box = safebox  # ✅ FIXED HERE
-			safe_box_hit_time += delta
-			print(safe_box_hit_time)
-		else:
-			safe_box_hit_time = 0.0
+		
+		if is_open:
+			deactivate()
+		elif not is_open:
+			laser_activate(end_local, 0.15)
 
 		if safe_box_hit_time >= 10.0:
 			if safe_box and safe_box.has_method("open_box"):
+				is_open = true
+				print(is_open)
 				safe_box.open_box()
-
-		laser_activate(end_local, 0.15)
-		
-	else:
-		safe_box_hit_time = 0.0
-		var max_reach_world = global_transform.origin + global_transform.basis.y * 100.0
-		var end_local = to_local(max_reach_world)
-		laser_activate(end_local, 0.05)
+				
+		if safebox.is_in_group("safe_boxes"):
+			safe_box = safebox
+			safe_box_hit_time += delta
+		else:
+			safe_box_hit_time = 0.0
 
 func laser_activate(hit_local: Vector3, time := 0.15):
 	beam_mesh.mesh.height = hit_local.y
