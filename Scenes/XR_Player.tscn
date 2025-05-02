@@ -1,8 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://bpfinjadhqgd1"]
+[gd_scene load_steps=9 format=3 uid="uid://bpfinjadhqgd1"]
 
 [ext_resource type="PackedScene" uid="uid://bq86r4yll8po" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_fullglove_low.tscn" id="1_s0r26"]
 [ext_resource type="PackedScene" uid="uid://xqimcf20s2jp" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_fullglove_low.tscn" id="2_3fwy5"]
 [ext_resource type="Material" uid="uid://dtjv8ydq0it37" path="res://Materials/Hand.tres" id="2_hpbtn"]
+[ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="3_nk0f1"]
+[ext_resource type="PackedScene" uid="uid://b4ysuy43poobf" path="res://addons/godot-xr-tools/functions/function_pickup.tscn" id="4_pykws"]
+[ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="5_pykws"]
+[ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="6_uyhp5"]
+[ext_resource type="Script" uid="uid://dypfbhlsxej6x" path="res://addons/godot-xr-tools/player/player_body.gd" id="7_t26s7"]
 
 [node name="XrPlayer" type="Node3D"]
 
@@ -18,8 +23,25 @@ tracker = &"left_hand"
 [node name="LeftHand" parent="XROrigin3D/LeftHand" instance=ExtResource("1_s0r26")]
 hand_material_override = ExtResource("2_hpbtn")
 
+[node name="MovementDirect" parent="XROrigin3D/LeftHand" instance=ExtResource("3_nk0f1")]
+strafe = true
+
+[node name="FunctionPickup" parent="XROrigin3D/LeftHand" instance=ExtResource("4_pykws")]
+
 [node name="RightHand" type="XRController3D" parent="XROrigin3D"]
 tracker = &"right_hand"
 
 [node name="RightHand" parent="XROrigin3D/RightHand" instance=ExtResource("2_3fwy5")]
 hand_material_override = ExtResource("2_hpbtn")
+
+[node name="MovementTurn" parent="XROrigin3D/RightHand" instance=ExtResource("5_pykws")]
+
+[node name="FunctionPickup" parent="XROrigin3D/RightHand" instance=ExtResource("4_pykws")]
+
+[node name="PlayerBody" type="CharacterBody3D" parent="XROrigin3D" groups=["player_body"] instance=ExtResource("6_uyhp5")]
+process_priority = -100
+process_physics_priority = -100
+top_level = true
+collision_layer = 524288
+collision_mask = 1023
+script = ExtResource("7_t26s7")

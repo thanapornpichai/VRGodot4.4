@@ -5,15 +5,13 @@ public partial class Scene3KumanThong : BaseFloorController
 {
 	[Export]
 	public Area3D area;
-	private Node3D _offerNode3D;
-	private Node3D _hintNode3D;
+	[Export] public Node3D offerNode3D;
+	[Export] public Node3D hint1Node3D;
+	[Export] public Node3D hint2Node3D;
 	private bool _triggered = false;
 
-	[Export] public double MaxTimer = 0;
-	
 	public override void _Ready()
 	{
-		_offerNode3D.Visible = false;
 		SetProcess(true);
 		
 		area.Connect("body_entered", new Callable(this, nameof(OnBodyEntered)));
@@ -21,11 +19,11 @@ public partial class Scene3KumanThong : BaseFloorController
 
 	private void OnBodyEntered(Node3D body)
 	{
-		if (body.IsInGroup("Offer"))
+		if (body.IsInGroup("Player"))
 		{
 			if (!_triggered)
 			{
-				_offerNode3D.Visible = true;
+				offerNode3D.Visible = true;
 				body.Visible = false;
 				_triggered = true;
 				GD.Print("Player give offer!");
@@ -38,7 +36,8 @@ public partial class Scene3KumanThong : BaseFloorController
 	{
 		GD.Print("Waiting 2 seconds...");
 		await ToSignal(GetTree().CreateTimer(2), "timeout");
-		_hintNode3D.Visible = true;
+		//hint1Node3D.Visible = false;
+		//hint2Node3D.Visible = true;
 		GD.Print("Show hint!");
 		Scene3FloorController.Instance.OnFinishFloor();
 	}

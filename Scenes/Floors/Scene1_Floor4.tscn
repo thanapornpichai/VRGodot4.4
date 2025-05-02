@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bk10ug2j36i8r"]
+[gd_scene load_steps=10 format=3 uid="uid://bk10ug2j36i8r"]
 
 [ext_resource type="PackedScene" uid="uid://ddneys6hhnini" path="res://Models/Classroom/SimpleFloor.tscn" id="1_cw5vt"]
 [ext_resource type="Script" uid="uid://37xaisjvtc8k" path="res://Scripts/Scene1FloorController.cs" id="1_embbr"]
@@ -7,6 +7,7 @@
 [ext_resource type="Material" uid="uid://k4y1b15kqekx" path="res://Models/Board/BoardBlack.tres" id="4_gqjfe"]
 [ext_resource type="PackedScene" uid="uid://dkb1oeb0htpsl" path="res://Models/Chair/chair.tscn" id="5_gqjfe"]
 [ext_resource type="PackedScene" uid="uid://bosp3baam0wet" path="res://Models/Desk/desk.tscn" id="5_xs76b"]
+[ext_resource type="PackedScene" uid="uid://cf8kpkve2mmja" path="res://cube.tscn" id="8_add8t"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_uk6cp"]
 size = Vector3(15.6099, 5.39844, 4.25537)
@@ -17,7 +18,7 @@ script = ExtResource("1_embbr")
 [node name="SimpleFloor" parent="." instance=ExtResource("1_cw5vt")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4.80001, -0.0999999, 16.1663)
 
-[node name="Door5" parent="SimpleFloor" index="24"]
+[node name="Door5" parent="SimpleFloor" index="25"]
 visible = false
 
 [node name="CollisionShape3D" parent="SimpleFloor/Door5/StaticBody3D" index="0"]
@@ -28,7 +29,7 @@ disabled = true
 visible = false
 disabled = true
 
-[node name="Door6" parent="SimpleFloor" index="25"]
+[node name="Door6" parent="SimpleFloor" index="26"]
 visible = false
 
 [node name="CollisionShape3D" parent="SimpleFloor/Door6/StaticBody3D" index="0"]
@@ -337,6 +338,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.29444, 24.5266)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.54858, 0, 1.41119)
 shape = SubResource("BoxShape3D_uk6cp")
+
+[node name="PickableObject" parent="." instance=ExtResource("8_add8t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.70281, 1.26511, 11.9682)
+
+[node name="PickableObject2" parent="." instance=ExtResource("8_add8t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.01465, 1.26511, 11.9419)
 
 [editable path="SimpleFloor"]
 [editable path="SimpleFloor/Door5"]

@@ -13,7 +13,6 @@ public partial class Scene3FloorController : BaseFloorController
 	
 	public override void _Ready()
 	{
-		_area = null;
 		if (Instance == null)
 		{
 			Instance = this;
@@ -28,8 +27,10 @@ public partial class Scene3FloorController : BaseFloorController
 
 	public void OnFinishFloor()
 	{
+		GD.Print("OnFinishScene3");
 		_area.Visible = true;
 		_area.Monitoring = true;
+		_finishedFloor = true;
 		
 		_area.Connect("body_entered", new Callable(this, nameof(OnBodyEntered)));
 		_area.Connect("body_exited", new Callable(this, nameof(OnBodyExited)));
