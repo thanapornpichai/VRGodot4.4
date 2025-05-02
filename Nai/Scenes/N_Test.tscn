@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://c30pdv1wwu405"]
+
+[ext_resource type="PackedScene" uid="uid://cxqdu6atifje6" path="res://Nai/Scenes/box.tscn" id="1_hj615"]
+[ext_resource type="PackedScene" uid="uid://dt111ydjcyy1b" path="res://Nai/Scenes/laser.tscn" id="2_nilsb"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hj615"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_nilsb"]
+sky_material = SubResource("ProceduralSkyMaterial_hj615")
+
+[sub_resource type="Environment" id="Environment_4dr5k"]
+background_mode = 2
+sky = SubResource("Sky_nilsb")
+tonemap_mode = 2
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_dxil7"]
+size = Vector2(5, 5)
+
+[node name="Main" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_4dr5k")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Floor" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00958526, -0.25, 0)
+mesh = SubResource("PlaneMesh_dxil7")
+
+[node name="Box_01" parent="." instance=ExtResource("1_hj615")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+
+[node name="Box_02" parent="." instance=ExtResource("1_hj615")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="Laser" parent="." instance=ExtResource("2_nilsb")]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 1, 0, 0)
+target_position = Vector3(0, -50, 0)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.991204, 0.132343, 0, -0.132343, 0.991204, -0.0377808, 0.157308, 1.63735)
+fov = 63.1613
