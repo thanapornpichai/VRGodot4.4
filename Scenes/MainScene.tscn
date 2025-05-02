@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bdxt84n3f5hyl"]
+[gd_scene load_steps=15 format=3 uid="uid://bdxt84n3f5hyl"]
 
 [ext_resource type="Script" uid="uid://tbh5wu80s6x6" path="res://Scripts/GameManager.cs" id="1_7rqgy"]
 [ext_resource type="PackedScene" uid="uid://dinmhn3cmls06" path="res://Scenes/Elevator.tscn" id="1_hpc76"]
@@ -8,6 +8,8 @@
 [ext_resource type="Script" uid="uid://ch47acqybk1sk" path="res://Scripts/XRViewport.cs" id="4_q68mp"]
 [ext_resource type="PackedScene" uid="uid://box148mntjlle" path="res://Scenes/Floors/Scene4_Floor3.tscn" id="5_0iob3"]
 [ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://addons/fpc/character.tscn" id="6_f140w"]
+[ext_resource type="AudioStream" uid="uid://ds3awsvgqfpcd" path="res://Sound/Amb_darkroom.wav" id="9_0iob3"]
+[ext_resource type="AudioStream" uid="uid://bqw5oykfvjp4g" path="res://Sound/flickeringlight-90411.mp3" id="10_4b75m"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tr2i4"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -44,7 +46,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.198458, 0)
 environment = SubResource("Environment_7rqgy")
 
 [node name="Character" parent="." groups=["Player"] instance=ExtResource("6_f140w")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.750499, 0, 13.2181)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.750499, 0, -0.239073)
 slide_on_ceiling = false
 floor_stop_on_slope = true
 floor_block_on_wall = true
@@ -57,3 +59,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.859781, 0)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Scene1_Floor4/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.418243, -0.12915)
 shape = SubResource("BoxShape3D_7rqgy")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_0iob3")
+volume_db = -17.263
+autoplay = true
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.70591, 3.25449, 66.2119)
+stream = ExtResource("10_4b75m")
+volume_db = 18.286
+unit_size = 1.5
+autoplay = true

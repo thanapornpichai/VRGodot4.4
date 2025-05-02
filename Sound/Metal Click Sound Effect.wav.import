@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cyjrajvhp53se"
+path="res://.godot/imported/Metal Click Sound Effect.wav-0c1ab13c2f7ac917d3722b3688288173.sample"
+
+[deps]
+
+source_file="res://Sound/Metal Click Sound Effect.wav"
+dest_files=["res://.godot/imported/Metal Click Sound Effect.wav-0c1ab13c2f7ac917d3722b3688288173.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

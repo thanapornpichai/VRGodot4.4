@@ -14,12 +14,17 @@ public partial class CryptexController : Node
 	[Export] public Node3D firstNumberPosition;
 	[Export] public Node3D secondNumberPosition;
 	[Export] public Node3D thirdNumberPosition;
+	
+	private AudioStreamPlayer3D clickSoundPlayer;
+	private AudioStreamPlayer3D unlockSoundPlayer;
 
 	public override void _Ready()
 	{
 		firstNumber = InstantiateNumber(0, firstNumberPosition);
 		secondNumber = InstantiateNumber(0, secondNumberPosition);
 		thirdNumber = InstantiateNumber(0, thirdNumberPosition);
+		clickSoundPlayer = GetNode<AudioStreamPlayer3D>("ClickSoundPlayer");
+		unlockSoundPlayer = GetNode<AudioStreamPlayer3D>("UnlockSoundPlayer");
 	}
 
 	public void ChangeNumber(int position, int change)
@@ -32,6 +37,8 @@ public partial class CryptexController : Node
 			if (_codeNumbers[position] < 0) _codeNumbers[position] = 9;
 
 			ReplaceNumber(position, _codeNumbers[position]);
+
+			clickSoundPlayer.Play();
 
 			GD.Print($"Updated Code: {_codeNumbers[0]} {_codeNumbers[1]} {_codeNumbers[2]}");
 
@@ -79,6 +86,9 @@ public partial class CryptexController : Node
 	private void UnlockCryptex()
 	{
 		GD.Print("Cryptex Unlocked! You got the key!");
+		
+		unlockSoundPlayer.Play();
+
 	}
 
 	public void OnIncreaseButton1Pressed() => ChangeNumber(0, 1);

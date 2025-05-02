@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dt1hvhfnthyfm"
+path="res://.godot/imported/Open Chest (Minecraft) ｜ Sound Effect.wav-a925995792d633c7ee543f3e96e1fb3e.sample"
+
+[deps]
+
+source_file="res://Sound/Open Chest (Minecraft) ｜ Sound Effect.wav"
+dest_files=["res://.godot/imported/Open Chest (Minecraft) ｜ Sound Effect.wav-a925995792d633c7ee543f3e96e1fb3e.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
