@@ -3,7 +3,6 @@ extends MeshInstance3D
 @export var beam_mesh      : MeshInstance3D
 @export var end_particles  : GPUParticles3D
 @export var rayCast        : RayCast3D
-@export var hit_vfx        : Node3D
 
 var tween : Tween
 var safe_box_hit_time := 0.0
@@ -11,6 +10,7 @@ var safe_box : Node = null
 var is_open = false
 
 func _process(delta):
+	rayCast.exclude_parent = true
 	rayCast.force_raycast_update()
 	if rayCast.is_colliding():
 		var collider = rayCast.get_collider()
