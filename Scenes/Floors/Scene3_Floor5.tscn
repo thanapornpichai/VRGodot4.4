@@ -157,11 +157,10 @@ shadow_opacity = 0.2
 omni_range = 10.0
 omni_attenuation = 2.324
 
-[node name="Kuman Tong_3" type="Node3D" parent="SimpleFloor" node_paths=PackedStringArray("area", "offerNode3D")]
+[node name="Kuman Tong_3" type="Node3D" parent="SimpleFloor" node_paths=PackedStringArray("area")]
 transform = Transform3D(0.998326, 0, -0.0578427, 0, 1, 0, 0.0578427, 0, 0.998326, -8.26926, 0.105958, -6.31888)
 script = ExtResource("5_31cuc")
 area = NodePath("Area3D")
-offerNode3D = NodePath("../../RedWater")
 
 [node name="Guman Tong_3_001" type="MeshInstance3D" parent="SimpleFloor/Kuman Tong_3"]
 transform = Transform3D(0.2, 0, 0, 0, -1.09278e-08, 0.25, 0, -0.25, -1.09278e-08, 0, -4.76837e-07, 0)

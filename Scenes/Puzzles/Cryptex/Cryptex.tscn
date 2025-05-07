@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bv0wy64hudybk"]
+[gd_scene load_steps=13 format=3 uid="uid://bv0wy64hudybk"]
 
 [ext_resource type="Script" uid="uid://0xvymqopke0y" path="res://Scripts/CryptexController.cs" id="1_no3ku"]
 [ext_resource type="PackedScene" uid="uid://db0f3bjv02kd5" path="res://Scenes/Puzzles/Cryptex/Number/Number1.tscn" id="2_e0gyp"]
@@ -12,20 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://b55t1rxjg7b80" path="res://Scenes/Puzzles/Cryptex/Number/Number8.tscn" id="9_o1g02"]
 [ext_resource type="PackedScene" uid="uid://x14kmlp8webs" path="res://Scenes/Puzzles/Cryptex/Number/Number9.tscn" id="10_ebgv8"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_e0gyp"]
-sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
-ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
-
-[sub_resource type="Sky" id="Sky_tpgif"]
-sky_material = SubResource("ProceduralSkyMaterial_e0gyp")
-
-[sub_resource type="Environment" id="Environment_kxv4j"]
-background_mode = 2
-sky = SubResource("Sky_tpgif")
-tonemap_mode = 2
-
 [sub_resource type="BoxMesh" id="BoxMesh_q0vmq"]
-size = Vector3(0.5, 1, 1)
+size = Vector3(0.1, 0.2, 0.2)
 
 [node name="CryptexController" type="Node3D" node_paths=PackedStringArray("firstNumberPosition", "secondNumberPosition", "thirdNumberPosition")]
 script = ExtResource("1_no3ku")
@@ -33,9 +21,6 @@ NumberList = Array[PackedScene]([ExtResource("2_tpgif"), ExtResource("2_e0gyp"),
 firstNumberPosition = NodePath("FirstNumber")
 secondNumberPosition = NodePath("SecoundNumber")
 thirdNumberPosition = NodePath("ThirdNumber")
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_kxv4j")
 
 [node name="Button1" type="Button" parent="."]
 offset_left = 327.0
@@ -78,10 +63,6 @@ offset_top = 200.0
 offset_right = 524.0
 offset_bottom = 224.0
 action_mode = 0
-
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.52394)
-current = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00366962, -0.0240532, -0.900938)

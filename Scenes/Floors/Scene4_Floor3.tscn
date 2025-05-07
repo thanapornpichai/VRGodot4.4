@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://box148mntjlle"]
+[gd_scene load_steps=12 format=3 uid="uid://box148mntjlle"]
 
 [ext_resource type="Script" uid="uid://37xaisjvtc8k" path="res://Scripts/Scene1FloorController.cs" id="1_a4d3q"]
 [ext_resource type="PackedScene" uid="uid://ddneys6hhnini" path="res://Models/Classroom/SimpleFloor.tscn" id="2_xxsgf"]
@@ -7,6 +7,9 @@
 [ext_resource type="ArrayMesh" uid="uid://bgne7aoj26tun" path="res://Models/Light01.vox" id="6_h2osg"]
 [ext_resource type="PackedScene" uid="uid://bosp3baam0wet" path="res://Models/Desk/desk.tscn" id="6_t5ekp"]
 [ext_resource type="PackedScene" uid="uid://dkb1oeb0htpsl" path="res://Models/Chair/chair.tscn" id="7_6bls3"]
+[ext_resource type="PackedScene" uid="uid://b4q7f0kevdoq3" path="res://Nai/Scenes/LaserPuzzle.tscn" id="8_p1u02"]
+[ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://addons/fpc/character.tscn" id="9_xxsgf"]
+[ext_resource type="PackedScene" uid="uid://bv0wy64hudybk" path="res://Scenes/Puzzles/Cryptex/Cryptex.tscn" id="10_t5ekp"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_uk6cp"]
 size = Vector3(15.6099, 5.39844, 4.25537)
@@ -16,6 +19,15 @@ script = ExtResource("1_a4d3q")
 
 [node name="SimpleFloor" parent="." instance=ExtResource("2_xxsgf")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4.80001, -0.0999999, 16.1663)
+
+[node name="Door2" parent="SimpleFloor" index="22"]
+visible = false
+
+[node name="CollisionShape3D" parent="SimpleFloor/Door2/StaticBody3D" index="0"]
+disabled = true
+
+[node name="CollisionShape3D2" parent="SimpleFloor/Door2/StaticBody3D" index="1"]
+disabled = true
 
 [node name="Door3" parent="SimpleFloor" index="23"]
 visible = false
@@ -89,7 +101,27 @@ shadow_enabled = true
 shadow_opacity = 0.2
 omni_range = 10.0
 
-[node name="Light04" type="MeshInstance3D" parent="SimpleFloor/Light04" index="3"]
+[node name="Light06" type="MeshInstance3D" parent="SimpleFloor/Light04" index="3"]
+transform = Transform3D(1, 0, -9.23706e-14, 0, 1, 0, 9.23706e-14, 0, 1, 6.94131, 0, -2.41073)
+mesh = ExtResource("6_h2osg")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="SimpleFloor/Light04/Light06"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.07604, 0)
+shadow_enabled = true
+shadow_opacity = 0.2
+omni_range = 10.0
+
+[node name="Light07" type="MeshInstance3D" parent="SimpleFloor/Light04" index="4"]
+transform = Transform3D(1, 0, -1.06581e-13, 0, 1, 0, 1.06581e-13, 0, 1, 6.94131, 0, 3.25697)
+mesh = ExtResource("6_h2osg")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="SimpleFloor/Light04/Light07"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.07604, 0)
+shadow_enabled = true
+shadow_opacity = 0.2
+omni_range = 10.0
+
+[node name="Light04" type="MeshInstance3D" parent="SimpleFloor/Light04" index="5"]
 transform = Transform3D(1, 0, -9.23706e-14, 0, 1, 0, 9.23706e-14, 0, 1, 6.94131, 0, -32.7767)
 mesh = ExtResource("6_h2osg")
 
@@ -99,7 +131,7 @@ shadow_enabled = true
 shadow_opacity = 0.2
 omni_range = 10.0
 
-[node name="Light05" type="MeshInstance3D" parent="SimpleFloor/Light04" index="4"]
+[node name="Light05" type="MeshInstance3D" parent="SimpleFloor/Light04" index="6"]
 transform = Transform3D(1, 0, -1.06581e-13, 0, 1, 0, 1.06581e-13, 0, 1, 6.94131, 0, -27.1089)
 mesh = ExtResource("6_h2osg")
 
@@ -372,6 +404,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.29444, 54.2227)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.54858, 0, 1.41119)
 shape = SubResource("BoxShape3D_uk6cp")
 
+[node name="LaserPuzzle" parent="." instance=ExtResource("8_p1u02")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.79661, 0.00066494, 48.2442)
+
+[node name="Safebox" parent="LaserPuzzle" index="0"]
+transform = Transform3D(-0.187939, 0, -0.068404, 0, 0.2, 0, 0.068404, 0, -0.187939, 1.33056, 0.1, 3.49133)
+
+[node name="Mirror" parent="LaserPuzzle/Vise" index="0"]
+transform = Transform3D(4.09263e-08, 0.936285, -0.351237, 1, -4.37114e-08, -1.41312e-15, -1.5353e-08, -0.351237, -0.936285, 0.51532, 4.1327, -0.0290947)
+
+[node name="Character" parent="LaserPuzzle/Vise" index="1" instance=ExtResource("9_xxsgf")]
+transform = Transform3D(5, 0, 2.41585e-13, 0, 5, 0, -2.41585e-13, 0, 5, 13.2917, -3.6, -37.7691)
+
+[node name="CryptexController" parent="." instance=ExtResource("10_t5ekp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.30014, 1.35872, 12.6585)
+
 [editable path="SimpleFloor"]
 [editable path="SimpleFloor/Door"]
 [editable path="SimpleFloor/Door2"]
@@ -385,3 +432,5 @@ shape = SubResource("BoxShape3D_uk6cp")
 [editable path="SimpleFloor/Light02"]
 [editable path="SimpleFloor/Light03"]
 [editable path="Board"]
+[editable path="LaserPuzzle"]
+[editable path="LaserPuzzle/Safebox"]
