@@ -36,6 +36,7 @@ import/blender/enabled=false
 
 Offer=""
 Player=""
+PlayerHand=""
 
 [input]
 

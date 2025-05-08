@@ -1,18 +1,24 @@
-[gd_scene load_steps=12 format=3 uid="uid://box148mntjlle"]
+[gd_scene load_steps=13 format=3 uid="uid://box148mntjlle"]
 
 [ext_resource type="Script" uid="uid://37xaisjvtc8k" path="res://Scripts/Scene1FloorController.cs" id="1_a4d3q"]
 [ext_resource type="PackedScene" uid="uid://ddneys6hhnini" path="res://Models/Classroom/SimpleFloor.tscn" id="2_xxsgf"]
 [ext_resource type="PackedScene" uid="uid://ccm70bu4r0y1s" path="res://Models/Board/board.tscn" id="4_p1u02"]
-[ext_resource type="Material" uid="uid://k4y1b15kqekx" path="res://Models/Board/BoardBlack.tres" id="5_xxsgf"]
 [ext_resource type="ArrayMesh" uid="uid://bgne7aoj26tun" path="res://Models/Light01.vox" id="6_h2osg"]
 [ext_resource type="PackedScene" uid="uid://bosp3baam0wet" path="res://Models/Desk/desk.tscn" id="6_t5ekp"]
 [ext_resource type="PackedScene" uid="uid://dkb1oeb0htpsl" path="res://Models/Chair/chair.tscn" id="7_6bls3"]
 [ext_resource type="PackedScene" uid="uid://b4q7f0kevdoq3" path="res://Nai/Scenes/LaserPuzzle.tscn" id="8_p1u02"]
 [ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://addons/fpc/character.tscn" id="9_xxsgf"]
-[ext_resource type="PackedScene" uid="uid://bv0wy64hudybk" path="res://Scenes/Puzzles/Cryptex/Cryptex.tscn" id="10_t5ekp"]
+[ext_resource type="PackedScene" uid="uid://bv0wy64hudybk" path="res://Nai/Cryptex.tscn" id="10_t5ekp"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_uk6cp"]
 size = Vector3(15.6099, 5.39844, 4.25537)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_xxsgf"]
+radius = 0.1
+
+[sub_resource type="SphereMesh" id="SphereMesh_t5ekp"]
+radius = 0.1
+height = 0.2
 
 [node name="Scene4_Floor3" type="Node3D"]
 script = ExtResource("1_a4d3q")
@@ -172,11 +178,7 @@ omni_range = 10.0
 omni_attenuation = 0.8
 
 [node name="Board" parent="." instance=ExtResource("4_p1u02")]
-transform = Transform3D(1.62952, 0, 0, 0, 1.37517, 0, 0, 0, 1, -7.46171, 1.15829, 9.36686)
-
-[node name="Board_001" parent="Board" index="0"]
-transform = Transform3D(1, 0, 0, 0, -1.19209e-07, -1, 0, 1, -1.19209e-07, 0.122889, 0, 0)
-material_override = ExtResource("5_xxsgf")
+transform = Transform3D(1.62952, 0, 0, 0, 1.37517, 0, 0, 0, 1, -7.26129, 1.15829, 9.36686)
 
 [node name="Desk_15" parent="." instance=ExtResource("6_t5ekp")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -10.7923, 0.00898439, 14.4806)
@@ -416,11 +418,41 @@ transform = Transform3D(-0.187939, 0, -0.068404, 0, 0.2, 0, 0.068404, 0, -0.1879
 [node name="Mirror" parent="LaserPuzzle/Vise" index="0"]
 transform = Transform3D(4.37061e-08, 0.99988, -0.0153936, 1, -4.37114e-08, -7.4727e-16, -6.72827e-10, -0.0153936, -0.99988, 0.51532, 4.1327, -0.0290909)
 
-[node name="Character" parent="LaserPuzzle/Vise" index="1" instance=ExtResource("9_xxsgf")]
-transform = Transform3D(5, 0, 2.41585e-13, 0, 5, 0, -2.41585e-13, 0, 5, 13.2917, -3.6, -37.7691)
-
 [node name="CryptexController" parent="." instance=ExtResource("10_t5ekp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.30014, 1.35872, 12.6585)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.30014, 1.51402, 12.0262)
+
+[node name="MeshInstance3D" parent="CryptexController/FirstNumber/IncreaseButton1 (Area3D)/IncreaseNum" index="0"]
+layers = 3
+
+[node name="MeshInstance3D" parent="CryptexController/FirstNumber/DecreaseButton1 (Area3D)/DecreaseNum" index="0"]
+layers = 3
+
+[node name="MeshInstance3D" parent="CryptexController/SecoundNumber/IncreaseButton2 (Area3D)/IncreaseNum" index="0"]
+layers = 3
+
+[node name="MeshInstance3D" parent="CryptexController/SecoundNumber/DecreaseButton2 (Area3D)/DecreaseNum" index="0"]
+layers = 3
+
+[node name="MeshInstance3D" parent="CryptexController/ThirdNumber/IncreaseButton3 (Area3D)/IncreaseNum" index="0"]
+layers = 3
+
+[node name="MeshInstance3D" parent="CryptexController/ThirdNumber/DecreaseButton3 (Area3D)/DecreaseNum" index="0"]
+layers = 3
+
+[node name="Character" parent="." instance=ExtResource("9_xxsgf")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -6.78945, 0.000665265, 12.9824)
+
+[node name="RigidBody3D" type="RigidBody3D" parent="Character/Head" index="3" groups=["PlayerHand"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.186468, -1.06488)
+collision_mask = 2
+gravity_scale = 0.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Character/Head/RigidBody3D" groups=["PlayerHand"]]
+shape = SubResource("SphereShape3D_xxsgf")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Character/Head/RigidBody3D" groups=["PlayerHand"]]
+mesh = SubResource("SphereMesh_t5ekp")
+skeleton = NodePath("../../..")
 
 [editable path="SimpleFloor"]
 [editable path="SimpleFloor/Door"]
@@ -434,6 +466,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.30014, 1.35872, 12.6585)
 [editable path="SimpleFloor/Light05"]
 [editable path="SimpleFloor/Light02"]
 [editable path="SimpleFloor/Light03"]
-[editable path="Board"]
 [editable path="LaserPuzzle"]
 [editable path="LaserPuzzle/Safebox"]
+[editable path="CryptexController"]
+[editable path="Character"]

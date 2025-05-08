@@ -55,7 +55,7 @@ transform = Transform3D(-8.74229e-09, 0, -0.2, 0, 0.2, 0, 0.2, 0, -8.74229e-09, 
 mesh = ExtResource("6_2db3p")
 script = ExtResource("7_m2w42")
 
-[node name="Mirror" type="MeshInstance3D" parent="Vise" node_paths=PackedStringArray("beam_mesh", "end_particles", "rayCast", "hit_vfx")]
+[node name="Mirror" type="MeshInstance3D" parent="Vise" node_paths=PackedStringArray("beam_mesh", "end_particles", "rayCast")]
 transform = Transform3D(4.37113e-08, 0.999998, -8.74226e-08, 1, -4.37114e-08, 0, -3.82136e-15, -8.74226e-08, -0.999998, 0.51532, 4.1327, -0.0290871)
 mesh = ExtResource("8_p0a2h")
 skeleton = NodePath("../../LaserGun/Laser1")
@@ -63,7 +63,6 @@ script = ExtResource("9_hrsf7")
 beam_mesh = NodePath("RayCast3D/BeamMesh")
 end_particles = NodePath("RayCast3D/EndParticles")
 rayCast = NodePath("RayCast3D")
-hit_vfx = NodePath("RayCast3D/Reflex2")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Vise/Mirror"]
 

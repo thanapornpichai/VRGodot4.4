@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://by354fdyu2f84"]
+[gd_scene load_steps=0 format=3 uid="uid://by354fdyu2f84"]
 
 [node name="SubViewportOffer" type="SubViewport"]
 size = Vector2i(500, 200)

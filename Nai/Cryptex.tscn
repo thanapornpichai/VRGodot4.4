@@ -1,0 +1,160 @@
+[gd_scene load_steps=17 format=3 uid="uid://bv0wy64hudybk"]
+
+[ext_resource type="Script" uid="uid://0xvymqopke0y" path="res://Scripts/CryptexController.cs" id="1_no3ku"]
+[ext_resource type="PackedScene" uid="uid://bch53w248llxy" path="res://Models/Key/key_card.tscn" id="2_d0gd2"]
+[ext_resource type="Material" uid="uid://bcs7ek5jiv1v0" path="res://Materials/new_standard_material_3d.tres" id="4_63dhp"]
+[ext_resource type="FontFile" uid="uid://c33d6w5xdgwib" path="res://labels_and_texts/fonts/Minecraftia-Regular.ttf" id="12_jmmhe"]
+[ext_resource type="Material" uid="uid://bgqetukp6750q" path="res://Materials/Cryptex font.tres" id="13_uqlrx"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_q0vmq"]
+size = Vector3(0.1, 0.2, 0.2)
+
+[sub_resource type="TextMesh" id="TextMesh_1qb1p"]
+material = ExtResource("13_uqlrx")
+text = "0"
+font = ExtResource("12_jmmhe")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2ytye"]
+size = Vector3(0.1, 0.06, 0.04)
+
+[sub_resource type="PrismMesh" id="PrismMesh_d0gd2"]
+material = ExtResource("4_63dhp")
+size = Vector3(0.06, 0.06, 0.01)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_63dhp"]
+size = Vector3(0.1, 0.06, 0.04)
+
+[sub_resource type="TextMesh" id="TextMesh_j14b7"]
+material = ExtResource("13_uqlrx")
+text = "0"
+font = ExtResource("12_jmmhe")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_d0gd2"]
+size = Vector3(0.1, 0.06, 0.04)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g3lq5"]
+size = Vector3(0.1, 0.06, 0.04)
+
+[sub_resource type="TextMesh" id="TextMesh_06764"]
+material = ExtResource("13_uqlrx")
+text = "0"
+font = ExtResource("12_jmmhe")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_u7kle"]
+size = Vector3(0.1, 0.06, 0.04)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sswb8"]
+size = Vector3(0.1, 0.06, 0.04)
+
+[node name="CryptexController" type="Node3D" node_paths=PackedStringArray("firstNumber", "secondNumber", "thirdNumber", "IncreaseButton1", "DecreaseButton1", "IncreaseButton2", "DecreaseButton2", "IncreaseButton3", "DecreaseButton3")]
+script = ExtResource("1_no3ku")
+firstNumber = NodePath("FirstNumber/Number/FirstNumberText")
+secondNumber = NodePath("SecoundNumber/Number/SecoundNumberText")
+thirdNumber = NodePath("ThirdNumber/Number/ThirdNumberText")
+IncreaseButton1 = NodePath("FirstNumber/IncreaseButton1 (Area3D)")
+DecreaseButton1 = NodePath("FirstNumber/DecreaseButton1 (Area3D)")
+IncreaseButton2 = NodePath("SecoundNumber/IncreaseButton2 (Area3D)")
+DecreaseButton2 = NodePath("SecoundNumber/DecreaseButton2 (Area3D)")
+IncreaseButton3 = NodePath("ThirdNumber/IncreaseButton3 (Area3D)")
+DecreaseButton3 = NodePath("ThirdNumber/DecreaseButton3 (Area3D)")
+keyCard = ExtResource("2_d0gd2")
+
+[node name="FirstNumber" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12, 0, 0)
+mesh = SubResource("BoxMesh_q0vmq")
+
+[node name="Number" type="Node3D" parent="FirstNumber"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0.005, 0, 0.11)
+
+[node name="FirstNumberText" type="MeshInstance3D" parent="FirstNumber/Number"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00351131, -0.0288702, 0)
+mesh = SubResource("TextMesh_1qb1p")
+
+[node name="IncreaseButton1 (Area3D)" type="Area3D" parent="FirstNumber"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.1)
+
+[node name="IncreaseNum" type="CollisionShape3D" parent="FirstNumber/IncreaseButton1 (Area3D)"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.137, 0)
+shape = SubResource("BoxShape3D_2ytye")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="FirstNumber/IncreaseButton1 (Area3D)/IncreaseNum"]
+mesh = SubResource("PrismMesh_d0gd2")
+
+[node name="DecreaseButton1 (Area3D)" type="Area3D" parent="FirstNumber"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.1)
+
+[node name="DecreaseNum" type="CollisionShape3D" parent="FirstNumber/DecreaseButton1 (Area3D)"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.137473, 0)
+shape = SubResource("BoxShape3D_63dhp")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="FirstNumber/DecreaseButton1 (Area3D)/DecreaseNum"]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("PrismMesh_d0gd2")
+skeleton = NodePath("../../../IncreaseButton1 (Area3D)/IncreaseNum")
+
+[node name="SecoundNumber" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_q0vmq")
+
+[node name="Number" type="Node3D" parent="SecoundNumber"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0.00501698, 0, 0.110466)
+
+[node name="SecoundNumberText" type="MeshInstance3D" parent="SecoundNumber/Number"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00351128, -0.0288702, 0)
+mesh = SubResource("TextMesh_j14b7")
+
+[node name="IncreaseButton2 (Area3D)" type="Area3D" parent="SecoundNumber"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.1)
+
+[node name="IncreaseNum" type="CollisionShape3D" parent="SecoundNumber/IncreaseButton2 (Area3D)"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.137, 0)
+shape = SubResource("BoxShape3D_d0gd2")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SecoundNumber/IncreaseButton2 (Area3D)/IncreaseNum"]
+mesh = SubResource("PrismMesh_d0gd2")
+skeleton = NodePath("../../../../FirstNumber/IncreaseButton1 (Area3D)/IncreaseNum")
+
+[node name="DecreaseButton2 (Area3D)" type="Area3D" parent="SecoundNumber"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.1)
+
+[node name="DecreaseNum" type="CollisionShape3D" parent="SecoundNumber/DecreaseButton2 (Area3D)"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.137473, 0)
+shape = SubResource("BoxShape3D_g3lq5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SecoundNumber/DecreaseButton2 (Area3D)/DecreaseNum"]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("PrismMesh_d0gd2")
+skeleton = NodePath("../../../../FirstNumber/IncreaseButton1 (Area3D)/IncreaseNum")
+
+[node name="ThirdNumber" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12, 0, 0)
+mesh = SubResource("BoxMesh_q0vmq")
+
+[node name="Number" type="Node3D" parent="ThirdNumber"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0.005, 0, 0.11)
+
+[node name="ThirdNumberText" type="MeshInstance3D" parent="ThirdNumber/Number"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00351131, -0.0288702, 0)
+mesh = SubResource("TextMesh_06764")
+
+[node name="IncreaseButton3 (Area3D)" type="Area3D" parent="ThirdNumber"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.1)
+
+[node name="IncreaseNum" type="CollisionShape3D" parent="ThirdNumber/IncreaseButton3 (Area3D)"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.137, 0)
+shape = SubResource("BoxShape3D_u7kle")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ThirdNumber/IncreaseButton3 (Area3D)/IncreaseNum"]
+mesh = SubResource("PrismMesh_d0gd2")
+skeleton = NodePath("../../../../FirstNumber/IncreaseButton1 (Area3D)/IncreaseNum")
+
+[node name="DecreaseButton3 (Area3D)" type="Area3D" parent="ThirdNumber"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.1)
+
+[node name="DecreaseNum" type="CollisionShape3D" parent="ThirdNumber/DecreaseButton3 (Area3D)"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.137473, 0)
+shape = SubResource("BoxShape3D_sswb8")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ThirdNumber/DecreaseButton3 (Area3D)/DecreaseNum"]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("PrismMesh_d0gd2")
+skeleton = NodePath("../../../../FirstNumber/IncreaseButton1 (Area3D)/IncreaseNum")

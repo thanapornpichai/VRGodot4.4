@@ -1,90 +1,145 @@
 using Godot;
-using Godot.Collections;
 
-public partial class CryptexController : Node
+public partial class CryptexController : Node3D
 {
-	private const string PASS_CODE = "911";
-	private int[] _codeNumbers = new int[3];
+    private const string PASS_CODE = "911";
+    private int[] _codeNumbers = new int[3];
 
-	[Export] public Array<PackedScene> NumberList = new Array<PackedScene>();
-	private Node3D firstNumber;
-	private Node3D secondNumber;
-	private Node3D thirdNumber;
+    [Export] public MeshInstance3D firstNumber;
+    [Export] public MeshInstance3D secondNumber;
+    [Export] public MeshInstance3D thirdNumber;
 
-	[Export] public Node3D firstNumberPosition;
-	[Export] public Node3D secondNumberPosition;
-	[Export] public Node3D thirdNumberPosition;
+    private TextMesh firstNumberText;
+    private TextMesh secondNumberText;
+    private TextMesh thirdNumberText;
 
-	public override void _Ready()
-	{
-		firstNumber = InstantiateNumber(0, firstNumberPosition);
-		secondNumber = InstantiateNumber(0, secondNumberPosition);
-		thirdNumber = InstantiateNumber(0, thirdNumberPosition);
-	}
+    [Export] public Area3D IncreaseButton1;
+    [Export] public Area3D DecreaseButton1;
+    [Export] public Area3D IncreaseButton2;
+    [Export] public Area3D DecreaseButton2;
+    [Export] public Area3D IncreaseButton3;
+    [Export] public Area3D DecreaseButton3;
 
-	public void ChangeNumber(int position, int change)
-	{
-		if (position >= 0 && position < _codeNumbers.Length)
-		{
-			_codeNumbers[position] += change;
+    [Export] public float delay = 3.0f;
+    [Export] public PackedScene keyCard;
 
-			if (_codeNumbers[position] > 9) _codeNumbers[position] = 0;
-			if (_codeNumbers[position] < 0) _codeNumbers[position] = 9;
+    private bool _isUnlocked = false;
 
-			ReplaceNumber(position, _codeNumbers[position]);
+    public override void _Ready()
+    {
+        firstNumber.Mesh = (TextMesh)firstNumber.Mesh.Duplicate();
+        secondNumber.Mesh = (TextMesh)secondNumber.Mesh.Duplicate();
+        thirdNumber.Mesh = (TextMesh)thirdNumber.Mesh.Duplicate();
 
-			GD.Print($"Updated Code: {_codeNumbers[0]} {_codeNumbers[1]} {_codeNumbers[2]}");
+        firstNumberText = firstNumber.Mesh as TextMesh;
+        firstNumberText.Text = "0";
 
-			if (CheckCode())
-			{
-				UnlockCryptex();
-			}
-		}
-	}
+        secondNumberText = secondNumber.Mesh as TextMesh;
+        secondNumberText.Text = "0";
 
-	private Node3D InstantiateNumber(int numberIndex, Node3D position)
-	{
-		Node3D instance = NumberList[numberIndex].Instantiate<Node3D>();
-		AddChild(instance);
-		instance.GlobalTransform = new Transform3D(Basis.Identity, position.Position);
-		return instance;
-	}
+        thirdNumberText = thirdNumber.Mesh as TextMesh;
+        thirdNumberText.Text = "0";
 
-	private void ReplaceNumber(int position, int newNumber)
-	{
-		switch (position)
-		{
-			case 0:
-				firstNumber.QueueFree();
-				firstNumber = InstantiateNumber(newNumber, firstNumberPosition);
-				break;
-			case 1:
-				secondNumber.QueueFree();
-				secondNumber = InstantiateNumber(newNumber, secondNumberPosition);
-				break;
-			case 2:
-				thirdNumber.QueueFree();
-				thirdNumber = InstantiateNumber(newNumber, thirdNumberPosition);
-				break;
-		}
-	}
+        IncreaseButton1.BodyEntered += OnIncreaseButton1;
+        DecreaseButton1.BodyEntered += OnDecreaseButton1;
 
-	private bool CheckCode()
-	{
-		string enteredCode = $"{_codeNumbers[0]}{_codeNumbers[1]}{_codeNumbers[2]}";
-		return enteredCode == PASS_CODE;
-	}
+        IncreaseButton2.BodyEntered += OnIncreaseButton2;
+        DecreaseButton2.BodyEntered += OnDecreaseButton2;
 
-	// Called when the code is correct
-	private void UnlockCryptex()
-	{
-		GD.Print("Cryptex Unlocked! You got the key!");
-	}
+        IncreaseButton3.BodyEntered += OnIncreaseButton3;
+        DecreaseButton3.BodyEntered += OnDecreaseButton3;
+    }
 
-	public void OnIncreaseButton1Pressed() => ChangeNumber(0, 1);
-	public void OnDecreaseButton1Pressed() => ChangeNumber(0, -1);
-	public void OnIncreaseButton2Pressed() => ChangeNumber(1, 1);
-	public void OnDecreaseButton2Pressed() => ChangeNumber(1, -1);
-	public void OnIncreaseButton3Pressed() => ChangeNumber(2, 1);
-	public void OnDecreaseButton3Pressed() => ChangeNumber(2, -1);
+    public void ChangeNumber(int position, int change)
+    {
+        if (_isUnlocked)
+            return;
+
+        if (position >= 0 && position < _codeNumbers.Length)
+        {
+            _codeNumbers[position] += change;
+
+            if (_codeNumbers[position] > 9) _codeNumbers[position] = 0;
+            if (_codeNumbers[position] < 0) _codeNumbers[position] = 9;
+
+            firstNumberText.Text = _codeNumbers[0].ToString();
+            secondNumberText.Text = _codeNumbers[1].ToString();
+            thirdNumberText.Text = _codeNumbers[2].ToString();
+            GD.Print($"Updated Code: {_codeNumbers[0]} {_codeNumbers[1]} {_codeNumbers[2]}");
+
+            if (CheckCode())
+            {
+                UnlockCryptex();
+            }
+        }
+    }
+
+    private bool CheckCode()
+    {
+        string enteredCode = $"{_codeNumbers[0]}{_codeNumbers[1]}{_codeNumbers[2]}";
+        return enteredCode == PASS_CODE;
+    }
+
+    private async void UnlockCryptex()
+    {
+        if (_isUnlocked)
+            return;
+
+        _isUnlocked = true;
+        GD.Print("Cryptex Unlocked! You got the key!");
+
+        IncreaseButton1.Monitoring = false;
+        DecreaseButton1.Monitoring = false;
+        IncreaseButton2.Monitoring = false;
+        DecreaseButton2.Monitoring = false;
+        IncreaseButton3.Monitoring = false;
+        DecreaseButton3.Monitoring = false;
+
+        await ToSignal(GetTree().CreateTimer(delay), "timeout");
+
+        this.Visible = false;
+
+        if (keyCard != null)
+        {
+            Node3D cardInstance = keyCard.Instantiate<Node3D>();
+            GetParent().AddChild(cardInstance);
+            cardInstance.GlobalTransform = this.GlobalTransform;
+        }
+    }
+
+    private void OnIncreaseButton1(Node3D body)
+    {
+        if (body.IsInGroup("PlayerHand"))
+            ChangeNumber(0, 1);
+    }
+
+    private void OnDecreaseButton1(Node3D body)
+    {
+        if (body.IsInGroup("PlayerHand"))
+            ChangeNumber(0, -1);
+    }
+
+    private void OnIncreaseButton2(Node3D body)
+    {
+        if (body.IsInGroup("PlayerHand"))
+            ChangeNumber(1, 1);
+    }
+
+    private void OnDecreaseButton2(Node3D body)
+    {
+        if (body.IsInGroup("PlayerHand"))
+            ChangeNumber(1, -1);
+    }
+
+    private void OnIncreaseButton3(Node3D body)
+    {
+        if (body.IsInGroup("PlayerHand"))
+            ChangeNumber(2, 1);
+    }
+
+    private void OnDecreaseButton3(Node3D body)
+    {
+        if (body.IsInGroup("PlayerHand"))
+            ChangeNumber(2, -1);
+    }
 }
