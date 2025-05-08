@@ -1,0 +1,88 @@
+[gd_scene load_steps=8 format=3 uid="uid://bdbwjlwxsxh13"]
+
+[ext_resource type="Script" uid="uid://bjhjcg4081v04" path="res://Scripts/CastShadow.cs" id="1_16dob"]
+[ext_resource type="Script" uid="uid://0qav4oe0yw36" path="res://Scripts/PlayerMovement.cs" id="2_ixixc"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_16dob"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_ixixc"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_e0a60"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_16dob"]
+size = Vector3(1.0838, 1.05786, 1.03702)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ixixc"]
+
+[node name="CastShadow" type="Node3D" node_paths=PackedStringArray("Player", "ButtonLeft", "ButtonRight", "Object1", "Object2")]
+script = ExtResource("1_16dob")
+Player = NodePath("Player")
+ButtonLeft = NodePath("ButtonLeft")
+ButtonRight = NodePath("ButtonRight")
+Object1 = NodePath("Object1")
+Object2 = NodePath("Object2")
+
+[node name="Player" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.66833)
+script = ExtResource("2_ixixc")
+
+[node name="Camera3D" type="Camera3D" parent="Player"]
+transform = Transform3D(0.999905, 0, 0.0137528, 0, 1, 0, -0.0137528, 0, 0.999905, 0, 0.124729, -0.58601)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.140196, -0.65059)
+shape = SubResource("CapsuleShape3D_16dob")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Player/CollisionShape3D"]
+mesh = SubResource("CapsuleMesh_ixixc")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_e0a60")
+
+[node name="ButtonLeft" type="Area3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.355731, 0.0113228, 0.0364734)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ButtonLeft"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.31, 0.405, 0.778)
+shape = SubResource("BoxShape3D_16dob")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ButtonLeft/CollisionShape3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000430822, 0.000217795, 0.000182271)
+mesh = SubResource("BoxMesh_ixixc")
+skeleton = NodePath("../..")
+
+[node name="ButtonRight" type="Area3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.283437, 0.00947347, 0.0364734)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ButtonRight"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.310431, 0.405218, 0.778182)
+shape = SubResource("BoxShape3D_16dob")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ButtonRight/CollisionShape3D"]
+mesh = SubResource("BoxMesh_ixixc")
+skeleton = NodePath("../..")
+
+[node name="Object1" type="Area3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.25243, 0.418315, -0.877492)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Object1"]
+shape = SubResource("BoxShape3D_16dob")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Object1"]
+mesh = SubResource("BoxMesh_ixixc")
+
+[node name="Object2" type="Area3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.330922, 0.418315, -0.877492)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Object2"]
+transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 1, 1.834, 0.235, 0)
+shape = SubResource("BoxShape3D_16dob")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Object2"]
+transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 1, 1.83396, 0.234507, 0)
+mesh = SubResource("BoxMesh_ixixc")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.565705, -0.0974147, -0.818834, 0.752889, -0.344027, 0.561074, -0.336358, -0.933893, -0.121275, -1.46811, 1.1971, 0)
+light_energy = 10.0
+shadow_enabled = true
