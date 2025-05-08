@@ -1,7 +1,7 @@
 [gd_scene load_steps=17 format=3 uid="uid://bv0wy64hudybk"]
 
 [ext_resource type="Script" uid="uid://0xvymqopke0y" path="res://Scripts/CryptexController.cs" id="1_no3ku"]
-[ext_resource type="PackedScene" uid="uid://bch53w248llxy" path="res://Models/Key/key_card.tscn" id="2_d0gd2"]
+[ext_resource type="PackedScene" uid="uid://bch53w248llxy" path="res://Models/KeyCard/key_card.tscn" id="2_d0gd2"]
 [ext_resource type="Material" uid="uid://bcs7ek5jiv1v0" path="res://Materials/new_standard_material_3d.tres" id="4_63dhp"]
 [ext_resource type="FontFile" uid="uid://c33d6w5xdgwib" path="res://labels_and_texts/fonts/Minecraftia-Regular.ttf" id="12_jmmhe"]
 [ext_resource type="Material" uid="uid://bgqetukp6750q" path="res://Materials/Cryptex font.tres" id="13_uqlrx"]

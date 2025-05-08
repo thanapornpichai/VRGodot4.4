@@ -37,6 +37,8 @@ import/blender/enabled=false
 Offer=""
 Player=""
 PlayerHand=""
+KeyCard=""
+LaserReceiver=""
 
 [input]
 

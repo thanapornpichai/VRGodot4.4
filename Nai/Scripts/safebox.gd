@@ -1,6 +1,6 @@
 extends MeshInstance3D
 
-@onready var cap = $Cap
+@onready var cap = $Pivot
 var is_open := false
 
 func _ready():

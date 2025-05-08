@@ -1,0 +1,58 @@
+[gd_scene load_steps=10 format=3 uid="uid://wjo53xd2s01v"]
+
+[ext_resource type="FontFile" uid="uid://c33d6w5xdgwib" path="res://labels_and_texts/fonts/Minecraftia-Regular.ttf" id="1_j4yxr"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ae8f2"]
+size = Vector3(0.2, 0.2, 0.1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j4yxr"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ga848"]
+material = SubResource("StandardMaterial3D_j4yxr")
+size = Vector3(0.1, 0.1, 0.1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_381b1"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_a8i8x"]
+material = SubResource("StandardMaterial3D_381b1")
+size = Vector3(0.08, 0.08, 0.1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_j4yxr"]
+size = Vector3(0.08, 0.08, 0.1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ga848"]
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+
+[sub_resource type="TextMesh" id="TextMesh_381b1"]
+material = SubResource("StandardMaterial3D_ga848")
+text = "Laser
+Receiver"
+font = ExtResource("1_j4yxr")
+font_size = 10
+line_spacing = -8.9
+
+[node name="LaserReceiver" type="Node3D"]
+
+[node name="Body" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_ae8f2")
+
+[node name="OuterHold" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0326491, 0.00682884)
+mesh = SubResource("BoxMesh_ga848")
+
+[node name="ReceiverPoint" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0326491, 0.00829182)
+mesh = SubResource("BoxMesh_a8i8x")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Body/ReceiverPoint" groups=["LaserReceiver"]]
+
+[node name="Laser" type="CollisionShape3D" parent="Body/ReceiverPoint/StaticBody3D" groups=["LaserReceiver"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0138313)
+shape = SubResource("BoxShape3D_j4yxr")
+
+[node name="Text" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0.0527764, 0.0467203)
+mesh = SubResource("TextMesh_381b1")
