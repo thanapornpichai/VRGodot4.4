@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://box148mntjlle"]
+[gd_scene load_steps=29 format=3 uid="uid://box148mntjlle"]
 
 [ext_resource type="Script" uid="uid://37xaisjvtc8k" path="res://Scripts/Scene1FloorController.cs" id="1_a4d3q"]
 [ext_resource type="PackedScene" uid="uid://ddneys6hhnini" path="res://Models/Classroom/SimpleFloor.tscn" id="2_xxsgf"]
@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://biux736h6i365" path="res://Models/StorageCabinet/storage_cabinet.tscn" id="10_mv8dg"]
 [ext_resource type="PackedScene" uid="uid://bv0wy64hudybk" path="res://Nai/Cryptex.tscn" id="10_t5ekp"]
 [ext_resource type="PackedScene" uid="uid://b41045fvgsk7e" path="res://Models/Clock/Clock_13.fbx" id="11_yhnbb"]
+[ext_resource type="PackedScene" uid="uid://byc817nbfg7oj" path="res://PickableObject/Book.tscn" id="19_yhnbb"]
 
 [sub_resource type="Animation" id="Animation_6bls3"]
 resource_name = "OpenDoor"
@@ -644,7 +645,7 @@ FlickerDuration = 1.0
 WaitBetweenFlicker = 0.5
 
 [node name="Node3D" type="Node3D" parent="Light01"]
-transform = Transform3D(0.0122868, 0.999925, 0, -0.999925, 0.0122868, 0, 0, 0, 1, -1.50266, 0.243144, 0.0521278)
+transform = Transform3D(0.0122861, 0.999925, 0, -0.999925, 0.0122861, 0, 0, 0, 1, -1.50266, 0.243144, 0.0521278)
 
 [node name="Light01" type="MeshInstance3D" parent="Light01/Node3D"]
 transform = Transform3D(0.994369, 0, -0.105969, 0, 1, 0, 0.105969, 0, 0.994369, 1.50266, -0.0917995, -0.0521278)
@@ -664,6 +665,9 @@ omni_attenuation = 1.341
 libraries = {
 &"": SubResource("AnimationLibrary_yhnbb")
 }
+
+[node name="PickableObject" parent="." instance=ExtResource("19_yhnbb")]
+transform = Transform3D(0.34723, 0, -0.93778, 0, 1, 0, 0.93778, 0, 0.34723, -4.53377, 0.501535, 51.6601)
 
 [editable path="SimpleFloor"]
 [editable path="SimpleFloor/Door"]

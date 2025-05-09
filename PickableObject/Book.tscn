@@ -1,0 +1,73 @@
+[gd_scene load_steps=9 format=4 uid="uid://byc817nbfg7oj"]
+
+[ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="1_l6aky"]
+[ext_resource type="Material" uid="uid://woo7mdd3enpj" path="res://Models/Book/Book1/Book_Blue.tres" id="2_u7pb8"]
+[ext_resource type="Texture2D" uid="uid://ck5e34a2vkk44" path="res://Models/Book/Book1/BlueBook_6_Color.png" id="3_oe8at"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_oe8at"]
+size = Vector3(0.136963, 0.300697, 0.306396)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vbqxs"]
+resource_name = "BlueBook_6_Material"
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("3_oe8at")
+emission_enabled = true
+emission_energy_multiplier = 0.0
+emission_texture = ExtResource("3_oe8at")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_08pn4"]
+_surfaces = [{
+"aabb": AABB(-0.2, -0.3, 0, 0.4, 0.6, 0.6),
+"format": 34359742465,
+"index_count": 132,
+"index_data": PackedByteArray("AAABAAIAAQAAAAMAAAAEAAMAAgAFAAAABAAAAAUAAgAGAAUABwAFAAYABwAEAAUACAAHAAYACAAGAAIABwAIAAkACQAIAAIABAAHAAkABAAKAAMAAwAKAAsAAQADAAsADAAKAAQADAAEAAkACgANAAsADAANAAoACwANAA4ACwAOAAEADAABAA4ADQAPAA4ADwAMAA4ADAAPAA0ADAAQAAEACQAQAAwAAQARAAIAEAARAAEACQACABIAEQASAAIAEAAJABMAEwAJABIAEAAUABEAEAATABUAFQAUABAAEwASABUAFAAWABEAFAAVABYAEQAXABIAEgAXABUAEQAWABcAFQAXABYA"),
+"name": "BlueBook_6_Material",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("0MzMvdDMTL6cmRk/0MzMvdDMTD6cmRk/0MzMPdDMTL6cmRk/0MxMvtDMTL6cmRk/0MzMvdDMTL4AAAAA0MzMvZyZmb6cmRk/0MzMPZyZmb6cmRk/0MzMvZyZmb4AAAAA0MzMPZyZmb4AAAAA0MzMPdDMTL4AAAAA0MxMvtDMTL4AAAAA0MxMvpyZmT6cmRk/0MzMvdDMTD4AAAAA0MxMvpyZmT4AAAAA0MzMvZyZmT6cmRk/0MzMvZyZmT4AAAAA0MzMPdDMTD4AAAAA0MzMPdDMTD6cmRk/0MxMPtDMTL6cmRk/0MxMPtDMTL4AAAAA0MzMPZyZmT4AAAAA0MxMPpyZmT4AAAAA0MzMPZyZmT6cmRk/0MxMPpyZmT6cmRk/")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_03ssx"]
+resource_name = "BlueBook_6_006"
+_surfaces = [{
+"aabb": AABB(-0.2, -0.3, 0, 0.4, 0.6, 0.6),
+"attribute_data": PackedByteArray("AACgPgAAED8AAKA+AACgPgAA4D4AABA/AACAPgAAED8AAKA+AAAgPwAA4D4AACA/AADgPgAAoD4AAAA/AAAQPwAAgD4AAIA+AACgPgAAgD4AAOA+AACAPgAAAD8AAIA+AAAAPwAAID8AACA/AAAgPwAAAD8AAIA+AAAgPwAAgD4AACA/AAAgPwAAMD8AACA/AAAgPwAAgD4AADA/AACAPgAAAAAAACA/AAAAAAAAgD8AAKA+AAAgPwAAoD4AAIA/AABgPwAAgD8AAFA/AACAPwAAYD8AACA/AABQPwAAID8AAIA9AACgPgAAgD0AABA/AABAPgAAED8AAIA9AAAgPwAAQD4AACA/AAAAAAAAED8AAAAAAACAPgAAgD0AAIA+AABAPgAAoD4AAIA+AAAQPwAAgD4AAIA+AABAPgAAgD4AAKA+AACAPwAAoD4AACA/AAAgPwAAgD8AACA/AAAgPwAAQD8AAIA/AAAgPwAAgD8AAEA/AAAgPwAAID8AACA/AABgPwAAID8AAHA/AAAgPwAAYD8AAIA+AABwPwAAgD4AAGA/AACAPwAAcD8AAIA/AABgPwAAID8AAHA/AAAgPwAAUD8AAIA+AABQPwAAID8AAGA/AACAPgAAYD8AACA/AABQPwAAID8AAFA/AACAPwAAQD8AACA/AABAPwAAgD8AAEA/AAAgPwAAMD8AACA/AABAPwAAgD4AADA/AACAPgAAUD8AACA/AABAPwAAID8AAFA/AACAPgAAQD8AAIA+AADgPgAAoD4AAAA/AACAPgAAAD8AABA/AACgPgAAoD4AAIA+AAAQPwAAgD4AAIA+"),
+"format": 34359742487,
+"index_count": 132,
+"index_data": PackedByteArray("AAABAAIAAQAAAAMAAgAEAAAAAgAFAAQAAQAGAAIABgAHAAIACAAJAAEABgAKAAsADAANAA4ADQAPAA4AEAARABIAEQATABIAFAAVABYAFQAXABYAGAAZABoAGQAbABoAHAAdAB4AHQAfAB4AHwAgAB4AHAAhAB0AHAAiACEAHAAjACIAHgAkABwAJAAeACUAJAAlACYAJgAnACQAKAApACoAKQArACoALAAtAC4ALQAvAC4AMAAxADIAMQAzADIANAA1ADYANQA3ADYAOAA5ADoAOQA7ADoAPAA9AD4APQA/AD4AQABBAEIAQQBDAEIARABFAEYARQBHAEYASABJAEoASwBMAE0A"),
+"material": SubResource("StandardMaterial3D_vbqxs"),
+"name": "BlueBook_6_Material",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 78,
+"vertex_data": PackedByteArray("0MzMvdDMTL6cmRk/0MzMvdDMTD6cmRk/0MzMPdDMTL6cmRk/0MxMvtDMTL6cmRk/0MzMvZyZmb6cmRk/0MzMPZyZmb6cmRk/0MzMPdDMTD6cmRk/0MxMPtDMTL6cmRk/0MxMvpyZmT6cmRk/0MzMvZyZmT6cmRk/0MzMPZyZmT6cmRk/0MxMPpyZmT6cmRk/0MzMvdDMTD4AAAAA0MzMPdDMTD4AAAAA0MzMvdDMTD6cmRk/0MzMPdDMTD6cmRk/0MzMvZyZmb4AAAAA0MzMvdDMTL4AAAAA0MzMvZyZmb6cmRk/0MzMvdDMTL6cmRk/0MxMvtDMTL6cmRk/0MxMvtDMTL4AAAAA0MxMvpyZmT6cmRk/0MxMvpyZmT4AAAAA0MzMvZyZmT4AAAAA0MzMvdDMTD4AAAAA0MzMvZyZmT6cmRk/0MzMvdDMTD6cmRk/0MzMvdDMTD4AAAAA0MzMvdDMTL4AAAAA0MzMPdDMTL4AAAAA0MzMvZyZmb4AAAAA0MzMPZyZmb4AAAAA0MxMvtDMTL4AAAAA0MxMvpyZmT4AAAAA0MzMvZyZmT4AAAAA0MzMPdDMTD4AAAAA0MxMPtDMTL4AAAAA0MxMPpyZmT4AAAAA0MzMPZyZmT4AAAAA0MxMPtDMTL4AAAAA0MxMPtDMTL6cmRk/0MxMPpyZmT4AAAAA0MxMPpyZmT6cmRk/0MzMPZyZmb4AAAAA0MzMvZyZmb4AAAAA0MzMPZyZmb6cmRk/0MzMvZyZmb6cmRk/0MzMPdDMTD4AAAAA0MzMPZyZmT4AAAAA0MzMPdDMTD6cmRk/0MzMPZyZmT6cmRk/0MzMPZyZmT4AAAAA0MxMPpyZmT4AAAAA0MzMPZyZmT6cmRk/0MxMPpyZmT6cmRk/0MxMvpyZmT6cmRk/0MxMvpyZmT4AAAAA0MzMvZyZmT6cmRk/0MzMvZyZmT4AAAAA0MzMvdDMTL6cmRk/0MzMvdDMTL4AAAAA0MxMvtDMTL6cmRk/0MxMvtDMTL4AAAAA0MzMPdDMTL4AAAAA0MzMPZyZmb4AAAAA0MzMPdDMTL6cmRk/0MzMPZyZmb6cmRk/0MxMPtDMTL4AAAAA0MzMPdDMTL4AAAAA0MxMPtDMTL6cmRk/0MzMPdDMTL6cmRk/0MzMPdDMTD6cmRk/0MxMPpyZmT6cmRk/0MxMPtDMTL6cmRk/0MzMvdDMTD6cmRk/0MxMvtDMTL6cmRk/0MxMvpyZmT6cmRk//3//f////7//f/9/////v/9//3////+//3//f////7//f/9/////v/9//3////+//3//f////7//f/9/////v/9//3////+//3//f////7//f/9/////v/9//3////+//3///////z//f///////P/9///////8//3///////z8AAP9//38AAAAA/3//fwAAAAD/f/9/AAAAAP9//38AAAAA/3//fwAAAAD/f/9/AAAAAP9//38AAAAA/3//fwAA////f/9///////9//3///////3//f///////f/9/////////////P/////////8//////////z//////////P/////////8//////////z//////////P/////////8//////////z//////////P/////////8//////////z////9//3///////3//f///////f/9///////9//3////9/AAD///+//38AAP///7//fwAA////v/9/AAD///+/AAD/f/9/AAAAAP9//38AAAAA/3//fwAAAAD/f/9/AAD/f///////P/9///////8//3///////z//f///////P/9///////8//3///////z//f///////P/9///////8//38AAP///7//fwAA////v/9/AAD///+//38AAP///7////9//3///////3//f///////f/9///////9//3////9/AAD///+//38AAP///7//fwAA////v/9/AAD///+//3//f////7//f/9/////v/9//3////+//3//f/7//7//f/9//v//v/9//3/+//+/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_08pn4")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5ecfa"]
+size = Vector3(0.400818, 0.60614, 0.598877)
+
+[node name="PickableObject" instance=ExtResource("1_l6aky")]
+
+[node name="CollisionShape3D" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000708342, 0.0290712, 0.000265715)
+shape = SubResource("BoxShape3D_oe8at")
+
+[node name="BlueBook_6" type="Node3D" parent="." index="1"]
+transform = Transform3D(0.338407, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="BlueBook_6" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.233921, 0)
+
+[node name="BlueBook_6_001" type="MeshInstance3D" parent="BlueBook_6/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, -1.19209e-07, 1, 0, -1, -1.19209e-07, 0, -5.96046e-08, 0)
+material_override = ExtResource("2_u7pb8")
+mesh = SubResource("ArrayMesh_03ssx")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BlueBook_6/StaticBody3D" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000335693, 0.297821, -0.000854492)
+shape = SubResource("BoxShape3D_5ecfa")
