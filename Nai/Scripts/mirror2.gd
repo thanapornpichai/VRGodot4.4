@@ -24,8 +24,8 @@ func _process(delta):
 		elif not is_open:
 			laser_activate(end_local, 0.15)
 
-		if safe_box_hit_time >= 10.0:
-			if safe_box and safe_box.has_method("open_box"):
+		if safe_box_hit_time >= 3.0:
+			if safe_box and safe_box.has_method("OpenBox"):
 				is_open = true
 				print(is_open)
 				safe_box.open_box()

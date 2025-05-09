@@ -1,0 +1,186 @@
+[gd_scene load_steps=23 format=3 uid="uid://isgin6idshf2"]
+
+[ext_resource type="Script" uid="uid://btq4g8lck4ruc" path="res://Scripts/CastShadowPuzzleController.cs" id="1_g1i6p"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jm0gr"]
+size = Vector3(0.3, 0.1, 0.3)
+
+[sub_resource type="BoxMesh" id="BoxMesh_jm0gr"]
+size = Vector3(0.3, 0.1, 0.3)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6ln3o"]
+albedo_color = Color(0.0980392, 0.239216, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_6ln3o"]
+material = SubResource("StandardMaterial3D_6ln3o")
+size = Vector3(0.2, 0.1, 0.2)
+
+[sub_resource type="TextMesh" id="TextMesh_jm0gr"]
+text = "L"
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wpdx6"]
+size = Vector3(0.3, 0.1, 0.3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6ln3o"]
+size = Vector3(0.3, 0.1, 0.3)
+
+[sub_resource type="BoxMesh" id="BoxMesh_wpdx6"]
+size = Vector3(0.3, 0.1, 0.3)
+
+[sub_resource type="BoxMesh" id="BoxMesh_vsiqc"]
+material = SubResource("StandardMaterial3D_6ln3o")
+size = Vector3(0.2, 0.1, 0.2)
+
+[sub_resource type="TextMesh" id="TextMesh_m1jx1"]
+text = "R"
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b80h8"]
+size = Vector3(0.3, 0.1, 0.3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vl4h5"]
+size = Vector3(0.3, 0.1, 0.3)
+
+[sub_resource type="BoxMesh" id="BoxMesh_4swoe"]
+size = Vector3(0.3, 0.1, 0.3)
+
+[sub_resource type="BoxMesh" id="BoxMesh_42kad"]
+material = SubResource("StandardMaterial3D_6ln3o")
+size = Vector3(0.2, 0.1, 0.2)
+
+[sub_resource type="TextMesh" id="TextMesh_kn36u"]
+text = "U"
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ylrsq"]
+size = Vector3(0.3, 0.1, 0.3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uqvrj"]
+size = Vector3(0.3, 0.1, 0.3)
+
+[sub_resource type="BoxMesh" id="BoxMesh_pc4y3"]
+size = Vector3(0.3, 0.1, 0.3)
+
+[sub_resource type="BoxMesh" id="BoxMesh_0udbp"]
+material = SubResource("StandardMaterial3D_6ln3o")
+size = Vector3(0.2, 0.1, 0.2)
+
+[sub_resource type="TextMesh" id="TextMesh_232s3"]
+text = "D
+"
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tq84a"]
+size = Vector3(0.3, 0.1, 0.3)
+
+[node name="ButtonController" type="Node3D" node_paths=PackedStringArray("ButtonLeft", "ButtonRight", "ButtonUp", "ButtonDown")]
+script = ExtResource("1_g1i6p")
+ButtonLeft = NodePath("ButtonLeft/Area3D")
+ButtonRight = NodePath("ButtonRight/Area3D")
+ButtonUp = NodePath("ButtonUp/Area3D")
+ButtonDown = NodePath("ButtonDown/Area3D")
+
+[node name="ButtonLeft" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, 0, 0)
+
+[node name="Area3D" type="Area3D" parent="ButtonLeft"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0494009, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ButtonLeft/Area3D"]
+shape = SubResource("BoxShape3D_jm0gr")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="ButtonLeft"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0494009, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ButtonLeft/StaticBody3D"]
+mesh = SubResource("BoxMesh_jm0gr")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="ButtonLeft/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0207425, 0)
+mesh = SubResource("BoxMesh_6ln3o")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="ButtonLeft/StaticBody3D/MeshInstance3D2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.0296203, 0)
+mesh = SubResource("TextMesh_jm0gr")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ButtonLeft/StaticBody3D"]
+shape = SubResource("BoxShape3D_wpdx6")
+
+[node name="ButtonRight" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4, 0, 0)
+
+[node name="Area3D" type="Area3D" parent="ButtonRight"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0494009, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ButtonRight/Area3D"]
+shape = SubResource("BoxShape3D_6ln3o")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="ButtonRight"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0494009, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ButtonRight/StaticBody3D"]
+mesh = SubResource("BoxMesh_wpdx6")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="ButtonRight/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0207425, 0)
+mesh = SubResource("BoxMesh_vsiqc")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="ButtonRight/StaticBody3D/MeshInstance3D2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.0296203, 0)
+mesh = SubResource("TextMesh_m1jx1")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ButtonRight/StaticBody3D"]
+shape = SubResource("BoxShape3D_b80h8")
+
+[node name="ButtonUp" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.4)
+
+[node name="Area3D" type="Area3D" parent="ButtonUp"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0494009, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ButtonUp/Area3D"]
+shape = SubResource("BoxShape3D_vl4h5")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="ButtonUp"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0494009, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ButtonUp/StaticBody3D"]
+mesh = SubResource("BoxMesh_4swoe")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="ButtonUp/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0207425, 0)
+mesh = SubResource("BoxMesh_42kad")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="ButtonUp/StaticBody3D/MeshInstance3D2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.0296203, 0)
+mesh = SubResource("TextMesh_kn36u")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ButtonUp/StaticBody3D"]
+shape = SubResource("BoxShape3D_ylrsq")
+
+[node name="ButtonDown" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.4)
+
+[node name="Area3D" type="Area3D" parent="ButtonDown"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0494009, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ButtonDown/Area3D"]
+shape = SubResource("BoxShape3D_uqvrj")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="ButtonDown"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0494009, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ButtonDown/StaticBody3D"]
+mesh = SubResource("BoxMesh_pc4y3")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="ButtonDown/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0207425, 0)
+mesh = SubResource("BoxMesh_0udbp")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="ButtonDown/StaticBody3D/MeshInstance3D2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.0296203, 0)
+mesh = SubResource("TextMesh_232s3")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ButtonDown/StaticBody3D"]
+shape = SubResource("BoxShape3D_tq84a")

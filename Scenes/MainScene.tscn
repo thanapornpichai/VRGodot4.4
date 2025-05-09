@@ -27,9 +27,9 @@ size = Vector3(1, 1.83649, 1.31494)
 
 [node name="MainScene" type="Node3D" node_paths=PackedStringArray("_currentFloor", "Elevator")]
 script = ExtResource("1_7rqgy")
+_currentFloor = NodePath("Scene1_Floor4")
 FloorContainerPath = NodePath("ElevatorContainer")
 SceneList = Array[PackedScene]([ExtResource("4_7rqgy"), ExtResource("3_y4jh7"), ExtResource("4_f140w"), ExtResource("5_0iob3")])
-_currentFloor = NodePath("Scene1_Floor4")
 Elevator = NodePath("Elevator")
 
 [node name="XRController" type="Node3D" parent="."]
