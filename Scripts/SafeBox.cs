@@ -1,16 +1,16 @@
 using Godot;
 
-public partial class SafeBox : MeshInstance3D
+public partial class SafeBox : Node3D
 {
     [Export] public Node3D CapPivot;
-    private AnimationPlayer _animPlayer;
-
+    [Export] public Node3D book;
+    [Export] public AnimationPlayer _animPlayer;
+    
     private bool _isOpen = false;
 
     public override void _Ready()
     {
         AddToGroup("safe_boxes");
-        _animPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
     }
 
     public void OpenBox()
@@ -20,6 +20,7 @@ public partial class SafeBox : MeshInstance3D
 
         _isOpen = true;
         GD.Print("SafeBox opened!");
+        book.Visible = true;
 
         if (_animPlayer != null)
             _animPlayer.Play("LockerOpen");

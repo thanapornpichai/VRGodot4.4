@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://deiqb5c7n64ei"]
+
+[ext_resource type="Texture2D" uid="uid://deopcv0uh4bjc" path="res://Images/MathPuzzle.png" id="1_f7yhy"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("1_f7yhy")

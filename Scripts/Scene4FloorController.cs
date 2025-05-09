@@ -27,7 +27,7 @@ public partial class Scene4FloorController : BaseFloorController
 	public void OnFinishFloor()
 	{
 		_area = GetNode<Area3D>("Area3D");
-
+		_finishedFloor = true;
 		_area.Connect("body_entered", new Callable(this, nameof(OnBodyEntered)));
 		_area.Connect("body_exited", new Callable(this, nameof(OnBodyExited)));
 	}

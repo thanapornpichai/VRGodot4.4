@@ -721,37 +721,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.29444, 54.2227)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.54858, 0, 1.41119)
 shape = SubResource("BoxShape3D_uk6cp")
 
-[node name="Mirror" type="MeshInstance3D" parent="." node_paths=PackedStringArray("beam_mesh", "end_particles", "rayCast")]
-transform = Transform3D(-0.000784277, 0.116103, -0.162848, -0.199716, -0.00910733, -0.00553124, -0.0106265, 0.162595, 0.115974, -7.80072, 1.61185, 42.3788)
-mesh = ExtResource("23_fudck")
-skeleton = NodePath("../LaserPuzzle/LaserGun/Laser1")
-script = ExtResource("24_tv6l0")
-beam_mesh = NodePath("RayCast3D/BeamMesh")
-end_particles = NodePath("RayCast3D/EndParticles")
-rayCast = NodePath("RayCast3D")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Mirror"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Mirror/StaticBody3D"]
-transform = Transform3D(0.999999, -0.000541715, 8.21529e-05, 0.00054123, 0.999985, 0.00532965, -8.51313e-05, -0.00532965, 0.999985, -0.00191069, 0.0473938, -0.0436783)
-shape = SubResource("BoxShape3D_0rxfa")
-
-[node name="Pivot" type="Node3D" parent="Mirror"]
-transform = Transform3D(1, -1.11759e-08, 3.72529e-09, 0, -2.98023e-08, 1, 7.45058e-09, -1, -8.9407e-08, -0.000483871, 0.0908597, -0.0241207)
-
-[node name="RayCast3D" type="RayCast3D" parent="Mirror"]
-transform = Transform3D(1, 9.77889e-09, 1.02445e-08, 5.58794e-09, 1, -2.08616e-07, 2.23517e-08, 1.78814e-07, 1, -0.000488281, 0.0907745, -0.0241547)
-target_position = Vector3(0, 500, 0)
-
-[node name="BeamMesh" type="MeshInstance3D" parent="Mirror/RayCast3D"]
-transform = Transform3D(1, -8.88178e-16, 0, 8.88178e-16, 1, 0, 0, 0, 1, 0, 0, 0)
-mesh = SubResource("CylinderMesh_ol8ve")
-surface_material_override/0 = SubResource("StandardMaterial3D_wnkjo")
-
-[node name="EndParticles" parent="Mirror/RayCast3D" instance=ExtResource("25_uqh4o")]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
-amount = 31
-
 [node name="LaserPuzzle" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.79661, 0.00066494, 48.2442)
 
@@ -765,6 +734,37 @@ transform = Transform3D(8, 0, -1.19209e-07, 0, 8, 0, 2.38419e-07, 0, 3, -0.78413
 CapPivot = NodePath("../../../..")
 book = NodePath("../../../../../../../../Book")
 _animPlayer = NodePath("../../../../../../AnimationPlayer")
+
+[node name="Mirror" type="MeshInstance3D" parent="LaserPuzzle" node_paths=PackedStringArray("beam_mesh", "end_particles", "rayCast")]
+transform = Transform3D(0.0103984, -0.143917, -0.138491, -0.199716, -0.00910733, -0.00553124, -0.00232622, 0.138582, -0.144186, -2.00411, 1.61118, -5.86538)
+mesh = ExtResource("23_fudck")
+skeleton = NodePath("../LaserGun/Laser1")
+script = ExtResource("24_tv6l0")
+beam_mesh = NodePath("RayCast3D/BeamMesh")
+end_particles = NodePath("RayCast3D/EndParticles")
+rayCast = NodePath("RayCast3D")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="LaserPuzzle/Mirror"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LaserPuzzle/Mirror/StaticBody3D"]
+transform = Transform3D(0.999999, -0.000541715, 8.21529e-05, 0.00054123, 0.999985, 0.00532965, -8.51313e-05, -0.00532965, 0.999985, -0.00191069, 0.0473938, -0.0436783)
+shape = SubResource("BoxShape3D_0rxfa")
+
+[node name="Pivot" type="Node3D" parent="LaserPuzzle/Mirror"]
+transform = Transform3D(1, -1.11759e-08, 3.72529e-09, 0, -2.98023e-08, 1, 7.45058e-09, -1, -8.9407e-08, -0.000483871, 0.0908597, -0.0241207)
+
+[node name="RayCast3D" type="RayCast3D" parent="LaserPuzzle/Mirror"]
+transform = Transform3D(1, 9.77889e-09, 1.02445e-08, 5.58794e-09, 1, -2.08616e-07, 2.23517e-08, 1.78814e-07, 1, -0.000488281, 0.0907745, -0.0241547)
+target_position = Vector3(0, 500, 0)
+
+[node name="BeamMesh" type="MeshInstance3D" parent="LaserPuzzle/Mirror/RayCast3D"]
+transform = Transform3D(1, -8.88178e-16, 0, 8.88178e-16, 1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("CylinderMesh_ol8ve")
+surface_material_override/0 = SubResource("StandardMaterial3D_wnkjo")
+
+[node name="EndParticles" parent="LaserPuzzle/Mirror/RayCast3D" instance=ExtResource("25_uqh4o")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+amount = 31
 
 [node name="LaserGun" type="MeshInstance3D" parent="LaserPuzzle"]
 transform = Transform3D(-8.74228e-09, 0, 0.2, 0, 0.2, 0, -0.2, 0, -8.74228e-09, -2, 0.022, 0)

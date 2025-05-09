@@ -1,11 +1,22 @@
-[gd_scene load_steps=8 format=3 uid="uid://dq85p7v4jggu0"]
+[gd_scene load_steps=11 format=3 uid="uid://dq85p7v4jggu0"]
 
 [ext_resource type="ArrayMesh" uid="uid://bubg8b6k8kpr5" path="res://Nai/Asssets/safe_open.vox" id="1_a1oe4"]
 [ext_resource type="ArrayMesh" uid="uid://brjodvvnojlbw" path="res://Nai/Asssets/safe_cap.vox" id="2_46wr3"]
-[ext_resource type="Script" uid="uid://bcdm1bj3e0pfj" path="res://Scripts/SafeBox.cs" id="2_c6icp"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_46wr3"]
+size = Vector3(4.08942, 9.40638, 0.89818)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_c6icp"]
+size = Vector3(0.263619, 9.40638, 1.98395)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dpwu1"]
+size = Vector3(4.0487, 0.437874, 1.98514)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0c4ic"]
+size = Vector3(3.99212, 0.403996, 1.98514)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_a1oe4"]
-size = Vector3(4.08942, 9.40638, 0.430123)
+size = Vector3(4.08942, 9.40638, 0.311741)
 
 [sub_resource type="Animation" id="Animation_46wr3"]
 resource_name = "LockerOpen"
@@ -44,10 +55,30 @@ _data = {
 &"RESET": SubResource("Animation_c6icp")
 }
 
-[node name="Safebox" type="MeshInstance3D" node_paths=PackedStringArray("CapPivot")]
+[node name="Safebox" type="MeshInstance3D"]
 mesh = ExtResource("1_a1oe4")
-script = ExtResource("2_c6icp")
-CapPivot = NodePath("Pivot")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1.00273, 0, 0, 0, 1.00273, 0, 0, 0, 1.00273, 0.00421202, 4.97724, -0.549295)
+shape = SubResource("BoxShape3D_46wr3")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1.00273, 0, 0, 0, 1.00273, 0, 0, 0, 1.00273, 1.92233, 4.97724, -0.00492966)
+shape = SubResource("BoxShape3D_c6icp")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1.00273, 0, 0, 0, 1.00273, 0, 0, 0, 1.00273, -1.9319, 4.97724, -0.00492966)
+shape = SubResource("BoxShape3D_c6icp")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1.00273, 0, 0, 0, 1.00273, 0, 0, 0, 1.00273, -0.0341885, 9.78632, -0.00433253)
+shape = SubResource("BoxShape3D_dpwu1")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1.00273, 0, 0, 0, 1.00273, 0, 0, 0, 1.00273, -0.00582313, 0.20431, -0.00433253)
+shape = SubResource("BoxShape3D_0c4ic")
 
 [node name="Pivot" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.81077, 5.96046e-08, 0.966825)

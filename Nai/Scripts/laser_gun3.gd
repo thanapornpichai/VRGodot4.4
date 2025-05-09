@@ -28,6 +28,8 @@ func _process(_delta):
 		var root = get_collider().get_parent()
 		if root and root.has_method("OnLaserHit"):
 			root.OnLaserHit(hit_world, refl)
+		elif root and root.has_method("StopLaser"):
+			root.StopLaser()
 
 	else:
 		# ไม่ชนอะไรเลย → ยิงเต็มระยะไปตาม target_position

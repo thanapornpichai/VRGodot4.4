@@ -47,27 +47,26 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_08pn4")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_5ecfa"]
-size = Vector3(0.400818, 0.60614, 0.598877)
+[sub_resource type="BoxShape3D" id="BoxShape3D_u7pb8"]
+size = Vector3(0.150391, 0.32251, 0.323242)
 
-[node name="PickableObject" instance=ExtResource("1_l6aky")]
+[node name="Book" instance=ExtResource("1_l6aky")]
 
 [node name="CollisionShape3D" parent="." index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000708342, 0.0290712, 0.000265715)
 shape = SubResource("BoxShape3D_oe8at")
 
-[node name="BlueBook_6" type="Node3D" parent="." index="1"]
-transform = Transform3D(0.338407, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="BlueBook_6" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.233921, 0)
-
-[node name="BlueBook_6_001" type="MeshInstance3D" parent="BlueBook_6/StaticBody3D" index="0"]
-transform = Transform3D(1, 0, 0, 0, -1.19209e-07, 1, 0, -1, -1.19209e-07, 0, -5.96046e-08, 0)
+[node name="BlueBook_6_001" type="MeshInstance3D" parent="." index="1"]
+transform = Transform3D(0.338407, 0, 0, 0, -5.96045e-08, 0.5, 0, -0.5, -5.96045e-08, 0, -0.116961, 0)
 material_override = ExtResource("2_u7pb8")
 mesh = SubResource("ArrayMesh_03ssx")
 skeleton = NodePath("")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="BlueBook_6/StaticBody3D" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000335693, 0.297821, -0.000854492)
-shape = SubResource("BoxShape3D_5ecfa")
+[node name="BlueBook_6" type="Node3D" parent="." index="2"]
+transform = Transform3D(0.338407, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+
+[node name="Area3D" type="Area3D" parent="." index="3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0309448, 0)
+shape = SubResource("BoxShape3D_u7pb8")

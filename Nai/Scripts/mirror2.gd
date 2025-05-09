@@ -3,23 +3,24 @@ extends MeshInstance3D
 @export var beam_mesh      : MeshInstance3D
 @export var end_particles  : GPUParticles3D
 @export var rayCast        : RayCast3D
-
 var tween : Tween
 var safe_box_hit_time := 0.0
 var safe_box : Node = null
 var is_open = false
+var on_Reflex = false;
 
 func _process(delta):
+	if not on_Reflex:
+		return
+		
 	rayCast.exclude_parent = true
 	rayCast.force_raycast_update()
 	if rayCast.is_colliding():
-		var collider = rayCast.get_collider()
-		var cap  = collider.get_parent()
-		var safebox = collider.get_parent().get_parent()
+		var safebox = rayCast.get_collider()
 		var hit_world = rayCast.get_collision_point()
 		var end_local = to_local(hit_world)
 		
-		if is_open:
+		if is_open && !on_Reflex :
 			deactivate()
 		elif not is_open:
 			laser_activate(end_local, 0.15)
@@ -27,8 +28,8 @@ func _process(delta):
 		if safe_box_hit_time >= 3.0:
 			if safe_box and safe_box.has_method("OpenBox"):
 				is_open = true
-				print(is_open)
-				safe_box.open_box()
+				StopLaser()
+				safe_box.OpenBox()
 				
 		if safebox.is_in_group("safe_boxes"):
 			safe_box = safebox
@@ -39,7 +40,6 @@ func _process(delta):
 func laser_activate(hit_local: Vector3, time := 0.15):
 	beam_mesh.mesh.height = hit_local.y
 	beam_mesh.position.y = hit_local.y * 0.5
-	end_particles.position = hit_local
 
 	tween = get_tree().create_tween().set_parallel(true)
 	visible = true
@@ -58,3 +58,18 @@ func deactivate(time := 0.15):
 	await tween.finished
 	visible = false
 	end_particles.emitting = false
+
+func OnLaserHit(hit_pos : Vector3, dir : Vector3):
+	on_Reflex = true
+	rayCast.global_position = hit_pos
+	
+	rayCast.look_at(hit_pos + dir, Vector3.UP)
+	rayCast.rotate_object_local(Vector3.RIGHT, deg_to_rad(90))
+	
+	if rayCast.is_colliding():
+		end_particles.global_position = rayCast.get_collision_point()
+		var hit = rayCast.get_collider()
+		print("Laser hit: ", hit.name)
+		
+func StopLaser():
+	on_Reflex = false

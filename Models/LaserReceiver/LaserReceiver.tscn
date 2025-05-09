@@ -1,5 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://wjo53xd2s01v"]
+[gd_scene load_steps=11 format=3 uid="uid://wjo53xd2s01v"]
 
+[ext_resource type="Script" uid="uid://bcdm1bj3e0pfj" path="res://Scripts/SafeBox.cs" id="1_ae8f2"]
 [ext_resource type="FontFile" uid="uid://c33d6w5xdgwib" path="res://labels_and_texts/fonts/Minecraftia-Regular.ttf" id="1_j4yxr"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_ae8f2"]
@@ -20,7 +21,7 @@ material = SubResource("StandardMaterial3D_381b1")
 size = Vector3(0.08, 0.08, 0.1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_j4yxr"]
-size = Vector3(0.08, 0.08, 0.1)
+size = Vector3(0.129883, 0.111816, 0.1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ga848"]
 emission_enabled = true
@@ -47,10 +48,11 @@ mesh = SubResource("BoxMesh_ga848")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0326491, 0.00829182)
 mesh = SubResource("BoxMesh_a8i8x")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Body/ReceiverPoint" groups=["LaserReceiver"]]
+[node name="LaserReceiver" type="StaticBody3D" parent="Body/ReceiverPoint" groups=["LaserReceiver"]]
+script = ExtResource("1_ae8f2")
 
-[node name="Laser" type="CollisionShape3D" parent="Body/ReceiverPoint/StaticBody3D" groups=["LaserReceiver"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0138313)
+[node name="Laser" type="CollisionShape3D" parent="Body/ReceiverPoint/LaserReceiver" groups=["LaserReceiver"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00219727, 0.0138313)
 shape = SubResource("BoxShape3D_j4yxr")
 
 [node name="Text" type="MeshInstance3D" parent="."]
