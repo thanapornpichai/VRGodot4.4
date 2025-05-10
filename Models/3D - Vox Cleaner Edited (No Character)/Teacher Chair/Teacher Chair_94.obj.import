@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c5kjheim7q853"
+path="res://.godot/imported/Teacher Chair_94.obj-3fd4d47b03e4f07cfe9889f6db9b8664.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Teacher Chair_94.obj-3fd4d47b03e4f07cfe9889f6db9b8664.mesh"]
+
+source_file="res://Models/3D - Vox Cleaner Edited (No Character)/Teacher Chair/Teacher Chair_94.obj"
+dest_files=["res://.godot/imported/Teacher Chair_94.obj-3fd4d47b03e4f07cfe9889f6db9b8664.mesh", "res://.godot/imported/Teacher Chair_94.obj-3fd4d47b03e4f07cfe9889f6db9b8664.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false
