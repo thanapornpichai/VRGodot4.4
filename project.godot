@@ -26,7 +26,7 @@ project/assembly_name="GodotVR4.4"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/MagicaVoxel_Importer_with_Extensions/plugin.cfg", "res://addons/godot-xr-tools/plugin.cfg", "res://addons/snappy/plugin.cfg")
+enabled=PackedStringArray("res://addons/godot-xr-tools/plugin.cfg", "res://addons/snappy/plugin.cfg")
 
 [filesystem]
 

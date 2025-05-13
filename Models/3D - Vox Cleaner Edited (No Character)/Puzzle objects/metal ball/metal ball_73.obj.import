@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cntka3ctw6ate"
+path="res://.godot/imported/metal ball_73.obj-2ae8b74d7605c61310e9e791a542dbd5.mesh"
+
+[deps]
+
+files=["res://.godot/imported/metal ball_73.obj-2ae8b74d7605c61310e9e791a542dbd5.mesh"]
+
+source_file="res://Models/3D - Vox Cleaner Edited (No Character)/Puzzle objects/metal ball/metal ball_73.obj"
+dest_files=["res://.godot/imported/metal ball_73.obj-2ae8b74d7605c61310e9e791a542dbd5.mesh", "res://.godot/imported/metal ball_73.obj-2ae8b74d7605c61310e9e791a542dbd5.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://se6527a82skr"
+path="res://.godot/imported/Workshop_table_88.obj-85299d949b14debcc5159b6aa7d8fab3.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Workshop_table_88.obj-85299d949b14debcc5159b6aa7d8fab3.mesh"]
+
+source_file="res://Models/3D - Vox Cleaner Edited (No Character)/Puzzle objects/Workshop table/Workshop_table_88.obj"
+dest_files=["res://.godot/imported/Workshop_table_88.obj-85299d949b14debcc5159b6aa7d8fab3.mesh", "res://.godot/imported/Workshop_table_88.obj-85299d949b14debcc5159b6aa7d8fab3.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

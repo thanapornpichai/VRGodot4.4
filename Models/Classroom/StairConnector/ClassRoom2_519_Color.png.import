@@ -3,21 +3,19 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cc1fxu4q0jidv"
-path.s3tc="res://.godot/imported/ClassRoom2_519_Color.png-cc9bfa1a823b736ac07db02da4bb0fb1.s3tc.ctex"
-path.etc2="res://.godot/imported/ClassRoom2_519_Color.png-cc9bfa1a823b736ac07db02da4bb0fb1.etc2.ctex"
+path="res://.godot/imported/ClassRoom2_519_Color.png-cc9bfa1a823b736ac07db02da4bb0fb1.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://Models/Classroom/StairConnector/ClassRoom2_519_Color.png"
-dest_files=["res://.godot/imported/ClassRoom2_519_Color.png-cc9bfa1a823b736ac07db02da4bb0fb1.s3tc.ctex", "res://.godot/imported/ClassRoom2_519_Color.png-cc9bfa1a823b736ac07db02da4bb0fb1.etc2.ctex"]
+dest_files=["res://.godot/imported/ClassRoom2_519_Color.png-cc9bfa1a823b736ac07db02da4bb0fb1.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=3
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

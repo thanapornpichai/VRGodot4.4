@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://2lykrxfgg1ik"
+path="res://.godot/imported/TheatreChair_86.obj-82be6dbcb63137e8c7a4d452708a214a.mesh"
+
+[deps]
+
+files=["res://.godot/imported/TheatreChair_86.obj-82be6dbcb63137e8c7a4d452708a214a.mesh"]
+
+source_file="res://Models/3D - Vox Cleaner Edited (No Character)/Puzzle objects/Theatre Chair/TheatreChair_86.obj"
+dest_files=["res://.godot/imported/TheatreChair_86.obj-82be6dbcb63137e8c7a4d452708a214a.mesh", "res://.godot/imported/TheatreChair_86.obj-82be6dbcb63137e8c7a4d452708a214a.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

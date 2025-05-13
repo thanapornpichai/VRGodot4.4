@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dq76xssnydgpb"
+path="res://.godot/imported/open box_52.obj-469e27467c9b62bc34de08f53c8aea85.mesh"
+
+[deps]
+
+files=["res://.godot/imported/open box_52.obj-469e27467c9b62bc34de08f53c8aea85.mesh"]
+
+source_file="res://Models/3D - Vox Cleaner Edited (No Character)/Puzzle objects/box(open and closed)/open box_52.obj"
+dest_files=["res://.godot/imported/open box_52.obj-469e27467c9b62bc34de08f53c8aea85.mesh", "res://.godot/imported/open box_52.obj-469e27467c9b62bc34de08f53c8aea85.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

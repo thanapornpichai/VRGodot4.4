@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cf8ykvkmijdir"
+path="res://.godot/imported/poster(panda_43.obj-364eb2087668ffefb9316b6291b6489d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/poster(panda_43.obj-364eb2087668ffefb9316b6291b6489d.mesh"]
+
+source_file="res://Models/3D - Vox Cleaner Edited (No Character)/poster(3types)/poster(panda_43.obj"
+dest_files=["res://.godot/imported/poster(panda_43.obj-364eb2087668ffefb9316b6291b6489d.mesh", "res://.godot/imported/poster(panda_43.obj-364eb2087668ffefb9316b6291b6489d.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

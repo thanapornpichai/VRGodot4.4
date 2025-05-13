@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bghydl0tqqfg3"
+path="res://.godot/imported/StrawHat_83.obj-cc43a0213624140efe0b4e67918be80a.mesh"
+
+[deps]
+
+files=["res://.godot/imported/StrawHat_83.obj-cc43a0213624140efe0b4e67918be80a.mesh"]
+
+source_file="res://Models/3D - Vox Cleaner Edited (No Character)/Puzzle objects/SEA StrawHat/StrawHat_83.obj"
+dest_files=["res://.godot/imported/StrawHat_83.obj-cc43a0213624140efe0b4e67918be80a.mesh", "res://.godot/imported/StrawHat_83.obj-cc43a0213624140efe0b4e67918be80a.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

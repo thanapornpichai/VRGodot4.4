@@ -3,21 +3,19 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://mkmcmhclisv1"
-path.s3tc="res://.godot/imported/ClassRoom2_332_Color.png-adf0dc36102286dc264a53424b878030.s3tc.ctex"
-path.etc2="res://.godot/imported/ClassRoom2_332_Color.png-adf0dc36102286dc264a53424b878030.etc2.ctex"
+path="res://.godot/imported/ClassRoom2_332_Color.png-adf0dc36102286dc264a53424b878030.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://Models/Classroom/Windows/ClassRoom2_332_Color.png"
-dest_files=["res://.godot/imported/ClassRoom2_332_Color.png-adf0dc36102286dc264a53424b878030.s3tc.ctex", "res://.godot/imported/ClassRoom2_332_Color.png-adf0dc36102286dc264a53424b878030.etc2.ctex"]
+dest_files=["res://.godot/imported/ClassRoom2_332_Color.png-adf0dc36102286dc264a53424b878030.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=3
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
