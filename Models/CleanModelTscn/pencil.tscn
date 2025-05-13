@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://dyojqhtmdo7el"]
+
+[ext_resource type="Texture2D" uid="uid://bltvlnenoc4am" path="res://Models/3D - Vox Cleaner Edited (No Character)/Pencil/pencil_25_Color.png" id="1_ydg7a"]
+[ext_resource type="ArrayMesh" uid="uid://dd36c5dw5limx" path="res://Models/3D - Vox Cleaner Edited (No Character)/Pencil/pencil_25.obj" id="2_add57"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uhfbx"]
+albedo_color = Color(0.878431, 0.878431, 0.878431, 1)
+albedo_texture = ExtResource("1_ydg7a")
+texture_filter = 0
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_m7055"]
+points = PackedVector3Array(0.11745, 0.287302, 0.0173982, -0.2, 0.616446, -0.3, -0.192063, 0.631555, 0.2, 0.3, 1.84966, -0.292063, -0.192063, 1.84966, 0.2, 0.3, 1.84966, 0.2, -0.2, 1.87384, -0.3, 0.3, 0.631555, -0.292063, 0.3, 0.631555, 0.2, -0.00946165, 0.287302, -0.109514, -0.00946165, 0.287302, 0.0173982, 0.11745, 0.287302, -0.109514, -0.1, 0.43694, -0.2)
+
+[node name="Pencil" type="MeshInstance3D"]
+transform = Transform3D(4.55426e-16, -6.93436e-09, -0.0660644, -0.0833595, -6.93437e-09, -1.02594e-23, -3.64376e-09, 0.15864, -2.88777e-09, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_uhfbx")
+mesh = ExtResource("2_add57")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_m7055")

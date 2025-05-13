@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://d1atqb4gamc8w"]
+
+[ext_resource type="Texture2D" uid="uid://bjc0n88842csr" path="res://Models/3D - Vox Cleaner Edited (No Character)/Puzzle objects/Southeast Asian Straw Hat/Southeast Asian Straw Hat_84_Color.png" id="1_v0xhv"]
+[ext_resource type="ArrayMesh" uid="uid://bgenar7hrv21m" path="res://Models/3D - Vox Cleaner Edited (No Character)/Puzzle objects/Southeast Asian Straw Hat/Southeast Asian Straw Hat_84.obj" id="2_ucs5c"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b5atu"]
+albedo_color = Color(0.741384, 0.741385, 0.741384, 1)
+albedo_texture = ExtResource("1_v0xhv")
+texture_filter = 0
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_2s60i"]
+points = PackedVector3Array(-0.484514, -0.0226733, 1.9, -1.31468, -0.2, -1.8963, -1.84778, -0.2, -1.71847, -1.2, 0.694515, -0.9, 0.996296, -0.2, -0.414304, -2.6181, -0.2, 0.948148, -0.600409, 0.694465, 0.8999, 0.623412, 0.149356, -1.14236, -2.74082, 0.149356, -0.444295, 0.750694, 0.149356, 0.952232, -1.6001, 0.68235, 0.583782, -0.0001, 0.694465, -0.299591, 0.344398, -0.2, 1.54028, -2.04236, 0.149356, 1.52381, -0.455705, 0.149356, -1.84122, -1.85183, 0.149356, -1.65069, 0.344398, -0.2, -1.54028, -1.31468, -0.2, 1.8963, -2.6181, -0.2, -0.948148, -2.74082, 0.149356, 0.444295, -1.79962, 0.694515, -0.3, 0.94122, 0.149356, -0.443898, -0.455705, 0.149356, 1.84122, -0.600376, 0.694515, -0.9, -1.3443, 0.149356, 1.84122, -0.0001, 0.694465, 0.299591, -2.42341, 0.149356, -1.14276, 0.996296, -0.2, 0.414304, 0.242758, 0.149356, 1.52341, -1.19997, 0.694465, 0.8999, -2.7963, -0.2, 0.414676, -1.3443, 0.149356, -1.84122)
+
+[node name="South East Asian Straw Hat" type="MeshInstance3D"]
+transform = Transform3D(-0.3, 0, 2.62268e-08, 0, 0.3, 0, -2.62268e-08, 0, -0.3, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_b5atu")
+mesh = ExtResource("2_ucs5c")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_2s60i")

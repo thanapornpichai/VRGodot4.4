@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://ct6rm0xdi4wla"]
+
+[ext_resource type="Texture2D" uid="uid://xtwxqq4wgi2m" path="res://Models/3D - Vox Cleaner Edited (No Character)/Puzzle objects/book/book_50_Color.png" id="1_4qign"]
+[ext_resource type="ArrayMesh" uid="uid://bg3q6sk6vn12e" path="res://Models/3D - Vox Cleaner Edited (No Character)/Puzzle objects/book/book_50.obj" id="2_m28qt"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tobfn"]
+albedo_color = Color(0.890196, 0.890196, 0.890196, 1)
+albedo_texture = ExtResource("1_4qign")
+roughness = 0.9
+texture_filter = 0
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_k3wi0"]
+data = PackedVector3Array(0.3, 0, -0.5, -0.3, 0.4, -0.5, -0.3, 0, -0.5, 0.3, 0.4, -0.5, -0.3, 0.4, -0.5, 0.3, 0, -0.5, 0.3, 0.4, 0.5, 0.3, 0, -0.5, 0.3, 0, 0.5, 0.3, 0.4, -0.5, 0.3, 0, -0.5, 0.3, 0.4, 0.5, -0.3, 0, 0.5, 0.3, 0.4, 0.5, 0.3, 0, 0.5, -0.3, 0.4, 0.5, 0.3, 0.4, 0.5, -0.3, 0, 0.5, 0.3, 0.4, 0.5, -0.3, 0.4, -0.5, 0.3, 0.4, -0.5, -0.3, 0.4, 0.5, -0.3, 0.4, -0.5, 0.3, 0.4, 0.5, -0.3, 0, 0.5, -0.3, 0.4, -0.5, -0.3, 0.4, 0.5, -0.3, 0, -0.5, -0.3, 0.4, -0.5, -0.3, 0, 0.5, 0.3, 0, -0.5, -0.3, 0, 0.5, 0.3, 0, 0.5, -0.3, 0, -0.5, -0.3, 0, 0.5, 0.3, 0, -0.5)
+
+[node name="Book" type="MeshInstance3D"]
+transform = Transform3D(-0.129409, -3.16774e-09, 0.463644, -2.18557e-08, 0.28, 2.78825e-15, -0.482963, -1.18221e-08, -0.124233, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_tobfn")
+mesh = ExtResource("2_m28qt")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_k3wi0")

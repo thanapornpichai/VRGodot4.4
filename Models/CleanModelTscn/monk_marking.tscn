@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://bs6u63e0efjwy"]
+
+[ext_resource type="Texture2D" uid="uid://syefiqw8fa7r" path="res://Models/3D - Vox Cleaner Edited (No Character)/Poster&Picture/MonkMarking/MonkMarking_35_Color.png" id="1_yiay8"]
+[ext_resource type="ArrayMesh" uid="uid://bw4bo8p2kkj71" path="res://Models/3D - Vox Cleaner Edited (No Character)/Poster&Picture/MonkMarking/MonkMarking_35.obj" id="2_mka7d"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gdoqa"]
+albedo_color = Color(0.878431, 0.878431, 0.878431, 1)
+albedo_texture = ExtResource("1_yiay8")
+texture_filter = 0
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_3yu32"]
+points = PackedVector3Array(-0.609524, -0.00932258, -0.509524, 0.55873, 0.976199, -0.4, 0.609524, 1.01905, -0.509524, 0.609524, -0.00932258, -0.509524, -0.609524, 1.01905, -0.509524, -0.55873, 0.0335259, -0.4, 0.55873, 0.0335259, -0.4, -0.55873, 0.976199, -0.4)
+
+[node name="MonkMarking" type="MeshInstance3D"]
+material_override = SubResource("StandardMaterial3D_gdoqa")
+mesh = ExtResource("2_mka7d")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_3yu32")

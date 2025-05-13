@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://bfbyyc2ojo420"]
+
+[ext_resource type="Texture2D" uid="uid://bc7yy2ijyjeni" path="res://Models/3D - Vox Cleaner Edited (No Character)/Puzzle objects/Projector/projector_45_Color.png" id="1_l0iyp"]
+[ext_resource type="Texture2D" uid="uid://cr0i7w7oaclwh" path="res://Models/3D - Vox Cleaner Edited (No Character)/Puzzle objects/Projector/projector_45_Emission.png" id="2_xnpwa"]
+[ext_resource type="ArrayMesh" uid="uid://capi4dgmpyspc" path="res://Models/3D - Vox Cleaner Edited (No Character)/Puzzle objects/Projector/projector_45.obj" id="3_vcwx4"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0a4q0"]
+albedo_color = Color(0.815686, 0.815686, 0.815686, 1)
+albedo_texture = ExtResource("1_l0iyp")
+metallic = 0.5
+metallic_specular = 0.3
+roughness = 0.8
+emission_enabled = true
+emission_texture = ExtResource("2_xnpwa")
+texture_filter = 0
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_8spnn"]
+data = PackedVector3Array(-0.2, 0.3, 0.2, 0.3, 0, 0.2, -0.2, 0, 0.2, 0.3, 0.3, 0.2, 0.3, 0, 0.2, -0.2, 0.3, 0.2, -0.3, 0, -0.3, -0.2, 0, 0.1, 0.3, 0, -0.3, -0.3, 0, 0.1, -0.2, 0, 0.1, -0.3, 0, -0.3, -0.2, 0, 0.2, 0.3, 0, -0.3, -0.2, 0, 0.1, 0.3, 0, 0.2, 0.3, 0, -0.3, -0.2, 0, 0.2, -0.3, 0.3, 0.1, 0.3, 0.3, -0.3, -0.2, 0.3, 0.1, -0.3, 0.3, -0.3, 0.3, 0.3, -0.3, -0.3, 0.3, 0.1, -0.2, 0.3, 0.2, -0.2, 0.3, 0.1, 0.3, 0.3, -0.3, 0.3, 0.3, 0.2, -0.2, 0.3, 0.2, 0.3, 0.3, -0.3, -0.2, 0, 0.1, -0.2, 0.3, 0.2, -0.2, 0, 0.2, -0.2, 0.3, 0.1, -0.2, 0.3, 0.2, -0.2, 0, 0.1, -0.3, 0, 0.1, -0.2, 0.3, 0.1, -0.2, 0, 0.1, -0.3, 0.3, 0.1, -0.2, 0.3, 0.1, -0.3, 0, 0.1, 0.3, 0, 0.2, 0.3, 0.3, -0.3, 0.3, 0, -0.3, 0.3, 0.3, 0.2, 0.3, 0.3, -0.3, 0.3, 0, 0.2, -0.3, 0, -0.3, -0.3, 0.3, 0.1, -0.3, 0, 0.1, -0.3, 0.3, -0.3, -0.3, 0.3, 0.1, -0.3, 0, -0.3, -0.3, 0, -0.3, 0.3, 0.3, -0.3, -0.3, 0.3, -0.3, 0.3, 0, -0.3, 0.3, 0.3, -0.3, -0.3, 0, -0.3)
+
+[node name="Projector" type="MeshInstance3D"]
+transform = Transform3D(-1.15, 0, 1.00536e-07, 0, 1.15, 0, -1.00536e-07, 0, -1.15, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_0a4q0")
+mesh = ExtResource("3_vcwx4")
+skeleton = NodePath("../PropGun/StaticBody3D")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_8spnn")

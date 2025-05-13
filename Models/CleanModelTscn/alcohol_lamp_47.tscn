@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://bpbha6qxua3lb"]
+
+[ext_resource type="Texture2D" uid="uid://dnrxrw7m15hie" path="res://Models/3D - Vox Cleaner Edited (No Character)/Puzzle objects/Alcohol lamp/alcohol lamp_47_Color.png" id="1_qxldk"]
+[ext_resource type="ArrayMesh" uid="uid://c1ecgd5dvjabt" path="res://Models/3D - Vox Cleaner Edited (No Character)/Puzzle objects/Alcohol lamp/alcohol lamp_47.obj" id="2_8o328"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pjjka"]
+transparency = 1
+albedo_color = Color(1, 0.967514, 0.710895, 0.866667)
+albedo_texture = ExtResource("1_qxldk")
+metallic = 0.26
+texture_filter = 0
+grow_amount = 7.191
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_kkbkb"]
+points = PackedVector3Array(0.103906, 5.55112e-17, 0.003854, 0.40632, 0.51576, 0.306349, 0.0999831, 0.964642, 6.93889e-18, -0.307936, 0.51576, 0.306349, -0.307936, 0.51576, -0.407937, 0.40632, 0.51576, -0.407937, -0.3, 0.205276, -0.4, 0.398383, 0.205179, -0.4, -0.3, 0.205276, 0.298412, 0.399971, 0.203839, 0.3, -0.0992196, 0, -0.199142, 0, 0.950004, -0.0999253, 0.197643, -5.55112e-17, 0.0975947, -0.0992196, -1.11022e-16, 0.0976237, 0.197643, 5.55112e-17, -0.199113, 0.098458, 0.950688, -0.1, 0, 0.950004, -0.00160002, 0.103786, 0.203839, 0.3)
+
+[node name="AlcoholLamp47" type="MeshInstance3D"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_pjjka")
+mesh = ExtResource("2_8o328")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_kkbkb")

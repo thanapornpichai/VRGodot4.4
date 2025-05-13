@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://c0bh1keie31nr"]
+
+[ext_resource type="Texture2D" uid="uid://bs08ukhnsex8d" path="res://Models/3D - Vox Cleaner Edited (No Character)/Puzzle objects/bookshelf（full)/full bookshelf_13_Color.png" id="1_pxkw6"]
+[ext_resource type="ArrayMesh" uid="uid://bl32v8ualpuri" path="res://Models/3D - Vox Cleaner Edited (No Character)/Puzzle objects/bookshelf（full)/full bookshelf_13.obj" id="2_jre76"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xet67"]
+albedo_color = Color(0.890196, 0.890196, 0.890196, 1)
+albedo_texture = ExtResource("1_pxkw6")
+roughness = 0.9
+texture_filter = 0
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_bwxkw"]
+points = PackedVector3Array(5, 19.5433, 1.41942, -4.63585, 0.855354, -1.5, 4.79446, 0.855354, -1.5, -5, 0.149114, 1.46747, -4.63585, 19.1446, -1.5, -5, 19.8509, 1.46747, 5, 0.456718, 1.41942, 4.79446, 19.1446, -1.5)
+
+[node name="FullBookshelf" type="MeshInstance3D"]
+transform = Transform3D(-0.15, 0, 2.26494e-08, 0, 0.15, 0, -2.26494e-08, 0, -0.15, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_xet67")
+mesh = ExtResource("2_jre76")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_bwxkw")

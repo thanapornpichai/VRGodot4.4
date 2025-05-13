@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://cds63vv6q0qto"]
+
+[ext_resource type="Texture2D" uid="uid://cwl1v4vu8y1lo" path="res://Models/3D - Vox Cleaner Edited (No Character)/Poster&Picture/GreenBoard/GreenBoard_34_Color.png" id="1_ksn6b"]
+[ext_resource type="ArrayMesh" uid="uid://ckidv6x6qfa2t" path="res://Models/3D - Vox Cleaner Edited (No Character)/Poster&Picture/GreenBoard/GreenBoard_34.obj" id="2_tticb"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m7055"]
+albedo_color = Color(0.878431, 0.878431, 0.878431, 1)
+albedo_texture = ExtResource("1_ksn6b")
+texture_filter = 0
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_6jlwi"]
+points = PackedVector3Array(-1.01587, -0.015668, -0.515848, 1.01587, 1.03175, -0.388901, 1.01587, 1.03175, -0.515848, -1.01587, 1.03175, -0.388901, 1.01587, -0.015668, -0.388901, 1.01587, -0.015668, -0.515848, -1.01587, 1.03175, -0.515848, -1.01587, -0.015668, -0.388901)
+
+[node name="GreenBoard" type="MeshInstance3D"]
+material_override = SubResource("StandardMaterial3D_m7055")
+mesh = ExtResource("2_tticb")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_6jlwi")

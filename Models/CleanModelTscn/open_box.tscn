@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://1xwf3vg2egft"]
+
+[ext_resource type="Texture2D" uid="uid://d1ecygbp86n6l" path="res://Models/3D - Vox Cleaner Edited (No Character)/Puzzle objects/box(open and closed)/open box_52_Color.png" id="1_fxnxm"]
+[ext_resource type="ArrayMesh" uid="uid://dq76xssnydgpb" path="res://Models/3D - Vox Cleaner Edited (No Character)/Puzzle objects/box(open and closed)/open box_52.obj" id="2_yfqmw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ib3cj"]
+albedo_color = Color(0.804743, 0.804743, 0.804743, 1)
+albedo_texture = ExtResource("1_fxnxm")
+texture_filter = 0
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_4al6g"]
+data = PackedVector3Array(-0.2, 0.1, 0.1, 0.2, 0.5, 0.1, 0.2, 0.1, 0.1, -0.2, 0.5, 0.1, 0.2, 0.5, 0.1, -0.2, 0.1, 0.1, 0.3, 0.5, 0.6, 0.2, 0.5, 0.5, 0.3, 0.5, -0.6, -0.3, 0.5, 0.6, 0.2, 0.5, 0.5, 0.3, 0.5, 0.6, 0.2, 0.5, 0.1, 0.3, 0.5, -0.6, 0.2, 0.5, 0.5, -0.2, 0.5, 0.5, 0.2, 0.5, 0.5, -0.3, 0.5, 0.6, -0.2, 0.5, 0.1, 0.3, 0.5, -0.6, 0.2, 0.5, 0.1, -0.3, 0.5, 0.6, -0.3, 0.5, -0.6, -0.2, 0.5, 0.5, 0.3, 0.5, -0.6, -0.2, 0.5, 0.1, -0.3, 0.5, -0.6, -0.2, 0.5, 0.1, -0.2, 0.5, 0.5, -0.3, 0.5, -0.6, -0.3, 0, 0.6, -0.3, 0.4, 0, -0.3, 0.5, 0.6, -0.3, 0, 0, -0.3, 0.4, 0, -0.3, 0, 0.6, -0.3, 0.4, -0.6, -0.3, 0.5, 0.6, -0.3, 0.4, 0, -0.3, 0.5, -0.6, -0.3, 0.5, 0.6, -0.3, 0.4, -0.6, -0.2, 0.1, 0.5, 0.2, 0.5, 0.5, -0.2, 0.5, 0.5, 0.2, 0.1, 0.5, 0.2, 0.5, 0.5, -0.2, 0.1, 0.5, 0.2, 0.1, 0.5, -0.2, 0.1, 0.1, 0.2, 0.1, 0.1, -0.2, 0.1, 0.5, -0.2, 0.1, 0.1, 0.2, 0.1, 0.5, 0.2, 0.1, 0.5, 0.2, 0.5, 0.1, 0.2, 0.5, 0.5, 0.2, 0.1, 0.1, 0.2, 0.5, 0.1, 0.2, 0.1, 0.5, -0.3, 0.5, 0.6, 0.3, 0, 0.6, -0.3, 0, 0.6, 0.3, 0.5, 0.6, 0.3, 0, 0.6, -0.3, 0.5, 0.6, 0.3, 0.4, -0.6, -0.3, 0.4, 0, 0.3, 0.4, 0, -0.3, 0.4, -0.6, -0.3, 0.4, 0, 0.3, 0.4, -0.6, -0.2, 0.5, 0.5, -0.2, 0.1, 0.1, -0.2, 0.1, 0.5, -0.2, 0.5, 0.1, -0.2, 0.1, 0.1, -0.2, 0.5, 0.5, 0.3, 0, 0, -0.3, 0, 0.6, 0.3, 0, 0.6, -0.3, 0, 0, -0.3, 0, 0.6, 0.3, 0, 0, 0.3, 0.5, -0.6, -0.3, 0.4, -0.6, 0.3, 0.4, -0.6, -0.3, 0.5, -0.6, -0.3, 0.4, -0.6, 0.3, 0.5, -0.6, 0.3, 0, 0, 0.3, 0.5, 0.6, 0.3, 0.4, 0, 0.3, 0, 0.6, 0.3, 0.5, 0.6, 0.3, 0, 0, 0.3, 0.4, -0.6, 0.3, 0.4, 0, 0.3, 0.5, 0.6, 0.3, 0.5, -0.6, 0.3, 0.4, -0.6, 0.3, 0.5, 0.6, 0.3, 0, 0, -0.3, 0.4, 0, -0.3, 0, 0, 0.3, 0.4, 0, -0.3, 0.4, 0, 0.3, 0, 0)
+
+[node name="OpenBox" type="MeshInstance3D"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_ib3cj")
+mesh = ExtResource("2_yfqmw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_4al6g")

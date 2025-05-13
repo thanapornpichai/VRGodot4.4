@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://drywj7l7r4akf"]
+
+[ext_resource type="Texture2D" uid="uid://b52t5gei5edwm" path="res://Models/3D - Vox Cleaner Edited (No Character)/Puzzle objects/Mirror/mirror_75_Color.png" id="1_7ya8c"]
+[ext_resource type="Texture2D" uid="uid://csq3hhkwpb26g" path="res://Models/3D - Vox Cleaner Edited (No Character)/Puzzle objects/Mirror/mirror_75_Transmission.png" id="2_a7leq"]
+[ext_resource type="ArrayMesh" uid="uid://cb7qe7tqjxqmu" path="res://Models/3D - Vox Cleaner Edited (No Character)/Puzzle objects/Mirror/mirror_75.obj" id="3_hcxyp"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4tom2"]
+albedo_color = Color(0.674815, 0.674815, 0.674815, 1)
+albedo_texture = ExtResource("1_7ya8c")
+metallic = 0.5
+metallic_specular = 0.81
+roughness = 0.1
+subsurf_scatter_strength = 1.0
+subsurf_scatter_texture = ExtResource("2_a7leq")
+refraction_enabled = true
+refraction_texture = ExtResource("2_a7leq")
+texture_filter = 0
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_4x4p0"]
+data = PackedVector3Array(0.6, 0.1, -0.5, -0.6, 0, -0.5, 0.6, 0, -0.5, -0.6, 0.1, -0.5, -0.6, 0, -0.5, 0.6, 0.1, -0.5, -0.6, 0, 0.4, -0.6, 0.1, -0.5, -0.6, 0.1, 0.4, -0.6, 0, -0.5, -0.6, 0.1, -0.5, -0.6, 0, 0.4, -0.6, 0.1, -0.5, 0.6, 0.1, 0.4, -0.6, 0.1, 0.4, 0.6, 0.1, -0.5, 0.6, 0.1, 0.4, -0.6, 0.1, -0.5, -0.6, 0.1, 0.4, 0.6, 0, 0.4, -0.6, 0, 0.4, 0.6, 0.1, 0.4, 0.6, 0, 0.4, -0.6, 0.1, 0.4, 0.6, 0.1, 0.4, 0.6, 0, -0.5, 0.6, 0, 0.4, 0.6, 0.1, -0.5, 0.6, 0, -0.5, 0.6, 0.1, 0.4, -0.6, 0, -0.5, 0.6, 0, 0.4, 0.6, 0, -0.5, -0.6, 0, 0.4, 0.6, 0, 0.4, -0.6, 0, -0.5)
+
+[node name="Mirror" type="MeshInstance3D"]
+transform = Transform3D(-1, 8.08537e-08, 3.32479e-08, 0, 0.380312, -0.924858, -8.74228e-08, -0.924858, -0.380312, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_4tom2")
+mesh = ExtResource("3_hcxyp")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_4x4p0")
