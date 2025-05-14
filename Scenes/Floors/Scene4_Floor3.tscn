@@ -1,6 +1,6 @@
 [gd_scene load_steps=65 format=3 uid="uid://box148mntjlle"]
 
-[ext_resource type="Script" uid="uid://37xaisjvtc8k" path="res://Scripts/Scene1FloorController.cs" id="1_a4d3q"]
+[ext_resource type="Script" uid="uid://dfqshe4brfxvb" path="res://Scripts/Scene4FloorController.cs" id="1_461ft"]
 [ext_resource type="PackedScene" uid="uid://ddneys6hhnini" path="res://Models/Classroom/SimpleFloor.tscn" id="2_xxsgf"]
 [ext_resource type="Script" uid="uid://dcesawlra4w4v" path="res://Scripts/BlinkingLightDark.cs" id="3_yhnbb"]
 [ext_resource type="PackedScene" uid="uid://ccm70bu4r0y1s" path="res://Models/Board/board.tscn" id="4_p1u02"]
@@ -185,7 +185,7 @@ _data = {
 }
 
 [node name="Scene4_Floor3" type="Node3D"]
-script = ExtResource("1_a4d3q")
+script = ExtResource("1_461ft")
 
 [node name="SimpleFloor" parent="." instance=ExtResource("2_xxsgf")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4.80001, -0.0999999, 16.1663)
@@ -862,10 +862,8 @@ transform = Transform3D(-0.0927029, 0, -0.177218, 0, 0.2, 0, 0.177218, 0, -0.092
 [node name="LaserReceiver" parent="LaserPuzzle/Safebox/Pivot/Cap" index="1" instance=ExtResource("9_q72ci")]
 transform = Transform3D(8, 0, -1.19209e-07, 0, 8, 0, 2.38419e-07, 0, 3, -0.784134, 6.18023, 1.08654)
 
-[node name="LaserReceiver" parent="LaserPuzzle/Safebox/Pivot/Cap/LaserReceiver/Body/ReceiverPoint" index="0" node_paths=PackedStringArray("CapPivot", "book", "_animPlayer")]
+[node name="LaserReceiver" parent="LaserPuzzle/Safebox/Pivot/Cap/LaserReceiver/Body/ReceiverPoint" index="0" node_paths=PackedStringArray("CapPivot")]
 CapPivot = NodePath("../../../..")
-book = NodePath("../../../../../../../../Book")
-_animPlayer = NodePath("../../../../../../AnimationPlayer")
 
 [node name="LaserGun" type="MeshInstance3D" parent="LaserPuzzle"]
 transform = Transform3D(-8.74228e-09, 0, 0.2, 0, 0.2, 0, -0.2, 0, -8.74228e-09, -2, 0.022, 0)

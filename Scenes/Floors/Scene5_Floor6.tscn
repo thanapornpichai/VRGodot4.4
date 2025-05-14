@@ -1,0 +1,218 @@
+[gd_scene load_steps=20 format=3 uid="uid://do7fn1eakgnci"]
+
+[ext_resource type="Script" uid="uid://bpnulmqen7lg" path="res://Scripts/Scene2FloorController.cs" id="1_jfi2w"]
+[ext_resource type="PackedScene" uid="uid://c3ynhdje3m5r3" path="res://Models/Classroom/class_room.tscn" id="2_vat50"]
+[ext_resource type="PackedScene" uid="uid://dhq0xfwxpel1r" path="res://Models/CleanModelTscn/insert_bookshelf.tscn" id="3_7af5d"]
+[ext_resource type="PackedScene" uid="uid://dojmkq5eymgqk" path="res://Models/Classroom/StairConnector/stair_connector.tscn" id="3_bk4oh"]
+[ext_resource type="Script" uid="uid://b7kp50bpqndll" path="res://Scripts/BookShelfInteraction.cs" id="3_yyyt2"]
+[ext_resource type="ArrayMesh" uid="uid://bgne7aoj26tun" path="res://Models/Light01.vox" id="4_cs01g"]
+[ext_resource type="PackedScene" uid="uid://dyesamjvdid0g" path="res://Models/Classroom/Stair/stair.tscn" id="4_plqna"]
+[ext_resource type="PackedScene" uid="uid://ct6rm0xdi4wla" path="res://Models/CleanModelTscn/book.tscn" id="5_1v63j"]
+[ext_resource type="PackedScene" uid="uid://tjtgdamcmc0u" path="res://Models/Classroom/Big Room at the end of the hall/Big Classroom.tscn" id="9_rtmhm"]
+[ext_resource type="PackedScene" uid="uid://dcbeh71jpa1ap" path="res://Models/Classroom/Library Maze/Library Maze.tscn" id="10_15e46"]
+[ext_resource type="PackedScene" uid="uid://ccm70bu4r0y1s" path="res://Models/Board/board.tscn" id="10_wwdyp"]
+[ext_resource type="PackedScene" uid="uid://c3utpnc3y8hsa" path="res://Models/RoomTag/room_tag.tscn" id="12_3jjic"]
+[ext_resource type="PackedScene" uid="uid://cqc8mss40x4xe" path="res://Models/Classroom/Pillar/Pillar.tscn" id="15_707uy"]
+[ext_resource type="PackedScene" uid="uid://4bh5bvr6jtpr" path="res://Models/Door/Door.tscn" id="21_yh50o"]
+[ext_resource type="PackedScene" uid="uid://byc817nbfg7oj" path="res://PickableObject/Book.tscn" id="34_ebm1h"]
+
+[sub_resource type="Animation" id="Animation_oyq3e"]
+resource_name = "BookShelfInteraction"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("InsertBookshelf:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5, 2.58, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(5.96046e-08, 1.12923e-08, -0.449997), Vector3(5.96046e-08, 1.12923e-08, -0.449997), Vector3(1.50001, 1.00699e-07, -0.449997)]
+}
+
+[sub_resource type="Animation" id="Animation_yyyt2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("InsertBookshelf:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1v63j"]
+_data = {
+&"BookShelfInteraction": SubResource("Animation_oyq3e"),
+&"RESET": SubResource("Animation_yyyt2")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_spun6"]
+size = Vector3(0.868118, 2.17633, 2.06091)
+
+[node name="Scene5_Floor6" type="Node3D"]
+script = ExtResource("1_jfi2w")
+
+[node name="Library Floor" type="Node3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4.79751, -0.0931903, 16.1626)
+
+[node name="ClassRoom" parent="Library Floor" instance=ExtResource("2_vat50")]
+
+[node name="ClassRoom2" parent="Library Floor" instance=ExtResource("2_vat50")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 1.7053e-13, -4.07454e-10)
+
+[node name="StairConnector" parent="Library Floor" instance=ExtResource("3_bk4oh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.2, -1.93715e-07, -5)
+
+[node name="Stair" parent="Library Floor" instance=ExtResource("4_plqna")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.2, -7.19997, 5.6)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Library Floor"]
+transform = Transform3D(1, 0, 0, 0, -1, 1.50996e-07, 0, -1.50996e-07, -1, 41.8, -3.57628e-07, -5)
+
+[node name="StairConnector2" type="Node3D" parent="Library Floor"]
+transform = Transform3D(-1, 0, 0, 0, 1, -1.50996e-07, 0, 1.50996e-07, 1, 41.8, -3.57628e-07, -5)
+
+[node name="Stair2" type="Node3D" parent="Library Floor"]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, 1, 40.8, -7.19997, 5.6)
+
+[node name="Board3" parent="Library Floor" instance=ExtResource("10_wwdyp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.2785, 1.17315, -2.48907)
+
+[node name="Board4" parent="Library Floor" instance=ExtResource("10_wwdyp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.8855, 1.17315, -2.48907)
+
+[node name="Board5" parent="Library Floor" instance=ExtResource("10_wwdyp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.457405, 1.17315, -2.48907)
+
+[node name="Board6" parent="Library Floor" instance=ExtResource("10_wwdyp")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -12.7562, 1.17315, -6.91406)
+
+[node name="Board7" parent="Library Floor" instance=ExtResource("10_wwdyp")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -9.42757, 1.17315, -6.91406)
+
+[node name="RoomTag2" parent="Library Floor" instance=ExtResource("12_3jjic")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 2.5, -2.9)
+
+[node name="RoomTag3" parent="Library Floor" instance=ExtResource("12_3jjic")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, 2.5, -2.9)
+
+[node name="Door3" parent="Library Floor" instance=ExtResource("21_yh50o")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 18.9, 0.0999995, -2.5)
+
+[node name="Door4" parent="Library Floor" instance=ExtResource("21_yh50o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.7, 0.0999995, -2.4)
+
+[node name="Door5" parent="Library Floor" instance=ExtResource("21_yh50o")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 3.9, 0.0999993, -2.5)
+
+[node name="Door6" parent="Library Floor" instance=ExtResource("21_yh50o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3, 0.0999993, -2.4)
+
+[node name="Pillar" parent="Library Floor" instance=ExtResource("15_707uy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.75445, 0.122253, -6.94528)
+
+[node name="Pillar4" parent="Library Floor" instance=ExtResource("15_707uy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.22288, 0.122253, -6.94528)
+
+[node name="Big Classroom" parent="Library Floor" instance=ExtResource("9_rtmhm")]
+transform = Transform3D(1.00044, 0, 1.20792e-13, 0, 1.00044, 0, -1.20792e-13, 0, 1.00044, 15.3127, 0.00671816, 2.69697)
+
+[node name="LibraryMaze" parent="Library Floor" instance=ExtResource("10_15e46")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.9661, 0.0367881, -10.3732)
+
+[node name="Light01" type="MeshInstance3D" parent="Library Floor"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.381477, 3.72039, -4.76125)
+mesh = ExtResource("4_cs01g")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Library Floor/Light01"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.07604, 0)
+shadow_enabled = true
+shadow_bias = 1.0
+shadow_opacity = 0.2
+omni_range = 10.0
+omni_attenuation = 1.654
+
+[node name="Light02" type="MeshInstance3D" parent="Library Floor"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -9.80207, 3.81216, -4.76125)
+mesh = ExtResource("4_cs01g")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Library Floor/Light02"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.07604, 0)
+shadow_enabled = true
+shadow_bias = 1.0
+shadow_opacity = 0.2
+omni_range = 10.0
+omni_attenuation = 1.654
+
+[node name="Light03" type="MeshInstance3D" parent="Library Floor"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 15.1202, 3.72665, -4.63357)
+mesh = ExtResource("4_cs01g")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Library Floor/Light03"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.07604, 0)
+shadow_enabled = true
+shadow_bias = 1.0
+shadow_opacity = 0.2
+omni_range = 10.0
+omni_attenuation = 1.654
+
+[node name="BookShelfInteraction" type="Node3D" parent="." node_paths=PackedStringArray("BookNode", "area", "_animPlayer")]
+transform = Transform3D(-1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, 0.459022, 0.000664849, 36.1061)
+script = ExtResource("3_yyyt2")
+BookNode = NodePath("InsertBookshelf/Book3")
+area = NodePath("Area3D")
+_animPlayer = NodePath("AnimationPlayer")
+
+[node name="InsertBookshelf" parent="BookShelfInteraction" instance=ExtResource("3_7af5d")]
+transform = Transform3D(0.15, 0, 9.53592e-09, 0, 0.15, 0, -9.53592e-09, 0, 0.15, 0, 0, 0)
+skeleton = NodePath("../..")
+
+[node name="Book" parent="BookShelfInteraction/InsertBookshelf" instance=ExtResource("5_1v63j")]
+transform = Transform3D(-1.09278e-07, 1.4, 1.69407e-21, 1.09278e-07, 2.67496e-15, -2.4, -2.5, -6.11959e-08, -1.04907e-07, 2.66819, 11.4183, -0.285873)
+skeleton = NodePath("../../Area3D")
+
+[node name="Book2" parent="BookShelfInteraction/InsertBookshelf" instance=ExtResource("5_1v63j")]
+transform = Transform3D(-1.09278e-07, 1.4, 1.69407e-21, 1.09278e-07, 2.67496e-15, -2.4, -2.5, -6.11959e-08, -1.04907e-07, 2.1512, 11.4183, -0.285873)
+skeleton = NodePath("../../Area3D")
+
+[node name="Book3" parent="BookShelfInteraction/InsertBookshelf" instance=ExtResource("34_ebm1h")]
+transform = Transform3D(9, 0, 2.14577e-06, 0, 9, 0, -2.14577e-06, 0, 9, 1.54203, 11.2778, 0.413971)
+
+[node name="InsertBookshelf2" parent="BookShelfInteraction" instance=ExtResource("3_7af5d")]
+transform = Transform3D(0.15, 0, 9.53592e-09, 0, 0.15, 0, -9.53592e-09, 0, 0.15, 1.5, 1.12923e-08, 0)
+skeleton = NodePath("../..")
+
+[node name="Book3" parent="BookShelfInteraction/InsertBookshelf2" instance=ExtResource("5_1v63j")]
+transform = Transform3D(-1.09278e-07, 1.4, 3.38813e-21, 1.09278e-07, 2.67496e-15, -2.4, -2.5, -6.11959e-08, -1.04907e-07, 2.81944, 11.4183, -0.285873)
+skeleton = NodePath("../../Area3D")
+
+[node name="Book4" parent="BookShelfInteraction/InsertBookshelf2" instance=ExtResource("5_1v63j")]
+transform = Transform3D(-1.09278e-07, 1.4, 3.38813e-21, 1.09278e-07, 2.67496e-15, -2.4, -2.5, -6.11959e-08, -1.04907e-07, 2.30246, 11.4183, -0.285873)
+skeleton = NodePath("../../Area3D")
+
+[node name="Book5" parent="BookShelfInteraction/InsertBookshelf2" instance=ExtResource("5_1v63j")]
+transform = Transform3D(-1.09278e-07, 1.4, 3.38813e-21, 1.09278e-07, 2.67496e-15, -2.4, -2.5, -6.11959e-08, -1.04907e-07, 1.70148, 11.4183, -0.285873)
+skeleton = NodePath("../../Area3D")
+
+[node name="Book6" parent="BookShelfInteraction/InsertBookshelf2" instance=ExtResource("5_1v63j")]
+transform = Transform3D(-1.09278e-07, 1.4, 3.38813e-21, 1.09278e-07, 2.67496e-15, -2.4, -2.5, -6.11959e-08, -1.04907e-07, 1.1845, 11.4183, -0.285873)
+skeleton = NodePath("../../Area3D")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BookShelfInteraction"]
+libraries = {
+&"": SubResource("AnimationLibrary_1v63j")
+}
+
+[node name="Area3D" type="Area3D" parent="BookShelfInteraction"]
+transform = Transform3D(0.2, 0, 1.27146e-08, 0, 0.2, 0, -1.27146e-08, 0, 0.2, 0.449862, 1.76704, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BookShelfInteraction/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.05715, -0.0559998, 0.530426)
+shape = SubResource("BoxShape3D_spun6")
