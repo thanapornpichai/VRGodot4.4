@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=4 uid="uid://bg5dhuw1jx001"]
+[gd_scene load_steps=40 format=4 uid="uid://bg5dhuw1jx001"]
 
 [ext_resource type="Script" uid="uid://bpnulmqen7lg" path="res://Scripts/Scene2FloorController.cs" id="1_l4gbl"]
 [ext_resource type="PackedScene" uid="uid://c3ynhdje3m5r3" path="res://Models/Classroom/class_room.tscn" id="2_sk07u"]
@@ -23,6 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://4bh5bvr6jtpr" path="res://Models/Door/Door.tscn" id="10_7g7rp"]
 [ext_resource type="PackedScene" uid="uid://cqc8mss40x4xe" path="res://Models/Classroom/Pillar/Pillar.tscn" id="11_j57ei"]
 [ext_resource type="PackedScene" uid="uid://c6afsp1shlypy" path="res://Scenes/Lights/Light01.tscn" id="12_i3omy"]
+[ext_resource type="PackedScene" uid="uid://bwdqct432a0or" path="res://Models/CleanModelTscn/old_mystic_symblo.tscn" id="24_c57rt"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kv0hi"]
 size = Vector3(8.63161, 0.678482, 7.50891)
@@ -426,6 +427,9 @@ shape = SubResource("BoxShape3D_f5cao")
 [node name="Nang_Rum_1" parent="." instance=ExtResource("7_l74kq")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 24.7805)
 visible = false
+
+[node name="OldMysticSymblo_1" parent="." instance=ExtResource("24_c57rt")]
+transform = Transform3D(0.69092, 0.722931, -3.16003e-08, 0, -4.37114e-08, -1, -0.722931, 0.69092, -3.02011e-08, 0.0342236, -0.0100244, 61.8787)
 
 [editable path="SimpleFloor/Light01"]
 [editable path="SimpleFloor/Light04"]

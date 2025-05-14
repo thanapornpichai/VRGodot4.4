@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bwdqct432a0or"]
+
+[ext_resource type="PackedScene" uid="uid://cxoh4aconvcda" path="res://Models/MySticSymblo/OldMysticSymblo_1.fbx" id="1_yk02b"]
+[ext_resource type="Material" uid="uid://dlknjoj5vp18t" path="res://Models/MySticSymblo/OldMysticSymblo.tres" id="2_xxexc"]
+
+[node name="OldMysticSymblo_1" instance=ExtResource("1_yk02b")]
+
+[node name="OldMysticSymblo_1_001" parent="." index="0"]
+transform = Transform3D(0.2, 0, 0, 0, -8.74228e-09, 0.2, 0, -0.2, -8.74228e-09, 0, -3.57628e-07, 0)
+material_override = ExtResource("2_xxexc")

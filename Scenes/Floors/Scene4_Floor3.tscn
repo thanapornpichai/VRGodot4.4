@@ -862,8 +862,12 @@ transform = Transform3D(-0.0927029, 0, -0.177218, 0, 0.2, 0, 0.177218, 0, -0.092
 [node name="LaserReceiver" parent="LaserPuzzle/Safebox/Pivot/Cap" index="1" instance=ExtResource("9_q72ci")]
 transform = Transform3D(8, 0, -1.19209e-07, 0, 8, 0, 2.38419e-07, 0, 3, -0.784134, 6.18023, 1.08654)
 
-[node name="LaserReceiver" parent="LaserPuzzle/Safebox/Pivot/Cap/LaserReceiver/Body/ReceiverPoint" index="0" node_paths=PackedStringArray("CapPivot")]
+[node name="LaserReceiver" parent="LaserPuzzle/Safebox/Pivot/Cap/LaserReceiver/Body/ReceiverPoint" index="0" node_paths=PackedStringArray("CapPivot", "book", "rayCastlaser1", "rayCastlaser2", "_animPlayer")]
 CapPivot = NodePath("../../../..")
+book = NodePath("../../../../../../../../Book")
+rayCastlaser1 = NodePath("../../../../../../../LaserGun/Laser1")
+rayCastlaser2 = NodePath("../../../../../../../../Mirror/RayCast3D")
+_animPlayer = NodePath("../../../../../../AnimationPlayer")
 
 [node name="LaserGun" type="MeshInstance3D" parent="LaserPuzzle"]
 transform = Transform3D(-8.74228e-09, 0, 0.2, 0, 0.2, 0, -0.2, 0, -8.74228e-09, -2, 0.022, 0)

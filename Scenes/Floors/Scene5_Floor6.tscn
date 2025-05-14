@@ -1,6 +1,6 @@
-[gd_scene load_steps=20 format=3 uid="uid://do7fn1eakgnci"]
+[gd_scene load_steps=25 format=3 uid="uid://do7fn1eakgnci"]
 
-[ext_resource type="Script" uid="uid://bpnulmqen7lg" path="res://Scripts/Scene2FloorController.cs" id="1_jfi2w"]
+[ext_resource type="Script" uid="uid://bmnjq5edyvf4x" path="res://Scripts/Scene5FloorController.cs" id="1_yspnc"]
 [ext_resource type="PackedScene" uid="uid://c3ynhdje3m5r3" path="res://Models/Classroom/class_room.tscn" id="2_vat50"]
 [ext_resource type="PackedScene" uid="uid://dhq0xfwxpel1r" path="res://Models/CleanModelTscn/insert_bookshelf.tscn" id="3_7af5d"]
 [ext_resource type="PackedScene" uid="uid://dojmkq5eymgqk" path="res://Models/Classroom/StairConnector/stair_connector.tscn" id="3_bk4oh"]
@@ -13,6 +13,10 @@
 [ext_resource type="PackedScene" uid="uid://ccm70bu4r0y1s" path="res://Models/Board/board.tscn" id="10_wwdyp"]
 [ext_resource type="PackedScene" uid="uid://c3utpnc3y8hsa" path="res://Models/RoomTag/room_tag.tscn" id="12_3jjic"]
 [ext_resource type="PackedScene" uid="uid://cqc8mss40x4xe" path="res://Models/Classroom/Pillar/Pillar.tscn" id="15_707uy"]
+[ext_resource type="PackedScene" uid="uid://cl6jhs0ql30a6" path="res://Models/CleanModelTscn/candle.tscn" id="16_f53y6"]
+[ext_resource type="PackedScene" uid="uid://dikrxbxrdty82" path="res://Models/CleanModelTscn/workshop_table.tscn" id="17_6c666"]
+[ext_resource type="Script" uid="uid://bndniib8kcuqp" path="res://Scripts/CandlePickup.cs" id="18_pbnhg"]
+[ext_resource type="PackedScene" uid="uid://dxvocfau8o35b" path="res://Models/CleanModelTscn/new_mystic_symblo.tscn" id="18_yspnc"]
 [ext_resource type="PackedScene" uid="uid://4bh5bvr6jtpr" path="res://Models/Door/Door.tscn" id="21_yh50o"]
 [ext_resource type="PackedScene" uid="uid://byc817nbfg7oj" path="res://PickableObject/Book.tscn" id="34_ebm1h"]
 
@@ -56,8 +60,11 @@ _data = {
 [sub_resource type="BoxShape3D" id="BoxShape3D_spun6"]
 size = Vector3(0.868118, 2.17633, 2.06091)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_6c666"]
+size = Vector3(0.491699, 0.608521, 0.22583)
+
 [node name="Scene5_Floor6" type="Node3D"]
-script = ExtResource("1_jfi2w")
+script = ExtResource("1_yspnc")
 
 [node name="Library Floor" type="Node3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4.79751, -0.0931903, 16.1626)
@@ -184,6 +191,7 @@ skeleton = NodePath("../../Area3D")
 
 [node name="Book3" parent="BookShelfInteraction/InsertBookshelf" instance=ExtResource("34_ebm1h")]
 transform = Transform3D(9, 0, 2.14577e-06, 0, 9, 0, -2.14577e-06, 0, 9, 1.54203, 11.2778, 0.413971)
+visible = false
 
 [node name="InsertBookshelf2" parent="BookShelfInteraction" instance=ExtResource("3_7af5d")]
 transform = Transform3D(0.15, 0, 9.53592e-09, 0, 0.15, 0, -9.53592e-09, 0, 0.15, 1.5, 1.12923e-08, 0)
@@ -216,3 +224,36 @@ transform = Transform3D(0.2, 0, 1.27146e-08, 0, 0.2, 0, -1.27146e-08, 0, 0.2, 0.
 [node name="CollisionShape3D" type="CollisionShape3D" parent="BookShelfInteraction/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.05715, -0.0559998, 0.530426)
 shape = SubResource("BoxShape3D_spun6")
+
+[node name="Candle" parent="." instance=ExtResource("16_f53y6")]
+transform = Transform3D(-0.55, 0, 8.30477e-08, 0, 0.55, 0, -8.30477e-08, 0, -0.55, 1.82829, 0.684589, 37.9657)
+
+[node name="OmniLight3D" parent="Candle/MeshInstance3D" index="0"]
+omni_range = 2.0
+omni_attenuation = 1.989
+
+[node name="Candle2" parent="." instance=ExtResource("16_f53y6")]
+transform = Transform3D(-0.55, 0, 8.30477e-08, 0, 0.55, 0, -8.30477e-08, 0, -0.55, -1.39556, 1.24607, 38.2222)
+
+[node name="Candle3" parent="." instance=ExtResource("16_f53y6")]
+transform = Transform3D(-0.55, 0, 8.30477e-08, 0, 0.55, 0, -8.30477e-08, 0, -0.55, 0.401075, 1.24607, 38.3366)
+
+[node name="WorkshopTable" parent="." instance=ExtResource("17_6c666")]
+transform = Transform3D(-0.235, 0, 2.05444e-08, 0, 0.235, 0, -2.05444e-08, 0, -0.235, -0.461982, 0.00747412, 37.7069)
+
+[node name="MysticSymblo" type="Node3D" parent="." node_paths=PackedStringArray("RootNode", "area")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.452439, 1.2548, 38.0566)
+script = ExtResource("18_pbnhg")
+RootNode = NodePath(".")
+area = NodePath("Area3D")
+
+[node name="NewMysticSymblo" parent="MysticSymblo" instance=ExtResource("18_yspnc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.317963, 0)
+
+[node name="Area3D" type="Area3D" parent="MysticSymblo"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MysticSymblo/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00854492, -0.0160522, -0.115112)
+shape = SubResource("BoxShape3D_6c666")
+
+[editable path="Candle"]

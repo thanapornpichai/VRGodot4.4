@@ -73,3 +73,5 @@ func OnLaserHit(hit_pos : Vector3, dir : Vector3):
 		
 func StopLaser():
 	on_Reflex = false
+	rayCast.visible = false;
+	
