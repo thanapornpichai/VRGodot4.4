@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://b30otix6hd1pw"]
+
+[ext_resource type="Material" uid="uid://bui32qkecob85" path="res://Materials/Newspaper.tres" id="1_jj5k0"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_h6adr"]
+
+[node name="Newspaper" type="MeshInstance3D"]
+transform = Transform3D(-3.4025e-08, 0, -5, 0, 0.967446, 0, 0.778402, 0, -2.18557e-07, 0, 0, 0)
+material_override = ExtResource("1_jj5k0")
+mesh = SubResource("QuadMesh_h6adr")
+skeleton = NodePath("")

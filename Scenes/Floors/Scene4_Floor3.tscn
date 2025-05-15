@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=3 uid="uid://box148mntjlle"]
+[gd_scene load_steps=68 format=3 uid="uid://box148mntjlle"]
 
 [ext_resource type="Script" uid="uid://dfqshe4brfxvb" path="res://Scripts/Scene4FloorController.cs" id="1_461ft"]
 [ext_resource type="PackedScene" uid="uid://ddneys6hhnini" path="res://Models/Classroom/SimpleFloor.tscn" id="2_xxsgf"]
@@ -43,6 +43,8 @@
 [ext_resource type="PackedScene" uid="uid://ckugeufmdl37j" path="res://Models/CleanModelTscn/white_board.tscn" id="39_s6w6t"]
 [ext_resource type="PackedScene" uid="uid://dx6icbvyxtxyp" path="res://Models/CleanModelTscn/prop_bottle.tscn" id="40_5omtg"]
 [ext_resource type="PackedScene" uid="uid://10i055jwafn1" path="res://Models/CleanModelTscn/old_chair.tscn" id="43_461ft"]
+[ext_resource type="PackedScene" uid="uid://b30otix6hd1pw" path="res://Models/CleanModelTscn/newspaper.tscn" id="44_1kpgl"]
+[ext_resource type="Material" uid="uid://bui32qkecob85" path="res://Materials/Newspaper.tres" id="45_l244x"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_faw17"]
 transparency = 2
@@ -183,6 +185,8 @@ _data = {
 &"LightSwing": SubResource("Animation_s1vnp"),
 &"RESET": SubResource("Animation_mv8dg")
 }
+
+[sub_resource type="QuadMesh" id="QuadMesh_h6adr"]
 
 [node name="Scene4_Floor3" type="Node3D"]
 script = ExtResource("1_461ft")
@@ -1051,6 +1055,24 @@ transform = Transform3D(0.56178, 0, 0.827286, 0, 1, 0, -0.827286, 0, 0.56178, -1
 
 [node name="Old Chair2" parent="." instance=ExtResource("43_461ft")]
 transform = Transform3D(0.878386, -0.00837974, 0.477878, 0.00989544, 0.999951, -0.000654337, -0.477849, 0.00530358, 0.878426, -10.5134, 0.000664794, 42.502)
+
+[node name="Newspaper" parent="." instance=ExtResource("44_1kpgl")]
+transform = Transform3D(-3.4025e-08, 0, -5, 0, 0.967446, 0, 0.778402, 0, -2.18557e-07, 2.00021, 1.84544, 3.34715)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-3.4025e-08, 0, -5, 0, 0.967446, 0, 0.778402, 0, -2.18557e-07, 2.00021, 1.84544, 4.23866)
+material_override = ExtResource("45_l244x")
+mesh = SubResource("QuadMesh_h6adr")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(-3.4025e-08, 0, -5, 0, 0.967446, 0, 0.778402, 0, -2.18557e-07, 2.00021, 1.84544, 2.48117)
+material_override = ExtResource("45_l244x")
+mesh = SubResource("QuadMesh_h6adr")
+skeleton = NodePath("")
+
+[node name="Newspaper2" parent="." instance=ExtResource("44_1kpgl")]
+transform = Transform3D(-3.4025e-08, 0, 5, 0, 0.967446, 0, -0.778402, 0, -2.18557e-07, -2.20492, 1.76144, 31.3992)
 
 [editable path="SimpleFloor"]
 [editable path="SimpleFloor/Door"]

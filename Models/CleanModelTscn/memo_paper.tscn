@@ -20,3 +20,4 @@ mesh = ExtResource("2_8tedw")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_vdt40")
+disabled = true
