@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://do7fn1eakgnci"]
+[gd_scene load_steps=24 format=3 uid="uid://do7fn1eakgnci"]
 
 [ext_resource type="Script" uid="uid://bmnjq5edyvf4x" path="res://Scripts/Scene5FloorController.cs" id="1_yspnc"]
 [ext_resource type="PackedScene" uid="uid://c3ynhdje3m5r3" path="res://Models/Classroom/class_room.tscn" id="2_vat50"]
@@ -15,7 +15,6 @@
 [ext_resource type="PackedScene" uid="uid://cqc8mss40x4xe" path="res://Models/Classroom/Pillar/Pillar.tscn" id="15_707uy"]
 [ext_resource type="PackedScene" uid="uid://cl6jhs0ql30a6" path="res://Models/CleanModelTscn/candle.tscn" id="16_f53y6"]
 [ext_resource type="PackedScene" uid="uid://dikrxbxrdty82" path="res://Models/CleanModelTscn/workshop_table.tscn" id="17_6c666"]
-[ext_resource type="Script" uid="uid://bndniib8kcuqp" path="res://Scripts/CandlePickup.cs" id="18_pbnhg"]
 [ext_resource type="PackedScene" uid="uid://dxvocfau8o35b" path="res://Models/CleanModelTscn/new_mystic_symblo.tscn" id="18_yspnc"]
 [ext_resource type="PackedScene" uid="uid://4bh5bvr6jtpr" path="res://Models/Door/Door.tscn" id="21_yh50o"]
 [ext_resource type="PackedScene" uid="uid://byc817nbfg7oj" path="res://PickableObject/Book.tscn" id="34_ebm1h"]
@@ -241,11 +240,8 @@ transform = Transform3D(-0.55, 0, 8.30477e-08, 0, 0.55, 0, -8.30477e-08, 0, -0.5
 [node name="WorkshopTable" parent="." instance=ExtResource("17_6c666")]
 transform = Transform3D(-0.235, 0, 2.05444e-08, 0, 0.235, 0, -2.05444e-08, 0, -0.235, -0.461982, 0.00747412, 37.7069)
 
-[node name="MysticSymblo" type="Node3D" parent="." node_paths=PackedStringArray("RootNode", "area")]
+[node name="MysticSymblo" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.452439, 1.2548, 38.0566)
-script = ExtResource("18_pbnhg")
-RootNode = NodePath(".")
-area = NodePath("Area3D")
 
 [node name="NewMysticSymblo" parent="MysticSymblo" instance=ExtResource("18_yspnc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.317963, 0)

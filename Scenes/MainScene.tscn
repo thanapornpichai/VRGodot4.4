@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bdxt84n3f5hyl"]
+[gd_scene load_steps=17 format=3 uid="uid://bdxt84n3f5hyl"]
 
 [ext_resource type="Script" uid="uid://tbh5wu80s6x6" path="res://Scripts/GameManager.cs" id="1_7rqgy"]
 [ext_resource type="PackedScene" uid="uid://dinmhn3cmls06" path="res://Scenes/Elevator.tscn" id="1_hpc76"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://box148mntjlle" path="res://Scenes/Floors/Scene4_Floor3.tscn" id="5_0iob3"]
 [ext_resource type="PackedScene" uid="uid://do7fn1eakgnci" path="res://Scenes/Floors/Scene5_Floor6.tscn" id="6_0iob3"]
 [ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://addons/fpc/character.tscn" id="6_f140w"]
+[ext_resource type="Shader" uid="uid://qg3jnxmom3wj" path="res://Scenes/pielfilter.gdshader" id="10_4b75m"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tr2i4"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -22,6 +23,19 @@ background_energy_multiplier = 0.0
 sky = SubResource("Sky_nhkr4")
 ambient_light_energy = 0.0
 tonemap_mode = 2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4b75m"]
+render_priority = 0
+shader = ExtResource("10_4b75m")
+shader_parameter/TwixelAngle = 45.0
+shader_parameter/PixelSize = 2.0
+shader_parameter/Quantize = false
+shader_parameter/Posterize = true
+shader_parameter/ColorSteps = 16
+
+[sub_resource type="QuadMesh" id="QuadMesh_0iob3"]
+material = SubResource("ShaderMaterial_4b75m")
+flip_faces = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7rqgy"]
 size = Vector3(1, 1.83649, 1.31494)
@@ -50,6 +64,11 @@ slide_on_ceiling = false
 floor_stop_on_slope = true
 floor_block_on_wall = true
 
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Character/Head/Camera" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.229)
+visible = false
+mesh = SubResource("QuadMesh_0iob3")
+
 [node name="Scene1_Floor4" parent="." instance=ExtResource("4_7rqgy")]
 
 [node name="Area3D" type="Area3D" parent="Scene1_Floor4"]
@@ -58,3 +77,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.859781, 0)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Scene1_Floor4/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.418243, -0.12915)
 shape = SubResource("BoxShape3D_7rqgy")
+
+[editable path="Character"]
