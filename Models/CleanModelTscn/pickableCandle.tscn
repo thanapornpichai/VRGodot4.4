@@ -1,0 +1,54 @@
+[gd_scene load_steps=10 format=3 uid="uid://bw8665a1mrjma"]
+
+[ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="1_5yyg6"]
+[ext_resource type="Texture2D" uid="uid://bkymsblas5iam" path="res://Models/3D - Vox Cleaner Edited (No Character)/Puzzle objects/Reagent Bottle_/Reagent Bottle_79_Color.png" id="2_574mf"]
+[ext_resource type="Texture2D" uid="uid://cc3ixtr5bayis" path="res://Models/3D - Vox Cleaner Edited (No Character)/Puzzle objects/Reagent Bottle_/Reagent Bottle_79_Metallic.png" id="3_ymmtl"]
+[ext_resource type="ArrayMesh" uid="uid://c0afh7gcy7gd2" path="res://Models/3D - Vox Cleaner Edited (No Character)/Puzzle objects/Reagent Bottle_/Reagent Bottle_79.obj" id="4_tvh8v"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_574mf"]
+size = Vector3(0.14856, 0.495972, 0.148376)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c1lxy"]
+albedo_texture = ExtResource("2_574mf")
+metallic = 1.0
+metallic_texture = ExtResource("3_ymmtl")
+texture_filter = 0
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_w0qiy"]
+data = PackedVector3Array(0.2, 0.9, -0.2, 0, 0.9, -0.1, -0.1, 0.9, -0.2, 0.1, 0.9, -0.1, 0, 0.9, -0.1, 0.2, 0.9, -0.2, 0, 0.9, 0, -0.1, 0.9, -0.2, 0, 0.9, -0.1, 0.2, 0.9, -0.2, 0.2, 0.9, 0.1, 0.1, 0.9, -0.1, -0.1, 0.9, -0.2, 0, 0.9, 0, -0.1, 0.9, 0.1, 0.2, 0.9, 0.1, -0.1, 0.9, 0.1, 0, 0.9, 0, 0.1, 0.9, 0, 0.2, 0.9, 0.1, 0, 0.9, 0, 0.1, 0.9, -0.1, 0.2, 0.9, 0.1, 0.1, 0.9, 0, 0.2, 0.9, -0.2, 0.2, 0.8, 0.1, 0.2, 0.9, 0.1, 0.2, 0.8, -0.2, 0.2, 0.8, 0.1, 0.2, 0.9, -0.2, -0.2, 0.8, 0.1, -0.1, 0.8, -0.2, -0.1, 0.8, 0.1, -0.2, 0.8, -0.2, -0.1, 0.8, -0.2, -0.2, 0.8, 0.1, -0.1, 0, -0.3, -0.1, 0.8, -0.2, -0.1, 0, -0.2, -0.1, 0.8, -0.3, -0.1, 0.8, -0.2, -0.1, 0, -0.3, -0.1, 0.8, -0.3, 0.2, 0.8, -0.2, -0.1, 0.8, -0.2, 0.2, 0.8, -0.3, 0.2, 0.8, -0.2, -0.1, 0.8, -0.3, -0.1, 0.8, -0.2, -0.1, 0.9, 0.1, -0.1, 0.8, 0.1, -0.1, 0.9, -0.2, -0.1, 0.9, 0.1, -0.1, 0.8, -0.2, 0.2, 0.8, 0.1, 0.3, 0.8, -0.2, 0.3, 0.8, 0.1, 0.2, 0.8, -0.2, 0.3, 0.8, -0.2, 0.2, 0.8, 0.1, -0.1, 0, -0.2, -0.1, 0, 0.1, 0.2, 0, -0.2, -0.2, 0, -0.2, -0.1, 0, 0.1, -0.1, 0, -0.2, -0.2, 0, 0.1, -0.1, 0, 0.1, -0.2, 0, -0.2, -0.1, 0, -0.3, -0.1, 0, -0.2, 0.2, 0, -0.2, 0.2, 0, -0.3, -0.1, 0, -0.3, 0.2, 0, -0.2, 0.2, 0, 0.1, 0.2, 0, -0.2, -0.1, 0, 0.1, 0.3, 0, -0.2, 0.2, 0, -0.2, 0.2, 0, 0.1, 0.3, 0, 0.1, 0.3, 0, -0.2, 0.2, 0, 0.1, -0.1, 0, 0.2, 0.2, 0, 0.1, -0.1, 0, 0.1, 0.2, 0, 0.2, 0.2, 0, 0.1, -0.1, 0, 0.2, 0, 0.9, -0.1, 0, 1, 0, 0, 0.9, 0, 0, 1, -0.1, 0, 1, 0, 0, 0.9, -0.1, -0.1, 0.8, 0.2, 0.2, 0.8, 0.1, 0.2, 0.8, 0.2, -0.1, 0.8, 0.1, 0.2, 0.8, 0.1, -0.1, 0.8, 0.2, 0.2, 0, 0.2, 0.2, 0.8, 0.1, 0.2, 0, 0.1, 0.2, 0.8, 0.2, 0.2, 0.8, 0.1, 0.2, 0, 0.2, 0.2, 0, 0.1, 0.3, 0.8, 0.1, 0.3, 0, 0.1, 0.2, 0.8, 0.1, 0.3, 0.8, 0.1, 0.2, 0, 0.1, 0.1, 1, -0.1, 0, 0.9, -0.1, 0.1, 0.9, -0.1, 0, 1, -0.1, 0, 0.9, -0.1, 0.1, 1, -0.1, 0.1, 1, 0, 0.1, 0.9, -0.1, 0.1, 0.9, 0, 0.1, 1, -0.1, 0.1, 0.9, -0.1, 0.1, 1, 0, -0.1, 0, -0.2, -0.2, 0.8, -0.2, -0.2, 0, -0.2, -0.1, 0.8, -0.2, -0.2, 0.8, -0.2, -0.1, 0, -0.2, -0.1, 0, 0.2, 0.2, 0.8, 0.2, 0.2, 0, 0.2, -0.1, 0.8, 0.2, 0.2, 0.8, 0.2, -0.1, 0, 0.2, 0.2, 0.9, -0.2, -0.1, 0.8, -0.2, 0.2, 0.8, -0.2, -0.1, 0.9, -0.2, -0.1, 0.8, -0.2, 0.2, 0.9, -0.2, 0, 1, -0.1, 0.1, 1, 0, 0, 1, 0, 0.1, 1, -0.1, 0.1, 1, 0, 0, 1, -0.1, -0.2, 0, 0.1, -0.1, 0.8, 0.1, -0.1, 0, 0.1, -0.2, 0.8, 0.1, -0.1, 0.8, 0.1, -0.2, 0, 0.1, 0, 1, 0, 0.1, 0.9, 0, 0, 0.9, 0, 0.1, 1, 0, 0.1, 0.9, 0, 0, 1, 0, -0.1, 0, -0.3, 0.2, 0.8, -0.3, -0.1, 0.8, -0.3, 0.2, 0, -0.3, 0.2, 0.8, -0.3, -0.1, 0, -0.3, -0.1, 0, 0.1, -0.1, 0.8, 0.2, -0.1, 0, 0.2, -0.1, 0.8, 0.1, -0.1, 0.8, 0.2, -0.1, 0, 0.1, 0.2, 0, -0.2, 0.2, 0.8, -0.3, 0.2, 0, -0.3, 0.2, 0.8, -0.2, 0.2, 0.8, -0.3, 0.2, 0, -0.2, -0.2, 0, 0.1, -0.2, 0.8, -0.2, -0.2, 0.8, 0.1, -0.2, 0, -0.2, -0.2, 0.8, -0.2, -0.2, 0, 0.1, 0.3, 0, 0.1, 0.3, 0.8, -0.2, 0.3, 0, -0.2, 0.3, 0.8, 0.1, 0.3, 0.8, -0.2, 0.3, 0, 0.1, -0.1, 0.9, 0.1, 0.2, 0.8, 0.1, -0.1, 0.8, 0.1, 0.2, 0.9, 0.1, 0.2, 0.8, 0.1, -0.1, 0.9, 0.1, 0.3, 0, -0.2, 0.2, 0.8, -0.2, 0.2, 0, -0.2, 0.3, 0.8, -0.2, 0.2, 0.8, -0.2, 0.3, 0, -0.2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eq7q4"]
+emission_enabled = true
+emission = Color(1, 0.603922, 0, 1)
+emission_energy_multiplier = 5.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_83i8a"]
+material = SubResource("StandardMaterial3D_eq7q4")
+size = Vector3(0.11, 0.11, 0.11)
+
+[node name="PickableObject" instance=ExtResource("1_5yyg6")]
+
+[node name="CollisionShape3D" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0142822, 0.252014, 0.0184631)
+shape = SubResource("BoxShape3D_574mf")
+
+[node name="Candle" type="MeshInstance3D" parent="." index="1"]
+transform = Transform3D(-0.3, 0, 4.52987e-08, 0, 0.55, 0, -4.52987e-08, 0, -0.3, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_c1lxy")
+mesh = ExtResource("4_tvh8v")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Candle" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Candle/StaticBody3D" index="0"]
+shape = SubResource("ConcavePolygonShape3D_w0qiy")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Candle" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05, 0.95, -0.0506897)
+mesh = SubResource("BoxMesh_83i8a")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Candle/MeshInstance3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.393674, 0)
+light_color = Color(1, 0.635294, 0, 1)
+light_energy = 1.5
+shadow_enabled = true
+omni_attenuation = 3.0

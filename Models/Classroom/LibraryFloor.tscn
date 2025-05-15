@@ -166,9 +166,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.2, -1.93715e-07, -5)
 [node name="Stair" parent="." instance=ExtResource("3_ubn2j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.2, -7.19997, 5.6)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -1, 1.50996e-07, 0, -1.50996e-07, -1, 41.8, -3.57628e-07, -5)
-
 [node name="StairConnector2" type="Node3D" parent="."]
 transform = Transform3D(-1, 0, 0, 0, 1, -1.50996e-07, 0, 1.50996e-07, 1, 41.8, -3.57628e-07, -5)
 
