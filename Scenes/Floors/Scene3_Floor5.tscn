@@ -172,10 +172,12 @@ shadow_opacity = 0.2
 omni_range = 10.0
 omni_attenuation = 2.324
 
-[node name="Kuman Tong_3" type="Node3D" parent="SimpleFloor" node_paths=PackedStringArray("area")]
+[node name="Kuman Tong_3" type="Node3D" parent="SimpleFloor" node_paths=PackedStringArray("area", "offerNode3D", "dialogue")]
 transform = Transform3D(0.998326, 0, -0.0578427, 0, 1, 0, 0.0578427, 0, 0.998326, -8.26926, 0.105958, -6.31888)
 script = ExtResource("5_31cuc")
 area = NodePath("Area3D")
+offerNode3D = NodePath("../../PickableObject/CollisionShape3D/PropBottle")
+dialogue = NodePath("DialogueText")
 
 [node name="Guman Tong_3_001" type="MeshInstance3D" parent="SimpleFloor/Kuman Tong_3"]
 transform = Transform3D(0.2, 0, 0, 0, -1.09278e-08, 0.25, 0, -0.25, -1.09278e-08, 0, -4.76837e-07, 0)
@@ -184,6 +186,7 @@ mesh = SubResource("ArrayMesh_oye2x")
 skeleton = NodePath("")
 
 [node name="Area3D" type="Area3D" parent="SimpleFloor/Kuman Tong_3"]
+collision_layer = 65537
 collision_mask = 65537
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SimpleFloor/Kuman Tong_3/Area3D"]
@@ -502,7 +505,7 @@ transform = Transform3D(0.509064, 0.896328, -0.61437, -0.0587781, -0.654737, -1.
 transform = Transform3D(-0.351126, -0.830754, 0.791554, -0.0660058, -0.81179, -0.881272, 1.14558, -0.301404, 0.191839, -5.35593, 1.90709, 14.9503)
 
 [node name="PickableObject" parent="." instance=ExtResource("13_75sb2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.19571, 1.42933, 11.9806)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.19571, 1.31008, 11.9806)
 
 [node name="MemoPaper" parent="." instance=ExtResource("16_v57wi")]
 transform = Transform3D(-1.79217e-08, -0.082, 0, 0.380812, -3.32916e-09, -0.151929, 0.151929, -1.3282e-09, 0.380812, -2.50067, 2.02945, 10.5382)
@@ -545,3 +548,4 @@ mesh = SubResource("TextMesh_t26at")
 [editable path="SimpleFloor/Light02"]
 [editable path="SimpleFloor/Light03"]
 [editable path="SimpleFloor/Door8"]
+[editable path="PickableObject"]

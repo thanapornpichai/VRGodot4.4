@@ -12,6 +12,20 @@
 [ext_resource type="PackedScene" uid="uid://c8rvtqfnkv2h5" path="res://Scenes/Floors/Scene6_Floor2.tscn" id="7_8ju71"]
 [ext_resource type="Shader" uid="uid://qg3jnxmom3wj" path="res://Scenes/pielfilter.gdshader" id="10_4b75m"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4b75m"]
+render_priority = 0
+shader = ExtResource("10_4b75m")
+shader_parameter/TwixelAngle = 45.0
+shader_parameter/PixelSize = 2.0
+shader_parameter/Quantize = false
+shader_parameter/Posterize = true
+shader_parameter/ColorSteps = 16
+
+[sub_resource type="QuadMesh" id="QuadMesh_0iob3"]
+lightmap_size_hint = Vector2i(7, 7)
+material = SubResource("ShaderMaterial_4b75m")
+flip_faces = true
+
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8ju71"]
 animation = &"Grip"
 
@@ -87,20 +101,6 @@ sky = SubResource("Sky_nhkr4")
 ambient_light_energy = 0.0
 tonemap_mode = 2
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_4b75m"]
-render_priority = 0
-shader = ExtResource("10_4b75m")
-shader_parameter/TwixelAngle = 45.0
-shader_parameter/PixelSize = 2.0
-shader_parameter/Quantize = false
-shader_parameter/Posterize = true
-shader_parameter/ColorSteps = 16
-
-[sub_resource type="QuadMesh" id="QuadMesh_0iob3"]
-lightmap_size_hint = Vector2i(7, 7)
-material = SubResource("ShaderMaterial_4b75m")
-flip_faces = true
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_7rqgy"]
 size = Vector3(1, 1.83649, 1.31494)
 
@@ -113,6 +113,12 @@ Elevator = NodePath("Elevator")
 
 [node name="XrPlayer" parent="." instance=ExtResource("7_4b75m")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.4941, 0.192183, 13.1323)
+
+[node name="Filter" type="MeshInstance3D" parent="XrPlayer/XROrigin3D/XRCamera3D" index="0"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0.052641, -0.329476)
+visible = false
+mesh = SubResource("QuadMesh_0iob3")
+skeleton = NodePath("")
 
 [node name="RigidBody3D" parent="XrPlayer/XROrigin3D/LeftHand/LeftHand/Hand_low_L/Armature/Skeleton3D/BoneAttachment3D" index="0" groups=["Player", "PlayerHand", "player_body"]]
 collision_layer = 65536
@@ -137,20 +143,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5349, 0, 13.2342)
 script = ExtResource("4_q68mp")
 
 [node name="Elevator" parent="." instance=ExtResource("1_hpc76")]
-transform = Transform3D(1, 0, 0, 0, 1.07881, 0, 0, 0, 1, 0, -0.210048, 0)
+transform = Transform3D(1, 0, 0, 0, 1.07881, 0, 0, 0, 1, 0, -0.210048, 0.142914)
 
 [node name="ElevatorContainer" type="Node3D" parent="."]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_7rqgy")
 
-[node name="Filter" type="MeshInstance3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.478501, 1.5, 13.2181)
-visible = false
-mesh = SubResource("QuadMesh_0iob3")
-skeleton = NodePath("")
-
 [node name="Scene1_Floor4" parent="." instance=ExtResource("4_7rqgy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0270929, 0.117034, 0.19469)
 
 [node name="Area3D" type="Area3D" parent="Scene1_Floor4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.859781, 0)

@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=3 uid="uid://b5lkb7q5glrr1"]
 
-[ext_resource type="PackedScene" uid="uid://kl4nx8ivav56" path="res://addons/xr-kit/physics-movement/scenes/player.tscn" id="1_4muep"]
+[ext_resource type="PackedScene" uid="uid://kl4nx8ivav56" path="res://addons/xr-kit/physics-movement/player.tscn" id="1_4muep"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_bcjol"]
 

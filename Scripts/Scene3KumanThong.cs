@@ -6,10 +6,7 @@ public partial class Scene3KumanThong : BaseFloorController
 	[Export]
 	public Area3D area;
 	[Export] public Node3D offerNode3D;
-	[Export] public Node3D hint1Node3D;
-	[Export] public Node3D hint2Node3D;
 	[Export] public MeshInstance3D dialogue;
-
 	private TextMesh dialogueText;
 
 	private bool _triggered = false;
@@ -28,7 +25,7 @@ public partial class Scene3KumanThong : BaseFloorController
 		{
 			if (!_triggered)
 			{
-				offerNode3D.Visible = true;
+				offerNode3D.Visible = false;
 				body.Visible = false;
 				_triggered = true;
 				GD.Print("Player give offer!");
@@ -40,8 +37,9 @@ public partial class Scene3KumanThong : BaseFloorController
 	private async void ShowHintDelay()
 	{
 		dialogueText.Text = string.Empty;
-		GD.Print("Waiting 2 seconds...");
-		await ToSignal(GetTree().CreateTimer(2), "timeout");
+		dialogueText.Text = "Good....";
+		GD.Print("Waiting 3 seconds...");
+		await ToSignal(GetTree().CreateTimer(3), "timeout");
 		dialogueText.Text = "Go down to the third floor";
 		GD.Print("Show hint!");
 		Scene3FloorController.Instance.OnFinishFloor();

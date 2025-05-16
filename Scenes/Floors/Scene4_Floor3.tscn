@@ -213,13 +213,16 @@ data = PackedVector3Array(0.1, 3.4, 0.3, 0.3, 3.5, 0.3, 0.3, 3.4, 0.3, 0.1, 3.5,
 text = "3"
 font = ExtResource("6_12kyy")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_2s238"]
+size = Vector3(0.0989075, 1.15917, 0.891235)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_5ocrq"]
 size = Vector3(1.20588, 0.1, 0.907227)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_aj0po"]
 top_radius = 0.1
 bottom_radius = 0.1
-height = 1.0
+height = 0.1
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sn8vg"]
 transparency = 1
@@ -227,9 +230,6 @@ albedo_color = Color(1, 0, 0, 1)
 emission_enabled = true
 emission = Color(1, 0, 0, 1)
 emission_energy_multiplier = 16.0
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_2s238"]
-size = Vector3(0.0938721, 1.21478, 0.899414)
 
 [node name="Scene4_Floor3" type="Node3D" node_paths=PackedStringArray("_area")]
 script = ExtResource("1_461ft")
@@ -1053,7 +1053,7 @@ mesh = ExtResource("27_s6w6t")
 script = ExtResource("28_10clf")
 
 [node name="CryptexController" parent="." instance=ExtResource("10_t5ekp")]
-transform = Transform3D(1, 0, 0, 0, 0.806186, 0.591662, 0, -0.591662, 0.806186, -7.30014, 1.37609, 11.9805)
+transform = Transform3D(0.5, 0, 0, 0, 0.403093, 0.295831, 0, -0.295831, 0.403093, -7.30014, 1.29751, 12.0263)
 
 [node name="MeshInstance3D" parent="CryptexController/FirstNumber/IncreaseButton1 (Area3D)/IncreaseNum" index="0"]
 layers = 3
@@ -1061,14 +1061,30 @@ layers = 3
 [node name="MeshInstance3D" parent="CryptexController/FirstNumber/DecreaseButton1 (Area3D)/DecreaseNum" index="0"]
 layers = 3
 
+[node name="IncreaseButton2 (Area3D)" parent="CryptexController/SecoundNumber" index="1"]
+collision_layer = 65537
+collision_mask = 65537
+
 [node name="MeshInstance3D" parent="CryptexController/SecoundNumber/IncreaseButton2 (Area3D)/IncreaseNum" index="0"]
 layers = 3
+
+[node name="DecreaseButton2 (Area3D)" parent="CryptexController/SecoundNumber" index="2"]
+collision_layer = 65537
+collision_mask = 65537
 
 [node name="MeshInstance3D" parent="CryptexController/SecoundNumber/DecreaseButton2 (Area3D)/DecreaseNum" index="0"]
 layers = 3
 
+[node name="IncreaseButton3 (Area3D)" parent="CryptexController/ThirdNumber" index="1"]
+collision_layer = 65537
+collision_mask = 65537
+
 [node name="MeshInstance3D" parent="CryptexController/ThirdNumber/IncreaseButton3 (Area3D)/IncreaseNum" index="0"]
 layers = 3
+
+[node name="DecreaseButton3 (Area3D)" parent="CryptexController/ThirdNumber" index="2"]
+collision_layer = 65537
+collision_mask = 65537
 
 [node name="MeshInstance3D" parent="CryptexController/ThirdNumber/DecreaseButton3 (Area3D)/DecreaseNum" index="0"]
 layers = 3
@@ -1213,7 +1229,7 @@ skeleton = NodePath("")
 transform = Transform3D(-3.4025e-08, 0, 5, 0, 0.967446, 0, -0.778402, 0, -2.18557e-07, -2.20492, 1.76144, 31.3992)
 
 [node name="Cryptex" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.209566, -0.214668, -9.1604e-09, -1.31134e-08, 5.73206e-16, 0.3, -0.214668, 0.209566, -9.38341e-09, -10.0019, 0.168138, 10.6504)
+transform = Transform3D(-0.13971, -0.143112, -6.25562e-09, 0, -8.74228e-09, 0.2, -0.143112, 0.13971, 6.10694e-09, -10.0019, 0.168138, 10.6504)
 material_override = SubResource("StandardMaterial3D_a1jls")
 mesh = ExtResource("47_b5vj2")
 skeleton = NodePath("")
@@ -1224,7 +1240,7 @@ skeleton = NodePath("")
 shape = SubResource("ConcavePolygonShape3D_novnf")
 
 [node name="Cryptex2" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.0774586, -0.289828, -3.38581e-09, -1.31134e-08, 1.31773e-15, 0.3, -0.289828, 0.0774586, -1.26688e-08, -10.0019, 0.168138, 9.65043)
+transform = Transform3D(-0.051639, -0.193219, -8.44585e-09, 0, -8.74228e-09, 0.2, -0.193219, 0.051639, 2.25721e-09, -10.0019, 0.168138, 9.65043)
 material_override = SubResource("StandardMaterial3D_a1jls")
 mesh = ExtResource("47_b5vj2")
 skeleton = NodePath("")
@@ -1235,7 +1251,7 @@ skeleton = NodePath("")
 shape = SubResource("ConcavePolygonShape3D_novnf")
 
 [node name="Cryptex3" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.14764, -0.261156, -6.45356e-09, -1.31134e-08, 2.10776e-15, 0.3, -0.261156, 0.14764, -1.14155e-08, -10.5413, 0.168138, 10.4372)
+transform = Transform3D(-0.0984267, -0.174104, -7.61033e-09, 0, -8.74228e-09, 0.2, -0.174104, 0.0984267, 4.30237e-09, -10.5413, 0.168138, 10.4372)
 material_override = SubResource("StandardMaterial3D_a1jls")
 mesh = ExtResource("47_b5vj2")
 skeleton = NodePath("")
@@ -1246,7 +1262,7 @@ skeleton = NodePath("")
 shape = SubResource("ConcavePolygonShape3D_novnf")
 
 [node name="Cryptex4" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.289985, -0.0768665, -1.26756e-08, -1.31134e-08, 3.03557e-15, 0.3, -0.0768665, 0.289985, -3.35994e-09, -9.37736, 0.168138, 9.91114)
+transform = Transform3D(-0.193324, -0.0512444, -2.23996e-09, 0, -8.74228e-09, 0.2, -0.0512444, 0.193324, 8.45044e-09, -9.37736, 0.168138, 9.91114)
 material_override = SubResource("StandardMaterial3D_a1jls")
 mesh = ExtResource("47_b5vj2")
 skeleton = NodePath("")
@@ -1257,7 +1273,7 @@ skeleton = NodePath("")
 shape = SubResource("ConcavePolygonShape3D_novnf")
 
 [node name="Cryptex18" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.0758792, -0.290245, -3.31678e-09, -1.31134e-08, 2.76248e-15, 0.3, -0.290245, 0.0758792, -1.2687e-08, -7.92649, 0.168138, 10.1298)
+transform = Transform3D(-0.0505862, -0.193497, -8.45802e-09, 0, -8.74228e-09, 0.2, -0.193497, 0.0505862, 2.21119e-09, -7.92649, 0.168138, 10.1298)
 material_override = SubResource("StandardMaterial3D_a1jls")
 mesh = ExtResource("47_b5vj2")
 skeleton = NodePath("")
@@ -1268,7 +1284,7 @@ skeleton = NodePath("")
 shape = SubResource("ConcavePolygonShape3D_novnf")
 
 [node name="Cryptex16" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.14764, -0.261156, -6.45356e-09, -1.31134e-08, 2.10776e-15, 0.3, -0.261156, 0.14764, -1.14155e-08, -9.32959, 0.168138, 11.3926)
+transform = Transform3D(-0.0984267, -0.174104, -7.61033e-09, 0, -8.74228e-09, 0.2, -0.174104, 0.0984267, 4.30237e-09, -9.32959, 0.168138, 11.3926)
 material_override = SubResource("StandardMaterial3D_a1jls")
 mesh = ExtResource("47_b5vj2")
 skeleton = NodePath("")
@@ -1279,7 +1295,7 @@ skeleton = NodePath("")
 shape = SubResource("ConcavePolygonShape3D_novnf")
 
 [node name="Cryptex17" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.289985, -0.0768665, -1.26756e-08, -1.31134e-08, 3.03557e-15, 0.3, -0.0768665, 0.289985, -3.35994e-09, -8.16569, 0.168138, 10.8665)
+transform = Transform3D(-0.193324, -0.0512444, -2.23996e-09, 0, -8.74228e-09, 0.2, -0.0512444, 0.193324, 8.45044e-09, -8.16569, 0.168138, 10.8665)
 material_override = SubResource("StandardMaterial3D_a1jls")
 mesh = ExtResource("47_b5vj2")
 skeleton = NodePath("")
@@ -1290,7 +1306,7 @@ skeleton = NodePath("")
 shape = SubResource("ConcavePolygonShape3D_novnf")
 
 [node name="Cryptex5" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.0841748, -0.287949, 3.6794e-09, -1.31134e-08, 2.76248e-15, 0.3, -0.287949, -0.0841748, -1.25866e-08, -10.5247, 0.168138, 11.8855)
+transform = Transform3D(0.0561165, -0.191966, -8.3911e-09, 0, -8.74228e-09, 0.2, -0.191966, -0.0561165, -2.45293e-09, -10.5247, 0.168138, 11.8855)
 material_override = SubResource("StandardMaterial3D_a1jls")
 mesh = ExtResource("47_b5vj2")
 skeleton = NodePath("")
@@ -1301,7 +1317,7 @@ skeleton = NodePath("")
 shape = SubResource("ConcavePolygonShape3D_novnf")
 
 [node name="Cryptex6" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.209566, -0.214668, -9.1604e-09, -1.31134e-08, 5.73206e-16, 0.3, -0.214668, 0.209566, -9.38341e-09, -3.46964, 0.168138, 10.6504)
+transform = Transform3D(-0.13971, -0.143112, -6.25562e-09, 0, -8.74228e-09, 0.2, -0.143112, 0.13971, 6.10694e-09, -3.46964, 0.168138, 10.6504)
 material_override = SubResource("StandardMaterial3D_a1jls")
 mesh = ExtResource("47_b5vj2")
 skeleton = NodePath("")
@@ -1312,7 +1328,7 @@ skeleton = NodePath("")
 shape = SubResource("ConcavePolygonShape3D_novnf")
 
 [node name="Cryptex7" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.0774586, -0.289828, -3.38581e-09, -1.31134e-08, 1.31773e-15, 0.3, -0.289828, 0.0774586, -1.26688e-08, -3.46964, 0.168138, 9.65043)
+transform = Transform3D(-0.051639, -0.193219, -8.44585e-09, 0, -8.74228e-09, 0.2, -0.193219, 0.051639, 2.25721e-09, -3.46964, 0.168138, 9.65043)
 material_override = SubResource("StandardMaterial3D_a1jls")
 mesh = ExtResource("47_b5vj2")
 skeleton = NodePath("")
@@ -1323,7 +1339,7 @@ skeleton = NodePath("")
 shape = SubResource("ConcavePolygonShape3D_novnf")
 
 [node name="Cryptex8" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.14764, -0.261156, -6.45356e-09, -1.31134e-08, 2.10776e-15, 0.3, -0.261156, 0.14764, -1.14155e-08, -4.00896, 0.168138, 10.4372)
+transform = Transform3D(-0.0984267, -0.174104, -7.61033e-09, 0, -8.74228e-09, 0.2, -0.174104, 0.0984267, 4.30237e-09, -4.00896, 0.168138, 10.4372)
 material_override = SubResource("StandardMaterial3D_a1jls")
 mesh = ExtResource("47_b5vj2")
 skeleton = NodePath("")
@@ -1334,7 +1350,7 @@ skeleton = NodePath("")
 shape = SubResource("ConcavePolygonShape3D_novnf")
 
 [node name="Cryptex9" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.289985, -0.0768665, -1.26756e-08, -1.31134e-08, 3.03557e-15, 0.3, -0.0768665, 0.289985, -3.35994e-09, -2.84506, 0.168138, 9.91114)
+transform = Transform3D(-0.193324, -0.0512444, -2.23996e-09, 0, -8.74228e-09, 0.2, -0.0512444, 0.193324, 8.45044e-09, -2.84506, 0.168138, 9.91114)
 material_override = SubResource("StandardMaterial3D_a1jls")
 mesh = ExtResource("47_b5vj2")
 skeleton = NodePath("")
@@ -1345,7 +1361,7 @@ skeleton = NodePath("")
 shape = SubResource("ConcavePolygonShape3D_novnf")
 
 [node name="Cryptex10" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.0841748, -0.287949, 3.6794e-09, -1.31134e-08, 2.76248e-15, 0.3, -0.287949, -0.0841748, -1.25866e-08, -3.9924, 0.168138, 11.8855)
+transform = Transform3D(0.0561165, -0.191966, -8.3911e-09, 0, -8.74228e-09, 0.2, -0.191966, -0.0561165, -2.45293e-09, -3.9924, 0.168138, 11.8855)
 material_override = SubResource("StandardMaterial3D_a1jls")
 mesh = ExtResource("47_b5vj2")
 skeleton = NodePath("")
@@ -1356,7 +1372,7 @@ skeleton = NodePath("")
 shape = SubResource("ConcavePolygonShape3D_novnf")
 
 [node name="Cryptex11" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.209566, -0.214668, -9.1604e-09, -1.31134e-08, 5.73206e-16, 0.3, -0.214668, 0.209566, -9.38341e-09, -5.64679, 0.168138, 10.6504)
+transform = Transform3D(-0.13971, -0.143112, -6.25562e-09, 0, -8.74228e-09, 0.2, -0.143112, 0.13971, 6.10694e-09, -5.64679, 0.168138, 10.6504)
 material_override = SubResource("StandardMaterial3D_a1jls")
 mesh = ExtResource("47_b5vj2")
 skeleton = NodePath("")
@@ -1367,7 +1383,7 @@ skeleton = NodePath("")
 shape = SubResource("ConcavePolygonShape3D_novnf")
 
 [node name="Cryptex12" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.0774586, -0.289828, -3.38581e-09, -1.31134e-08, 1.31773e-15, 0.3, -0.289828, 0.0774586, -1.26688e-08, -5.64679, 0.168138, 9.65043)
+transform = Transform3D(-0.051639, -0.193219, -8.44585e-09, 0, -8.74228e-09, 0.2, -0.193219, 0.051639, 2.25721e-09, -5.64679, 0.168138, 9.65043)
 material_override = SubResource("StandardMaterial3D_a1jls")
 mesh = ExtResource("47_b5vj2")
 skeleton = NodePath("")
@@ -1378,7 +1394,7 @@ skeleton = NodePath("")
 shape = SubResource("ConcavePolygonShape3D_novnf")
 
 [node name="Cryptex13" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.14764, -0.261156, -6.45356e-09, -1.31134e-08, 2.10776e-15, 0.3, -0.261156, 0.14764, -1.14155e-08, -6.53085, 0.168138, 9.86654)
+transform = Transform3D(-0.0984267, -0.174104, -7.61033e-09, 0, -8.74228e-09, 0.2, -0.174104, 0.0984267, 4.30237e-09, -6.53085, 0.168138, 9.86654)
 material_override = SubResource("StandardMaterial3D_a1jls")
 mesh = ExtResource("47_b5vj2")
 skeleton = NodePath("")
@@ -1389,7 +1405,7 @@ skeleton = NodePath("")
 shape = SubResource("ConcavePolygonShape3D_novnf")
 
 [node name="Cryptex14" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.289985, -0.0768665, -1.26756e-08, -1.31134e-08, 3.03557e-15, 0.3, -0.0768665, 0.289985, -3.35994e-09, -5.02221, 0.168138, 9.91114)
+transform = Transform3D(-0.193324, -0.0512444, -2.23996e-09, 0, -8.74228e-09, 0.2, -0.0512444, 0.193324, 8.45044e-09, -5.02221, 0.168138, 9.91114)
 material_override = SubResource("StandardMaterial3D_a1jls")
 mesh = ExtResource("47_b5vj2")
 skeleton = NodePath("")
@@ -1400,7 +1416,7 @@ skeleton = NodePath("")
 shape = SubResource("ConcavePolygonShape3D_novnf")
 
 [node name="Cryptex15" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.0841748, -0.287949, 3.6794e-09, -1.31134e-08, 2.76248e-15, 0.3, -0.287949, -0.0841748, -1.25866e-08, -6.16954, 0.168138, 11.8855)
+transform = Transform3D(0.0561165, -0.191966, -8.3911e-09, 0, -8.74228e-09, 0.2, -0.191966, -0.0561165, -2.45293e-09, -6.16954, 0.168138, 11.8855)
 material_override = SubResource("StandardMaterial3D_a1jls")
 mesh = ExtResource("47_b5vj2")
 skeleton = NodePath("")
@@ -1416,17 +1432,21 @@ material_override = ExtResource("46_l244x")
 mesh = SubResource("TextMesh_8w1p6")
 
 [node name="MirrorPickable" type="RigidBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.22086, 1.78212, 42.1525)
+transform = Transform3D(-0.171413, 0, 0.985199, 0, 1, 0, -0.985199, 0, -0.171413, -7.22086, 1.78212, 42.1525)
 collision_layer = 4
 collision_mask = 196615
 freeze_mode = 1
 script = ExtResource("47_8w1p6")
 
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MirrorPickable"]
+transform = Transform3D(0.2, 0, -9.31323e-10, 0, 0.2, 0, 9.31323e-10, 0, 0.2, -0.01091, -0.00390255, -0.00933075)
+shape = SubResource("BoxShape3D_2s238")
+
 [node name="Node3D" type="Node3D" parent="MirrorPickable"]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
 
 [node name="Mirror" type="MeshInstance3D" parent="MirrorPickable/Node3D" node_paths=PackedStringArray("beam_mesh", "end_particles", "rayCast")]
-transform = Transform3D(2.42929e-08, 0.555758, 0.831342, 1, -4.37114e-08, 2.64697e-22, 3.63391e-08, 0.831342, -0.555758, 0, 0, 0)
+transform = Transform3D(-4.37114e-08, -0.999998, 0, 1, -4.37113e-08, 0, 0, 0, 0.999998, 0, 0, 0)
 mesh = ExtResource("23_fudck")
 skeleton = NodePath("../../LaserGun/Laser1")
 script = ExtResource("24_tv6l0")
@@ -1455,10 +1475,6 @@ surface_material_override/0 = SubResource("StandardMaterial3D_sn8vg")
 [node name="EndParticles" parent="MirrorPickable/Node3D/Mirror/RayCast3D" instance=ExtResource("25_uqh4o")]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
 amount = 31
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MirrorPickable"]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.0487671, -0.00302124, 0.050293)
-shape = SubResource("BoxShape3D_2s238")
 
 [editable path="SimpleFloor"]
 [editable path="SimpleFloor/Door"]
