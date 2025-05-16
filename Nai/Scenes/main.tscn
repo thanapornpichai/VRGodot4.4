@@ -1,0 +1,129 @@
+[gd_scene load_steps=19 format=3 uid="uid://jd53qqlylvu8"]
+
+[ext_resource type="ArrayMesh" uid="uid://dsribb0848n8s" path="res://Nai/Asssets/Laser_Machine.vox" id="1_awtg0"]
+[ext_resource type="PackedScene" uid="uid://dt111ydjcyy1b" path="res://Nai/Scenes/laser.tscn" id="2_qu6du"]
+[ext_resource type="Script" uid="uid://b3u6or033rykx" path="res://Nai/Scripts/laser_gun3.gd" id="3_x7ri8"]
+[ext_resource type="PackedScene" uid="uid://dq85p7v4jggu0" path="res://Nai/Scenes/safebox.tscn" id="4_qu6du"]
+[ext_resource type="ArrayMesh" uid="uid://bnhqyeb6u4nxp" path="res://Nai/Asssets/Mirror.vox" id="4_tgo4a"]
+[ext_resource type="Script" uid="uid://c6hri4lvgolq5" path="res://Nai/Scripts/mirror2.gd" id="5_xa78p"]
+[ext_resource type="PackedScene" uid="uid://c68p8gcw0xqx3" path="res://Models/Classroom/Room2/class_room_2.tscn" id="6_hiwvh"]
+[ext_resource type="PackedScene" uid="uid://bv14xk3mk3v2h" path="res://Nai/Scenes/end_particles.tscn" id="6_v8pia"]
+[ext_resource type="ArrayMesh" uid="uid://by50btjgv0212" path="res://Nai/Asssets/Workshop_table.vox" id="7_7sne6"]
+[ext_resource type="ArrayMesh" uid="uid://cj4irppl4xbl" path="res://Nai/Asssets/bench_vise.vox" id="8_3p5uv"]
+[ext_resource type="Script" uid="uid://60y7cgxskrky" path="res://Nai/Scripts/vise.gd" id="8_tgo4a"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_awtg0"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_qu6du"]
+sky_material = SubResource("ProceduralSkyMaterial_awtg0")
+
+[sub_resource type="Environment" id="Environment_wwyjm"]
+background_mode = 2
+sky = SubResource("Sky_qu6du")
+tonemap_mode = 2
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0rxfa"]
+size = Vector3(1.85576, 0.1, 1.8379)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_ol8ve"]
+top_radius = 0.1
+bottom_radius = 0.1
+height = 0.1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wnkjo"]
+transparency = 1
+albedo_color = Color(1, 0, 0, 1)
+emission_enabled = true
+emission = Color(1, 0, 0, 1)
+emission_energy_multiplier = 16.0
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_pfhbm"]
+radius = 0.1
+
+[node name="Main" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_wwyjm")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866026, -0.500003, 0.749999, -0.43301, 18.9836, 14.3006, 0)
+shadow_enabled = true
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.793754, -0.302327, 0.527781, 0.0909018, 0.916939, 0.388535, -0.601408, -0.260425, 0.755306, 2.91434, 2.58077, 7.37973)
+
+[node name="Safebox" parent="." instance=ExtResource("4_qu6du")]
+transform = Transform3D(-0.187939, 0, -0.068404, 0, 0.2, 0, 0.068404, 0, -0.187939, 1.33056, 0.1, 6.243)
+
+[node name="LaserGun" type="MeshInstance3D" parent="."]
+transform = Transform3D(-8.74228e-09, 0, 0.2, 0, 0.2, 0, -0.2, 0, -8.74228e-09, -2, 0.022, 0)
+mesh = ExtResource("1_awtg0")
+
+[node name="LaserOrigin" type="Node3D" parent="LaserGun"]
+transform = Transform3D(-4.37114e-08, 1, 3.55271e-15, -1, -4.37114e-08, 0, 0, -3.55271e-15, 1, 10.0513, 8, 0)
+
+[node name="Laser1" parent="LaserGun" instance=ExtResource("2_qu6du")]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 10.051, 8, 0)
+target_position = Vector3(0, 500, 0)
+script = ExtResource("3_x7ri8")
+
+[node name="Table" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -1.62526, 0, -6.49717)
+mesh = ExtResource("7_7sne6")
+
+[node name="Vise" type="MeshInstance3D" parent="."]
+transform = Transform3D(-8.74229e-09, 0, -0.2, 0, 0.2, 0, 0.2, 0, -8.74229e-09, -2, 0.72, -5.963)
+mesh = ExtResource("8_3p5uv")
+script = ExtResource("8_tgo4a")
+
+[node name="Mirror" type="MeshInstance3D" parent="Vise" node_paths=PackedStringArray("beam_mesh", "end_particles", "rayCast", "hit_vfx")]
+transform = Transform3D(4.37113e-08, 0.999998, -8.74226e-08, 1, -4.37114e-08, 0, -3.82136e-15, -8.74226e-08, -0.999998, 0.51532, 4.1327, -0.0290871)
+mesh = ExtResource("4_tgo4a")
+skeleton = NodePath("../../LaserGun/Laser1")
+script = ExtResource("5_xa78p")
+beam_mesh = NodePath("RayCast3D/BeamMesh")
+end_particles = NodePath("RayCast3D/EndParticles")
+rayCast = NodePath("RayCast3D")
+hit_vfx = NodePath("RayCast3D/Reflex2")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Vise/Mirror"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Vise/Mirror/StaticBody3D"]
+transform = Transform3D(1, -1.42109e-14, 1.43885e-13, 3.55271e-14, 1, -3.57628e-07, 1.06581e-14, 3.57628e-07, 1, -0.0420341, 0.0473595, -0.0124292)
+shape = SubResource("BoxShape3D_0rxfa")
+
+[node name="RayCast3D" type="RayCast3D" parent="Vise/Mirror"]
+transform = Transform3D(1, 9.31323e-09, -1.62981e-08, -9.31322e-09, 1, 2.23517e-07, 1.62981e-08, -2.23517e-07, 1, -0.000483751, 0.0908597, -0.0241207)
+target_position = Vector3(0, 100, 0)
+
+[node name="BeamMesh" type="MeshInstance3D" parent="Vise/Mirror/RayCast3D"]
+transform = Transform3D(1, -8.88178e-16, 0, 8.88178e-16, 1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("CylinderMesh_ol8ve")
+surface_material_override/0 = SubResource("StandardMaterial3D_wnkjo")
+
+[node name="EndParticles" parent="Vise/Mirror/RayCast3D" instance=ExtResource("6_v8pia")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+amount = 31
+
+[node name="Reflex2" type="Node3D" parent="Vise/Mirror/RayCast3D"]
+transform = Transform3D(10, 5.68434e-14, -7.10543e-14, -2.84217e-14, 10, -9.53674e-07, 2.84217e-14, 9.53674e-07, 10, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Vise/Mirror/RayCast3D/Reflex2"]
+transform = Transform3D(0.7, 0, 1.77636e-15, 8.88178e-16, -5.96046e-08, -0.7, 8.88178e-16, 0.7, -5.96046e-08, 0, 0, 0)
+visible = false
+mesh = SubResource("CapsuleMesh_pfhbm")
+
+[node name="Pivot" type="Node3D" parent="Vise/Mirror"]
+transform = Transform3D(1, -1.11759e-08, 3.72529e-09, 0, -2.98023e-08, 1, 7.45058e-09, -1, -8.9407e-08, -0.000483871, 0.0908597, -0.0241207)
+
+[node name="ClassRoom2" parent="." instance=ExtResource("6_hiwvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.017, 0, 0)
+visible = false
+
+[node name="StaticBody3D" parent="ClassRoom2/ClassRoom2_593_001" index="0"]
+visible = false
+
+[editable path="Safebox"]
+[editable path="ClassRoom2"]

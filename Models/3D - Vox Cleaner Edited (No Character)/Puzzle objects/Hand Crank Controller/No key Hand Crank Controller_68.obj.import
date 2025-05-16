@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b3xqqc8olfhkp"
+path="res://.godot/imported/No key Hand Crank Controller_68.obj-5b1d649ae441428995af290cbd734055.mesh"
+
+[deps]
+
+files=["res://.godot/imported/No key Hand Crank Controller_68.obj-5b1d649ae441428995af290cbd734055.mesh"]
+
+source_file="res://Models/3D - Vox Cleaner Edited (No Character)/Puzzle objects/Hand Crank Controller/No key Hand Crank Controller_68.obj"
+dest_files=["res://.godot/imported/No key Hand Crank Controller_68.obj-5b1d649ae441428995af290cbd734055.mesh", "res://.godot/imported/No key Hand Crank Controller_68.obj-5b1d649ae441428995af290cbd734055.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

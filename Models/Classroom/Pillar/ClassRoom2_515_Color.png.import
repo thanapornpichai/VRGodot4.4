@@ -3,21 +3,19 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dd6butj1751vc"
-path.s3tc="res://.godot/imported/ClassRoom2_515_Color.png-8f2074c99486635316e0ab40361cae8b.s3tc.ctex"
-path.etc2="res://.godot/imported/ClassRoom2_515_Color.png-8f2074c99486635316e0ab40361cae8b.etc2.ctex"
+path="res://.godot/imported/ClassRoom2_515_Color.png-8f2074c99486635316e0ab40361cae8b.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://Models/Classroom/Pillar/ClassRoom2_515_Color.png"
-dest_files=["res://.godot/imported/ClassRoom2_515_Color.png-8f2074c99486635316e0ab40361cae8b.s3tc.ctex", "res://.godot/imported/ClassRoom2_515_Color.png-8f2074c99486635316e0ab40361cae8b.etc2.ctex"]
+dest_files=["res://.godot/imported/ClassRoom2_515_Color.png-8f2074c99486635316e0ab40361cae8b.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=3
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c68p8gcw0xqx3"]
+[gd_scene load_steps=13 format=3 uid="uid://c68p8gcw0xqx3"]
 
 [ext_resource type="PackedScene" uid="uid://dg5emcxoqpujv" path="res://Models/Classroom/Room2/ClassRoom2_593.fbx" id="1_gcpo4"]
 [ext_resource type="Material" uid="uid://dqghxmejullve" path="res://Models/Classroom/Room2/Room2.tres" id="2_wwyqt"]
@@ -24,6 +24,12 @@ size = Vector3(0.104309, 3.92506, 14.9668)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cshrr"]
 size = Vector3(0.618164, 4.00648, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ecura"]
+albedo_color = Color(0.237322, 0.00900725, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_wtoju"]
+material = SubResource("StandardMaterial3D_ecura")
 
 [node name="ClassRoom2" instance=ExtResource("1_gcpo4")]
 
@@ -83,3 +89,27 @@ transform = Transform3D(-5.30129e-08, 0, -1, 0, 1, 0, 1.21279, 0, -4.37114e-08, 
 
 [node name="Windows4" parent="." index="4" instance=ExtResource("3_ecura")]
 transform = Transform3D(-5.30129e-08, 0, -1, 0, 1, 0, 1.21279, 0, -4.37114e-08, 4.97533, 1.23111, 3.43469)
+
+[node name="Lable7" type="MeshInstance3D" parent="." index="5"]
+transform = Transform3D(9.75957, 0, 0, 0, -5.09702e-09, -0.407919, 0, 0.116606, -1.78307e-08, 0.0156563, 0.286529, -7.43844)
+mesh = SubResource("BoxMesh_wtoju")
+
+[node name="Lable8" type="MeshInstance3D" parent="." index="6"]
+transform = Transform3D(9.91977, 0, 0, 0, -5.09702e-09, -0.407919, 0, 0.116606, -1.78307e-08, 0.0611427, 0.286529, 7.44218)
+mesh = SubResource("BoxMesh_wtoju")
+
+[node name="Lable9" type="MeshInstance3D" parent="." index="7"]
+transform = Transform3D(-6.55342e-07, 0.116606, -1.78307e-08, 0, -5.09702e-09, -0.407919, -14.9925, -5.09702e-09, 7.79405e-16, 4.93373, 0.286529, -0.00794327)
+mesh = SubResource("BoxMesh_wtoju")
+
+[node name="Lable12" type="MeshInstance3D" parent="." index="8"]
+transform = Transform3D(-4.78939e-08, 0.627044, -1.78307e-08, 0, -2.7409e-08, -0.407919, -1.09569, -2.7409e-08, 7.79405e-16, 4.79165, 0.286529, -0.00794327)
+mesh = SubResource("BoxMesh_wtoju")
+
+[node name="Lable10" type="MeshInstance3D" parent="." index="9"]
+transform = Transform3D(-4.50945e-07, 0.116606, -1.78307e-08, 0, -5.09702e-09, -0.407919, -10.3164, -5.09702e-09, 7.79405e-16, -4.9545, 0.286529, -2.35201)
+mesh = SubResource("BoxMesh_wtoju")
+
+[node name="Lable11" type="MeshInstance3D" parent="." index="10"]
+transform = Transform3D(-1.32175e-07, 0.116606, -1.78307e-08, 0, -5.09702e-09, -0.407919, -3.0238, -5.09702e-09, 7.79405e-16, -4.9545, 0.286529, 6.00386)
+mesh = SubResource("BoxMesh_wtoju")

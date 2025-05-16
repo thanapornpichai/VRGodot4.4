@@ -1,10 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://cqc8mss40x4xe"]
+[gd_scene load_steps=6 format=3 uid="uid://cqc8mss40x4xe"]
 
 [ext_resource type="PackedScene" uid="uid://c7tmiwb3rdsbd" path="res://Models/Classroom/Pillar/Pillar.fbx" id="1_nm2vt"]
 [ext_resource type="Material" uid="uid://bfl1cxpd5aoqg" path="res://Models/Classroom/Pillar/Pillar.tres" id="2_eodhn"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_eodhn"]
 size = Vector3(1, 1, 4.00708)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eodhn"]
+albedo_color = Color(0.237322, 0.00900725, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_gu48j"]
+material = SubResource("StandardMaterial3D_eodhn")
 
 [node name="Pillar" instance=ExtResource("1_nm2vt")]
 
@@ -17,3 +23,7 @@ material_override = ExtResource("2_eodhn")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Pillar_001/StaticBody3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.00305)
 shape = SubResource("BoxShape3D_eodhn")
+
+[node name="Lable12" type="MeshInstance3D" parent="." index="1"]
+transform = Transform3D(-4.45962e-08, 1.01994, -1.78307e-08, 0, -4.4583e-08, -0.407919, -1.02024, -4.4583e-08, 7.79405e-16, 0.00463045, 0.206231, -0.00794327)
+mesh = SubResource("BoxMesh_gu48j")

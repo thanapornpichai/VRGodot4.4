@@ -3,21 +3,19 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ck5e34a2vkk44"
-path.s3tc="res://.godot/imported/BlueBook_6_Color.png-8ba32648a6ccda33693303be5941a220.s3tc.ctex"
-path.etc2="res://.godot/imported/BlueBook_6_Color.png-8ba32648a6ccda33693303be5941a220.etc2.ctex"
+path="res://.godot/imported/BlueBook_6_Color.png-8ba32648a6ccda33693303be5941a220.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://Models/Book/Book1/BlueBook_6_Color.png"
-dest_files=["res://.godot/imported/BlueBook_6_Color.png-8ba32648a6ccda33693303be5941a220.s3tc.ctex", "res://.godot/imported/BlueBook_6_Color.png-8ba32648a6ccda33693303be5941a220.etc2.ctex"]
+dest_files=["res://.godot/imported/BlueBook_6_Color.png-8ba32648a6ccda33693303be5941a220.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=3
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

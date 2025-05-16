@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bhxyb43vn3pu8"
+path="res://.godot/imported/MemoPaper_23.obj-65c19c06fa9120255f08988681e7c443.mesh"
+
+[deps]
+
+files=["res://.godot/imported/MemoPaper_23.obj-65c19c06fa9120255f08988681e7c443.mesh"]
+
+source_file="res://Models/3D - Vox Cleaner Edited (No Character)/Paper& MemoPad/MemoPaper_23.obj"
+dest_files=["res://.godot/imported/MemoPaper_23.obj-65c19c06fa9120255f08988681e7c443.mesh", "res://.godot/imported/MemoPaper_23.obj-65c19c06fa9120255f08988681e7c443.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

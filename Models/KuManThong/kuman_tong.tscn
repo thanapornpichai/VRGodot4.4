@@ -1,10 +1,49 @@
-[gd_scene load_steps=3 format=3 uid="uid://bs71cxdouhb0u"]
+[gd_scene load_steps=11 format=3 uid="uid://bs71cxdouhb0u"]
 
 [ext_resource type="PackedScene" uid="uid://bpnu7t2mohawg" path="res://Models/KuManThong/Kuman Tong_3.fbx" id="1_i8por"]
 [ext_resource type="Material" uid="uid://e781x18efxo7" path="res://Models/KuManThong/KuManThong.tres" id="2_ubk07"]
+[ext_resource type="PackedScene" uid="uid://by354fdyu2f84" path="res://textures/sub_viewport_offer.tscn" id="3_egrkp"]
+[ext_resource type="PackedScene" uid="uid://psvor7owqaaj" path="res://textures/sub_viewport_hint.tscn" id="4_0hn8i"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_i8por"]
+viewport_path = NodePath("SubViewportOffer")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i8por"]
+resource_local_to_scene = true
+albedo_color = Color(1, 1, 1, 0)
+albedo_texture = SubResource("ViewportTexture_i8por")
+
+[sub_resource type="QuadMesh" id="QuadMesh_ubk07"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_i8por")
+size = Vector2(1, 0.4)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_egrkp"]
+viewport_path = NodePath("SubViewportHint")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_egrkp"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_egrkp")
+
+[sub_resource type="QuadMesh" id="QuadMesh_0hn8i"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_egrkp")
+size = Vector2(1, 0.4)
 
 [node name="Kuman Tong_3" instance=ExtResource("1_i8por")]
 
 [node name="Guman Tong_3_001" parent="." index="0"]
 transform = Transform3D(0.2, 0, 0, 0, -1.09278e-08, 0.25, 0, -0.25, -1.09278e-08, 0, -4.76837e-07, 0)
 material_override = ExtResource("2_ubk07")
+
+[node name="SubViewportOffer" parent="." index="1" instance=ExtResource("3_egrkp")]
+
+[node name="Hint1" type="MeshInstance3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.50997, 0)
+mesh = SubResource("QuadMesh_ubk07")
+
+[node name="SubViewportHint" parent="." index="3" instance=ExtResource("4_0hn8i")]
+
+[node name="Hint2" type="MeshInstance3D" parent="." index="4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.50997, 0)
+mesh = SubResource("QuadMesh_0hn8i")

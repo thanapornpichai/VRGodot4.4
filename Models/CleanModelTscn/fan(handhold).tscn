@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://ceml4oojpcx1v"]
+
+[ext_resource type="Texture2D" uid="uid://b2kyuln6msm0a" path="res://Models/3D - Vox Cleaner Edited (No Character)/Puzzle objects/Fan(handhold)/Fan(handhold)_65_Color.png" id="1_dcmh8"]
+[ext_resource type="ArrayMesh" uid="uid://cigu5w48tvodb" path="res://Models/3D - Vox Cleaner Edited (No Character)/Puzzle objects/Fan(handhold)/Fan(handhold)_65.obj" id="2_jx4ba"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8o2hw"]
+albedo_color = Color(0.925353, 0.925353, 0.925353, 1)
+albedo_texture = ExtResource("1_dcmh8")
+metallic = 0.8
+roughness = 0.5
+texture_filter = 0
+
+[node name="Fan(handhold)" type="MeshInstance3D"]
+transform = Transform3D(-0.330757, 0.0623964, 0.018079, 0.0753434, 0.31104, 0.0432161, -0.0228653, 0.122314, -0.11912, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_8o2hw")
+mesh = ExtResource("2_jx4ba")

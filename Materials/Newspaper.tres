@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bui32qkecob85"]
+
+[ext_resource type="Texture2D" uid="uid://dou1yxbfs3a0t" path="res://addons/godot-xr-tools/images/School_Fire.png" id="1_3j2ga"]
+
+[resource]
+albedo_texture = ExtResource("1_3j2ga")

@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://brhvebkafgu56"]
+
+[ext_resource type="Texture2D" uid="uid://b14frfbulqkpa" path="res://Models/3D - Vox Cleaner Edited (No Character)/Paper& MemoPad/paper_24_Color.png" id="1_iiwv8"]
+[ext_resource type="ArrayMesh" uid="uid://dxiouqr50vdvn" path="res://Models/3D - Vox Cleaner Edited (No Character)/Paper& MemoPad/paper_24.obj" id="2_5waht"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o4unr"]
+albedo_color = Color(0.815686, 0.815686, 0.815686, 1)
+albedo_texture = ExtResource("1_iiwv8")
+texture_filter = 0
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_o4unr"]
+points = PackedVector3Array(-0.407936, -0.00792563, -0.507937, 0.378533, 0.1, 0.479005, 0.401587, -0.00792563, 0.507937, -0.407936, -0.00792563, 0.507937, 0.401587, -0.00792563, -0.507937, -0.384882, 0.1, -0.479005, -0.384882, 0.1, 0.479005, 0.378533, 0.1, -0.479005)
+
+[node name="Paper" type="MeshInstance3D"]
+transform = Transform3D(0.5, 0, 0, 0, 0.1, 0, 0, 0, 0.5, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_o4unr")
+mesh = ExtResource("2_5waht")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_o4unr")
+disabled = true

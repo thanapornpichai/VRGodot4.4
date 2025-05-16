@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bch53w248llxy"]
+
+[ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="1_4emcu"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bmugq"]
+size = Vector3(0.3, 0.15, 0.01)
+
+[sub_resource type="BoxMesh" id="BoxMesh_a8vfh"]
+size = Vector3(0.3, 0.15, 0.01)
+
+[node name="KeyCard" groups=["KeyCard"] instance=ExtResource("1_4emcu")]
+transform = Transform3D(1, 0, 0, 0, 0.681436, 0.731877, 0, -0.731877, 0.681436, 0, 0, 0)
+
+[node name="CollisionShape3D" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000687018, 2.98023e-08, 6.79493e-05)
+shape = SubResource("BoxShape3D_bmugq")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="1"]
+mesh = SubResource("BoxMesh_a8vfh")
+skeleton = NodePath("")

@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://bi0tmm1flhrqa"]
+
+[ext_resource type="Texture2D" uid="uid://cu2vmdritsrwm" path="res://Models/3D - Vox Cleaner Edited (No Character)/Puzzle objects/box(open and closed)/closed box_53_Color.png" id="1_v4vkw"]
+[ext_resource type="ArrayMesh" uid="uid://b656fbretgh82" path="res://Models/3D - Vox Cleaner Edited (No Character)/Puzzle objects/box(open and closed)/closed box_53.obj" id="2_ni1tr"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4al6g"]
+albedo_color = Color(0.803922, 0.803922, 0.803922, 1)
+albedo_texture = ExtResource("1_v4vkw")
+texture_filter = 0
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_f0ic8"]
+data = PackedVector3Array(0.2, 0.5, -0.2, -0.2, 0.5, 0.2, -0.2, 0.5, -0.2, 0.2, 0.5, 0.2, -0.2, 0.5, 0.2, 0.2, 0.5, -0.2, -0.2, 0.1, 0.2, -0.2, 0.5, -0.2, -0.2, 0.5, 0.2, -0.2, 0.1, -0.2, -0.2, 0.5, -0.2, -0.2, 0.1, 0.2, 0.2, 0.1, -0.2, -0.2, 0.1, 0.2, 0.2, 0.1, 0.2, -0.2, 0.1, -0.2, -0.2, 0.1, 0.2, 0.2, 0.1, -0.2, -0.3, 0.6, -0.3, 0.3, 0.6, 0.3, -0.3, 0.6, 0.3, 0.3, 0.6, -0.3, 0.3, 0.6, 0.3, -0.3, 0.6, -0.3, -0.2, 0.1, -0.2, 0.2, 0.5, -0.2, -0.2, 0.5, -0.2, 0.2, 0.1, -0.2, 0.2, 0.5, -0.2, -0.2, 0.1, -0.2, 0.2, 0.5, 0.2, 0.2, 0.1, -0.2, 0.2, 0.1, 0.2, 0.2, 0.5, -0.2, 0.2, 0.1, -0.2, 0.2, 0.5, 0.2, 0.3, 0, -0.3, -0.3, 0, 0.3, 0.3, 0, 0.3, -0.3, 0, -0.3, -0.3, 0, 0.3, 0.3, 0, -0.3, 0.3, 0.6, 0.3, 0.3, 0, -0.3, 0.3, 0, 0.3, 0.3, 0.6, -0.3, 0.3, 0, -0.3, 0.3, 0.6, 0.3, -0.3, 0, -0.3, -0.3, 0.6, 0.3, -0.3, 0, 0.3, -0.3, 0.6, -0.3, -0.3, 0.6, 0.3, -0.3, 0, -0.3, -0.3, 0, 0.3, 0.3, 0.6, 0.3, 0.3, 0, 0.3, -0.3, 0.6, 0.3, 0.3, 0.6, 0.3, -0.3, 0, 0.3, 0.2, 0.5, 0.2, -0.2, 0.1, 0.2, -0.2, 0.5, 0.2, 0.2, 0.1, 0.2, -0.2, 0.1, 0.2, 0.2, 0.5, 0.2, -0.3, 0, -0.3, 0.3, 0.6, -0.3, -0.3, 0.6, -0.3, 0.3, 0, -0.3, 0.3, 0.6, -0.3, -0.3, 0, -0.3)
+
+[node name="ClosedBox" type="MeshInstance3D"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_4al6g")
+mesh = ExtResource("2_ni1tr")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_f0ic8")

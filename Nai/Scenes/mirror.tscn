@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://cb1uvx0p14neg"]
+
+[ext_resource type="ArrayMesh" uid="uid://bnhqyeb6u4nxp" path="res://Nai/Asssets/Mirror.vox" id="1_tarca"]
+[ext_resource type="Script" uid="uid://ch0cgdai317" path="res://Nai/Scripts/mirror.gd" id="2_wh8if"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wh8if"]
+size = Vector3(1.25, 0.1, 1)
+
+[node name="Mirror" type="MeshInstance3D"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+mesh = ExtResource("1_tarca")
+script = ExtResource("2_wh8if")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00127566, 0.0473633, -0.0515991)
+shape = SubResource("BoxShape3D_wh8if")

@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://bwyvsvjxpnc68"]
+
+[ext_resource type="Texture2D" uid="uid://de7oxppt8ckuc" path="res://Models/3D - Vox Cleaner Edited (No Character)/Poster&Picture/Painting2/Painting2_38_Color.png" id="1_k0h1w"]
+[ext_resource type="ArrayMesh" uid="uid://onyic614v6xx" path="res://Models/3D - Vox Cleaner Edited (No Character)/Poster&Picture/Painting2/Painting2_38.obj" id="2_ftkts"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0n8gb"]
+albedo_color = Color(0.878431, 0.878431, 0.878431, 1)
+albedo_texture = ExtResource("1_k0h1w")
+texture_filter = 0
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_d46np"]
+points = PackedVector3Array(-0.507937, -0.00773764, -0.507937, 0.479105, 0.978917, -0.4, 0.479105, 0.0210827, -0.4, 0.507937, 1.00774, -0.507937, -0.479105, 0.978917, -0.4, 0.507937, -0.00773764, -0.507937, -0.507937, 1.00774, -0.507937, -0.479105, 0.0210827, -0.4)
+
+[node name="Painting2" type="MeshInstance3D"]
+material_override = SubResource("StandardMaterial3D_0n8gb")
+mesh = ExtResource("2_ftkts")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_d46np")
