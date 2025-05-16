@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bk10ug2j36i8r"]
+[gd_scene load_steps=17 format=3 uid="uid://bk10ug2j36i8r"]
 
 [ext_resource type="PackedScene" uid="uid://ddneys6hhnini" path="res://Models/Classroom/SimpleFloor.tscn" id="1_cw5vt"]
 [ext_resource type="Script" uid="uid://37xaisjvtc8k" path="res://Scripts/Scene1FloorController.cs" id="1_embbr"]
@@ -8,15 +8,132 @@
 [ext_resource type="PackedScene" uid="uid://dkb1oeb0htpsl" path="res://Models/Chair/chair.tscn" id="5_gqjfe"]
 [ext_resource type="PackedScene" uid="uid://bosp3baam0wet" path="res://Models/Desk/desk.tscn" id="5_xs76b"]
 [ext_resource type="PackedScene" uid="uid://cf8kpkve2mmja" path="res://cube.tscn" id="8_add8t"]
+[ext_resource type="Material" uid="uid://c7smjhndbot3a" path="res://Materials/Number.tres" id="9_t7ew8"]
+[ext_resource type="FontFile" uid="uid://c33d6w5xdgwib" path="res://labels_and_texts/fonts/Minecraftia-Regular.ttf" id="10_lpas0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lpas0"]
+albedo_color = Color(0.237322, 0.00900725, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_tgq0x"]
+material = SubResource("StandardMaterial3D_lpas0")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t7ew8"]
+albedo_color = Color(0.237322, 0.00900725, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_lpas0"]
+material = SubResource("StandardMaterial3D_t7ew8")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_uk6cp"]
 size = Vector3(15.6099, 5.39844, 4.25537)
+
+[sub_resource type="TextMesh" id="TextMesh_tgq0x"]
+text = "4"
+font = ExtResource("10_lpas0")
 
 [node name="Scene1_Floor4" type="Node3D"]
 script = ExtResource("1_embbr")
 
 [node name="SimpleFloor" parent="." instance=ExtResource("1_cw5vt")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4.80001, -0.0999999, 16.1663)
+
+[node name="LableGroup" type="Node3D" parent="SimpleFloor/StairConnector2" index="1"]
+
+[node name="Lable7" type="MeshInstance3D" parent="SimpleFloor/StairConnector2/LableGroup"]
+transform = Transform3D(8.11182, 0, 0, 0, -5.09702e-09, -0.407919, 0, 0.116606, -1.78307e-08, -0.0245492, 0.286529, -1.91865)
+mesh = SubResource("BoxMesh_tgq0x")
+skeleton = NodePath("../..")
+
+[node name="Lable8" type="MeshInstance3D" parent="SimpleFloor/StairConnector2/LableGroup"]
+transform = Transform3D(2.09497, 0, 0, 0, -5.09702e-09, -0.407919, 0, 0.116606, -1.78307e-08, -3.03399, 0.286529, 1.83005)
+mesh = SubResource("BoxMesh_tgq0x")
+skeleton = NodePath("../..")
+
+[node name="Lable10" type="MeshInstance3D" parent="SimpleFloor/StairConnector2/LableGroup"]
+transform = Transform3D(-2.8091e-08, 0.116606, -1.78307e-08, 0, -5.09702e-09, -0.407919, -0.642648, -5.09702e-09, 7.79405e-16, -4.04452, 0.286529, 1.51326)
+mesh = SubResource("BoxMesh_tgq0x")
+skeleton = NodePath("../..")
+
+[node name="Lable11" type="MeshInstance3D" parent="SimpleFloor/StairConnector2/LableGroup"]
+transform = Transform3D(-4.74497e-08, 0.116606, -1.78307e-08, 0, -5.09702e-09, -0.407919, -1.08552, -5.09702e-09, 7.79405e-16, -4.04452, 0.286529, -1.34094)
+mesh = SubResource("BoxMesh_tgq0x")
+skeleton = NodePath("../..")
+
+[node name="Lable9" type="MeshInstance3D" parent="SimpleFloor/StairConnector2/LableGroup"]
+transform = Transform3D(-2.45091e-08, 0.116606, -1.78307e-08, 0, -5.09702e-09, -0.407919, -0.560702, -5.09702e-09, 7.79405e-16, -2.02959, 0.286529, 2.0502)
+mesh = SubResource("BoxMesh_tgq0x")
+skeleton = NodePath("../..")
+
+[node name="LableGroup" type="Node3D" parent="SimpleFloor/Stair2" index="1"]
+
+[node name="Lable7" type="MeshInstance3D" parent="SimpleFloor/Stair2/LableGroup"]
+transform = Transform3D(-1.05373e-07, 0.116606, -1.78307e-08, 0, -5.09702e-09, -0.407919, -2.41065, -5.09702e-09, 7.79405e-16, -3.04683, 7.49787, -7.10317)
+mesh = SubResource("BoxMesh_lpas0")
+skeleton = NodePath("../..")
+
+[node name="Lable8" type="MeshInstance3D" parent="SimpleFloor/Stair2/LableGroup"]
+transform = Transform3D(-4.65946e-08, 0.116606, -1.98337e-08, 0, -5.09702e-09, -0.453743, -1.06596, -5.09702e-09, 8.66961e-16, -3.04683, 7.97607, -5.36219)
+mesh = SubResource("BoxMesh_lpas0")
+skeleton = NodePath("../..")
+
+[node name="Lable11" type="MeshInstance3D" parent="SimpleFloor/Stair2/LableGroup"]
+transform = Transform3D(-4.0979e-08, 0.116606, -1.78307e-08, 0, -5.09702e-09, -0.407919, -0.93749, -5.09702e-09, 7.79405e-16, 3.04203, 7.50749, -6.24642)
+mesh = SubResource("BoxMesh_lpas0")
+skeleton = NodePath("../..")
+
+[node name="Lable12" type="MeshInstance3D" parent="SimpleFloor/Stair2/LableGroup"]
+transform = Transform3D(-4.0979e-08, 0.116606, -1.78307e-08, 0, -5.09702e-09, -0.407919, -0.93749, -5.09702e-09, 7.79405e-16, 3.04203, 7.01773, -5.68234)
+mesh = SubResource("BoxMesh_lpas0")
+skeleton = NodePath("../..")
+
+[node name="Lable13" type="MeshInstance3D" parent="SimpleFloor/Stair2/LableGroup"]
+transform = Transform3D(-4.0979e-08, 0.116606, -1.78307e-08, 0, -5.09702e-09, -0.407919, -0.93749, -5.09702e-09, 7.79405e-16, 3.04203, 6.52138, -4.97072)
+mesh = SubResource("BoxMesh_lpas0")
+skeleton = NodePath("../..")
+
+[node name="Lable14" type="MeshInstance3D" parent="SimpleFloor/Stair2/LableGroup"]
+transform = Transform3D(-4.0979e-08, 0.116606, -1.78307e-08, 0, -5.09702e-09, -0.407919, -0.93749, -5.09702e-09, 7.79405e-16, 3.04203, 6.03203, -4.27742)
+mesh = SubResource("BoxMesh_lpas0")
+skeleton = NodePath("../..")
+
+[node name="Lable15" type="MeshInstance3D" parent="SimpleFloor/Stair2/LableGroup"]
+transform = Transform3D(-2.12781e-07, 0.116606, -1.78307e-08, 0, -5.09702e-09, -0.407919, -4.86786, -5.09702e-09, 7.79405e-16, 3.04203, 5.52267, -2.23189)
+mesh = SubResource("BoxMesh_lpas0")
+skeleton = NodePath("../..")
+
+[node name="Lable17" type="MeshInstance3D" parent="SimpleFloor/Stair2/LableGroup"]
+transform = Transform3D(-2.12781e-07, 0.116606, -1.78307e-08, 0, -5.09702e-09, -0.407919, -4.86786, -5.09702e-09, 7.79405e-16, -3.03806, 5.51873, -2.23189)
+mesh = SubResource("BoxMesh_lpas0")
+skeleton = NodePath("../..")
+
+[node name="Lable16" type="MeshInstance3D" parent="SimpleFloor/Stair2/LableGroup"]
+transform = Transform3D(6.76958, 0, 0, 0, -5.09702e-09, -0.407919, 0, 0.116606, -1.78307e-08, 0.31759, 5.52267, -0.117763)
+mesh = SubResource("BoxMesh_lpas0")
+skeleton = NodePath("../..")
+
+[node name="Lable18" type="MeshInstance3D" parent="SimpleFloor/Stair2/LableGroup"]
+transform = Transform3D(-2.12781e-07, 0.116606, -1.78307e-08, 0, -5.09702e-09, -0.407919, -4.86786, -5.09702e-09, 7.79405e-16, 3.04203, 9.50116, -2.03426)
+mesh = SubResource("BoxMesh_lpas0")
+skeleton = NodePath("../..")
+
+[node name="Lable19" type="MeshInstance3D" parent="SimpleFloor/Stair2/LableGroup"]
+transform = Transform3D(-2.12781e-07, 0.116606, -1.78307e-08, 0, -5.09702e-09, -0.407919, -4.86786, -5.09702e-09, 7.79405e-16, -3.03806, 9.49722, -1.34534)
+mesh = SubResource("BoxMesh_lpas0")
+skeleton = NodePath("../..")
+
+[node name="Lable20" type="MeshInstance3D" parent="SimpleFloor/Stair2/LableGroup"]
+transform = Transform3D(6.22089, 0, 0, 0, -5.09702e-09, -0.407919, 0, 0.116606, -1.78307e-08, 0.177148, 9.50116, -0.0782599)
+mesh = SubResource("BoxMesh_lpas0")
+skeleton = NodePath("../..")
+
+[node name="Lable9" type="MeshInstance3D" parent="SimpleFloor/Stair2/LableGroup"]
+transform = Transform3D(-4.65946e-08, 0.116606, -1.98337e-08, 0, -5.09702e-09, -0.453743, -1.06596, -5.09702e-09, 8.66961e-16, -3.04683, 8.53334, -4.65821)
+mesh = SubResource("BoxMesh_lpas0")
+skeleton = NodePath("../..")
+
+[node name="Lable10" type="MeshInstance3D" parent="SimpleFloor/Stair2/LableGroup"]
+transform = Transform3D(-4.65946e-08, 0.116606, -1.98337e-08, 0, -5.09702e-09, -0.453743, -1.06596, -5.09702e-09, 8.66961e-16, -3.03705, 9.07217, -3.94608)
+mesh = SubResource("BoxMesh_lpas0")
+skeleton = NodePath("../..")
 
 [node name="Door5" parent="SimpleFloor" index="25"]
 visible = false
@@ -344,6 +461,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.70281, 1.26511, 11.9682)
 
 [node name="PickableObject2" parent="." instance=ExtResource("8_add8t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.01465, 1.26511, 11.9419)
+
+[node name="FloorNumber2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-5, 0, -4.37114e-07, 0, 5, 0, 4.37114e-07, 0, -5, -3.297, 1.854, 8.8679)
+material_override = ExtResource("9_t7ew8")
+mesh = SubResource("TextMesh_tgq0x")
 
 [editable path="SimpleFloor"]
 [editable path="SimpleFloor/Door5"]

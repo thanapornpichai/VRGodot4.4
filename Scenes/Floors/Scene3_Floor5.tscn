@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://cghew80d8e872"]
+[gd_scene load_steps=28 format=4 uid="uid://cghew80d8e872"]
 
 [ext_resource type="Script" uid="uid://c4g00y14fo4ng" path="res://Scripts/Scene3FloorController.cs" id="1_31cuc"]
 [ext_resource type="PackedScene" uid="uid://ddneys6hhnini" path="res://Models/Classroom/SimpleFloor.tscn" id="2_75sb2"]
@@ -16,6 +16,8 @@
 [ext_resource type="PackedScene" uid="uid://0gg542hjyhlu" path="res://PickableObject/RedBottle.tscn" id="13_75sb2"]
 [ext_resource type="PackedScene" uid="uid://dkb1oeb0htpsl" path="res://Models/Chair/chair.tscn" id="13_f5k57"]
 [ext_resource type="PackedScene" uid="uid://skrc2vmekdxb" path="res://Models/CleanModelTscn/memo_paper.tscn" id="16_v57wi"]
+[ext_resource type="Material" uid="uid://c7smjhndbot3a" path="res://Materials/Number.tres" id="17_5kcb8"]
+[ext_resource type="FontFile" uid="uid://c33d6w5xdgwib" path="res://labels_and_texts/fonts/Minecraftia-Regular.ttf" id="18_dln5n"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qa28c"]
 resource_name = "Guman Tong_3_Material"
@@ -75,6 +77,10 @@ size = Vector3(14.8738, 4.06842, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cuojo"]
 size = Vector3(2.01172, 3.11804, 1.18628)
+
+[sub_resource type="TextMesh" id="TextMesh_t26at"]
+text = "5"
+font = ExtResource("18_dln5n")
 
 [node name="Scene3_Floor5" type="Node3D" node_paths=PackedStringArray("_area")]
 script = ExtResource("1_31cuc")
@@ -374,6 +380,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.99979, 1.53421, 1.71478)
 shape = SubResource("BoxShape3D_31cuc")
 
 [node name="Area3D" type="Area3D" parent="."]
+collision_mask = 65537
 monitoring = false
 
 [node name="CollisionFloorCheck" type="CollisionShape3D" parent="Area3D"]
@@ -496,10 +503,6 @@ transform = Transform3D(-0.351126, -0.830754, 0.791554, -0.0660058, -0.81179, -0
 [node name="PickableObject" parent="." instance=ExtResource("13_75sb2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.19571, 1.42933, 11.9806)
 
-[node name="RedWater" parent="." instance=ExtResource("13_75sb2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.544, 2.48152, 7.81563)
-visible = false
-
 [node name="MemoPaper" parent="." instance=ExtResource("16_v57wi")]
 transform = Transform3D(-1.79217e-08, -0.082, 0, 0.380812, -3.32916e-09, -0.151929, 0.151929, -1.3282e-09, 0.380812, -2.50067, 2.02945, 10.5382)
 
@@ -527,6 +530,11 @@ transform = Transform3D(0.5, 0, 0, 0, 0.1, 0, 0, 0, 0.5, 0.448868, 0.122775, 4.6
 [node name="Paper2" parent="." instance=ExtResource("9_0m4j3")]
 transform = Transform3D(0.385596, 0, 0.318302, 0, 0.1, 0, -0.318302, 0, 0.385596, 0.759669, 0.122567, 3.2706)
 
+[node name="FloorNumber" type="MeshInstance3D" parent="."]
+transform = Transform3D(-5, 0, -4.37114e-07, 0, 5, 0, 4.37114e-07, 0, -5, -3.29671, 1.85353, 8.92282)
+material_override = ExtResource("17_5kcb8")
+mesh = SubResource("TextMesh_t26at")
+
 [editable path="SimpleFloor"]
 [editable path="SimpleFloor/Board6"]
 [editable path="SimpleFloor/Door6"]
@@ -536,4 +544,3 @@ transform = Transform3D(0.385596, 0, 0.318302, 0, 0.1, 0, -0.318302, 0, 0.385596
 [editable path="SimpleFloor/Light02"]
 [editable path="SimpleFloor/Light03"]
 [editable path="SimpleFloor/Door8"]
-[editable path="RedWater"]

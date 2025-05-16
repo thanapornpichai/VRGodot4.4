@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://b4luavvunwdgt"]
+
+[ext_resource type="Texture2D" uid="uid://bvr3n7gxnp0y3" path="res://Models/3D - Vox Cleaner Edited (No Character)/Puzzle objects/prop bottle/prop bottle_Red.png" id="1_cj22w"]
+
+[resource]
+albedo_texture = ExtResource("1_cj22w")

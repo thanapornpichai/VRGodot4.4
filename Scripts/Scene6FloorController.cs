@@ -1,13 +1,13 @@
 using Godot;
 
-public partial class Scene5FloorController : BaseFloorController
+public partial class Scene6FloorController : BaseFloorController
 {
 	[Export] public Area3D _area;
 	private double _timer = 0f;
 	private bool _playerInside = false;
 	private bool _isTrigger = false;
 	private bool _finishedFloor = false;
-	public static Scene5FloorController Instance { get; private set; }
+	public static Scene6FloorController Instance { get; private set; }
 	
 	public override void _Ready()
 	{
@@ -15,7 +15,7 @@ public partial class Scene5FloorController : BaseFloorController
 		if (Instance == null)
 		{
 			Instance = this;
-			GD.Print("FloorController5 Loaded");
+			GD.Print("FloorController6 Loaded");
 		}
 		else
 		{
@@ -30,6 +30,7 @@ public partial class Scene5FloorController : BaseFloorController
 		_area.Monitoring = true;
 		_finishedFloor = true;
 		
+		_finishedFloor = true;
 		_area.Connect("body_entered", new Callable(this, nameof(OnBodyEntered)));
 		_area.Connect("body_exited", new Callable(this, nameof(OnBodyExited)));
 	}
@@ -51,7 +52,7 @@ public partial class Scene5FloorController : BaseFloorController
 				{
 					if (!_isTrigger)
 					{
-						this.LoadFloor(5);
+						this.LoadFloor(6);
 						_isTrigger = true;
 					}
 					_timer = 2;

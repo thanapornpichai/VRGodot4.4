@@ -3,6 +3,9 @@ extends MeshInstance3D
 @export var beam_mesh      : MeshInstance3D
 @export var end_particles  : GPUParticles3D
 @export var rayCast        : RayCast3D
+@export var obj1       : Node3D
+@export var obj2       : Node3D
+
 var tween : Tween
 var safe_box_hit_time := 0.0
 var safe_box : Node = null
@@ -38,8 +41,15 @@ func _process(delta):
 			safe_box_hit_time = 0.0
 
 func laser_activate(hit_local: Vector3, time := 0.15):
+	var offset = rayCast.get_collision_point();
+	print(to_local(offset));
+	print(to_local(to_local(offset)));
+	print(to_local(to_local(to_local(offset))));
+
+	
 	beam_mesh.mesh.height = hit_local.y
-	beam_mesh.position.y = hit_local.y * 0.5
+	beam_mesh.position.y = (hit_local.y) * 0.5
+	print(beam_mesh.mesh.height);
 
 	tween = get_tree().create_tween().set_parallel(true)
 	visible = true
@@ -60,6 +70,8 @@ func deactivate(time := 0.15):
 	end_particles.emitting = false
 
 func OnLaserHit(hit_pos : Vector3, dir : Vector3):
+	end_particles.emitting = true;
+	rayCast.visible = true;
 	on_Reflex = true
 	rayCast.global_position = hit_pos
 	
@@ -73,5 +85,6 @@ func OnLaserHit(hit_pos : Vector3, dir : Vector3):
 		
 func StopLaser():
 	on_Reflex = false
+	end_particles.emitting = false;
 	rayCast.visible = false;
 	

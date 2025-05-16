@@ -2,6 +2,7 @@ extends RayCast3D
 
 @onready var beam_mesh      : MeshInstance3D = $BeamMesh
 @onready var end_particles  : GPUParticles3D = $EndParticles
+@export var mirror        : Node3D
 
 var start_locked := false
 var start_world  : Vector3
@@ -25,11 +26,10 @@ func _process(_delta):
 		var nrm  = get_collision_normal().normalized()
 		var refl = inc.reflect(nrm)
 
-		var root = get_collider().get_parent()
-		if root and root.has_method("OnLaserHit"):
-			root.OnLaserHit(hit_world, refl)
-		elif root and root.has_method("StopLaser"):
-			root.StopLaser()
+		if mirror.has_method("OnLaserHit"):
+			mirror.OnLaserHit(hit_world, refl)
+		elif mirror.has_method("StopLaser"):
+			mirror.StopLaser()
 
 	else:
 		# ไม่ชนอะไรเลย → ยิงเต็มระยะไปตาม target_position

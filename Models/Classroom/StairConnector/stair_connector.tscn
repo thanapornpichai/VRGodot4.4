@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dojmkq5eymgqk"]
+[gd_scene load_steps=10 format=3 uid="uid://dojmkq5eymgqk"]
 
 [ext_resource type="PackedScene" uid="uid://wavqnvtpwa2v" path="res://Models/Classroom/StairConnector/StairConnector.fbx" id="1_ftyb1"]
 [ext_resource type="Material" uid="uid://bwuq1s5ynqh1f" path="res://Models/Classroom/StairConnector/Stairconnector.tres" id="2_prb0b"]
@@ -17,6 +17,12 @@ size = Vector3(0.117706, 1.35352, 4.43237)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_o08mq"]
 size = Vector3(0.106445, 2.04285, 1.0509)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ftyb1"]
+albedo_color = Color(0.237322, 0.00900725, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ftyb1"]
+material = SubResource("StandardMaterial3D_ftyb1")
 
 [node name="StairConnector" instance=ExtResource("1_ftyb1")]
 
@@ -53,3 +59,30 @@ shape = SubResource("BoxShape3D_rfb6x")
 [node name="CollisionShape3D7" type="CollisionShape3D" parent="StairConnector_001/StaticBody3D" index="6"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.04894, 0.203051, -3.12148)
 shape = SubResource("BoxShape3D_o08mq")
+
+[node name="LableGroup" type="Node3D" parent="." index="1"]
+
+[node name="Lable7" type="MeshInstance3D" parent="LableGroup" index="0"]
+transform = Transform3D(8.11182, 0, 0, 0, -5.09702e-09, -0.407919, 0, 0.116606, -1.78307e-08, -0.0245492, 0.286529, -1.91865)
+mesh = SubResource("BoxMesh_ftyb1")
+skeleton = NodePath("../..")
+
+[node name="Lable8" type="MeshInstance3D" parent="LableGroup" index="1"]
+transform = Transform3D(2.09497, 0, 0, 0, -5.09702e-09, -0.407919, 0, 0.116606, -1.78307e-08, -3.03399, 0.286529, 1.83005)
+mesh = SubResource("BoxMesh_ftyb1")
+skeleton = NodePath("../..")
+
+[node name="Lable10" type="MeshInstance3D" parent="LableGroup" index="2"]
+transform = Transform3D(-2.8091e-08, 0.116606, -1.78307e-08, 0, -5.09702e-09, -0.407919, -0.642648, -5.09702e-09, 7.79405e-16, -4.04452, 0.286529, 1.51326)
+mesh = SubResource("BoxMesh_ftyb1")
+skeleton = NodePath("../..")
+
+[node name="Lable11" type="MeshInstance3D" parent="LableGroup" index="3"]
+transform = Transform3D(-4.74497e-08, 0.116606, -1.78307e-08, 0, -5.09702e-09, -0.407919, -1.08552, -5.09702e-09, 7.79405e-16, -4.04452, 0.286529, -1.34094)
+mesh = SubResource("BoxMesh_ftyb1")
+skeleton = NodePath("../..")
+
+[node name="Lable9" type="MeshInstance3D" parent="LableGroup" index="4"]
+transform = Transform3D(-2.45091e-08, 0.116606, -1.78307e-08, 0, -5.09702e-09, -0.407919, -0.560702, -5.09702e-09, 7.79405e-16, -2.02959, 0.286529, 2.0502)
+mesh = SubResource("BoxMesh_ftyb1")
+skeleton = NodePath("../..")

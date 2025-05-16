@@ -2,7 +2,7 @@ using Godot;
 
 public partial class Scene4FloorController : BaseFloorController
 {
-	private Area3D _area;
+	[Export] public Area3D _area;
 	private double _timer = 0f;
 	private bool _playerInside = false;
 	private bool _isTrigger = false;
@@ -11,7 +11,6 @@ public partial class Scene4FloorController : BaseFloorController
 	
 	public override void _Ready()
 	{
-		_area = null;
 		if (Instance == null)
 		{
 			Instance = this;
@@ -25,9 +24,10 @@ public partial class Scene4FloorController : BaseFloorController
 	}
 
 	public void OnFinishFloor()
-	{
-		_area = GetNode<Area3D>("Area3D");
+	{   _area.Visible = true;
+		_area.Monitoring = true;
 		_finishedFloor = true;
+		
 		_area.Connect("body_entered", new Callable(this, nameof(OnBodyEntered)));
 		_area.Connect("body_exited", new Callable(this, nameof(OnBodyExited)));
 	}
@@ -49,7 +49,7 @@ public partial class Scene4FloorController : BaseFloorController
 				{
 					if (!_isTrigger)
 					{
-						this.LoadFloor(3);
+						this.LoadFloor(4);
 						_isTrigger = true;
 					}
 					_timer = 2;
