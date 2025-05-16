@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://dyotj43j4mf2p"]
 
-[ext_resource type="Script" uid="uid://37xaisjvtc8k" path="res://Scripts/Scene1FloorController.cs" id="1_thkcj"]
+[ext_resource type="Script" uid="uid://lqtq355mtv1n" path="res://Scripts/Scene7FloorController.cs" id="1_75g43"]
 [ext_resource type="PackedScene" uid="uid://ddneys6hhnini" path="res://Models/Classroom/SimpleFloor.tscn" id="2_tmu2b"]
 [ext_resource type="PackedScene" uid="uid://c3ynhdje3m5r3" path="res://Models/Classroom/class_room.tscn" id="3_canlr"]
 [ext_resource type="ArrayMesh" uid="uid://bgne7aoj26tun" path="res://Models/Light01.vox" id="3_y455e"]
@@ -29,8 +29,8 @@ font = ExtResource("10_7to88")
 [sub_resource type="BoxShape3D" id="BoxShape3D_75g43"]
 size = Vector3(1.01855, 4.45374, 7.74121)
 
-[node name="Scene1_Floor4" type="Node3D"]
-script = ExtResource("1_thkcj")
+[node name="Scene7_Floor1" type="Node3D"]
+script = ExtResource("1_75g43")
 
 [node name="SimpleFloor" parent="." instance=ExtResource("2_tmu2b")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4.80001, -0.0999999, 16.1663)

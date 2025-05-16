@@ -579,6 +579,8 @@ ghostEvent = NodePath("../EventAreaGhost")
 
 [node name="Area3D" type="Area3D" parent="EventAreaStorageRoom"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 31.3784)
+collision_layer = 65537
+collision_mask = 65537
 
 [node name="EventArea" type="CollisionShape3D" parent="EventAreaStorageRoom/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7861, 32.4016)
@@ -594,6 +596,8 @@ floorCheck = NodePath("../EventAreaFloorCheck")
 
 [node name="Area3D" type="Area3D" parent="EventAreaGhost"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 31.3784)
+collision_layer = 65537
+collision_mask = 65537
 monitoring = false
 
 [node name="EventArea" type="CollisionShape3D" parent="EventAreaGhost/Area3D"]
@@ -607,6 +611,7 @@ _area = NodePath("Area3D")
 
 [node name="Area3D" type="Area3D" parent="EventAreaFloorCheck"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 31.3784)
+collision_layer = 65537
 collision_mask = 65537
 monitoring = false
 

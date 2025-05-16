@@ -1497,6 +1497,8 @@ libraries = {
 
 [node name="Area3D" type="Area3D" parent="BookShelfInteraction"]
 transform = Transform3D(0.2, 0, 1.27146e-08, 0, 0.2, 0, -1.27146e-08, 0, 0.2, 0.449862, 1.76704, 0)
+collision_layer = 65537
+collision_mask = 65537
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="BookShelfInteraction/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.05715, -0.0559998, 0.530426)
@@ -1542,6 +1544,8 @@ transform = Transform3D(-4.25532, -3.72013e-07, 1.62612e-14, 0, -1.86006e-07, -4
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.317963, 0)
 
 [node name="Area3D" type="Area3D" parent="WorkshopTable/MysticSymblo"]
+collision_layer = 65537
+collision_mask = 65537
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="WorkshopTable/MysticSymblo/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00854492, -0.0160522, -0.115112)

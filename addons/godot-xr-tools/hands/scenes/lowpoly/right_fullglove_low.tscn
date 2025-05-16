@@ -153,14 +153,7 @@ transform = Transform3D(1, 1.83077e-05, -1.5264e-08, -1.52677e-08, 0.00166774, 0
 bone_name = "Wrist_R"
 bone_idx = 0
 
-[node name="RigidBody3D" type="RigidBody3D" parent="Hand_low_R/Armature/Skeleton3D/Hand" groups=["Player", "PlayerHand"]]
-axis_lock_linear_x = true
-axis_lock_linear_y = true
-axis_lock_linear_z = true
-axis_lock_angular_x = true
-axis_lock_angular_y = true
-axis_lock_angular_z = true
-gravity_scale = 0.0
+[node name="RigidBody3D" type="Area3D" parent="Hand_low_R/Armature/Skeleton3D/Hand" groups=["Player", "PlayerHand"]]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hand_low_R/Armature/Skeleton3D/Hand/RigidBody3D"]
 transform = Transform3D(1, 7.45058e-09, -4.65661e-09, 7.45058e-09, 1, -2.98023e-08, 1.86265e-09, -1.49012e-08, 1, 0, 0.02, -3.72529e-09)
@@ -181,14 +174,7 @@ transform = Transform3D(0.921479, -0.383958, 0.0587628, 0.124052, 0.434264, 0.89
 bone_name = "Thumb_Proximal_R"
 bone_idx = 2
 
-[node name="RigidBody3D" type="RigidBody3D" parent="Hand_low_R/Armature/Skeleton3D/Finger0_1" groups=["Player", "PlayerHand"]]
-axis_lock_linear_x = true
-axis_lock_linear_y = true
-axis_lock_linear_z = true
-axis_lock_angular_x = true
-axis_lock_angular_y = true
-axis_lock_angular_z = true
-gravity_scale = 0.0
+[node name="RigidBody3D" type="Area3D" parent="Hand_low_R/Armature/Skeleton3D/Finger0_1" groups=["Player", "PlayerHand"]]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hand_low_R/Armature/Skeleton3D/Finger0_1/RigidBody3D"]
 transform = Transform3D(1, 7.45058e-09, -4.65661e-09, 7.45058e-09, 1, -2.98023e-08, 1.86265e-09, -1.49012e-08, 1, 0, 0.02, -3.72529e-09)
@@ -204,14 +190,7 @@ transform = Transform3D(0.930159, -0.366844, -0.0151708, 0.154037, 0.352396, 0.9
 bone_name = "Thumb_Distal_R"
 bone_idx = 3
 
-[node name="RigidBody3D" type="RigidBody3D" parent="Hand_low_R/Armature/Skeleton3D/Finger0_2" groups=["Player", "PlayerHand"]]
-axis_lock_linear_x = true
-axis_lock_linear_y = true
-axis_lock_linear_z = true
-axis_lock_angular_x = true
-axis_lock_angular_y = true
-axis_lock_angular_z = true
-gravity_scale = 0.0
+[node name="RigidBody3D" type="Area3D" parent="Hand_low_R/Armature/Skeleton3D/Finger0_2" groups=["Player", "PlayerHand"]]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hand_low_R/Armature/Skeleton3D/Finger0_2/RigidBody3D"]
 transform = Transform3D(1, 0, -7.45058e-09, 2.98023e-08, 1, 4.47035e-08, 0, -2.98023e-08, 1, 0, 0.012, 0)
@@ -227,14 +206,7 @@ transform = Transform3D(0.997821, -0.0419385, 0.0509327, -0.0413169, 0.204661, 0
 bone_name = "Index_Proximal_R"
 bone_idx = 6
 
-[node name="RigidBody3D" type="RigidBody3D" parent="Hand_low_R/Armature/Skeleton3D/Finger1_1"]
-axis_lock_linear_x = true
-axis_lock_linear_y = true
-axis_lock_linear_z = true
-axis_lock_angular_x = true
-axis_lock_angular_y = true
-axis_lock_angular_z = true
-gravity_scale = 0.0
+[node name="RigidBody3D" type="Area3D" parent="Hand_low_R/Armature/Skeleton3D/Finger1_1"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hand_low_R/Armature/Skeleton3D/Finger1_1/RigidBody3D"]
 transform = Transform3D(1, 7.45058e-09, -4.65661e-09, 7.45058e-09, 1, -2.98023e-08, 1.86265e-09, -1.49012e-08, 1, 0, 0.02, -3.72529e-09)
@@ -250,14 +222,7 @@ transform = Transform3D(0.759851, -0.644453, 0.0854741, 0.0405881, 0.178251, 0.9
 bone_name = "Index_Intermediate_R"
 bone_idx = 7
 
-[node name="RigidBody3D" type="RigidBody3D" parent="Hand_low_R/Armature/Skeleton3D/Finger1_2"]
-axis_lock_linear_x = true
-axis_lock_linear_y = true
-axis_lock_linear_z = true
-axis_lock_angular_x = true
-axis_lock_angular_y = true
-axis_lock_angular_z = true
-gravity_scale = 0.0
+[node name="RigidBody3D" type="Area3D" parent="Hand_low_R/Armature/Skeleton3D/Finger1_2"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hand_low_R/Armature/Skeleton3D/Finger1_2/RigidBody3D"]
 transform = Transform3D(1, 0, -7.45058e-09, 2.98023e-08, 1, 4.47035e-08, 0, -2.98023e-08, 1, 0, 0.012, 0)
@@ -273,14 +238,7 @@ transform = Transform3D(0.356467, -0.927111, 0.115741, 0.109286, 0.164404, 0.980
 bone_name = "Index_Distal_R"
 bone_idx = 8
 
-[node name="RigidBody3D" type="RigidBody3D" parent="Hand_low_R/Armature/Skeleton3D/Finger1_3"]
-axis_lock_linear_x = true
-axis_lock_linear_y = true
-axis_lock_linear_z = true
-axis_lock_angular_x = true
-axis_lock_angular_y = true
-axis_lock_angular_z = true
-gravity_scale = 0.0
+[node name="RigidBody3D" type="Area3D" parent="Hand_low_R/Armature/Skeleton3D/Finger1_3"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hand_low_R/Armature/Skeleton3D/Finger1_3/RigidBody3D"]
 transform = Transform3D(1, 0, -7.45058e-09, 2.98023e-08, 1, 4.47035e-08, 0, -2.98023e-08, 1, -1.86265e-09, 0.01, 0)
@@ -296,14 +254,7 @@ transform = Transform3D(0.971345, -0.237654, 0.00293004, -0.0207339, -0.0724503,
 bone_name = "Middle_Proximal_R"
 bone_idx = 11
 
-[node name="RigidBody3D" type="RigidBody3D" parent="Hand_low_R/Armature/Skeleton3D/Finger2_1"]
-axis_lock_linear_x = true
-axis_lock_linear_y = true
-axis_lock_linear_z = true
-axis_lock_angular_x = true
-axis_lock_angular_y = true
-axis_lock_angular_z = true
-gravity_scale = 0.0
+[node name="RigidBody3D" type="Area3D" parent="Hand_low_R/Armature/Skeleton3D/Finger2_1"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hand_low_R/Armature/Skeleton3D/Finger2_1/RigidBody3D"]
 transform = Transform3D(1, 1.49012e-08, -5.58794e-09, 0, 1, -2.98023e-08, 3.72529e-09, 0, 1, 0.00093591, 0.023829, 0.000297654)
@@ -319,14 +270,7 @@ transform = Transform3D(0.764922, -0.643162, 0.0351718, -0.0290327, 0.0201225, 0
 bone_name = "Middle_Intermediate_R"
 bone_idx = 12
 
-[node name="RigidBody3D" type="RigidBody3D" parent="Hand_low_R/Armature/Skeleton3D/Finger2_2"]
-axis_lock_linear_x = true
-axis_lock_linear_y = true
-axis_lock_linear_z = true
-axis_lock_angular_x = true
-axis_lock_angular_y = true
-axis_lock_angular_z = true
-gravity_scale = 0.0
+[node name="RigidBody3D" type="Area3D" parent="Hand_low_R/Armature/Skeleton3D/Finger2_2"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hand_low_R/Armature/Skeleton3D/Finger2_2/RigidBody3D"]
 transform = Transform3D(1, 0, -7.45058e-09, 2.98023e-08, 1, 4.47035e-08, 0, -2.98023e-08, 1, 0, 0.012, 0)
@@ -342,14 +286,7 @@ transform = Transform3D(0.297115, -0.95453, 0.0243818, -0.0374454, 0.0138673, 0.
 bone_name = "Middle_Distal_R"
 bone_idx = 13
 
-[node name="RigidBody3D" type="RigidBody3D" parent="Hand_low_R/Armature/Skeleton3D/Finger2_3"]
-axis_lock_linear_x = true
-axis_lock_linear_y = true
-axis_lock_linear_z = true
-axis_lock_angular_x = true
-axis_lock_angular_y = true
-axis_lock_angular_z = true
-gravity_scale = 0.0
+[node name="RigidBody3D" type="Area3D" parent="Hand_low_R/Armature/Skeleton3D/Finger2_3"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hand_low_R/Armature/Skeleton3D/Finger2_3/RigidBody3D"]
 transform = Transform3D(1, 0, -7.45058e-09, 2.98023e-08, 1, 4.47035e-08, 0, -2.98023e-08, 1, -1.86265e-09, 0.01, 0)
@@ -365,14 +302,7 @@ transform = Transform3D(0.982964, -0.181854, -0.0266582, -0.0109494, -0.202722, 
 bone_name = "Ring_Proximal_R"
 bone_idx = 16
 
-[node name="RigidBody3D" type="RigidBody3D" parent="Hand_low_R/Armature/Skeleton3D/Finger3_1"]
-axis_lock_linear_x = true
-axis_lock_linear_y = true
-axis_lock_linear_z = true
-axis_lock_angular_x = true
-axis_lock_angular_y = true
-axis_lock_angular_z = true
-gravity_scale = 0.0
+[node name="RigidBody3D" type="Area3D" parent="Hand_low_R/Armature/Skeleton3D/Finger3_1"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hand_low_R/Armature/Skeleton3D/Finger3_1/RigidBody3D"]
 transform = Transform3D(1, 7.45058e-09, -4.65661e-09, 7.45058e-09, 1, -2.98023e-08, 1.86265e-09, -1.49012e-08, 1, 0, 0.02, -3.72529e-09)
@@ -388,14 +318,7 @@ transform = Transform3D(0.772579, -0.634603, -0.0200164, -0.0794844, -0.127948, 
 bone_name = "Ring_Intermediate_R"
 bone_idx = 17
 
-[node name="RigidBody3D" type="RigidBody3D" parent="Hand_low_R/Armature/Skeleton3D/Finger3_2"]
-axis_lock_linear_x = true
-axis_lock_linear_y = true
-axis_lock_linear_z = true
-axis_lock_angular_x = true
-axis_lock_angular_y = true
-axis_lock_angular_z = true
-gravity_scale = 0.0
+[node name="RigidBody3D" type="Area3D" parent="Hand_low_R/Armature/Skeleton3D/Finger3_2"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hand_low_R/Armature/Skeleton3D/Finger3_2/RigidBody3D"]
 transform = Transform3D(1, 0, -7.45058e-09, 2.98023e-08, 1, 4.47035e-08, 0, -2.98023e-08, 1, 0, 0.012, 0)
@@ -411,14 +334,7 @@ transform = Transform3D(0.381387, -0.924068, -0.025339, -0.114105, -0.0742599, 0
 bone_name = "Ring_Distal_R"
 bone_idx = 18
 
-[node name="RigidBody3D" type="RigidBody3D" parent="Hand_low_R/Armature/Skeleton3D/Finger3_3"]
-axis_lock_linear_x = true
-axis_lock_linear_y = true
-axis_lock_linear_z = true
-axis_lock_angular_x = true
-axis_lock_angular_y = true
-axis_lock_angular_z = true
-gravity_scale = 0.0
+[node name="RigidBody3D" type="Area3D" parent="Hand_low_R/Armature/Skeleton3D/Finger3_3"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hand_low_R/Armature/Skeleton3D/Finger3_3/RigidBody3D"]
 transform = Transform3D(1, 0, -7.45058e-09, 2.98023e-08, 1, 4.47035e-08, 0, -2.98023e-08, 1, -1.86265e-09, 0.01, 0)
@@ -434,14 +350,7 @@ transform = Transform3D(0.969212, -0.239304, -0.0579745, -0.0185535, -0.305761, 
 bone_name = "Little_Proximal_R"
 bone_idx = 21
 
-[node name="RigidBody3D" type="RigidBody3D" parent="Hand_low_R/Armature/Skeleton3D/Finger4_1"]
-axis_lock_linear_x = true
-axis_lock_linear_y = true
-axis_lock_linear_z = true
-axis_lock_angular_x = true
-axis_lock_angular_y = true
-axis_lock_angular_z = true
-gravity_scale = 0.0
+[node name="RigidBody3D" type="Area3D" parent="Hand_low_R/Armature/Skeleton3D/Finger4_1"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hand_low_R/Armature/Skeleton3D/Finger4_1/RigidBody3D"]
 transform = Transform3D(1, 7.45058e-09, -4.65661e-09, 7.45058e-09, 1, -2.98023e-08, 1.86265e-09, -1.49012e-08, 1, 0, 0.02, -3.72529e-09)
@@ -457,14 +366,7 @@ transform = Transform3D(0.699331, -0.713816, -0.0374602, -0.103947, -0.153407, 0
 bone_name = "Little_Intermediate_R"
 bone_idx = 22
 
-[node name="RigidBody3D" type="RigidBody3D" parent="Hand_low_R/Armature/Skeleton3D/Finger4_2"]
-axis_lock_linear_x = true
-axis_lock_linear_y = true
-axis_lock_linear_z = true
-axis_lock_angular_x = true
-axis_lock_angular_y = true
-axis_lock_angular_z = true
-gravity_scale = 0.0
+[node name="RigidBody3D" type="Area3D" parent="Hand_low_R/Armature/Skeleton3D/Finger4_2"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hand_low_R/Armature/Skeleton3D/Finger4_2/RigidBody3D"]
 transform = Transform3D(1, 0, -7.45058e-09, 2.98023e-08, 1, 4.47035e-08, 0, -2.98023e-08, 1, 0, 0.012, 0)
@@ -480,14 +382,7 @@ transform = Transform3D(0.340891, -0.939844, -0.0220291, -0.162162, -0.081867, 0
 bone_name = "Little_Distal_R"
 bone_idx = 23
 
-[node name="RigidBody3D" type="RigidBody3D" parent="Hand_low_R/Armature/Skeleton3D/Finger4_3"]
-axis_lock_linear_x = true
-axis_lock_linear_y = true
-axis_lock_linear_z = true
-axis_lock_angular_x = true
-axis_lock_angular_y = true
-axis_lock_angular_z = true
-gravity_scale = 0.0
+[node name="RigidBody3D" type="Area3D" parent="Hand_low_R/Armature/Skeleton3D/Finger4_3"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hand_low_R/Armature/Skeleton3D/Finger4_3/RigidBody3D"]
 transform = Transform3D(1, 2.98023e-08, 0, 5.96046e-08, 1, 3.72529e-08, 4.47035e-08, -2.98023e-08, 1, 0.00159602, 0.0131073, 0.000521891)
