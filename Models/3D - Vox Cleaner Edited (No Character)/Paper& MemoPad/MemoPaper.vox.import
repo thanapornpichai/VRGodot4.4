@@ -1,0 +1,18 @@
+[remap]
+
+importer="MagicaVoxel.With.Extensions.To.Mesh"
+type="Mesh"
+uid="uid://ee25eil17oud"
+path="res://.godot/imported/MemoPaper.vox-7a95449ab9d739fc63788542607e034d.mesh"
+
+[deps]
+
+source_file="res://Models/3D - Vox Cleaner Edited (No Character)/Paper& MemoPad/MemoPaper.vox"
+dest_files=["res://.godot/imported/MemoPaper.vox-7a95449ab9d739fc63788542607e034d.mesh"]
+
+[params]
+
+Scale=0.1
+GreedyMeshGenerator=true
+SnapToGround=false
+FirstKeyframeOnly=true

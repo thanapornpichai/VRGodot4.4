@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=4 uid="uid://do7fn1eakgnci"]
+[gd_scene load_steps=65 format=4 uid="uid://do7fn1eakgnci"]
 
 [ext_resource type="Script" uid="uid://bmnjq5edyvf4x" path="res://Scripts/Scene5FloorController.cs" id="1_yspnc"]
 [ext_resource type="PackedScene" uid="uid://c3ynhdje3m5r3" path="res://Models/Classroom/class_room.tscn" id="2_vat50"]
@@ -23,6 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://4bh5bvr6jtpr" path="res://Models/Door/Door.tscn" id="21_yh50o"]
 [ext_resource type="Texture2D" uid="uid://bkymsblas5iam" path="res://Models/3D - Vox Cleaner Edited (No Character)/Puzzle objects/Reagent Bottle_/Reagent Bottle_79_Color.png" id="24_plqna"]
 [ext_resource type="PackedScene" uid="uid://bw8665a1mrjma" path="res://Models/CleanModelTscn/pickableCandle.tscn" id="24_vat50"]
+[ext_resource type="Script" uid="uid://bi4cr5rpkfpj1" path="res://Scripts/MysticSymbolPickup.cs" id="25_72eoj"]
 [ext_resource type="Texture2D" uid="uid://cc3ixtr5bayis" path="res://Models/3D - Vox Cleaner Edited (No Character)/Puzzle objects/Reagent Bottle_/Reagent Bottle_79_Metallic.png" id="25_q5dlx"]
 [ext_resource type="ArrayMesh" uid="uid://c0afh7gcy7gd2" path="res://Models/3D - Vox Cleaner Edited (No Character)/Puzzle objects/Reagent Bottle_/Reagent Bottle_79.obj" id="26_hcj1w"]
 [ext_resource type="Material" uid="uid://e781x18efxo7" path="res://Models/KuManThong/KuManThong.tres" id="27_hcj1w"]
@@ -1537,8 +1538,11 @@ shape = SubResource("ConcavePolygonShape3D_w0qiy")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05, 0.95, -0.0506897)
 mesh = SubResource("BoxMesh_83i8a")
 
-[node name="MysticSymblo" type="Node3D" parent="WorkshopTable"]
+[node name="MysticSymblo" type="Node3D" parent="WorkshopTable" node_paths=PackedStringArray("RootNode", "area")]
 transform = Transform3D(-4.25532, -3.72013e-07, 1.62612e-14, 0, -1.86006e-07, -4.25532, 3.72013e-07, -4.25532, 1.86006e-07, 0, 5.308, 0)
+script = ExtResource("25_72eoj")
+RootNode = NodePath(".")
+area = NodePath("Area3D")
 
 [node name="NewMysticSymblo" parent="WorkshopTable/MysticSymblo" instance=ExtResource("18_yspnc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.317963, 0)

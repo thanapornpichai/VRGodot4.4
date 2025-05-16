@@ -1,0 +1,18 @@
+[remap]
+
+importer="MagicaVoxel.With.Extensions.To.Mesh"
+type="Mesh"
+uid="uid://ikuvdxh5tkkj"
+path="res://.godot/imported/Chair.vox-40e4647f58c54c989e09528fd6aa012b.mesh"
+
+[deps]
+
+source_file="res://Models/3D - Vox Cleaner Edited (No Character)/Old Chair/Chair.vox"
+dest_files=["res://.godot/imported/Chair.vox-40e4647f58c54c989e09528fd6aa012b.mesh"]
+
+[params]
+
+Scale=0.1
+GreedyMeshGenerator=true
+SnapToGround=false
+FirstKeyframeOnly=true

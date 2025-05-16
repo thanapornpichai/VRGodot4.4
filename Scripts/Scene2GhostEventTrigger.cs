@@ -1,5 +1,7 @@
 using Godot;
 using System;
+using Godot.Collections;
+using System.Collections.Generic;
 
 public partial class Scene2GhostEventTrigger : BaseFloorController
 {
@@ -12,6 +14,8 @@ public partial class Scene2GhostEventTrigger : BaseFloorController
 	[Export] public double MaxTimer = 0;
 	[Export] public Node3D ghostNode3D;
 	[Export] public Node3D floorCheck;
+	[Export] public AnimationPlayer _animPlayer;
+	[Export] public Array<Node3D> _nodeArray = new Array<Node3D>();
 	
 	public override void _Ready()
 	{
@@ -31,6 +35,7 @@ public partial class Scene2GhostEventTrigger : BaseFloorController
 				ghostNode3D.Visible = false;
 				_triggered = false;
 				SetProcess(false);
+				ActiveNodeArray(true);
 			}
 		}
 	}
@@ -41,8 +46,10 @@ public partial class Scene2GhostEventTrigger : BaseFloorController
 		{
 			if (!_triggered)
 			{
+				ActiveNodeArray(false);
 				ghostNode3D.Visible = true;
-				
+				if (_animPlayer != null)
+					_animPlayer.Play("NungRumHead");
 				var ghostArea3D = this.GetNode<Area3D>("Area3D");
 				ghostArea3D.Visible = false;
 				ghostArea3D.Monitoring = false;
@@ -53,6 +60,14 @@ public partial class Scene2GhostEventTrigger : BaseFloorController
 				_triggered = true;
 			}
 			GD.Print("Player entered event area!");
+		}
+	}
+
+	public void ActiveNodeArray(bool active)
+	{
+		for (int i = 0; i < _nodeArray.Count; i++)
+		{
+			_nodeArray[i].Visible = active;
 		}
 	}
 }

@@ -456,8 +456,8 @@ light_energy = 1.0
 shadow_enabled = true
 shadow_bias = 1.0
 shadow_opacity = 0.2
-omni_range = 10.0
-omni_attenuation = 0.8
+omni_range = 8.0
+omni_attenuation = 2.037
 
 [node name="Light04" parent="SimpleFloor" instance=ExtResource("12_i3omy")]
 transform = Transform3D(-4.37305e-08, 0, -1.00044, 0, 1.00044, 0, 1.00044, 0, -4.37305e-08, 0.550908, 3.72644, -4.80001)
@@ -467,8 +467,8 @@ light_energy = 1.0
 shadow_enabled = true
 shadow_bias = 1.0
 shadow_opacity = 0.2
-omni_range = 10.0
-omni_attenuation = 0.8
+omni_range = 8.0
+omni_attenuation = 2.037
 
 [node name="Light05" parent="SimpleFloor" instance=ExtResource("12_i3omy")]
 transform = Transform3D(-4.37305e-08, 0, -1.00044, 0, 1.00044, 0, 1.00044, 0, -4.37305e-08, -10.3655, 3.72644, -4.80001)
@@ -481,8 +481,8 @@ light_energy = 1.0
 shadow_enabled = true
 shadow_bias = 1.0
 shadow_opacity = 0.2
-omni_range = 10.0
-omni_attenuation = 0.8
+omni_range = 8.0
+omni_attenuation = 2.037
 
 [node name="Light02" parent="SimpleFloor" instance=ExtResource("12_i3omy")]
 transform = Transform3D(-4.37305e-08, 0, -1.00044, 0, 1.00044, 0, 1.00044, 0, -4.37305e-08, 30.4855, 3.72644, -4.80001)
@@ -492,8 +492,8 @@ light_energy = 1.0
 shadow_enabled = true
 shadow_bias = 1.0
 shadow_opacity = 0.2
-omni_range = 10.0
-omni_attenuation = 0.8
+omni_range = 8.0
+omni_attenuation = 2.037
 
 [node name="Light03" parent="SimpleFloor" instance=ExtResource("12_i3omy")]
 transform = Transform3D(-4.37305e-08, 0, -1.00044, 0, 1.00044, 0, 1.00044, 0, -4.37305e-08, 42.2345, 3.72644, -4.80001)
@@ -503,8 +503,8 @@ light_energy = 1.0
 shadow_enabled = true
 shadow_bias = 1.0
 shadow_opacity = 0.2
-omni_range = 10.0
-omni_attenuation = 0.8
+omni_range = 8.0
+omni_attenuation = 2.037
 
 [node name="Light02" type="MeshInstance3D" parent="SimpleFloor/Light03" node_paths=PackedStringArray("_light")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -7.44107e-07, 0, -8.51162)
@@ -586,13 +586,15 @@ collision_mask = 65537
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7861, 32.4016)
 shape = SubResource("BoxShape3D_eiqug")
 
-[node name="EventAreaGhost" type="Node3D" parent="." node_paths=PackedStringArray("_area", "ghostNode3D", "floorCheck")]
+[node name="EventAreaGhost" type="Node3D" parent="." node_paths=PackedStringArray("_area", "ghostNode3D", "floorCheck", "_animPlayer", "_nodeArray")]
 visible = false
 script = ExtResource("7_eiqug")
 _area = NodePath("Area3D")
 MaxTimer = 3.0
 ghostNode3D = NodePath("../Nang_Rum_1")
 floorCheck = NodePath("../EventAreaFloorCheck")
+_animPlayer = NodePath("../Nang_Rum_1/AnimationPlayer")
+_nodeArray = [NodePath("../SimpleFloor/Light01/Light01/OmniLight3D"), NodePath("../SimpleFloor/Light04/Light01/OmniLight3D"), NodePath("../SimpleFloor/Light05/Light01/OmniLight3D"), NodePath("../SimpleFloor/Light02/Light01/OmniLight3D"), NodePath("../SimpleFloor/Light03/Light01/OmniLight3D")]
 
 [node name="Area3D" type="Area3D" parent="EventAreaGhost"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 31.3784)
@@ -620,8 +622,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0527, -31.673)
 shape = SubResource("BoxShape3D_f5cao")
 
 [node name="Nang_Rum_1" parent="." instance=ExtResource("7_l74kq")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 24.7805)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 28.8535)
 visible = false
+
+[node name="Nung Rum_Head_3_001" parent="Nang_Rum_1/Nung Rum_Head_3" index="0"]
+transform = Transform3D(1, 0, 0, 0, -1.19209e-07, 1, 0, -1, -1.19209e-07, 0, 0.599999, 0)
+
+[node name="Nung Rum_Body_2_001" parent="Nang_Rum_1/Nung Rum_Body_2" index="0"]
+transform = Transform3D(1, 0, 0, 0, -1.19209e-07, 1, 0, -1, -1.19209e-07, 0, -3.57628e-07, 0)
 
 [node name="OldMysticSymblo_1" parent="." instance=ExtResource("24_c57rt")]
 transform = Transform3D(0.69092, 0.722931, -3.16003e-08, 0, -4.37114e-08, -1, -0.722931, 0.69092, -3.02011e-08, 0.0342236, -0.0100244, 61.8787)
@@ -795,6 +803,7 @@ mesh = SubResource("TextMesh_km3kn")
 [editable path="SimpleFloor/Light02"]
 [editable path="SimpleFloor/Light03"]
 [editable path="Board"]
+[editable path="Nang_Rum_1"]
 [editable path="Book"]
 [editable path="Book2"]
 [editable path="Book3"]

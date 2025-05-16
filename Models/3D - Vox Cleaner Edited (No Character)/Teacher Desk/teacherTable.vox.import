@@ -1,0 +1,18 @@
+[remap]
+
+importer="MagicaVoxel.With.Extensions.To.Mesh"
+type="Mesh"
+uid="uid://lssy5dl7dl51"
+path="res://.godot/imported/teacherTable.vox-3b2f949a3fb316f22b12a880731bf525.mesh"
+
+[deps]
+
+source_file="res://Models/3D - Vox Cleaner Edited (No Character)/Teacher Desk/teacherTable.vox"
+dest_files=["res://.godot/imported/teacherTable.vox-3b2f949a3fb316f22b12a880731bf525.mesh"]
+
+[params]
+
+Scale=0.1
+GreedyMeshGenerator=true
+SnapToGround=false
+FirstKeyframeOnly=true

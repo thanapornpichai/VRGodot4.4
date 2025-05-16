@@ -1,0 +1,18 @@
+[remap]
+
+importer="MagicaVoxel.With.Extensions.To.Mesh"
+type="Mesh"
+uid="uid://b7gsspim6a5gx"
+path="res://.godot/imported/StudentBag.vox-a02abf947d6ff4493c5a0332c875a04e.mesh"
+
+[deps]
+
+source_file="res://Models/3D - Vox Cleaner Edited (No Character)/StudentBag/StudentBag.vox"
+dest_files=["res://.godot/imported/StudentBag.vox-a02abf947d6ff4493c5a0332c875a04e.mesh"]
+
+[params]
+
+Scale=0.1
+GreedyMeshGenerator=true
+SnapToGround=false
+FirstKeyframeOnly=true

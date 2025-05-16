@@ -6,7 +6,6 @@ public partial class Scene7FloorController : BaseFloorController
 	private Area3D _area;
 	private bool _isTrigger = false;
 	public static Scene7FloorController Instance { get; private set; }
-	[Export] public PackedScene finalScene;
 	
 	public override void _Ready()
 	{
@@ -39,7 +38,7 @@ public partial class Scene7FloorController : BaseFloorController
 		if (body.IsInGroup("Player"))
 		{
 			await Task.Delay(3000);
-			GetTree().ChangeSceneToPacked(finalScene);
+			this.LoadFloor(7);
 		}
 	}
 }

@@ -68,9 +68,9 @@ emission = Color(1, 1, 1, 1)
 
 [sub_resource type="TextMesh" id="TextMesh_3fasx"]
 material = SubResource("StandardMaterial3D_f5k57")
-text = "Bring me an offer, and I might 
-just tell you 
-something interesting"
+text = "I am not the one doing this. 
+I can help you, but first 
+please give me something to drink."
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_31cuc"]
 size = Vector3(14.8738, 4.06842, 1)
@@ -506,6 +506,11 @@ transform = Transform3D(-0.351126, -0.830754, 0.791554, -0.0660058, -0.81179, -0
 
 [node name="PickableObject" parent="." instance=ExtResource("13_75sb2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.19571, 1.31008, 11.9806)
+collision_layer = 65541
+picked_up_layer = 65537
+
+[node name="PropBottle" parent="PickableObject/CollisionShape3D" index="0"]
+layers = 65537
 
 [node name="MemoPaper" parent="." instance=ExtResource("16_v57wi")]
 transform = Transform3D(-1.79217e-08, -0.082, 0, 0.380812, -3.32916e-09, -0.151929, 0.151929, -1.3282e-09, 0.380812, -2.50067, 2.02945, 10.5382)

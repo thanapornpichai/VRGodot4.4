@@ -165,7 +165,7 @@ skeleton = NodePath("../..")
 shape = SubResource("BoxShape3D_ylrsq")
 
 [node name="ButtonDown" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.4)
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0.4)
 
 [node name="Area3D" type="Area3D" parent="ButtonDown"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0494009, 0)

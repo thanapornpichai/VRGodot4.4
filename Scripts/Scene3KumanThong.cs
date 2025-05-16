@@ -21,7 +21,7 @@ public partial class Scene3KumanThong : BaseFloorController
 
 	private void OnBodyEntered(Node3D body)
 	{
-		if (body.IsInGroup("Player"))
+		if (body.IsInGroup("Offer"))
 		{
 			if (!_triggered)
 			{
@@ -37,11 +37,53 @@ public partial class Scene3KumanThong : BaseFloorController
 	private async void ShowHintDelay()
 	{
 		dialogueText.Text = string.Empty;
+
+		// Message 1
 		dialogueText.Text = "Good....";
-		GD.Print("Waiting 3 seconds...");
 		await ToSignal(GetTree().CreateTimer(3), "timeout");
-		dialogueText.Text = "Go down to the third floor";
-		GD.Print("Show hint!");
+
+		// Message 2
+		dialogueText.Text =
+			" Ahh! Thanks! Alright, read carefully.\n" +
+			"That soda is giving me enough energy to communicate\n" +
+			"to you from the outside.\n" +
+			"I’m not actually even in here.";
+		await ToSignal(GetTree().CreateTimer(5), "timeout");
+
+		// Message 3
+		dialogueText.Text =
+			"It looks like you’re trapped in some kind of\n" +
+			"purgatory realm, and I think I know what’s\n" +
+			"keeping you in here… ";
+		await ToSignal(GetTree().CreateTimer(7), "timeout");
+
+		// Message 4
+		dialogueText.Text =
+			"I don’t know why she chose you,\n" +
+			"but if you wanna get out of here,\n" +
+			"you might have to confront her yourself.";
+		await ToSignal(GetTree().CreateTimer(7), "timeout");
+
+		// Message 5
+		dialogueText.Text =
+			"But before you do that,\n" +
+			"you’ll have to go inside the storage room,\n" +
+			"there is something in there,\n" +
+			"something very important to her.\n" +
+			"It's the deepest part of her psyche,\n" +
+			"so you’ll have to go step-by-step.";
+		await ToSignal(GetTree().CreateTimer(7), "timeout");
+
+		// Message 6
+		dialogueText.Text =
+			"You’ll first have to go to the big room\n" +
+			"at the end of the 3rd floor. There,\n" +
+			"you will find a cryptex, the only\n" +
+			"cryptex you can open! As for the password…\n" +
+			"There might be clues in the other rooms\n" +
+			"that are related to it. Good luck!";
+
+		// Notify floor controller
 		Scene3FloorController.Instance.OnFinishFloor();
 	}
 }

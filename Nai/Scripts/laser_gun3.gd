@@ -26,10 +26,14 @@ func _process(_delta):
 		var nrm  = get_collision_normal().normalized()
 		var refl = inc.reflect(nrm)
 
-		if mirror.has_method("OnLaserHit"):
-			mirror.OnLaserHit(hit_world, refl)
-		elif mirror.has_method("StopLaser"):
-			mirror.StopLaser()
+		var collider = get_collider()
+
+		if collider.is_in_group("Mirror"):
+			if mirror.has_method("OnLaserHit"):
+				mirror.OnLaserHit(hit_world, refl)
+		else:
+			if mirror.has_method("StopLaser"):
+				mirror.StopLaser()
 
 	else:
 		# ไม่ชนอะไรเลย → ยิงเต็มระยะไปตาม target_position

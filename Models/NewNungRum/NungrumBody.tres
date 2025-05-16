@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://c5a4posc878kr"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7j0h1"]
+load_path = "res://.godot/imported/Nung Rum_Body_2_Color.png-742ad68c8c9b275a89072c66442e2ff5.ctex"
+
+[resource]
+albedo_texture = SubResource("CompressedTexture2D_7j0h1")
+texture_filter = 0
