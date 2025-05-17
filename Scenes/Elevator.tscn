@@ -1,8 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://dinmhn3cmls06"]
+[gd_scene load_steps=14 format=3 uid="uid://dinmhn3cmls06"]
 
 [ext_resource type="ArrayMesh" uid="uid://bwlc31vxoag6t" path="res://Models/Elevator.vox" id="1_dmimb"]
 [ext_resource type="ArrayMesh" uid="uid://dyc2lmthfk7yo" path="res://Models/ElevatorDoorLeft.vox" id="2_xv5vg"]
 [ext_resource type="ArrayMesh" uid="uid://cwnn05n46gxon" path="res://Models/ElevatorDoorRight.vox" id="3_3geoe"]
+[ext_resource type="AudioStream" uid="uid://buucvk5m0jukx" path="res://Sound/elevator-29654 (1).mp3" id="4_3geoe"]
+[ext_resource type="AudioStream" uid="uid://02eq5bl6rhsf" path="res://Sound/elevator-sound-99315.mp3" id="5_57077"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dmimb"]
 size = Vector3(0.999359, 2.60034, 0.103577)
@@ -126,3 +128,10 @@ shape = SubResource("BoxShape3D_3geoe")
 [node name="WallCollision3" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.35548, -1.23621)
 shape = SubResource("BoxShape3D_57077")
+
+[node name="ElevatorMoveSound" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_3geoe")
+
+[node name="ElevatorDingSound" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("5_57077")
+volume_db = -19.809

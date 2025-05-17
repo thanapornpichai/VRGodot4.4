@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://cghew80d8e872"]
+[gd_scene load_steps=32 format=4 uid="uid://cghew80d8e872"]
 
 [ext_resource type="Script" uid="uid://c4g00y14fo4ng" path="res://Scripts/Scene3FloorController.cs" id="1_31cuc"]
 [ext_resource type="PackedScene" uid="uid://ddneys6hhnini" path="res://Models/Classroom/SimpleFloor.tscn" id="2_75sb2"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://f3wjrcxt2cm3" path="res://Scripts/Scene3KumanThong.cs" id="5_31cuc"]
 [ext_resource type="Texture2D" uid="uid://lfh6l3vmyvo7" path="res://Models/KuManThong/Guman Tong_3_Color.png" id="6_v57wi"]
 [ext_resource type="PackedScene" uid="uid://4bh5bvr6jtpr" path="res://Models/Door/Door.tscn" id="7_u6agb"]
+[ext_resource type="AudioStream" uid="uid://dopovomi56uin" path="res://Sound/Horror Kid Laugh (Layered with Echo) - Sound Effect for editing.wav" id="8_jpk4g"]
 [ext_resource type="PackedScene" uid="uid://brhvebkafgu56" path="res://Models/CleanModelTscn/paper.tscn" id="9_0m4j3"]
 [ext_resource type="PackedScene" uid="uid://bosp3baam0wet" path="res://Models/Desk/desk.tscn" id="9_7pjfb"]
 [ext_resource type="PackedScene" uid="uid://biux736h6i365" path="res://Models/StorageCabinet/storage_cabinet.tscn" id="11_7pjfb"]
@@ -18,6 +19,9 @@
 [ext_resource type="PackedScene" uid="uid://skrc2vmekdxb" path="res://Models/CleanModelTscn/memo_paper.tscn" id="16_v57wi"]
 [ext_resource type="Material" uid="uid://c7smjhndbot3a" path="res://Materials/Number.tres" id="17_5kcb8"]
 [ext_resource type="FontFile" uid="uid://c33d6w5xdgwib" path="res://labels_and_texts/fonts/Minecraftia-Regular.ttf" id="18_dln5n"]
+[ext_resource type="AudioStream" uid="uid://coqhplqwbnlsu" path="res://Sound/Hit_Suspens.wav" id="19_t26at"]
+[ext_resource type="AudioStream" uid="uid://bksqsvijjffoe" path="res://Sound/Hit_Anvil.wav" id="20_3y1a5"]
+[ext_resource type="AudioStream" uid="uid://bqw5oykfvjp4g" path="res://Sound/flickeringlight-90411.mp3" id="22_jpk4g"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qa28c"]
 resource_name = "Guman Tong_3_Material"
@@ -172,12 +176,15 @@ shadow_opacity = 0.2
 omni_range = 10.0
 omni_attenuation = 2.324
 
-[node name="Kuman Tong_3" type="Node3D" parent="SimpleFloor" node_paths=PackedStringArray("area", "offerNode3D", "dialogue")]
+[node name="Kuman Tong_3" type="Node3D" parent="SimpleFloor" node_paths=PackedStringArray("area", "offerNode3D", "dialogue", "OfferSound", "LaughSound", "ClueSound")]
 transform = Transform3D(0.998326, 0, -0.0578427, 0, 1, 0, 0.0578427, 0, 0.998326, -8.26926, 0.105958, -6.31888)
 script = ExtResource("5_31cuc")
 area = NodePath("Area3D")
 offerNode3D = NodePath("../../PickableObject/CollisionShape3D/PropBottle")
 dialogue = NodePath("DialogueText")
+OfferSound = NodePath("OfferSound")
+LaughSound = NodePath("LaughSound")
+ClueSound = NodePath("ClueSound")
 
 [node name="Guman Tong_3_001" type="MeshInstance3D" parent="SimpleFloor/Kuman Tong_3"]
 transform = Transform3D(0.2, 0, 0, 0, -1.09278e-08, 0.25, 0, -0.25, -1.09278e-08, 0, -4.76837e-07, 0)
@@ -196,6 +203,21 @@ shape = SubResource("BoxShape3D_u6agb")
 [node name="DialogueText" type="MeshInstance3D" parent="SimpleFloor/Kuman Tong_3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.0528768, 0, 1.70543, 0)
 mesh = SubResource("TextMesh_3fasx")
+
+[node name="OfferSound" type="AudioStreamPlayer3D" parent="SimpleFloor/Kuman Tong_3"]
+transform = Transform3D(-0.0578427, 0, 0.998325, 0, 1, 0, -0.998325, 0, -0.0578427, -7.79596, -0.0059581, 1.97311)
+stream = ExtResource("20_3y1a5")
+volume_db = -5.0
+
+[node name="LaughSound" type="AudioStreamPlayer3D" parent="SimpleFloor/Kuman Tong_3"]
+transform = Transform3D(-0.0578427, 0, 0.998325, 0, 1, 0, -0.998325, 0, -0.0578427, -7.79596, -0.0059581, 1.97311)
+stream = ExtResource("8_jpk4g")
+volume_db = 5.0
+
+[node name="ClueSound" type="AudioStreamPlayer3D" parent="SimpleFloor/Kuman Tong_3"]
+transform = Transform3D(-0.0578427, 0, 0.998325, 0, 1, 0, -0.998325, 0, -0.0578427, -7.79596, -0.0059581, 1.97311)
+stream = ExtResource("20_3y1a5")
+volume_db = -4.0
 
 [node name="Light06" type="MeshInstance3D" parent="SimpleFloor"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3.32436, 3.71921, 2.56586)
@@ -543,6 +565,18 @@ transform = Transform3D(0.385596, 0, 0.318302, 0, 0.1, 0, -0.318302, 0, 0.385596
 transform = Transform3D(-5, 0, -4.37114e-07, 0, 5, 0, 4.37114e-07, 0, -5, -3.29671, 1.85353, 8.92282)
 material_override = ExtResource("17_5kcb8")
 mesh = SubResource("TextMesh_t26at")
+
+[node name="AreaEnteredSound" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("19_t26at")
+volume_db = -6.0
+
+[node name="FloorCompleteSound" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("20_3y1a5")
+volume_db = -4.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("22_jpk4g")
+autoplay = true
 
 [editable path="SimpleFloor"]
 [editable path="SimpleFloor/Board6"]

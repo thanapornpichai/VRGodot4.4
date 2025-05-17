@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bk10ug2j36i8r"]
+[gd_scene load_steps=17 format=3 uid="uid://bk10ug2j36i8r"]
 
 [ext_resource type="PackedScene" uid="uid://ddneys6hhnini" path="res://Models/Classroom/SimpleFloor.tscn" id="1_cw5vt"]
 [ext_resource type="Script" uid="uid://37xaisjvtc8k" path="res://Scripts/Scene1FloorController.cs" id="1_embbr"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bosp3baam0wet" path="res://Models/Desk/desk.tscn" id="5_xs76b"]
 [ext_resource type="Material" uid="uid://c7smjhndbot3a" path="res://Materials/Number.tres" id="9_t7ew8"]
 [ext_resource type="FontFile" uid="uid://c33d6w5xdgwib" path="res://labels_and_texts/fonts/Minecraftia-Regular.ttf" id="10_lpas0"]
+[ext_resource type="AudioStream" uid="uid://c0fccpwoitun8" path="res://Sound/Dark Ambient Sound Effects - Scary Horror Sound Effects & Eerie Ambient Sounds.wav" id="10_t7ew8"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lpas0"]
 albedo_color = Color(0.237322, 0.00900725, 0, 1)
@@ -459,6 +460,11 @@ shape = SubResource("BoxShape3D_uk6cp")
 transform = Transform3D(-5, 0, -4.37114e-07, 0, 5, 0, 4.37114e-07, 0, -5, -3.297, 1.854, 8.8679)
 material_override = ExtResource("9_t7ew8")
 mesh = SubResource("TextMesh_tgq0x")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_t7ew8")
+volume_db = -20.0
+autoplay = true
 
 [editable path="SimpleFloor"]
 [editable path="SimpleFloor/Door5"]

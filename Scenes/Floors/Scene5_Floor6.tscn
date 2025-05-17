@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=4 uid="uid://do7fn1eakgnci"]
+[gd_scene load_steps=67 format=4 uid="uid://do7fn1eakgnci"]
 
 [ext_resource type="Script" uid="uid://bmnjq5edyvf4x" path="res://Scripts/Scene5FloorController.cs" id="1_yspnc"]
 [ext_resource type="PackedScene" uid="uid://c3ynhdje3m5r3" path="res://Models/Classroom/class_room.tscn" id="2_vat50"]
@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://dikrxbxrdty82" path="res://Models/CleanModelTscn/workshop_table.tscn" id="17_6c666"]
 [ext_resource type="PackedScene" uid="uid://dxvocfau8o35b" path="res://Models/CleanModelTscn/new_mystic_symblo.tscn" id="18_yspnc"]
 [ext_resource type="PackedScene" uid="uid://4bh5bvr6jtpr" path="res://Models/Door/Door.tscn" id="21_yh50o"]
+[ext_resource type="AudioStream" uid="uid://b8e77wcayaqeo" path="res://Sound/place-100513.mp3" id="24_nkeua"]
 [ext_resource type="Texture2D" uid="uid://bkymsblas5iam" path="res://Models/3D - Vox Cleaner Edited (No Character)/Puzzle objects/Reagent Bottle_/Reagent Bottle_79_Color.png" id="24_plqna"]
 [ext_resource type="PackedScene" uid="uid://bw8665a1mrjma" path="res://Models/CleanModelTscn/pickableCandle.tscn" id="24_vat50"]
 [ext_resource type="Script" uid="uid://bi4cr5rpkfpj1" path="res://Scripts/MysticSymbolPickup.cs" id="25_72eoj"]
@@ -31,6 +32,7 @@
 [ext_resource type="PackedScene" uid="uid://dkb1oeb0htpsl" path="res://Models/Chair/chair.tscn" id="29_042be"]
 [ext_resource type="Material" uid="uid://c7smjhndbot3a" path="res://Materials/Number.tres" id="30_7djjy"]
 [ext_resource type="FontFile" uid="uid://c33d6w5xdgwib" path="res://labels_and_texts/fonts/Minecraftia-Regular.ttf" id="31_72eoj"]
+[ext_resource type="AudioStream" uid="uid://da5nf0h4xp4wp" path="res://Sound/Ominous Suspense Music - Silent Shadows.wav" id="33_3jjic"]
 [ext_resource type="PackedScene" uid="uid://byc817nbfg7oj" path="res://PickableObject/Book.tscn" id="34_ebm1h"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7djjy"]
@@ -1426,12 +1428,13 @@ shadow_opacity = 0.2
 omni_range = 10.0
 omni_attenuation = 1.654
 
-[node name="BookShelfInteraction" type="Node3D" parent="." node_paths=PackedStringArray("BookNode", "area", "_animPlayer")]
+[node name="BookShelfInteraction" type="Node3D" parent="." node_paths=PackedStringArray("BookNode", "area", "_animPlayer", "InsertSound")]
 transform = Transform3D(-5.24537e-08, 0, -1.2, 0, 1.2, 0, 1.2, 0, -5.24537e-08, 0.20595, 0.0126397, 54.3736)
 script = ExtResource("3_yyyt2")
 BookNode = NodePath("InsertBookshelf/Book3")
 area = NodePath("Area3D")
 _animPlayer = NodePath("AnimationPlayer")
+InsertSound = NodePath("InsertSound")
 
 [node name="InsertBookshelf" parent="BookShelfInteraction" instance=ExtResource("3_7af5d")]
 transform = Transform3D(0.15, 0, 9.53592e-09, 0, 0.15, 0, -9.53592e-09, 0, 0.15, 0, 0, 0)
@@ -1505,6 +1508,10 @@ collision_mask = 65537
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.05715, -0.0559998, 0.530426)
 shape = SubResource("BoxShape3D_spun6")
 
+[node name="InsertSound" type="AudioStreamPlayer3D" parent="BookShelfInteraction"]
+transform = Transform3D(-3.64262e-08, 0, 0.833333, 0, 0.833333, 0, -0.833333, 0, -3.64262e-08, 0, 0, 0)
+stream = ExtResource("24_nkeua")
+
 [node name="WorkshopTable" parent="." instance=ExtResource("17_6c666")]
 transform = Transform3D(-0.235, 0, 2.05444e-08, 0, 0.235, 0, -2.05444e-08, 0, -0.235, 13.5436, 0.00747412, 46.1801)
 
@@ -1568,7 +1575,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.20769, -0.0703956, 39.7719)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.25008, -0.0703946, 57.01)
 
 [node name="Kuman Tong_3" type="Node3D" parent="."]
-transform = Transform3D(-0.816127, 0, -0.577872, 0, 1, 0, 0.577872, 0, -0.816127, -1.32572, 0.0200685, 57.5062)
+transform = Transform3D(-0.818079, 0, -0.575105, 0, 1, 0, 0.575105, 0, -0.818079, -1.32572, 0.0200685, 57.5062)
 
 [node name="Guman Tong_3_001" type="MeshInstance3D" parent="Kuman Tong_3"]
 transform = Transform3D(0.17904, 0.111417, 4.87016e-09, 0, -1.09278e-08, 0.25, 0.0891333, -0.2238, -9.78256e-09, 0, -4.76837e-07, 0)
@@ -1695,3 +1702,8 @@ transform = Transform3D(-4.32339, 0, -2.51163, 0, 5, 0, 2.51163, 0, -4.32339, -0
 transform = Transform3D(-5, 0, -4.37114e-07, 0, 5, 0, 4.37114e-07, 0, -5, -3.29671, 1.85353, 8.9394)
 material_override = ExtResource("30_7djjy")
 mesh = SubResource("TextMesh_3jjic")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("33_3jjic")
+volume_db = 5.0
+autoplay = true

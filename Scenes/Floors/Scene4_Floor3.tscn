@@ -1,4 +1,4 @@
-[gd_scene load_steps=80 format=3 uid="uid://box148mntjlle"]
+[gd_scene load_steps=89 format=3 uid="uid://box148mntjlle"]
 
 [ext_resource type="Script" uid="uid://dfqshe4brfxvb" path="res://Scripts/Scene4FloorController.cs" id="1_461ft"]
 [ext_resource type="PackedScene" uid="uid://ddneys6hhnini" path="res://Models/Classroom/SimpleFloor.tscn" id="2_xxsgf"]
@@ -26,13 +26,17 @@
 [ext_resource type="PackedScene" uid="uid://dq85p7v4jggu0" path="res://Nai/Scenes/safebox.tscn" id="18_m1bbf"]
 [ext_resource type="PackedScene" uid="uid://byc817nbfg7oj" path="res://PickableObject/Book.tscn" id="19_yhnbb"]
 [ext_resource type="ArrayMesh" uid="uid://dsribb0848n8s" path="res://Nai/Asssets/Laser_Machine.vox" id="20_q36wp"]
+[ext_resource type="AudioStream" uid="uid://ceyl82dvtfjgb" path="res://Sound/button-press-beep-269718.mp3" id="21_5bhom"]
 [ext_resource type="Script" uid="uid://b3u6or033rykx" path="res://Nai/Scripts/laser_gun3.gd" id="22_ygg5l"]
 [ext_resource type="ArrayMesh" uid="uid://bnhqyeb6u4nxp" path="res://Nai/Asssets/Mirror.vox" id="23_fudck"]
 [ext_resource type="Script" uid="uid://c6hri4lvgolq5" path="res://Nai/Scripts/mirror2.gd" id="24_tv6l0"]
 [ext_resource type="PackedScene" uid="uid://bv14xk3mk3v2h" path="res://Nai/Scenes/end_particles.tscn" id="25_uqh4o"]
 [ext_resource type="ArrayMesh" uid="uid://cj4irppl4xbl" path="res://Nai/Asssets/bench_vise.vox" id="27_s6w6t"]
 [ext_resource type="Script" uid="uid://60y7cgxskrky" path="res://Nai/Scripts/vise.gd" id="28_10clf"]
+[ext_resource type="AudioStream" uid="uid://ih1k1t7m6w2j" path="res://Sound/laser-beam-76426.mp3" id="31_cap18"]
+[ext_resource type="AudioStream" uid="uid://u1b8crsgt1cf" path="res://Sound/electronic-door-opening-102496.mp3" id="33_knnep"]
 [ext_resource type="PackedScene" uid="uid://dyojqhtmdo7el" path="res://Models/CleanModelTscn/pencil.tscn" id="33_q36wp"]
+[ext_resource type="AudioStream" uid="uid://bni42xxlidby8" path="res://Sound/open-door-sound-247415.mp3" id="34_ctbu0"]
 [ext_resource type="PackedScene" uid="uid://o6jgwthmr8mh" path="res://Models/CleanModelTscn/painting_4.tscn" id="34_fudck"]
 [ext_resource type="PackedScene" uid="uid://bwyvsvjxpnc68" path="res://Models/CleanModelTscn/painting_2.tscn" id="35_tv6l0"]
 [ext_resource type="PackedScene" uid="uid://brp5wciubvn6g" path="res://Models/CleanModelTscn/painting_3.tscn" id="36_uqh4o"]
@@ -47,6 +51,11 @@
 [ext_resource type="Material" uid="uid://c7smjhndbot3a" path="res://Materials/Number.tres" id="46_l244x"]
 [ext_resource type="Script" uid="uid://cpkarkkjxe5yb" path="res://addons/godot-xr-tools/objects/pickable.gd" id="47_8w1p6"]
 [ext_resource type="ArrayMesh" uid="uid://dxuj6f5dp0n4m" path="res://Models/3D - Vox Cleaner Edited (No Character)/Puzzle objects/Cryptex/Cryptex_64.obj" id="47_b5vj2"]
+[ext_resource type="AudioStream" uid="uid://c0fccpwoitun8" path="res://Sound/Dark Ambient Sound Effects - Scary Horror Sound Effects & Eerie Ambient Sounds.wav" id="48_b5vj2"]
+[ext_resource type="AudioStream" uid="uid://cyjrajvhp53se" path="res://Sound/Metal Click Sound Effect.wav" id="49_o5kjg"]
+[ext_resource type="AudioStream" uid="uid://dt1hvhfnthyfm" path="res://Sound/Open Chest (Minecraft) ｜ Sound Effect.wav" id="50_pmtu7"]
+[ext_resource type="AudioStream" uid="uid://c0vgby2nfhs68" path="res://Sound/tank-turret-rotate-14879.mp3" id="53_gonp4"]
+[ext_resource type="AudioStream" uid="uid://darfcuqstbo04" path="res://Sound/ding-36029.mp3" id="54_5bhom"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_l244x"]
 size = Vector3(1.83105, 3.10541, 1.49561)
@@ -960,6 +969,12 @@ PuzzleObject = NodePath("../Node3D")
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.704746, -0.0405239, 0.742838)
 PuzzleObject = NodePath("../Node3D")
 
+[node name="RotateStartSound" type="AudioStreamPlayer3D" parent="ShadowPuzzle"]
+stream = ExtResource("21_5bhom")
+
+[node name="RotateLoopSound" type="AudioStreamPlayer3D" parent="ShadowPuzzle"]
+stream = ExtResource("53_gonp4")
+
 [node name="LockedDoor" type="Node3D" parent="."]
 transform = Transform3D(-3.61999e-06, 0, -1, 0, 1, 0, 1, 0, -3.61999e-06, -2.34934, 0.0191294, 42.068)
 
@@ -1050,14 +1065,22 @@ surface_material_override/0 = SubResource("StandardMaterial3D_b7ay4")
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
 amount = 31
 
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="LaserPuzzle/LaserGun"]
+transform = Transform3D(5, 0, 1.27898e-13, 0, 5, 0, -1.27898e-13, 0, 5, 20.4937, 8.25264, 1.3556)
+stream = ExtResource("31_cap18")
+max_db = 0.0
+autoplay = true
+
 [node name="Vise" type="MeshInstance3D" parent="LaserPuzzle"]
 transform = Transform3D(-8.74228e-09, 0, -0.2, 0, 0.2, 0, 0.2, 0, -8.74228e-09, -1.88094, 0.72, -5.78986)
 visible = false
 mesh = ExtResource("27_s6w6t")
 script = ExtResource("28_10clf")
 
-[node name="CryptexController" parent="." instance=ExtResource("10_t5ekp")]
+[node name="CryptexController" parent="." node_paths=PackedStringArray("TickSound", "UnlockSound") instance=ExtResource("10_t5ekp")]
 transform = Transform3D(0.5, 0, 0, 0, 0.403093, 0.295831, 0, -0.295831, 0.403093, -7.30014, 1.29751, 12.0263)
+TickSound = NodePath("../TickSound")
+UnlockSound = NodePath("../UnlockSound")
 
 [node name="MeshInstance3D" parent="CryptexController/FirstNumber/IncreaseButton1 (Area3D)/IncreaseNum" index="0"]
 layers = 3
@@ -1093,13 +1116,23 @@ collision_mask = 65537
 [node name="MeshInstance3D" parent="CryptexController/ThirdNumber/DecreaseButton3 (Area3D)/DecreaseNum" index="0"]
 layers = 3
 
-[node name="KeyCardReader" parent="." node_paths=PackedStringArray("doorToOpen") instance=ExtResource("10_6bls3")]
+[node name="KeyCardReader" parent="." node_paths=PackedStringArray("doorToOpen", "KeycardSound", "DoorOpenSound") instance=ExtResource("10_6bls3")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.30068, 1.59661, 43.896)
 doorToOpen = NodePath("../LockedDoor")
+KeycardSound = NodePath("KeycardSound")
+DoorOpenSound = NodePath("DoorOpenSound")
 
 [node name="Area3D" parent="KeyCardReader" index="0"]
 collision_layer = 65537
 collision_mask = 65537
+
+[node name="KeycardSound" type="AudioStreamPlayer3D" parent="KeyCardReader"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+stream = ExtResource("33_knnep")
+
+[node name="DoorOpenSound" type="AudioStreamPlayer3D" parent="KeyCardReader"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+stream = ExtResource("34_ctbu0")
 
 [node name="Light01" type="Node3D" parent="." node_paths=PackedStringArray("_light")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0460307, 3.47456, 58.0828)
@@ -1489,6 +1522,26 @@ surface_material_override/0 = SubResource("StandardMaterial3D_sn8vg")
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
 emitting = false
 amount = 31
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("48_b5vj2")
+volume_db = -5.0
+autoplay = true
+
+[node name="TickSound" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.76188, 1.16313, 11.6232)
+stream = ExtResource("49_o5kjg")
+
+[node name="UnlockSound" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.76188, 1.16313, 11.6232)
+stream = ExtResource("50_pmtu7")
+volume_db = -5.0
+
+[node name="MoveSound" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("53_gonp4")
+
+[node name="WinSound" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("54_5bhom")
 
 [editable path="SimpleFloor"]
 [editable path="SimpleFloor/Door"]

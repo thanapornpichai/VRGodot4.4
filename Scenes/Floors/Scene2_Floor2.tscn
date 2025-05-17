@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=4 uid="uid://bg5dhuw1jx001"]
+[gd_scene load_steps=83 format=4 uid="uid://bg5dhuw1jx001"]
 
 [ext_resource type="Script" uid="uid://bpnulmqen7lg" path="res://Scripts/Scene2FloorController.cs" id="1_l4gbl"]
 [ext_resource type="PackedScene" uid="uid://c3ynhdje3m5r3" path="res://Models/Classroom/class_room.tscn" id="2_sk07u"]
@@ -33,6 +33,7 @@
 [ext_resource type="PackedScene" uid="uid://bmwo1q3l2mnnm" path="res://Models/CleanModelTscn/control_box___interectable.tscn" id="26_w1wh4"]
 [ext_resource type="PackedScene" uid="uid://c28u2ycf2r777" path="res://Models/CleanModelTscn/box.tscn" id="27_dnvvo"]
 [ext_resource type="PackedScene" uid="uid://ct6rm0xdi4wla" path="res://Models/CleanModelTscn/book.tscn" id="28_oodcf"]
+[ext_resource type="AudioStream" uid="uid://dh5p4kak6hb08" path="res://Sound/Hit_stress.wav" id="29_tvmjk"]
 [ext_resource type="PackedScene" uid="uid://bs6u63e0efjwy" path="res://Models/CleanModelTscn/monk_marking.tscn" id="29_u5lgp"]
 [ext_resource type="PackedScene" uid="uid://b30otix6hd1pw" path="res://Models/CleanModelTscn/newspaper.tscn" id="30_k4cyr"]
 [ext_resource type="PackedScene" uid="uid://dog1312s586gy" path="res://Models/CleanModelTscn/news_board.tscn" id="36_c82h3"]
@@ -54,6 +55,9 @@
 [ext_resource type="PackedScene" uid="uid://b7tkwy80t4c6d" path="res://Models/Airconditioner/AirConditioner_4.fbx" id="52_uljau"]
 [ext_resource type="FontFile" uid="uid://c33d6w5xdgwib" path="res://labels_and_texts/fonts/Minecraftia-Regular.ttf" id="53_ia6ah"]
 [ext_resource type="Material" uid="uid://c7smjhndbot3a" path="res://Materials/Number.tres" id="53_km3kn"]
+[ext_resource type="AudioStream" uid="uid://07t3l3kiusv3" path="res://Sound/V2.wav" id="55_ivkwa"]
+[ext_resource type="AudioStream" uid="uid://bqw5oykfvjp4g" path="res://Sound/flickeringlight-90411.mp3" id="56_7j123"]
+[ext_resource type="AudioStream" uid="uid://ds3awsvgqfpcd" path="res://Sound/Amb_darkroom.wav" id="56_tvmjk"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kv0hi"]
 size = Vector3(8.63161, 0.678482, 7.50891)
@@ -586,7 +590,7 @@ collision_mask = 65537
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7861, 32.4016)
 shape = SubResource("BoxShape3D_eiqug")
 
-[node name="EventAreaGhost" type="Node3D" parent="." node_paths=PackedStringArray("_area", "ghostNode3D", "floorCheck", "_animPlayer", "_nodeArray")]
+[node name="EventAreaGhost" type="Node3D" parent="." node_paths=PackedStringArray("_area", "ghostNode3D", "floorCheck", "_animPlayer", "_nodeArray", "FlickerLights", "GhostSound")]
 visible = false
 script = ExtResource("7_eiqug")
 _area = NodePath("Area3D")
@@ -595,6 +599,8 @@ ghostNode3D = NodePath("../Nang_Rum_1")
 floorCheck = NodePath("../EventAreaFloorCheck")
 _animPlayer = NodePath("../Nang_Rum_1/AnimationPlayer")
 _nodeArray = [NodePath("../SimpleFloor/Light01/Light01/OmniLight3D"), NodePath("../SimpleFloor/Light04/Light01/OmniLight3D"), NodePath("../SimpleFloor/Light05/Light01/OmniLight3D"), NodePath("../SimpleFloor/Light02/Light01/OmniLight3D"), NodePath("../SimpleFloor/Light03/Light01/OmniLight3D")]
+FlickerLights = [NodePath("../SimpleFloor/Light01/Light01/OmniLight3D"), NodePath("../SimpleFloor/Light04/Light01/OmniLight3D"), NodePath("../SimpleFloor/Light05/Light01/OmniLight3D"), NodePath("../SimpleFloor/Light02/Light01/OmniLight3D"), NodePath("../SimpleFloor/Light03/Light01/OmniLight3D"), NodePath("../SimpleFloor/Light03/Light02/OmniLight3D"), NodePath("../SimpleFloor/Light03/Light03/OmniLight3D")]
+GhostSound = NodePath("../Nang_Rum_1/AudioStreamPlayer3D3")
 
 [node name="Area3D" type="Area3D" parent="EventAreaGhost"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 31.3784)
@@ -625,11 +631,10 @@ shape = SubResource("BoxShape3D_f5cao")
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 28.8535)
 visible = false
 
-[node name="Nung Rum_Head_3_001" parent="Nang_Rum_1/Nung Rum_Head_3" index="0"]
-transform = Transform3D(1, 0, 0, 0, -1.19209e-07, 1, 0, -1, -1.19209e-07, 0, 0.599999, 0)
-
-[node name="Nung Rum_Body_2_001" parent="Nang_Rum_1/Nung Rum_Body_2" index="0"]
-transform = Transform3D(1, 0, 0, 0, -1.19209e-07, 1, 0, -1, -1.19209e-07, 0, -3.57628e-07, 0)
+[node name="AudioStreamPlayer3D3" type="AudioStreamPlayer3D" parent="Nang_Rum_1"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -0.612955, 1.78875, -36.9268)
+stream = ExtResource("29_tvmjk")
+volume_db = -5.0
 
 [node name="OldMysticSymblo_1" parent="." instance=ExtResource("24_c57rt")]
 transform = Transform3D(0.69092, 0.722931, -3.16003e-08, 0, -4.37114e-08, -1, -0.722931, 0.69092, -3.02011e-08, 0.0342236, -0.0100244, 61.8787)
@@ -796,6 +801,23 @@ transform = Transform3D(-3.49691e-08, 0, -0.8, 0, 0.8, 0, 0.8, 0, -3.49691e-08, 
 transform = Transform3D(-5, 0, -4.37114e-07, 0, 5, 0, 4.37114e-07, 0, -5, -3.29671, 1.85353, 8.9342)
 material_override = ExtResource("53_km3kn")
 mesh = SubResource("TextMesh_km3kn")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.440193, 1.78875, 68.7707)
+stream = ExtResource("55_ivkwa")
+volume_db = -5.0
+unit_size = 5.0
+max_db = -2.0
+autoplay = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="AudioStreamPlayer3D"]
+stream = ExtResource("56_tvmjk")
+
+[node name="AudioStreamPlayer3D2" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.612958, 1.78875, 65.7803)
+stream = ExtResource("56_7j123")
+unit_size = 1.0
+autoplay = true
 
 [editable path="SimpleFloor/Light01"]
 [editable path="SimpleFloor/Light04"]

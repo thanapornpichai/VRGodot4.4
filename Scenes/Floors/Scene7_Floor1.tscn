@@ -1,10 +1,11 @@
-[gd_scene load_steps=15 format=3 uid="uid://dyotj43j4mf2p"]
+[gd_scene load_steps=16 format=3 uid="uid://dyotj43j4mf2p"]
 
 [ext_resource type="Script" uid="uid://lqtq355mtv1n" path="res://Scripts/Scene7FloorController.cs" id="1_75g43"]
 [ext_resource type="PackedScene" uid="uid://ddneys6hhnini" path="res://Models/Classroom/SimpleFloor.tscn" id="2_tmu2b"]
 [ext_resource type="PackedScene" uid="uid://c3ynhdje3m5r3" path="res://Models/Classroom/class_room.tscn" id="3_canlr"]
 [ext_resource type="ArrayMesh" uid="uid://bgne7aoj26tun" path="res://Models/Light01.vox" id="3_y455e"]
 [ext_resource type="Material" uid="uid://dof4yrkgubhw" path="res://Materials/Exit.tres" id="7_75g43"]
+[ext_resource type="AudioStream" uid="uid://ds3awsvgqfpcd" path="res://Sound/Amb_darkroom.wav" id="8_tggj8"]
 [ext_resource type="Material" uid="uid://c7smjhndbot3a" path="res://Materials/Number.tres" id="9_qrjcr"]
 [ext_resource type="FontFile" uid="uid://c33d6w5xdgwib" path="res://labels_and_texts/fonts/Minecraftia-Regular.ttf" id="10_7to88"]
 
@@ -38,13 +39,10 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4.800
 [node name="ClassRoom" parent="SimpleFloor" index="0"]
 visible = false
 
-[node name="ClassRoom5" parent="SimpleFloor" instance=ExtResource("3_canlr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6.52399)
-
-[node name="ClassRoom2" parent="SimpleFloor" index="2"]
+[node name="ClassRoom2" parent="SimpleFloor" index="1"]
 visible = false
 
-[node name="ClassRoom3" parent="SimpleFloor" index="3"]
+[node name="ClassRoom3" parent="SimpleFloor" index="2"]
 visible = false
 
 [node name="LableGroup" type="Node3D" parent="SimpleFloor/StairConnector2" index="1"]
@@ -146,7 +144,7 @@ transform = Transform3D(-4.65946e-08, 0.116606, -1.98337e-08, 0, -5.09702e-09, -
 mesh = SubResource("BoxMesh_lpas0")
 skeleton = NodePath("../..")
 
-[node name="Door5" parent="SimpleFloor" index="26"]
+[node name="Door5" parent="SimpleFloor" index="25"]
 visible = false
 
 [node name="CollisionShape3D" parent="SimpleFloor/Door5/StaticBody3D" index="0"]
@@ -157,7 +155,7 @@ disabled = true
 visible = false
 disabled = true
 
-[node name="Door6" parent="SimpleFloor" index="27"]
+[node name="Door6" parent="SimpleFloor" index="26"]
 visible = false
 
 [node name="CollisionShape3D" parent="SimpleFloor/Door6/StaticBody3D" index="0"]
@@ -231,6 +229,9 @@ shadow_opacity = 0.2
 omni_range = 10.0
 omni_attenuation = 0.8
 
+[node name="ClassRoom5" parent="SimpleFloor" instance=ExtResource("3_canlr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6.52399)
+
 [node name="FloorNumber2" type="MeshInstance3D" parent="."]
 transform = Transform3D(-5, 0, -4.37114e-07, 0, 5, 0, 4.37114e-07, 0, -5, -0.102908, 1.854, 8.8679)
 material_override = ExtResource("9_qrjcr")
@@ -258,6 +259,9 @@ shape = SubResource("BoxShape3D_75g43")
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.30875, 1.72687, 6.13045)
 shape = SubResource("BoxShape3D_75g43")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_tggj8")
 
 [editable path="SimpleFloor"]
 [editable path="SimpleFloor/Door5"]
